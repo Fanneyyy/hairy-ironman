@@ -1,18 +1,15 @@
 #include <QCoreApplication>
 #include <iostream>
+#include "person.h"
+
+using namespace std;
 
 int main(int argc, char *argv[])
 {
-    std::cout << "Hello World" << std::endl;
-
-    std::cout << "Hello OK" << std::endl;
-
-    std::cout << "Hello" << std::endl;
-    std::cout << "Testing... 1.... 2.... 3" << std::endl;
-    std::cout << "Again" << std::endl;
-
-    // alltaf.
-
+    cout << "Klasatest a Person." << endl;
+    Person p1;
+    cin >> p1;
+    cout << "Og þetta er það sem prentast:" << endl;
+    cout << p1;
     return 0;
-
 }
