@@ -16,7 +16,9 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp \
-    person.cpp
+    person.cpp \
+    consoleui.cpp
 
 HEADERS += \
-    person.h
+    person.h \
+    consoleui.h
