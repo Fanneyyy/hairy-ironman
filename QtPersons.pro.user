@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
+<<<<<<< HEAD
 <!-- Written by QtCreator 3.2.2, 2014-11-27T14:57:01. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
   <value type="QByteArray">{87ec5511-68d5-4686-a9aa-8dbc0109c17d}</value>
+=======
+<!-- Written by QtCreator 3.2.2, 2014-11-27T14:56:27. -->
+<qtcreator>
+ <data>
+  <variable>EnvironmentId</variable>
+  <value type="QByteArray">{ceb6ac07-f4b3-4dd5-9586-c71fc15adb5a}</value>
+>>>>>>> 9c40a58e62989e8d5c651052d938b69099e1e5a8
  </data>
  <data>
   <variable>ProjectExplorer.Project.ActiveTarget</variable>
@@ -236,7 +244,11 @@
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">QtPersons</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">QtPersons2</value>
+<<<<<<< HEAD
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:/Users/evaingibjorg/Documents/Skóli/!Háskólinn í Reykjavík/Verklegt/Vika1/QtPersons/QtPersons.pro</value>
+=======
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:/Users/kthorri/Dropbox/Verklegt/Vika1/QtPersons/QtPersons.pro</value>
+>>>>>>> 9c40a58e62989e8d5c651052d938b69099e1e5a8
     <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.CommandLineArguments"></value>
     <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.ProFile">QtPersons.pro</value>
     <value type="bool" key="Qt4ProjectManager.Qt4RunConfiguration.UseDyldImageSuffix">false</value>
