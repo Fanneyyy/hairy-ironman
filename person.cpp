@@ -14,6 +14,25 @@ Person::Person(string newName, string newGender, int newYearOfBirth, int newYear
     yearOfDeath = newYearOfDeath;
 }
 
+ostream& operator <<(ostream& outs, const Person& p) {
+    outs << "Name: " << p.name << endl;
+    outs << "Gender: " << p.gender << endl;
+    outs << "Year of birth: " << p.yearOfBirth;
+    outs << "Year of death: " << p.yearOfDeath;
+    return outs;
+}
+
+istream& operator >>(istream& ins, Person& p) {
+    string newName, newGender;
+    int newYearOfBirth, newYearOfDeath;
+    ins >> newName >> newGender >> newYearOfBirth >> newYearOfDeath;
+    p.name = newName;
+    p.gender = newGender;
+    p.yearOfBirth = newYearOfBirth;
+    p.yearOfDeath = newYearOfDeath;
+    return ins;
+}
+
 void Person::changeName(Person p, string newName) {
     p.name = newName;
 }

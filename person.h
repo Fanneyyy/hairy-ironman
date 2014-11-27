@@ -11,6 +11,8 @@ class Person
 public:
     Person();
     Person(string newName, string newGender, int newYearOfBirth, int newYearOfDeath);
+    friend ostream& operator <<(ostream& outs, const Person& p);
+    friend istream& operator >>(istream& ins, Person& p);
     void changeName(Person p, string newName);
     void changeGender(Person p, string newGender);
     void changeYearOfBirth(Person p, int newYearOfBirth);
