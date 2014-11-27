@@ -1,13 +1,14 @@
 #include "person.h"
 
 Person::Person() {
-    name = "empty";
+    name.last = "empty";
+    name.first = "empty";
     gender = "neutral";
     yearOfBirth = 0;
     yearOfDeath = 0;
 }
 
-Person::Person(string newName, string newGender, int newYearOfBirth, int newYearOfDeath) {
+Person::Person(fullName newName, string newGender, int newYearOfBirth, int newYearOfDeath) {
     name = newName;
     gender = newGender;
     yearOfBirth = newYearOfBirth;
@@ -15,7 +16,7 @@ Person::Person(string newName, string newGender, int newYearOfBirth, int newYear
 }
 
 ostream& operator <<(ostream& outs, const Person& p) {
-    outs << "Name: " << p.name << endl;
+    outs << "Name: " << p.name.first << " " << p.name.last << endl;
     outs << "Gender: " << p.gender << endl;
     outs << "Year of birth: " << p.yearOfBirth;
     outs << "Year of death: " << p.yearOfDeath;
@@ -23,18 +24,22 @@ ostream& operator <<(ostream& outs, const Person& p) {
 }
 
 istream& operator >>(istream& ins, Person& p) {
-    string newName, newGender;
+    string newLast, newFirst, newGender;
     int newYearOfBirth, newYearOfDeath;
-    ins >> newName >> newGender >> newYearOfBirth >> newYearOfDeath;
-    p.name = newName;
+    cout << "Type in the persons last name, first name, gender, year of birth ";
+    cout << "and year of death, seperated by a space." << endl;
+    ins >> newLast >> newFirst >> newGender >> newYearOfBirth >> newYearOfDeath;
+    p.name.last = newLast;
+    p.name.first = newFirst;
     p.gender = newGender;
     p.yearOfBirth = newYearOfBirth;
     p.yearOfDeath = newYearOfDeath;
     return ins;
 }
 
-void Person::changeName(Person p, string newName) {
-    p.name = newName;
+void Person::changeName(Person p, string newLast, string newFirst) {
+    p.name.last = newLast;
+    p.name.first = newFirst;
 }
 
 void Person::changeGender(Person p, string newGender) {
@@ -49,8 +54,12 @@ void Person::changeYearOfDeath(Person p, int newYearOfDeath) {
     p.yearOfDeath = newYearOfDeath;
 }
 
-string Person::getName(Person p) {
-    return p.name;
+string Person::getLastName(Person p) {
+    return p.name.last;
+}
+
+string Person::getFirstName(Person p) {
+    return p.name.first;
 }
 
 string Person::getGender(Person p) {
