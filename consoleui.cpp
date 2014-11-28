@@ -1,4 +1,6 @@
 #include "consoleui.h"
+#include "readperson.h"
+#include "printfile.h"
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -10,38 +12,26 @@ ConsoleUI::ConsoleUI() {
 
 }
 
-void ConsoleUI::start() {
-    Person p1;
-    string line;
-    ofstream outputFile;
-    outputFile.open("test.txt");
-    char c;
+void ConsoleUI::choose(){
+    readPerson rp;
+    printFile wf;
 
+    int what;
+    cout << "What would you like to do? " << endl;
+    cout << "1. Add person" << endl;
+    cout << "2. Print from file" << endl;
 
+    cin >> what;
 
-    do
+    switch(what)
     {
-    cout << "Klasa Test a Person." << endl;
-    cin >> p1;
-
-
-    outputFile << p1;   // add person to file
-
-
-    cout << "Og þetta er það sem prentast:" << endl;
-    cout << p1;
-
-
-    cout << "Ready to add another? (y/n?) ";
-    cin >> c;
-    }while(c != 'N' && c != 'n');
-
-    cout << "Nuna prentum við ur filenum" << endl;
-    ifstream myfile ("test.txt");
-    while (getline (myfile, line))
-    {
-        cout << line << endl;
+    case 1:
+        rp.read();
+        break;
+    case 2:
+        wf.print();
+        break;
+    default:
+        break;
     }
-    outputFile.close();
-    myfile.close();
 }

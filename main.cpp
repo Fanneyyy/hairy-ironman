@@ -4,7 +4,7 @@
 int main(int argc, char *argv[])
 {
     ConsoleUI ui;
-    ui.start();
+    ui.choose();
 
 
     return 0;
