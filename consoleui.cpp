@@ -24,14 +24,14 @@ void ConsoleUI::start() {
     cout << "Klasa Test a Person." << endl;
     cin >> p1;
 
-    // add person to file
 
-    outputFile << p1;
+    outputFile << p1;   // add person to file
 
-    // add person to file
 
     cout << "Og þetta er það sem prentast:" << endl;
     cout << p1;
+
+
     cout << "Ready to add another? (y/n?) ";
     cin >> c;
     }while(c != 'N' && c != 'n');

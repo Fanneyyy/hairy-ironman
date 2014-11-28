@@ -19,7 +19,7 @@ ostream& operator <<(ostream& outs, const Person& p) {
     outs << "Name: " << p.name.first << " " << p.name.last << endl;
     outs << "Gender: " << p.gender << endl;
     outs << "Year of birth: " << p.yearOfBirth << endl;
-    outs << "Year of death: " << p.yearOfDeath << endl;
+    outs << "Year of death: " << p.yearOfDeath << endl << endl;
 
     return outs;
 }
