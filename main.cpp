@@ -1,10 +1,11 @@
 #include <QCoreApplication>
-#include <iostream>
+#include "consoleui.h"
 
 int main(int argc, char *argv[])
 {
-    std::cout << "Hello World" << std::endl;
-    std::cout << "Hello" << std::endl;
-    return 0;
+    ConsoleUI ui;
+    ui.start();
 
+
+    return 0;
 }
