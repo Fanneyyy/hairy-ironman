@@ -4,7 +4,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include "person.h"
+#include "search.h"
 
 using namespace std;
 
@@ -34,6 +34,9 @@ void ConsoleUI::choose(){
     case 2:
         wf.print();
         break;
+    case 3:
+        searchUI();
+        break;
     case 0:
         return;
         break;
@@ -41,4 +44,8 @@ void ConsoleUI::choose(){
         break;
     }
     }while(what != 0);
+}
+
+void ConsoleUI::searchUI() {
+
 }

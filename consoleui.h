@@ -10,6 +10,7 @@ public:
     void choose();
     void read();
     void print();
+    void searchUI();
 };
 
 #endif // CONSOLEUI_H

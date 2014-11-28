@@ -57,22 +57,22 @@ void Person::setYearOfDeath(Person p, int newYearOfDeath) {
     p.yearOfDeath = newYearOfDeath;
 }
 
-string Person::getLastName(Person p) {
-    return p.name.last;
+string Person::getLastName() {
+    return name.last;
 }
 
-string Person::getFirstName(Person p) {
-    return p.name.first;
+string Person::getFirstName() {
+    return name.first;
 }
 
-string Person::getGender(Person p) {
-    return p.gender;
+string Person::getGender() {
+    return gender;
 }
 
-int Person::getYearOfBirth(Person p) {
-    return p.yearOfBirth;
+int Person::getYearOfBirth() {
+    return yearOfBirth;
 }
 
-int Person::getYearOfDeath(Person p) {
-    return p.yearOfDeath;
+int Person::getYearOfDeath() {
+    return yearOfDeath;
 }

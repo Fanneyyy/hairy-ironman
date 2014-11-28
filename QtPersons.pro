@@ -19,10 +19,12 @@ SOURCES += main.cpp \
     person.cpp \
     consoleui.cpp \
     readperson.cpp \
-    printfile.cpp
+    printfile.cpp \
+    search.cpp
 
 HEADERS += \
     person.h \
     consoleui.h \
     readperson.h \
-    printfile.h
+    printfile.h \
+    search.h
