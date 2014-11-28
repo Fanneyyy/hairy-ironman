@@ -14,6 +14,7 @@ public:
     Person get(int id);
     int add();
     int remove();
+    void Startup();
 private:
     PersonRepository personRepo;
 };

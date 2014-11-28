@@ -20,6 +20,7 @@ int Service::add() {
         outputFile << p;   // add person to file
         personRepo.add(p);
 
+
         cout << "Want to add another? (y/n?) ";
         cin >> c;
     }while(c != 'N' && c != 'n');
@@ -28,6 +29,28 @@ int Service::add() {
 
 int Service::remove() {
 
+}
+
+void Service::Startup()
+{
+    Person p;
+
+    string line;
+    cout << "add file to vector" << endl;
+
+     ifstream myfile ("test.txt");
+     if(myfile.is_open())
+     {
+     while (getline (myfile, line))
+     {
+         cout << line << endl;
+     }
+     myfile.close();
+     }
+     else
+     {
+         cout << "Sorry, no information at hand" << endl;
+     }
 }
 
 
