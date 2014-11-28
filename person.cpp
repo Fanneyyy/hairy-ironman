@@ -14,6 +14,14 @@ Person::Person(fullName name, string gender, int yearOfBirth, int yearOfDeath) {
     this -> yearOfBirth = yearOfBirth;
     this -> yearOfDeath = yearOfDeath;
 }
+void Person::printAll(const Person& p){
+    cout << p.name.first << endl;
+    cout << p.name.last << endl;
+    cout << p.gender << endl;
+    cout << p.yearOfBirth << endl;
+    cout << p.yearOfDeath << endl;
+
+}
 
 ostream& operator <<(ostream& outs, const Person& p) {
     outs << "Name: " << p.name.first << " " << p.name.last << endl;
