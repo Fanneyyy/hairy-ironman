@@ -12,7 +12,7 @@ private:
     list<Person> personList;
 public:
     PersonRepository();
-    void add(Person a);
+    int add(Person a);
 };
 
 #endif // PERSONREPOSITORY_H
