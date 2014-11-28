@@ -13,9 +13,16 @@ void printFile::print(){
    cout << "Nuna prentum við ur filenum" << endl;
 
     ifstream myfile ("test.txt");
+    if(myfile.is_open())
+    {
     while (getline (myfile, line))
     {
         cout << line << endl;
     }
     myfile.close();
+    }
+    else
+    {
+        cout << "Sorry, no information at hand" << endl;
+    }
 }
