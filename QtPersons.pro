@@ -17,8 +17,12 @@ TEMPLATE = app
 
 SOURCES += main.cpp \
     person.cpp \
-    consoleui.cpp
+    consoleui.cpp \
+    readperson.cpp \
+    printfile.cpp
 
 HEADERS += \
     person.h \
-    consoleui.h
+    consoleui.h \
+    readperson.h \
+    printfile.h
