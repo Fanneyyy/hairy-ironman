@@ -1,8 +1,7 @@
 #include "service.h"
 
 
-Service::Service()
-{
+Service::Service() {
 }
 
 Person Service::get(int id) {
@@ -28,6 +27,29 @@ int Service::add() {
 
 int Service::remove() {
 
+}
+
+void Service::setUp() {
+    Person p;
+    string line;
+    int number;
+    ifstream myfile ("test.txt");
+    if(myfile.is_open()) {
+        while(getline(myfile, line)) {
+             p.setFirstName(line);
+             getline(myfile, line);
+             p.setLastName(line);
+             getline(myfile, line);
+             p.setGender(line);
+             getline(myfile, line);
+             p.setYearOfBirth(line);
+             getline(myfile, line);
+             p.setYearOfDeath(line);
+        }
+        myfile.close();
+    } else {
+        cout << "Sorry, no information at hand" << endl;
+    }
 }
 
 

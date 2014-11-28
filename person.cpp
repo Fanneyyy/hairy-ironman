@@ -4,11 +4,11 @@ Person::Person() {
     name.last = "empty";
     name.first = "empty";
     gender = "neutral";
-    yearOfBirth = 0;
-    yearOfDeath = 0;
+    yearOfBirth = "0";
+    yearOfDeath = "0";
 }
 
-Person::Person(fullName name, string gender, int yearOfBirth, int yearOfDeath) {
+Person::Person(fullName name, string gender, string yearOfBirth, string yearOfDeath) {
     this -> name = name;
     this -> gender = gender;
     this -> yearOfBirth = yearOfBirth;
@@ -22,7 +22,6 @@ void Person::printAll(const Person p){
 }
 
 ostream& operator <<(ostream& outs, const Person& p) {
-
     outs << p.name.first << endl;
     outs << p.name.last << endl;
     outs << p.gender << endl;
@@ -48,21 +47,23 @@ istream& operator >>(istream& ins, Person& p) {
     return ins;
 }
 
-void Person::setName(Person p, string newLast, string newFirst) {
-    p.name.last = newLast;
-    p.name.first = newFirst;
+void Person::setFirstName(string newFirst) {
+    name.first = newFirst;
+}
+void Person::setLastName(string newLast) {
+    name.last = newLast;
 }
 
-void Person::setGender(Person p, string newGender) {
-    p.gender = newGender;
+void Person::setGender(string newGender) {
+    gender = newGender;
 }
 
-void Person::setYearOfBirth(Person p, int newYearOfBirth) {
-    p.yearOfBirth = newYearOfBirth;
+void Person::setYearOfBirth(string newYearOfBirth) {
+    yearOfBirth = newYearOfBirth;
 }
 
-void Person::setYearOfDeath(Person p, int newYearOfDeath) {
-    p.yearOfDeath = newYearOfDeath;
+void Person::setYearOfDeath(string newYearOfDeath) {
+    yearOfDeath = newYearOfDeath;
 }
 
 string Person::getLastName() {
@@ -77,10 +78,10 @@ string Person::getGender() {
     return gender;
 }
 
-int Person::getYearOfBirth() {
+string Person::getYearOfBirth() {
     return yearOfBirth;
 }
 
-int Person::getYearOfDeath() {
+string Person::getYearOfDeath() {
     return yearOfDeath;
 }
