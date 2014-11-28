@@ -15,11 +15,14 @@ ConsoleUI::ConsoleUI() {
 void ConsoleUI::choose(){
     readPerson rp;
     printFile wf;
-
     int what;
+    do{
     cout << "What would you like to do? " << endl;
     cout << "1. Add person" << endl;
     cout << "2. Print from file" << endl;
+    cout << "3. Search list" << endl;
+    cout << "4. Sort list" << endl;
+    cout << "0. Exit" << endl;
 
     cin >> what;
 
@@ -31,7 +34,11 @@ void ConsoleUI::choose(){
     case 2:
         wf.print();
         break;
+    case 0:
+        return;
+        break;
     default:
         break;
     }
+    }while(what != 0);
 }
