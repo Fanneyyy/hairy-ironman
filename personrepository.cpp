@@ -2,5 +2,9 @@
 
 PersonRepository::PersonRepository()
 {  
-    personVector = vector<Person>();
+    personList = list<Person>();
+}
+
+void PersonRepository::add(Person a){
+    personList.push_back(a);
 }
