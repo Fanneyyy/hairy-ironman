@@ -1,5 +1,11 @@
 #ifndef SERVICE_H
 #define SERVICE_H
+#include <fstream>
+#include <iostream>
+#include <string>
+#include <vector>
+#include "person.h"
+#include "personrepository.h"
 
 class Service
 {
@@ -8,6 +14,8 @@ public:
     Person get(int id);
     int add();
     int remove();
+private:
+    PersonRepository personRepo;
 };
 
 #endif // SERVICE_H

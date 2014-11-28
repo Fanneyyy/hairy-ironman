@@ -2,9 +2,13 @@
 
 PersonRepository::PersonRepository()
 {  
-    personList = list<Person>();
+    personList = vector<Person>();
 }
 
 int PersonRepository::add(Person a){
     personList.push_back(a);
+}
+
+Person PersonRepository::get(int id){
+    personList[id];
 }

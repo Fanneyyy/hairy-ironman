@@ -5,19 +5,20 @@ using namespace std;
 Search::Search() {
 }
 
-bool Search::firstName(list<Person> persons, string firstName) {
-    for(list<Person>::iterator iter = persons.begin(); iter != persons.end(); ++iter) {
-        if(iter->getFirstName() == firstName) {
+bool Search::firstName(vector<Person> persons, string firstName) {
+    for(unsigned int i = 0; i < persons.size(); i++) {
+        if(persons[i].getFirstName() == firstName) {
             return true;
         }
     }
     return false;
 }
 
-Person Search::returnFirstName(list<Person> persons, string firstName) {
-    for(list<Person>::iterator iter = persons.begin(); iter != persons.end(); ++iter) {
-        if(iter->getFirstName() == firstName) {
-            return *iter;
+Person Search::returnFirstName(vector<Person> persons, string firstName) {
+
+    for(unsigned int i = 0; i < persons.size(); i++) {
+        if(persons[i].getFirstName() == firstName) {
+            return persons[i];
         }
     }
 }

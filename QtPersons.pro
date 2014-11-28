@@ -19,7 +19,6 @@ SOURCES += main.cpp \
     person.cpp \
     consoleui.cpp \
     personrepository.cpp \
-    readperson.cpp \
     printfile.cpp \
     search.cpp \
     service.cpp
@@ -28,7 +27,6 @@ HEADERS += \
     person.h \
     consoleui.h \
     personrepository.h \
-    readperson.h \
     printfile.h \
     search.h \
     service.h

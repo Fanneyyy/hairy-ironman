@@ -21,7 +21,7 @@ public:
     void setGender(Person p, string newGender);
     void setYearOfBirth(Person p, int newYearOfBirth);
     void setYearOfDeath(Person p, int newYearOfDeath);
-    void printAll(const Person& p);
+    void printAll(const Person p);
 
     string getLastName();
     string getFirstName();

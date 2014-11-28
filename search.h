@@ -2,14 +2,14 @@
 #define SEARCH_H
 #include "person.h"
 #include <iostream>
-#include <list>
+#include <vector>
 
 class Search
 {
 public:
     Search();
-    bool firstName(list<Person> persons, string firstName);
-    Person returnFirstName(list<Person> persons, string firstName);
+    bool firstName(vector<Person> persons, string firstName);
+    Person returnFirstName(vector<Person> persons, string firstName);
 };
 
 #endif // SEARCH_H
