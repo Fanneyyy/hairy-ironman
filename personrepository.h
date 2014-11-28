@@ -1,7 +1,7 @@
 #ifndef PERSONREPOSITORY_H
 #define PERSONREPOSITORY_H
 
-#include <vector>
+#include <list>
 #include "Person.h"
 
 using namespace std;
@@ -9,9 +9,10 @@ using namespace std;
 class PersonRepository
 {
 private:
-    vector<Person> personVector;
+    list<Person> personList;
 public:
     PersonRepository();
+    void add(Person a);
 };
 
 #endif // PERSONREPOSITORY_H
