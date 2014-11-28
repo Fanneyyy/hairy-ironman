@@ -21,14 +21,17 @@ public:
     void setGender(Person p, string newGender);
     void setYearOfBirth(Person p, int newYearOfBirth);
     void setYearOfDeath(Person p, int newYearOfDeath);
-    string getLastName(Person p);
-    string getFirstName(Person p);
-    string getGender(Person p);
-    int getYearOfBirth(Person p);
-    int getYearOfDeath(Person p);
+    void printAll(const Person& p);
+
+    string getLastName();
+    string getFirstName();
+    string getGender();
+    int getYearOfBirth();
+    int getYearOfDeath();
 
     friend ostream& operator <<(ostream& outs, const Person& p);
     friend istream& operator >>(istream& ins, Person& p);
+
 private:
     fullName name;
     string gender;
