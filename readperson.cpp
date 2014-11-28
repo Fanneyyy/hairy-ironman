@@ -1,5 +1,6 @@
 #include "readperson.h"
 #include <fstream>
+#include <iostream>
 #include <string>
 #include "person.h"
 
@@ -13,16 +14,10 @@ void readPerson::read() {
     char c;
     do
     {
-    cout << "Klasa Test a Person." << endl;
+
     cin >> p1;
 
-
     outputFile << p1;   // add person to file
-
-
-    cout << "Og þetta er það sem prentast:" << endl;
-    cout << p1;
-
 
     cout << "Ready to add another? (y/n?) ";
     cin >> c;
