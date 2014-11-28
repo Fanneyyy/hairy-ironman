@@ -1,7 +1,7 @@
 #ifndef PERSONREPOSITORY_H
 #define PERSONREPOSITORY_H
 
-#include <list>
+#include <vector>
 #include "Person.h"
 
 using namespace std;
