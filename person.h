@@ -17,10 +17,10 @@ public:
     Person();
     Person(fullName name, string gender, int yearOfBirth, int yearOfDeath);
 
-//    void changeName(Person p, string newLast, string newFirst);
-//    void changeGender(Person p, string newGender);
-//    void changeYearOfBirth(Person p, int newYearOfBirth);
-//    void changeYearOfDeath(Person p, int newYearOfDeath);
+    void setName(Person p, string newLast, string newFirst);
+    void setGender(Person p, string newGender);
+    void setYearOfBirth(Person p, int newYearOfBirth);
+    void setYearOfDeath(Person p, int newYearOfDeath);
     string getLastName(Person p);
     string getFirstName(Person p);
     string getGender(Person p);

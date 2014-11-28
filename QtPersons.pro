@@ -18,9 +18,13 @@ TEMPLATE = app
 SOURCES += main.cpp \
     person.cpp \
     consoleui.cpp \
-    personrepository.cpp
+    personrepository.cpp \
+    readperson.cpp \
+    printfile.cpp
 
 HEADERS += \
     person.h \
     consoleui.h \
-    personrepository.h
+    personrepository.h \
+    readperson.h \
+    printfile.h

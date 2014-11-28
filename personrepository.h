@@ -9,7 +9,7 @@ using namespace std;
 class PersonRepository
 {
 private:
-    list<Person> personList;
+    vector<Person> personVector;
 public:
     PersonRepository();
 };

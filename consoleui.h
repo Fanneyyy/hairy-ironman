@@ -5,7 +5,11 @@ class ConsoleUI
 {
 public:
     ConsoleUI();
-    void start();
+
+
+    void choose();
+    void read();
+    void print();
 };
 
 #endif // CONSOLEUI_H
