@@ -21,7 +21,8 @@ SOURCES += main.cpp \
     personrepository.cpp \
     readperson.cpp \
     printfile.cpp \
-    search.cpp
+    search.cpp \
+    service.cpp
 
 HEADERS += \
     person.h \
@@ -29,4 +30,5 @@ HEADERS += \
     personrepository.h \
     readperson.h \
     printfile.h \
-    search.h
+    search.h \
+    service.h
