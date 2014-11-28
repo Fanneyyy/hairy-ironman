@@ -26,31 +26,36 @@ ostream& operator <<(ostream& outs, const Person& p) {
 
 istream& operator >>(istream& ins, Person& p) {
 
-    cout << "Last name: "; ins >> p.name.last;
-    cout << "First name: "; ins >> p.name.first;
-    cout << "Gender: "; ins >> p.gender;
-    cout << "Year of birth: "; ins >> p.yearOfBirth;
-    cout << "Year of death: "; ins >> p.yearOfDeath;
+    cout << "Last name: ";
+    ins >> p.name.last;
+    cout << "First name: ";
+    ins >> p.name.first;
+    cout << "Gender: ";
+    ins >> p.gender;
+    cout << "Year of birth: ";
+    ins >> p.yearOfBirth;
+    cout << "Year of death: ";
+    ins >> p.yearOfDeath;
 
     return ins;
 }
 
-//void Person::changeName(Person p, string newLast, string newFirst) {
-//    p.name.last = newLast;
-//    p.name.first = newFirst;
-//}
+void Person::setName(Person p, string newLast, string newFirst) {
+    p.name.last = newLast;
+    p.name.first = newFirst;
+}
 
-//void Person::changeGender(Person p, string newGender) {
-//    p.gender = newGender;
-//}
+void Person::setGender(Person p, string newGender) {
+    p.gender = newGender;
+}
 
-//void Person::changeYearOfBirth(Person p, int newYearOfBirth) {
-//    p.yearOfBirth = newYearOfBirth;
-//}
+void Person::setYearOfBirth(Person p, int newYearOfBirth) {
+    p.yearOfBirth = newYearOfBirth;
+}
 
-//void Person::changeYearOfDeath(Person p, int newYearOfDeath) {
-//    p.yearOfDeath = newYearOfDeath;
-//}
+void Person::setYearOfDeath(Person p, int newYearOfDeath) {
+    p.yearOfDeath = newYearOfDeath;
+}
 
 string Person::getLastName(Person p) {
     return p.name.last;
