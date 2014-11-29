@@ -17,6 +17,8 @@ public:
     void remove();
     void setUp();
     void printAll();
+    void printOne(int id);
+    void searchAll(string firstName);
 private:
     Search s;
     PersonRepository personRepo;

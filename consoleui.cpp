@@ -7,7 +7,7 @@ ConsoleUI::ConsoleUI() {
 }
 
 void ConsoleUI::choose(){
-    // s.setUp();
+    s.setUp();
     int what;
     do{
         cout << "What would you like to do? " << endl;
@@ -41,6 +41,7 @@ void ConsoleUI::choose(){
 
 void ConsoleUI::searchUI() {
     int input;
+    string search;
     cout << "How would you like to search?" << endl;
     cout << "1. Search for first name" << endl;
     cout << "More later" << endl;
@@ -48,6 +49,9 @@ void ConsoleUI::searchUI() {
 
     switch(input) {
         case 1:
+            cout << "Please enter the first name: ";
+            cin >> search;
+            s.searchAll(search);
             break;
         case 2:
             break;

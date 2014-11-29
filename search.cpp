@@ -5,13 +5,13 @@ using namespace std;
 Search::Search() {
 }
 
-bool Search::firstName(vector<Person> persons, string firstName) {
+int Search::firstName(vector<Person> persons, string firstName) {
     for(unsigned int i = 0; i < persons.size(); i++) {
         if(persons[i].getFirstName() == firstName) {
-            return true;
+            return i;
         }
     }
-    return false;
+    return 0;
 }
 
 Person Search::returnFirstName(vector<Person> persons, string firstName) {

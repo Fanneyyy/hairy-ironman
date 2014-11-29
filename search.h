@@ -8,7 +8,7 @@ class Search
 {
 public:
     Search();
-    bool firstName(vector<Person> persons, string firstName);
+    int firstName(vector<Person> persons, string firstName);
     Person returnFirstName(vector<Person> persons, string firstName);
 };
 

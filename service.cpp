@@ -37,6 +37,17 @@ void Service::printAll() {
     }
 }
 
+void Service::printOne(int id) {
+    personRepo.get(id).print();
+}
+
+void Service::searchAll(string firstName) {
+    int id = s.firstName(personRepo.getAll(),firstName);
+    if(id != 0) {
+        personRepo.get(id).print();
+    }
+}
+
 void Service::remove() {
 
 }

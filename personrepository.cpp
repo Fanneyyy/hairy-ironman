@@ -4,6 +4,10 @@ PersonRepository::PersonRepository() {
     personList = vector<Person>();
 }
 
+vector<Person> PersonRepository::getAll() {
+    return personList;
+}
+
 void PersonRepository::add(Person a){
     personList.push_back(a);
 }

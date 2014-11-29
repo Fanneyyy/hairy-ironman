@@ -1,11 +1,11 @@
 #include "person.h"
 
 Person::Person() {
-    name.last = "empty";
-    name.first = "empty";
-    gender = "neutral";
-    yearOfBirth = "0";
-    yearOfDeath = "0";
+    name.last = "";
+    name.first = "";
+    gender = "";
+    yearOfBirth = "";
+    yearOfDeath = "";
 }
 
 Person::Person(fullName name, string gender, string yearOfBirth, string yearOfDeath) {

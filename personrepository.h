@@ -15,6 +15,7 @@ public:
     void add(Person a);
     Person get(int id);
     int getSize();
+    vector<Person> getAll();
 };
 
 #endif // PERSONREPOSITORY_H
