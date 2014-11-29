@@ -11,12 +11,17 @@ Person Service::get(int id) {
 void Service::add() {
     Person p;
     char c;
+    ofstream outFile("test.txt");
     do {
         cin >> p;
         personRepo.add(p);
-        cout << "Want to add another? (y/n?) ";
+        if(outFile.is_open()) {
+            outFile << p;
+            cout << "Want to add another? (y/n?) ";
+        }
         cin >> c;
     } while(c != 'N' && c != 'n');
+    outFile.close();
 
 //    ofstream outFile("test.txt");
 //    if(outFile.is_open()) {
