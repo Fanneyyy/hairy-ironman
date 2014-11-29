@@ -15,19 +15,20 @@ class Person
 {
 public:
     Person();
-    Person(fullName name, string gender, int yearOfBirth, int yearOfDeath);
+    Person(fullName name, string gender, string yearOfBirth, string yearOfDeath);
 
-    void setName(Person p, string newLast, string newFirst);
-    void setGender(Person p, string newGender);
-    void setYearOfBirth(Person p, int newYearOfBirth);
-    void setYearOfDeath(Person p, int newYearOfDeath);
-    void printAll(const Person p);
+    void setFirstName(string newFirst);
+    void setLastName(string newLast);
+    void setGender(string newGender);
+    void setYearOfBirth(string newYearOfBirth);
+    void setYearOfDeath(string newYearOfDeath);
+    void print();
 
     string getLastName();
     string getFirstName();
     string getGender();
-    int getYearOfBirth();
-    int getYearOfDeath();
+    string getYearOfBirth();
+    string getYearOfDeath();
 
     friend ostream& operator <<(ostream& outs, const Person& p);
     friend istream& operator >>(istream& ins, Person& p);
@@ -35,8 +36,8 @@ public:
 private:
     fullName name;
     string gender;
-    int yearOfBirth;
-    int yearOfDeath;
+    string yearOfBirth;
+    string yearOfDeath;
 };
 
 #endif // PERSON_H

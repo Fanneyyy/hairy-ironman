@@ -1,14 +1,21 @@
 #include "personrepository.h"
 
-PersonRepository::PersonRepository()
-{  
+PersonRepository::PersonRepository() {
     personList = vector<Person>();
 }
 
-int PersonRepository::add(Person a){
+vector<Person> PersonRepository::getAll() {
+    return personList;
+}
+
+void PersonRepository::add(Person a){
     personList.push_back(a);
 }
 
 Person PersonRepository::get(int id){
-    personList[id];
+    return personList[id];
+}
+
+int PersonRepository::getSize() {
+    return personList.size();
 }

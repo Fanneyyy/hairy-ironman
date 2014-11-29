@@ -5,6 +5,7 @@
 #include <string>
 #include <vector>
 #include "person.h"
+#include "search.h"
 #include "personrepository.h"
 
 class Service
@@ -12,10 +13,14 @@ class Service
 public:
     Service();
     Person get(int id);
-    int add();
-    int remove();
-    void Startup();
+    void add();
+    void remove();
+    void setUp();
+    void printAll();
+    void printOne(int id);
+    void searchAll(int theCase, string name);
 private:
+    Search s;
     PersonRepository personRepo;
 };
 
