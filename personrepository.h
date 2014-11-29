@@ -12,8 +12,9 @@ private:
     vector<Person> personList;
 public:
     PersonRepository();
-    int add(Person a);
+    void add(Person a);
     Person get(int id);
+    int getSize();
 };
 
 #endif // PERSONREPOSITORY_H

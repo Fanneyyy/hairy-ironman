@@ -7,7 +7,7 @@ ConsoleUI::ConsoleUI() {
 }
 
 void ConsoleUI::choose(){
-    s.setUp();
+    // s.setUp();
     int what;
     do{
         cout << "What would you like to do? " << endl;
@@ -67,6 +67,7 @@ void ConsoleUI::printUI() {
 
     switch(input) {
         case 1:
+            s.printAll();
             break;
         case 2:
             break;

@@ -13,9 +13,10 @@ class Service
 public:
     Service();
     Person get(int id);
-    int add();
-    int remove();
+    void add();
+    void remove();
     void setUp();
+    void printAll();
 private:
     Search s;
     PersonRepository personRepo;
