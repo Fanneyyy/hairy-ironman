@@ -14,7 +14,6 @@ void ConsoleUI::choose(){
         cout << "1. Add person" << endl;
         cout << "2. Print list" << endl;
         cout << "3. Search list" << endl;
-        cout << "4. Sort list" << endl;
         cout << "0. Exit" << endl;
 
         cin >> what;
@@ -43,17 +42,26 @@ void ConsoleUI::searchUI() {
     int input;
     string search;
     cout << "How would you like to search?" << endl;
-    cout << "1. Search for first name" << endl;
-    cout << "More later" << endl;
+    cout << "1. Search for a first or a last name" << endl;
+    cout << "2. Search for gender" << endl;
+    cout << "3. Search for a year of birth or of death" << endl;
     cin >> input;
 
     switch(input) {
         case 1:
-            cout << "Please enter the first name: ";
+            cout << "Please enter the name: ";
             cin >> search;
-            s.searchAll(search);
+            s.searchAll(1, search);
             break;
         case 2:
+            cout << "Please enter f for female og m for male: ";
+            cin >> search;
+            s.searchAll(2, search);
+            break;
+        case 3:
+            cout << "Please enter a year: ";
+            cin >> search;
+            s.searchAll(3, search);
             break;
         default:
             break;

@@ -18,7 +18,7 @@ public:
     void setUp();
     void printAll();
     void printOne(int id);
-    void searchAll(string firstName);
+    void searchAll(int theCase, string name);
 private:
     Search s;
     PersonRepository personRepo;

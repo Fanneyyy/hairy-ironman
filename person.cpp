@@ -37,7 +37,7 @@ istream& operator >>(istream& ins, Person& p) {
     ins >> p.name.last;
     cout << "First name: ";
     ins >> p.name.first;
-    cout << "Gender: ";
+    cout << "Gender f/m: ";
     ins >> p.gender;
     cout << "Year of birth: ";
     ins >> p.yearOfBirth;

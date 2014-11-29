@@ -8,8 +8,9 @@ class Search
 {
 public:
     Search();
-    int firstName(vector<Person> persons, string firstName);
-    Person returnFirstName(vector<Person> persons, string firstName);
+    int* name(vector<Person> persons, string name);
+    int* gender(vector<Person> persons, string gender);
+    int *year(vector<Person> persons, string year);
 };
 
 #endif // SEARCH_H

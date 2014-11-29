@@ -5,20 +5,32 @@ using namespace std;
 Search::Search() {
 }
 
-int Search::firstName(vector<Person> persons, string firstName) {
+int* Search::name(vector<Person> persons, string name) {
+    int* ids = new int[persons.size()]();
     for(unsigned int i = 0; i < persons.size(); i++) {
-        if(persons[i].getFirstName() == firstName) {
-            return i;
+        if(persons[i].getFirstName() == name || persons[i].getLastName() == name) {
+            ids[i] = i;
         }
     }
-    return 0;
+    return ids;
 }
 
-Person Search::returnFirstName(vector<Person> persons, string firstName) {
-
+int* Search::gender(vector<Person> persons, string gender) {
+    int* ids = new int[persons.size()]();
     for(unsigned int i = 0; i < persons.size(); i++) {
-        if(persons[i].getFirstName() == firstName) {
-            return persons[i];
+        if(persons[i].getGender() == gender) {
+            ids[i] = i;
         }
     }
+    return ids;
+}
+
+int* Search::year(vector<Person> persons, string year) {
+    int* ids = new int[persons.size()]();
+    for(unsigned int i = 0; i < persons.size(); i++) {
+        if(persons[i].getYearOfBirth() == year || persons[i].getYearOfDeath() == year) {
+            ids[i] = i;
+        }
+    }
+    return ids;
 }

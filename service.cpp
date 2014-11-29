@@ -41,10 +41,28 @@ void Service::printOne(int id) {
     personRepo.get(id).print();
 }
 
-void Service::searchAll(string firstName) {
-    int id = s.firstName(personRepo.getAll(),firstName);
-    if(id != 0) {
-        personRepo.get(id).print();
+void Service::searchAll(int theCase, string search) {
+    int* ids = new int[personRepo.getSize()];
+    switch(theCase) {
+        case 1: {
+            ids = s.name(personRepo.getAll(),search);
+            break;
+        }
+        case 2: {
+            ids = s.gender(personRepo.getAll(),search);
+            break;
+        }
+        case 3: {
+            ids = s.year(personRepo.getAll(),search);
+            break;
+        }
+        default:
+            break;
+    }
+    for(int i = 0; i < personRepo.getSize(); i++) {
+        if(ids[i] != 0) {
+            personRepo.get(ids[i]).print();
+        }
     }
 }
 
