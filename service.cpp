@@ -79,6 +79,8 @@ void Service::setUp() {
     Person p;
     string line;
     ifstream inFile ("test.txt");
+
+    //addar Persónunni úr filenum í vectorinn
     if(inFile.is_open()) {
         while(getline(inFile, line)) {
              p.setFirstName(line);
@@ -96,6 +98,13 @@ void Service::setUp() {
     } else {
         cout << "Sorry, no information at hand" << endl;
     }
+    //addar Persónunni svo aftur í file'inn (commentað út því þetta olli einhverjum errorum)
+//    ofstream outFile("test.txt");
+
+//    if(outFile.is_open()) {
+//        outFile << p;
+//    }
+//    outFile.close();
 }
 
 
