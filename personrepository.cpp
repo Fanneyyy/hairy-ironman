@@ -19,3 +19,7 @@ Person PersonRepository::get(int id){
 int PersonRepository::getSize() {
     return personList.size();
 }
+
+void PersonRepository::removePerson(int id) {
+    personList.erase(personList.begin()+id);
+}

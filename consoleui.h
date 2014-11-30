@@ -14,6 +14,7 @@ public:
     void choose();
     void searchUI();
     void printUI();
+    void removeUI();
 private:
     Service s;
     vector<Person> persons;

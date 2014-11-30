@@ -14,11 +14,12 @@ public:
     Service();
     Person get(int id);
     void add();
-    void remove();
     void setUp();
     void printAll();
     void printOne(int id);
     void searchAll(int theCase, string name);
+    void printAllWithNumber();
+    void removeFromFile(int id);
 private:
     Search s;
     PersonRepository personRepo;

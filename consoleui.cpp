@@ -14,6 +14,7 @@ void ConsoleUI::choose(){
         cout << "1. Add person" << endl;
         cout << "2. Print list" << endl;
         cout << "3. Search list" << endl;
+        cout << "4. Remove a person" << endl;
         cout << "0. Exit" << endl;
 
         cin >> what;
@@ -28,6 +29,9 @@ void ConsoleUI::choose(){
                 break;
             case 3:
                 searchUI();
+                break;
+            case 4:
+                removeUI();
                 break;
             case 0:
                 return;
@@ -69,7 +73,6 @@ void ConsoleUI::searchUI() {
 }
 
 void ConsoleUI::printUI() {
-    // Sort s;
     int input;
     cout << "In what order would you like the list?" << endl;
     cout << "1. By input order" << endl;
@@ -86,4 +89,14 @@ void ConsoleUI::printUI() {
         default:
             break;
     }
+}
+
+void ConsoleUI::removeUI() {
+    int input;
+    s.printAllWithNumber();
+    cout << "Please enter the number of the person you wish to remove" << endl;
+    cin >> input;
+    cout << "This person has been removed:" << endl;
+    s.printOne(input-1);
+    s.removeFromFile(input-1);
 }
