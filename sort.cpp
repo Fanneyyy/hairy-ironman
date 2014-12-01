@@ -39,5 +39,10 @@ bool sortByYearOfBirth(Person p1, Person p2) {
     return p1.getYearOfBirth() < p2.getYearOfBirth();
 }
 bool sortByYearOfDeath(Person p1, Person p2) {
+    if(p1.getYearOfDeath() == "-") {
+        return false;
+    } else if(p2.getYearOfDeath() == "-") {
+        return true;
+    }
     return p1.getYearOfDeath() < p2.getYearOfDeath();
 }

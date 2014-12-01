@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include <sstream>
 
 using namespace std;
 
@@ -33,6 +34,7 @@ public:
     friend ostream& operator <<(ostream& outs, const Person& p);
     friend istream& operator >>(istream& ins, Person& p);
 
+    bool validYear(string year);
 private:
     fullName name;
     string gender;

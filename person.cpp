@@ -32,7 +32,7 @@ ostream& operator <<(ostream& outs, const Person& p) {
 }
 
 istream& operator >>(istream& ins, Person& p) {
-
+    string year;
     cout << "Last name: ";
     ins >> p.name.last;
     cout << "First name: ";
@@ -40,9 +40,15 @@ istream& operator >>(istream& ins, Person& p) {
     cout << "Gender f/m: ";
     ins >> p.gender;
     cout << "Year of birth: ";
-    ins >> p.yearOfBirth;
-    cout << "Year of death: ";
-    ins >> p.yearOfDeath;
+    do {
+        ins >> year;
+    }while(!p.validYear(year));
+    p.yearOfBirth = year;
+    cout << "Year of death (enter '-' if person is still alive): ";
+    do {
+        ins >> year;
+    }while(!p.validYear(year));
+    p.yearOfDeath = year;
 
     return ins;
 }
@@ -84,4 +90,21 @@ string Person::getYearOfBirth() {
 
 string Person::getYearOfDeath() {
     return yearOfDeath;
+}
+
+bool Person::validYear(string year) {
+    for(unsigned long i = 0; i < year.size(); ++i) {
+        if(!isdigit(year[i]) && year[i] != '-') {
+            cout << "Not a valid year, please retype" << endl;
+            return false;
+        }
+    }
+    int temp;
+    istringstream buffer(year);
+    buffer >> temp;
+    if(temp < 0 || temp > 2014) {
+        cout << "Not a valid year, please retype" << endl;
+        return false;
+    }
+    return true;
 }
