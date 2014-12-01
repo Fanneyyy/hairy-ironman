@@ -22,7 +22,11 @@ public:
     void printAllWithNumber();
     void removeFromFile(int id);
     void clearAndPrintFile();
+<<<<<<< HEAD
     void sortAll(int theCase);
+=======
+    bool UIinputCheck(int input, int maxcases);
+>>>>>>> 7ac667996037a085f448c29637655fd450193242
 private:
     Search searcher;
     Sort sorter;

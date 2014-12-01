@@ -23,7 +23,9 @@ void ConsoleUI::choose(){
             }
         }
             inFile.close();
+        do{
         cin >> what;
+            }while(!s.UIinputCheck(what, 5));
 
         switch(what)
         {
@@ -37,9 +39,6 @@ void ConsoleUI::choose(){
                 searchUI();
                 break;
             case 4:
-                sortUI();
-                break;
-            case 5:
                 removeUI();
                 break;
             case 0:

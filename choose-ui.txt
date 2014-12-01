@@ -7,9 +7,9 @@
                |    1. Add name to list                      |
                |    2. Print out list                        |
                |    3. Search list                           |
-               |    4. Sort list                             |
-               |    5. Remove from list                      |
+               |    4. Remove from list                      |
                |    0. Stop right now, thank you very much   |
+               |                                             |
                |                                             |
                |                                             |
                |                                             |
