@@ -52,10 +52,10 @@ void ConsoleUI::choose(){
     }while(what != 0);
 }
 
-void ConsoleUI::sortUI() {
+void ConsoleUI::printUI() {
     int input;
     string line;
-    ifstream inFile ("sort-ui.txt");
+    ifstream inFile ("print-ui.txt");
 
     if(inFile.is_open()) {
         while(getline(inFile, line)) {
@@ -67,7 +67,10 @@ void ConsoleUI::sortUI() {
 
     if(input == 0) {
         choose();
-    } else {
+    } else if(input == 1) {
+        s.printAll();
+    }
+        else {
         s.sortAll(input);
     }
 }
@@ -109,33 +112,39 @@ void ConsoleUI::searchUI() {
     }
 }
 
-void ConsoleUI::printUI() {
-    int input;
-    string line;
-    ifstream inFile ("print-ui.txt");
+//void ConsoleUI::printUI() {
+//    int input;
+//    string line;
+//    ifstream inFile ("print-ui.txt");
 
-    if(inFile.is_open()) {
-        while(getline(inFile, line)) {
-            cout << line << endl;
-        }
-    }
-        inFile.close();
-    cin >> input;
+//    if(inFile.is_open()) {
+//        while(getline(inFile, line)) {
+//            cout << line << endl;
+//        }
+//    }
+//        inFile.close();
+//    cin >> input;
 
-    switch(input) {
-        case 1:
-            s.printAll();
-            break;
-        case 2:
-            break;
-        case 3:
-            break;
-        case 0:
-            choose();
-        default:
-            break;
-    }
-}
+//    switch(input) {
+//        case 1:
+//            s.printAll();
+//            break;
+//        case 2:
+//            break;
+//        case 3:
+//            break;
+//        case 4:
+//            break;
+//        case 5:
+//            break;
+//        case 6:
+//            break;
+//        case 0:
+//            choose();
+//        default:
+//            break;
+//    }
+//}
 
 void ConsoleUI::removeUI() {
     int input;
