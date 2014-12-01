@@ -116,17 +116,15 @@ void Service::setUp() {
     } else {
         cout << "Sorry, no information at hand" << endl;
     }
-    //addar Persónunni svo aftur í file'inn (commentað út því þetta olli einhverjum errorum)
-//    ofstream outFile("test.txt");
-
-//    if(outFile.is_open()) {
-//        outFile << p;
-//    }
-//    outFile.close();
 }
 
 bool Service::UIinputCheck(int input, int maxcases) {
-
+    if(cin.fail())
+    {
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(),'\n');
+        input = -1;
+    }
 
     if(input < 0 || input > maxcases) {
         cout << "Wrong input, please try again" << endl;
@@ -135,5 +133,3 @@ bool Service::UIinputCheck(int input, int maxcases) {
     return true;
 
 }
-
-

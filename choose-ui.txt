@@ -10,7 +10,4 @@
                |    4. Remove from list                      |
                |    0. Stop right now, thank you very much   |
                |                                             |
-               |                                             |
-               |                                             |
-               |                                             |
                |_____________________________________________|

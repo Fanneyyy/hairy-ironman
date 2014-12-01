@@ -25,7 +25,7 @@ void ConsoleUI::choose(){
             inFile.close();
         do{
         cin >> what;
-            }while(!s.UIinputCheck(what, 5));
+            }while(!s.UIinputCheck(what, 4));
 
         switch(what)
         {
@@ -63,7 +63,9 @@ void ConsoleUI::printUI() {
         }
     }
         inFile.close();
-    cin >> input;
+        do{
+        cin >> input;
+            }while(!s.UIinputCheck(input, 6));
 
     if(input == 0) {
         choose();
@@ -86,7 +88,9 @@ void ConsoleUI::searchUI() {
             cout << line << endl;
         }
     }
+    do{
     cin >> input;
+        }while(!s.UIinputCheck(input, 3));
 
     switch(input) {
         case 1:

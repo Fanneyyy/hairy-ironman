@@ -9,8 +9,4 @@
                |    3. Search for year of birth/death        |
                |    0. Get back! You don't know me like that |
                |                                             |
-               |                                             |
-               |                                             |
-               |                                             |
-               |                                             |
                |_____________________________________________|
