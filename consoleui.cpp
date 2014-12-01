@@ -12,12 +12,12 @@ void ConsoleUI::initialSetUp() {
     char c;
 
     s.setUp();
-    clear_screen();
     if(inFile.is_open()) {
         while(getline(inFile, line)) {
             cout << line << endl;
         }
     }
+    inFile.close();
     cin >> c;
     clear_screen();
 }
@@ -42,7 +42,9 @@ void ConsoleUI::choose(){
         switch(what)
         {
             case 1:
+                addUI();
                 s.add();
+                clear_screen();
                 break;
             case 2:
                 printUI();
@@ -62,15 +64,29 @@ void ConsoleUI::choose(){
         }
 
     }while(what != 0);
+    clear_screen();
+}
+
+void ConsoleUI::addUI() {
+    string line;
+    ifstream inFile ("add-ui.txt");
+
+    clear_screen();
+    if(inFile.is_open()) {
+        while(getline(inFile, line)) {
+            cout << line << endl;
+        }
+    }
+        inFile.close();
 }
 
 void ConsoleUI::printUI() {
     int input;
+    char c;
     string line;
     ifstream inFile ("print-ui.txt");
 
     clear_screen();
-
     if(inFile.is_open()) {
         while(getline(inFile, line)) {
             cout << line << endl;
@@ -89,13 +105,18 @@ void ConsoleUI::printUI() {
         else {
         s.sortAll(input);
     }
+    cout << "Press a key to continue";
+    cin >> c;
+    clear_screen();
 }
 
 void ConsoleUI::searchUI() {
     int input;
+    char c;
     string search;
     string line;
     ifstream inFile ("search.txt");
+    clear_screen();
 
     if(inFile.is_open()) {
         while(getline(inFile, line)) {
@@ -123,11 +144,15 @@ void ConsoleUI::searchUI() {
             s.searchAll(3, search);
             break;
         case 0:
+        clear_screen();
             choose();
             break;
         default:
             break;
     }
+    cout << "Press any key to continue: ";
+    cin >> c;
+    clear_screen();
 }
 
 void ConsoleUI::removeUI() {
@@ -138,6 +163,7 @@ void ConsoleUI::removeUI() {
     cout << "This person has been removed:" << endl;
     s.printOne(input-1);
     s.removeFromFile(input-1);
+    choose();
 }
 
 

@@ -19,6 +19,7 @@ public:
     void sortUI();
     void initialSetUp();
     void clear_screen();
+    void addUI();
 private:
     Service s;
     vector<Person> persons;

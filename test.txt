@@ -43,8 +43,3 @@ Hopper
 f
 1906
 1992
-Konrad
-Zuse
-m
-1910
-1995

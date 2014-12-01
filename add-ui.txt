@@ -6,18 +6,18 @@
             /                                                    \
            |    _____________________________________________     |
            |   |                                             |    |
-           |   | Great choice my friend!                     |    |
-           |   | How would you like your print?              |    |
+           |   | Adding a new person!                        |    |
            |   |                                             |    |
-           |   | 1. By input order                           |    |
-           |   | 2. By last name                             |    |
-           |   | 3. By first name                            |    |
-           |   | 4. By gender                                |    |
-           |   | 5. By year of birth                         |    |
-           |   | 6. By year of death                         |    |
-           |   | 0. Back it up! Back it up! You got it!      |    |
+           |   | Please insert information about person in   |    |
+           |   | this order:                                 |    | 
            |   |                                             |    |
+           |   |   Last name                                 |    |
+           |   |   First name                                |    |
+           |   |   Gender (m/f)                              |    |
+           |   |   Year of birth                             |    |
+           |   |   Year of death                             |    |
            |   |                                             |    |
+           |   | Thank you!                                  |    |
            |   |_____________________________________________|    |
            |                                                      |
             \_____________________________________________________/
