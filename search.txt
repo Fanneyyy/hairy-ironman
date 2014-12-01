@@ -1,0 +1,16 @@
+
+                _____________________________________________ 
+               |                                             |
+               |    Search and thou shall find.              |
+               |    What are you looking for?                |
+               |                                             |
+               |    1. Search for a first/last name          |
+               |    2. Search for gender                     |
+               |    3. Search for year of birth/death        |
+               |    0. Get back! You don't know me like that |
+               |                                             |
+               |                                             |
+               |                                             |
+               |                                             |
+               |                                             |
+               |_____________________________________________|
