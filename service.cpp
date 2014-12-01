@@ -22,22 +22,17 @@ void Service::add() {
         cin >> c;
     } while(c != 'N' && c != 'n');
     outFile.close();
-
-//    ofstream outFile("test.txt");
-//    if(outFile.is_open()) {
-//        do {
-//            cin >> p;
-//            outFile << p;
-//            personRepo.add(p);
-//            cout << "Want to add another? (y/n?) ";
-//            cin >> c;
-//        } while(c != 'N' && c != 'n');
-//        outFile.close();
-//    }
 }
 
 void Service::printAll() {
     for(int i = 0; i < personRepo.getSize(); i++) {
+        personRepo.get(i).print();
+    }
+}
+
+void Service::printAllWithNumber() {
+    for(int i = 0; i < personRepo.getSize(); i++) {
+        cout << "Person number: " << i+1 << endl;
         personRepo.get(i).print();
     }
 }
@@ -71,8 +66,18 @@ void Service::searchAll(int theCase, string search) {
     }
 }
 
-void Service::remove() {
+void Service::removeFromFile(int id) {
+    personRepo.removePerson(id);
+    remove("test.txt");
+    ofstream outFile("test.txt");
 
+    if(outFile.is_open()) {
+        for(int i = 0; i < personRepo.getSize(); i++) {
+            outFile << personRepo.get(i);
+        }
+    }
+
+    outFile.close();
 }
 
 void Service::setUp() {

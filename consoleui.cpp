@@ -9,13 +9,17 @@ ConsoleUI::ConsoleUI() {
 void ConsoleUI::choose(){
     s.setUp();
     int what;
-    do{
-        cout << "What would you like to do? " << endl;
-        cout << "1. Add person" << endl;
-        cout << "2. Print list" << endl;
-        cout << "3. Search list" << endl;
-        cout << "0. Exit" << endl;
+    string line;
+    ifstream inFile ("choose-ui.txt");
 
+
+    do{
+        if(inFile.is_open()) {
+            while(getline(inFile, line)) {
+                cout << line << endl;
+            }
+        }
+            inFile.close();
         cin >> what;
 
         switch(what)
@@ -29,12 +33,17 @@ void ConsoleUI::choose(){
             case 3:
                 searchUI();
                 break;
+            case 4:
+                removeUI();
+                break;
             case 0:
+                s.clearAndPrintFile();
                 return;
                 break;
             default:
                 break;
         }
+
     }while(what != 0);
 }
 
@@ -69,12 +78,16 @@ void ConsoleUI::searchUI() {
 }
 
 void ConsoleUI::printUI() {
-    // Sort s;
     int input;
-    cout << "In what order would you like the list?" << endl;
-    cout << "1. By input order" << endl;
-    cout << "2. By first name" << endl;
-    cout << "More later" << endl;
+    string line;
+    ifstream inFile ("print-ui.txt");
+
+    if(inFile.is_open()) {
+        while(getline(inFile, line)) {
+            cout << line << endl;
+        }
+    }
+        inFile.close();
     cin >> input;
 
     switch(input) {
@@ -86,4 +99,14 @@ void ConsoleUI::printUI() {
         default:
             break;
     }
+}
+
+void ConsoleUI::removeUI() {
+    int input;
+    s.printAllWithNumber();
+    cout << "Please enter the number of the person you wish to remove" << endl;
+    cin >> input;
+    cout << "This person has been removed:" << endl;
+    s.printOne(input-1);
+    s.removeFromFile(input-1);
 }

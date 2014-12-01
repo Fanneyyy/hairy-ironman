@@ -16,6 +16,7 @@ public:
     Person get(int id);
     int getSize();
     vector<Person> getAll();
+    void removePerson(int id);
 };
 
 #endif // PERSONREPOSITORY_H
