@@ -7,7 +7,15 @@ ConsoleUI::ConsoleUI() {
 }
 
 void ConsoleUI::initialSetUp() {
+    string line;
+    ifstream inFile ("welcome.txt");
+
     s.setUp();
+    if(inFile.is_open()) {
+        while(getline(inFile, line)) {
+            cout << line << endl;
+        }
+    }
 }
 
 void ConsoleUI::choose(){
@@ -99,7 +107,7 @@ void ConsoleUI::searchUI() {
             s.searchAll(1, search);
             break;
         case 2:
-            cout << "Please enter f for female og m for male: ";
+            cout << "Please enter f for female or m for male: ";
             cin >> search;
             s.searchAll(2, search);
             break;
@@ -115,40 +123,6 @@ void ConsoleUI::searchUI() {
             break;
     }
 }
-
-//void ConsoleUI::printUI() {
-//    int input;
-//    string line;
-//    ifstream inFile ("print-ui.txt");
-
-//    if(inFile.is_open()) {
-//        while(getline(inFile, line)) {
-//            cout << line << endl;
-//        }
-//    }
-//        inFile.close();
-//    cin >> input;
-
-//    switch(input) {
-//        case 1:
-//            s.printAll();
-//            break;
-//        case 2:
-//            break;
-//        case 3:
-//            break;
-//        case 4:
-//            break;
-//        case 5:
-//            break;
-//        case 6:
-//            break;
-//        case 0:
-//            choose();
-//        default:
-//            break;
-//    }
-//}
 
 void ConsoleUI::removeUI() {
     int input;

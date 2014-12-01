@@ -7,7 +7,7 @@
            |   | This is a small console program designed to |    |
            |   | hold a list of people you add in!           |    |
            |   | We can do all sorts of things with this list|    |
-           |   | Press any key to continue! :)               |    |
+           |   | Prepare for glory!                          |    |
            |   |                                             |    |
            |   |                               Best regards: |    |
            |   |                                Eva Inibjorg |    |

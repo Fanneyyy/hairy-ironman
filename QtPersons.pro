@@ -36,4 +36,5 @@ OTHER_FILES += \
     print-ui.txt \
     search.txt \
     sort-ui.txt \
-    welcome.txt
+    welcome.txt \
+    database.txt

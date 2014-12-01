@@ -2,20 +2,10 @@
 #include "consoleui.h"
 #include <string>
 
-int main(int argc, char *argv[])
+int main()
 {
-    string line;
     ConsoleUI ui;
-    ifstream inFile ("welcome.txt");
 
-    char c;
-
-    if(inFile.is_open()) {
-        while(getline(inFile, line)) {
-            cout << line << endl;
-        }
-    cin >> c;
-    }
     ui.initialSetUp();
     ui.choose();
 

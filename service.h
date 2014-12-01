@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <limits>
 #include "person.h"
 #include "search.h"
 #include "personrepository.h"

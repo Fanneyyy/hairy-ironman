@@ -509,7 +509,8 @@ main.o: main.cpp ../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Hea
 		search.h \
 		person.h \
 		service.h \
-		personrepository.h
+		personrepository.h \
+		sort.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o main.cpp
 
 person.o: person.cpp person.h
@@ -519,7 +520,8 @@ consoleui.o: consoleui.cpp consoleui.h \
 		search.h \
 		person.h \
 		service.h \
-		personrepository.h
+		personrepository.h \
+		sort.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o consoleui.o consoleui.cpp
 
 personrepository.o: personrepository.cpp personrepository.h \
@@ -533,7 +535,8 @@ search.o: search.cpp search.h \
 service.o: service.cpp service.h \
 		person.h \
 		search.h \
-		personrepository.h
+		personrepository.h \
+		sort.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o service.o service.cpp
 
 sort.o: sort.cpp sort.h \
