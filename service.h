@@ -7,6 +7,7 @@
 #include "person.h"
 #include "search.h"
 #include "personrepository.h"
+#include "sort.h"
 
 class Service
 {
@@ -21,8 +22,10 @@ public:
     void printAllWithNumber();
     void removeFromFile(int id);
     void clearAndPrintFile();
+    void sortAll(int theCase);
 private:
-    Search s;
+    Search searcher;
+    Sort sorter;
     PersonRepository personRepo;
 };
 

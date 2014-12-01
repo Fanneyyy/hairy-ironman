@@ -6,8 +6,11 @@ ConsoleUI::ConsoleUI() {
 
 }
 
-void ConsoleUI::choose(){
+void ConsoleUI::initialSetUp() {
     s.setUp();
+}
+
+void ConsoleUI::choose(){
     int what;
     string line;
 
@@ -63,27 +66,10 @@ void ConsoleUI::sortUI() {
         inFile.close();
     cin >> input;
 
-    switch(input) {
-        case 1:
-            // By last name
-            break;
-        case 2:
-            // By first name
-            break;
-        case 3:
-            // By gender
-            break;
-        case 4:
-            // By year of birth
-            break;
-        case 5:
-            // By year of death
-            break;
-        case 0:
-            choose();
-            break;
-        default:
-            break;
+    if(input == 0) {
+        choose();
+    } else {
+        s.sortAll(input);
     }
 }
 

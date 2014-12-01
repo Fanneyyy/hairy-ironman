@@ -16,6 +16,7 @@ public:
     void printUI();
     void removeUI();
     void sortUI();
+    void initialSetUp();
 private:
     Service s;
     vector<Person> persons;

@@ -40,15 +40,15 @@ void Service::searchAll(int theCase, string search) {
     int* ids = new int[personRepo.getSize()];
     switch(theCase) {
         case 1: {
-            ids = s.name(personRepo.getAll(),search);
+            ids = searcher.name(personRepo.getAll(),search);
             break;
         }
         case 2: {
-            ids = s.gender(personRepo.getAll(),search);
+            ids = searcher.gender(personRepo.getAll(),search);
             break;
         }
         case 3: {
-            ids = s.year(personRepo.getAll(),search);
+            ids = searcher.year(personRepo.getAll(),search);
             break;
         }
         default:
@@ -74,6 +74,12 @@ void Service::removeFromFile(int id) {
     }
 
     outFile.close();
+}
+void Service::sortAll(int theCase) {
+    vector<Person> sortedTemp = sorter.sortVector(personRepo.getAll(), theCase);
+    for(unsigned int i = 0; i < sortedTemp.size(); i++) {
+        sortedTemp[i].print();
+    }
 }
 
 void Service::clearAndPrintFile() {

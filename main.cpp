@@ -6,7 +6,7 @@ int main(int argc, char *argv[])
     string line;
     ConsoleUI ui;
     ifstream inFile ("welcome.txt");
-    int c;
+    string c;
 
     if(inFile.is_open()) {
         while(getline(inFile, line)) {
@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
         }
         cin >> c;
     }
-
+    ui.initialSetUp();
     ui.choose();
 
     return 0;
