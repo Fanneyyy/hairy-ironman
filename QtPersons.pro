@@ -30,3 +30,10 @@ HEADERS += \
     search.h \
     service.h \
     sort.h
+
+OTHER_FILES += \
+    choose-ui.txt \
+    print-ui.txt \
+    search.txt \
+    sort-ui.txt \
+    welcome.txt

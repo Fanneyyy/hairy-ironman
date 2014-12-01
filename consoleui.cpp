@@ -40,11 +40,7 @@ void ConsoleUI::choose(){
                 removeUI();
                 break;
             case 0:
-<<<<<<< HEAD
                 s.clearAndPrintFile();
-=======
-            //    s.clearAndPrintFile();
->>>>>>> c79f0bccbe8e6220d063fa984b8db3ea08b5a5ff
                 return;
                 break;
             default:
