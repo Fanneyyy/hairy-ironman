@@ -20,6 +20,7 @@ public:
     void searchAll(int theCase, string name);
     void printAllWithNumber();
     void removeFromFile(int id);
+    void clearAndPrintFile();
 private:
     Search s;
     PersonRepository personRepo;

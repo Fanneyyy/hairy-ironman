@@ -34,6 +34,7 @@ void ConsoleUI::choose(){
                 removeUI();
                 break;
             case 0:
+                s.clearAndPrintFile();
                 return;
                 break;
             default:

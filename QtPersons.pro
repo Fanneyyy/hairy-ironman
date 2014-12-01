@@ -20,11 +20,13 @@ SOURCES += main.cpp \
     consoleui.cpp \
     personrepository.cpp \
     search.cpp \
-    service.cpp
+    service.cpp \
+    sort.cpp
 
 HEADERS += \
     person.h \
     consoleui.h \
     personrepository.h \
     search.h \
-    service.h
+    service.h \
+    sort.h
