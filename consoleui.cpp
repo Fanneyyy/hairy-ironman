@@ -9,14 +9,17 @@ ConsoleUI::ConsoleUI() {
 void ConsoleUI::choose(){
     s.setUp();
     int what;
-    do{
-        cout << "What would you like to do? " << endl;
-        cout << "1. Add person" << endl;
-        cout << "2. Print list" << endl;
-        cout << "3. Search list" << endl;
-        cout << "4. Remove a person" << endl;
-        cout << "0. Exit" << endl;
+    string line;
 
+
+    do{
+        ifstream inFile ("choose-ui.txt");
+        if(inFile.is_open()) {
+            while(getline(inFile, line)) {
+                cout << line << endl;
+            }
+        }
+            inFile.close();
         cin >> what;
 
         switch(what)
@@ -31,25 +34,74 @@ void ConsoleUI::choose(){
                 searchUI();
                 break;
             case 4:
+                sortUI();
+                break;
+            case 5:
                 removeUI();
                 break;
             case 0:
+<<<<<<< HEAD
                 s.clearAndPrintFile();
+=======
+            //    s.clearAndPrintFile();
+>>>>>>> c79f0bccbe8e6220d063fa984b8db3ea08b5a5ff
                 return;
                 break;
             default:
                 break;
         }
+
     }while(what != 0);
+}
+
+void ConsoleUI::sortUI() {
+    int input;
+    string line;
+    ifstream inFile ("sort-ui.txt");
+
+    if(inFile.is_open()) {
+        while(getline(inFile, line)) {
+            cout << line << endl;
+        }
+    }
+        inFile.close();
+    cin >> input;
+
+    switch(input) {
+        case 1:
+            // By last name
+            break;
+        case 2:
+            // By first name
+            break;
+        case 3:
+            // By gender
+            break;
+        case 4:
+            // By year of birth
+            break;
+        case 5:
+            // By year of death
+            break;
+        case 0:
+            choose();
+            break;
+        default:
+            break;
+    }
 }
 
 void ConsoleUI::searchUI() {
     int input;
     string search;
-    cout << "How would you like to search?" << endl;
-    cout << "1. Search for a first or a last name" << endl;
-    cout << "2. Search for gender" << endl;
-    cout << "3. Search for a year of birth or of death" << endl;
+    string line;
+    ifstream inFile ("search.txt");
+
+    if(inFile.is_open()) {
+        while(getline(inFile, line)) {
+            cout << line << endl;
+        }
+    }
     cin >> input;
 
     switch(input) {
@@ -68,6 +120,9 @@ void ConsoleUI::searchUI() {
             cin >> search;
             s.searchAll(3, search);
             break;
+        case 0:
+            choose();
+            break;
         default:
             break;
     }
@@ -75,10 +130,15 @@ void ConsoleUI::searchUI() {
 
 void ConsoleUI::printUI() {
     int input;
-    cout << "In what order would you like the list?" << endl;
-    cout << "1. By input order" << endl;
-    cout << "2. By first name" << endl;
-    cout << "More later" << endl;
+    string line;
+    ifstream inFile ("print-ui.txt");
+
+    if(inFile.is_open()) {
+        while(getline(inFile, line)) {
+            cout << line << endl;
+        }
+    }
+        inFile.close();
     cin >> input;
 
     switch(input) {
@@ -87,6 +147,10 @@ void ConsoleUI::printUI() {
             break;
         case 2:
             break;
+        case 3:
+            break;
+        case 0:
+            choose();
         default:
             break;
     }
