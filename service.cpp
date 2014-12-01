@@ -119,4 +119,15 @@ void Service::setUp() {
 //    outFile.close();
 }
 
+bool Service::UIinputCheck(int input, int maxcases) {
+
+
+    if(input < 0 || input > maxcases) {
+        cout << "Wrong input, please try again" << endl;
+        return false;
+    }
+    return true;
+
+}
+
 

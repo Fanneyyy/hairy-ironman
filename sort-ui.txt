@@ -1,15 +1,15 @@
 
-                _____________________________________________ 
+                _____________________________________________
                |                                             |
-               |    Lets get organized!                      |
-               |    How shall we sort this list?             |
+               |    Great choice my friend!                  |
+               |    How would you like your print?           |
                |                                             |
-               |    1. By last name                          |
-               |    2. By first name                         |
-               |    3. By gender                             |
-               |    4. By year of birth                      |
-               |    5. By year of death                      |
-               |    0. Back it up! Back it up! You got it!   |
+               |    1. By input order                        |
+               |    2. By last name                          |
+               |    3. By first name                         |
+               |    0. Oh no I wont back down                |
+               |                                             |
+               |                                             |
                |                                             |
                |                                             |
                |                                             |

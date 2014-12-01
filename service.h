@@ -21,6 +21,7 @@ public:
     void printAllWithNumber();
     void removeFromFile(int id);
     void clearAndPrintFile();
+    bool UIinputCheck(int input, int maxcases);
 private:
     Search s;
     PersonRepository personRepo;
