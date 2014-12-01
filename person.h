@@ -16,7 +16,6 @@ class Person
 {
 public:
     Person();
-    Person(fullName name, string gender, string yearOfBirth, string yearOfDeath);
 
     void setFirstName(string newFirst);
     void setLastName(string newLast);
@@ -35,6 +34,8 @@ public:
     friend istream& operator >>(istream& ins, Person& p);
 
     bool validYear(string year);
+    bool validGender(string gender);
+    bool validName(string name);
 private:
     fullName name;
     string gender;
