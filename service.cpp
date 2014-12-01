@@ -11,17 +11,12 @@ Person Service::get(int id) {
 void Service::add() {
     Person p;
     char c;
-    ofstream outFile("test.txt");
     do {
         cin >> p;
         personRepo.add(p);
-        if(outFile.is_open()) {
-            outFile << p;
-            cout << "Want to add another? (y/n?) ";
-        }
+        cout << "Want to add another? (y/n?) ";
         cin >> c;
     } while(c != 'N' && c != 'n');
-    outFile.close();
 }
 
 void Service::printAll() {
@@ -60,10 +55,11 @@ void Service::searchAll(int theCase, string search) {
             break;
     }
     for(int i = 0; i < personRepo.getSize(); i++) {
-        if(ids[i] != 0) {
-            personRepo.get(ids[i]).print();
+        if(ids[i] == 1) {
+            personRepo.get(i).print();
         }
     }
+    delete [] ids;
 }
 
 void Service::removeFromFile(int id) {
@@ -77,6 +73,17 @@ void Service::removeFromFile(int id) {
         }
     }
 
+    outFile.close();
+}
+
+void Service::clearAndPrintFile() {
+    remove("test.txt");
+    ofstream outFile("test.txt");
+    if(outFile.is_open()) {
+        for(int i = 0; i < personRepo.getSize(); i++) {
+            outFile << personRepo.get(i);
+        }
+    }
     outFile.close();
 }
 
