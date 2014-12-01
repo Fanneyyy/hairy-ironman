@@ -9,19 +9,23 @@ ConsoleUI::ConsoleUI() {
 void ConsoleUI::initialSetUp() {
     string line;
     ifstream inFile ("welcome.txt");
+    char c;
 
     s.setUp();
+    clear_screen();
     if(inFile.is_open()) {
         while(getline(inFile, line)) {
             cout << line << endl;
         }
     }
+    cin >> c;
+    clear_screen();
 }
 
 void ConsoleUI::choose(){
     int what;
     string line;
-
+    clear_screen();
 
     do{
         ifstream inFile ("choose-ui.txt");
@@ -64,6 +68,8 @@ void ConsoleUI::printUI() {
     int input;
     string line;
     ifstream inFile ("print-ui.txt");
+
+    clear_screen();
 
     if(inFile.is_open()) {
         while(getline(inFile, line)) {
@@ -132,4 +138,15 @@ void ConsoleUI::removeUI() {
     cout << "This person has been removed:" << endl;
     s.printOne(input-1);
     s.removeFromFile(input-1);
+}
+
+
+void ConsoleUI::clear_screen()
+{
+#ifdef WINDOWS
+    std::system("cls");
+#else
+    // Assume POSIX
+    std::system ("clear");
+#endif
 }

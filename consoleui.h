@@ -4,6 +4,7 @@
 #include <fstream>
 #include <string>
 #include <vector>
+#include <cstdlib>
 #include "search.h"
 #include "service.h"
 
@@ -17,6 +18,7 @@ public:
     void removeUI();
     void sortUI();
     void initialSetUp();
+    void clear_screen();
 private:
     Service s;
     vector<Person> persons;
