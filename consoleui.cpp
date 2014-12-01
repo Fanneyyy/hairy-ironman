@@ -125,26 +125,36 @@ void ConsoleUI::searchUI() {
     }
     do{
     cin >> input;
-        }while(!s.UIinputCheck(input, 3));
+        }while(!s.UIinputCheck(input, 5));
 
     switch(input) {
         case 1:
-            cout << "Please enter the name: ";
+            cout << "Please enter the first name: ";
             cin >> search;
             s.searchAll(1, search);
             break;
         case 2:
-            cout << "Please enter f for female or m for male: ";
+            cout << "Please enter the last name: ";
             cin >> search;
             s.searchAll(2, search);
             break;
         case 3:
-            cout << "Please enter a year: ";
+            cout << "Please enter f for female or m for male: ";
             cin >> search;
             s.searchAll(3, search);
             break;
+        case 4:
+            cout << "Please enter a birth year: ";
+            cin >> search;
+            s.searchAll(4, search);
+            break;
+        case 5:
+            cout << "Please enter a birth year: ";
+            cin >> search;
+            s.searchAll(5, search);
+            break;
         case 0:
-        clear_screen();
+            clear_screen();
             choose();
             break;
         default:
