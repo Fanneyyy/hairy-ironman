@@ -3,6 +3,7 @@
 #include <iostream>
 #include <algorithm>
 #include <vector>
+#include <sstream>
 #include "person.h"
 
 using namespace std;
