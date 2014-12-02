@@ -9,7 +9,6 @@ ConsoleUI::ConsoleUI() {
 void ConsoleUI::initialSetUp() {
     string line;
     ifstream inFile ("welcome.txt");
-    char c;
 
     s.setUp();
     if(inFile.is_open()) {

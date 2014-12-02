@@ -510,7 +510,9 @@ main.o: main.cpp ../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Hea
 		person.h \
 		service.h \
 		personrepository.h \
-		sort.h
+		sort.h \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QUrl \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qurl.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o main.cpp
 
 person.o: person.cpp person.h
@@ -521,7 +523,9 @@ consoleui.o: consoleui.cpp consoleui.h \
 		person.h \
 		service.h \
 		personrepository.h \
-		sort.h
+		sort.h \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QUrl \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qurl.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o consoleui.o consoleui.cpp
 
 personrepository.o: personrepository.cpp personrepository.h \
