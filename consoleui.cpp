@@ -180,9 +180,7 @@ void ConsoleUI::removeUI() {
 // clear_screen(): clear the screen for nice visual affect
 void ConsoleUI::clear_screen()
 {
-    //system("CLS");
     system("clear");
-
 }
 // continueOrQuit(): asks the user if he wants to continue or quit
 void ConsoleUI::continueOrQuit() {
