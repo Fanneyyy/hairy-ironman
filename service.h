@@ -25,6 +25,7 @@ public:
     void clearAndPrintFile();
     void sortAll(int theCase);
     bool UIinputCheck(int input, int maxcases);
+    int sizeOfDatabase();
 private:
     Search searcher;
     Sort sorter;

@@ -1,3 +1,7 @@
+// ConsoleUI: Calls a function to read in a file to fill the vector with stored information.
+// It initializes the user interface and calls relevant functions from the Service as demanded
+// by the user.
+
 #ifndef CONSOLEUI_H
 #define CONSOLEUI_H
 #include <iostream>
@@ -23,7 +27,6 @@ public:
     void cont();
 private:
     Service s;
-    vector<Person> persons;
 };
 
 #endif // CONSOLEUI_H
