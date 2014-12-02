@@ -187,7 +187,7 @@ void ConsoleUI::cont() {
     cout << "Please enter 'c' to Continue or 'q' to quit: ";
     cin >> c;
 
-    if(c == 'q')
+    if(c == 'q' || c == 'Q')
     {
         exit(0);
     }
