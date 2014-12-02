@@ -28,11 +28,6 @@ Chomsky
 m
 1928
 -
-Alan
-Turing
-m
-1912
-1954
 Grace
 Hopper
 f

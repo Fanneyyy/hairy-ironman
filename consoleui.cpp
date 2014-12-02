@@ -170,18 +170,16 @@ void ConsoleUI::removeUI() {
     cout << "This person has been removed:" << endl;
     s.printOne(input-1);
     s.removeFromFile(input-1);
+    cont();
     choose();
 }
 
 
 void ConsoleUI::clear_screen()
 {
-#ifdef WINDOWS
-    std::system("cls");
-#else
-    // Assume POSIX
-    std::system ("clear");
-#endif
+    //system("CLS");
+    system("clear");
+
 }
 
 void ConsoleUI::cont() {
