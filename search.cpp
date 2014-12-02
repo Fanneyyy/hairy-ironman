@@ -4,7 +4,8 @@ using namespace std;
 
 Search::Search() {
 }
-
+// nameFirst: search the vector persons for a person with a
+// first name equal to name.
 int* Search::nameFirst(vector<Person> persons, string name) {
     int* ids = new int[persons.size()]();
     for(unsigned int i = 0; i < persons.size(); i++) {
@@ -14,7 +15,8 @@ int* Search::nameFirst(vector<Person> persons, string name) {
     }
     return ids;
 }
-
+// nameLast: search the vector persons for a person with a
+// last name equal to name.
 int* Search::nameLast(vector<Person> persons, string name) {
     int* ids = new int[persons.size()]();
     for(unsigned int i = 0; i < persons.size(); i++) {
@@ -24,7 +26,8 @@ int* Search::nameLast(vector<Person> persons, string name) {
     }
     return ids;
 }
-
+// gender: search the vector persons for a person with a
+// gender equal to the string gender.
 int* Search::gender(vector<Person> persons, string gender) {
     int* ids = new int[persons.size()]();
     for(unsigned int i = 0; i < persons.size(); i++) {
@@ -34,7 +37,8 @@ int* Search::gender(vector<Person> persons, string gender) {
     }
     return ids;
 }
-
+// birthYear: search the vector persons for a person with a
+// birth year equal to the string year.
 int* Search::birthYear(vector<Person> persons, string year) {
     int* ids = new int[persons.size()]();
     for(unsigned int i = 0; i < persons.size(); i++) {
@@ -44,7 +48,8 @@ int* Search::birthYear(vector<Person> persons, string year) {
     }
     return ids;
 }
-
+// deathYear: search the vector persons for a person with a
+// death year equal to the string year.
 int* Search::deathYear(vector<Person> persons, string year) {
     int* ids = new int[persons.size()]();
     for(unsigned int i = 0; i < persons.size(); i++) {

@@ -23,7 +23,7 @@ public:
     void printOne(int id);
     void searchAll(int theCase, string name);
     void printAllWithNumber();
-    void removeFromFile(int id);
+    void removeFromVector(int id);
     void clearAndPrintFile();
     void sortAll(int theCase);
     string getFileName();

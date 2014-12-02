@@ -38,4 +38,5 @@ OTHER_FILES += \
     sort-ui.txt \
     welcome.txt \
     database.txt \
-    add-ui.txt
+    add-ui.txt \
+    README.txt
