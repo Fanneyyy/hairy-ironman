@@ -39,15 +39,23 @@ void Service::searchAll(int theCase, string search) {
     int* ids = new int[personRepo.getSize()];
     switch(theCase) {
         case 1: {
-            ids = searcher.name(personRepo.getAll(),search);
+            ids = searcher.nameFirst(personRepo.getAll(),search);
             break;
         }
         case 2: {
-            ids = searcher.gender(personRepo.getAll(),search);
+            ids = searcher.nameLast(personRepo.getAll(),search);
             break;
         }
         case 3: {
-            ids = searcher.year(personRepo.getAll(),search);
+            ids = searcher.gender(personRepo.getAll(),search);
+            break;
+        }
+        case 4: {
+            ids = searcher.birthYear(personRepo.getAll(),search);
+            break;
+        }
+        case 5: {
+            ids = searcher.deathYear(personRepo.getAll(),search);
             break;
         }
         default:

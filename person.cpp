@@ -8,12 +8,6 @@ Person::Person() {
     yearOfDeath = "";
 }
 
-Person::Person(fullName name, string gender, string yearOfBirth, string yearOfDeath) {
-    this -> name = name;
-    this -> gender = gender;
-    this -> yearOfBirth = yearOfBirth;
-    this -> yearOfDeath = yearOfDeath;
-}
 void Person::print(){
     cout << "Name: " << name.first << " " << name.last << endl;
     cout << "Gender: " << gender << endl;
@@ -32,17 +26,32 @@ ostream& operator <<(ostream& outs, const Person& p) {
 }
 
 istream& operator >>(istream& ins, Person& p) {
-
+    string input;
     cout << "Last name: ";
-    ins >> p.name.last;
+    do {
+        ins >> input;
+    } while(!p.validName(input));
+    p.name.last = input;
     cout << "First name: ";
-    ins >> p.name.first;
+    do {
+        ins >> input;
+    } while(!p.validName(input));
+    p.name.first = input;
     cout << "Gender f/m: ";
-    ins >> p.gender;
+    do {
+        ins >> input;
+    } while(!p.validGender(input));
+    p.gender = input;
     cout << "Year of birth: ";
-    ins >> p.yearOfBirth;
-    cout << "Year of death: ";
-    ins >> p.yearOfDeath;
+    do {
+        ins >> input;
+    }while(!p.validYear(input));
+    p.yearOfBirth = input;
+    cout << "Year of death (enter '-' if person is still alive): ";
+    do {
+        ins >> input;
+    }while(!p.validYear(input));
+    p.yearOfDeath = input;
 
     return ins;
 }
@@ -85,3 +94,39 @@ string Person::getYearOfBirth() {
 string Person::getYearOfDeath() {
     return yearOfDeath;
 }
+
+bool Person::validName(string name) {
+    for(unsigned long i = 0; i < name.size(); ++i) {
+        if(!isalpha(name[i])) {
+            cout << "Not a valid name, please use only letters and no spaces" << endl;
+            return false;
+        }
+    }
+    return true;
+}
+
+bool Person::validYear(string year) {
+    for(unsigned long i = 0; i < year.size(); ++i) {
+        if(!isdigit(year[i]) && year[i] != '-') {
+            cout << "Not a valid year, please retype" << endl;
+            return false;
+        }
+    }
+    int temp;
+    istringstream buffer(year);
+    buffer >> temp;
+    if(temp < 0 || temp > 2014) {
+        cout << "Not a valid year, please retype" << endl;
+        return false;
+    }
+    return true;
+}
+
+bool Person::validGender(string gender) {
+    if(gender != "m" && gender != "M" && gender != "f" && gender != "F") {
+        cout << "Not a valid gender, please retype m/f" << endl;
+        return false;
+    }
+    return true;
+}
+

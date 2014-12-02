@@ -5,10 +5,20 @@ using namespace std;
 Search::Search() {
 }
 
-int* Search::name(vector<Person> persons, string name) {
+int* Search::nameFirst(vector<Person> persons, string name) {
     int* ids = new int[persons.size()]();
     for(unsigned int i = 0; i < persons.size(); i++) {
-        if(persons[i].getFirstName() == name || persons[i].getLastName() == name) {
+        if(persons[i].getFirstName() == name) {
+            ids[i] = 1;
+        }
+    }
+    return ids;
+}
+
+int* Search::nameLast(vector<Person> persons, string name) {
+    int* ids = new int[persons.size()]();
+    for(unsigned int i = 0; i < persons.size(); i++) {
+        if(persons[i].getLastName() == name) {
             ids[i] = 1;
         }
     }
@@ -25,10 +35,20 @@ int* Search::gender(vector<Person> persons, string gender) {
     return ids;
 }
 
-int* Search::year(vector<Person> persons, string year) {
+int* Search::birthYear(vector<Person> persons, string year) {
     int* ids = new int[persons.size()]();
     for(unsigned int i = 0; i < persons.size(); i++) {
-        if(persons[i].getYearOfBirth() == year || persons[i].getYearOfDeath() == year) {
+        if(persons[i].getYearOfBirth() == year) {
+            ids[i] = 1;
+        }
+    }
+    return ids;
+}
+
+int* Search::deathYear(vector<Person> persons, string year) {
+    int* ids = new int[persons.size()]();
+    for(unsigned int i = 0; i < persons.size(); i++) {
+        if(persons[i].getYearOfDeath() == year) {
             ids[i] = 1;
         }
     }

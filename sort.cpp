@@ -36,8 +36,29 @@ bool sortByGender(Person p1, Person p2) {
     return p1.getGender() < p2.getGender();
 }
 bool sortByYearOfBirth(Person p1, Person p2) {
-    return p1.getYearOfBirth() < p2.getYearOfBirth();
+    string tempP1 = p1.getYearOfBirth();
+    string tempP2 = p2.getYearOfBirth();
+    int tempP1int, tempP2int;
+
+    istringstream buffer1(tempP1);
+    buffer1 >> tempP1int;
+    istringstream buffer2(tempP2);
+    buffer2 >> tempP2int;
+    return tempP1int < tempP2int;
 }
 bool sortByYearOfDeath(Person p1, Person p2) {
-    return p1.getYearOfDeath() < p2.getYearOfDeath();
+    if(p1.getYearOfDeath() == "-") {
+        return false;
+    } else if(p2.getYearOfDeath() == "-") {
+        return true;
+    }
+    string tempP1 = p1.getYearOfBirth();
+    string tempP2 = p2.getYearOfBirth();
+    int tempP1int, tempP2int;
+
+    istringstream buffer1(tempP1);
+    buffer1 >> tempP1int;
+    istringstream buffer2(tempP2);
+    buffer2 >> tempP2int;
+    return tempP1int < tempP2int;
 }
