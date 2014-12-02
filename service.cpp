@@ -1,12 +1,13 @@
 #include "service.h"
 
 Service::Service() {
+    strcpy(filename, "test.txt");
 }
 
 Person Service::get(int id) {
     return personRepo.get(id);
 }
-
+// add(): adds a person to the personRepo database.
 void Service::add() {
     Person p;
     char c;
@@ -17,24 +18,20 @@ void Service::add() {
         cin >> c;
     } while(c != 'N' && c != 'n');
 }
-
 void Service::printAll() {
     for(int i = 0; i < personRepo.getSize(); i++) {
         personRepo.get(i).print();
     }
 }
-
 void Service::printAllWithNumber() {
     for(int i = 0; i < personRepo.getSize(); i++) {
         cout << "Person number: " << i+1 << endl;
         personRepo.get(i).print();
     }
 }
-
 void Service::printOne(int id) {
     personRepo.get(id).print();
 }
-
 void Service::searchAll(int theCase, string search) {
     int* ids = new int[personRepo.getSize()];
     bool personFound = false;
@@ -73,27 +70,20 @@ void Service::searchAll(int theCase, string search) {
     }
     delete [] ids;
 }
-
-void Service::removeFromFile(int id) {
+// removeFromVector(int id): removes the person with the appropriate
+// id from the personRepo database.
+void Service::removeFromVector(int id) {
     personRepo.removePerson(id);
-    remove("test.txt");
-    ofstream outFile("test.txt");
-
-    if(outFile.is_open()) {
-        for(int i = 0; i < personRepo.getSize(); i++) {
-            outFile << personRepo.get(i);
-        }
-    }
-
-    outFile.close();
 }
+// sortAll: calls the correct sorting case and prints the results.
 void Service::sortAll(int theCase) {
     vector<Person> sortedTemp = sorter.sortVector(personRepo.getAll(), theCase);
     for(unsigned int i = 0; i < sortedTemp.size(); i++) {
         sortedTemp[i].print();
     }
 }
-
+// clearAndPrintFile(): deletes the original file and makes a new one
+// with all the persons from the personRepo database.
 void Service::clearAndPrintFile() {
     remove("test.txt");
     ofstream outFile("test.txt");
@@ -104,17 +94,16 @@ void Service::clearAndPrintFile() {
     }
     outFile.close();
 }
-
 int Service::sizeOfDatabase() {
     return personRepo.getSize();
 }
-
+// setUp(): reads in information from a file and places it into
+// the personRepo database.
 void Service::setUp() {
     Person p;
     string line;
     ifstream inFile ("test.txt");
 
-    //addar Persónunni úr filenum í vectorinn
     if(inFile.is_open()) {
         while(getline(inFile, line)) {
              p.setFirstName(line);
@@ -133,7 +122,7 @@ void Service::setUp() {
         cout << "Sorry, no information at hand" << endl;
     }
 }
-
+// UIinputCheck: validates the input for UI choices.
 bool Service::UIinputCheck(int input, int maxcases) {
     if(cin.fail())
     {

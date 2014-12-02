@@ -24,7 +24,7 @@ public:
     void initialSetUp();
     void clear_screen();
     void addUI();
-    void cont();
+    void continueOrQuit();
 private:
     Service s;
 };

@@ -94,9 +94,9 @@ string Person::getYearOfBirth() {
 string Person::getYearOfDeath() {
     return yearOfDeath;
 }
-
+// validName(): checks if the name has only alphabetic letters.
 bool Person::validName(string name) {
-    for(unsigned long i = 0; i < name.size(); ++i) {
+    for(unsigned int i = 0; i < name.size(); ++i) {
         if(!isalpha(name[i])) {
             cout << "Not a valid name, please use only letters and no spaces" << endl;
             return false;
@@ -104,9 +104,9 @@ bool Person::validName(string name) {
     }
     return true;
 }
-
+// validYear(): checks if the year has only digits from 0 to 2014.
 bool Person::validYear(string year) {
-    for(unsigned long i = 0; i < year.size(); ++i) {
+    for(unsigned int i = 0; i < year.size(); ++i) {
         if(!isdigit(year[i]) && year[i] != '-') {
             cout << "Not a valid year, please retype" << endl;
             return false;
@@ -121,7 +121,7 @@ bool Person::validYear(string year) {
     }
     return true;
 }
-
+// valiGender(): checks if the gender is 'm', 'M', 'f' or 'F'.
 bool Person::validGender(string gender) {
     if(gender != "m" && gender != "M" && gender != "f" && gender != "F") {
         cout << "Not a valid gender, please retype m/f" << endl;

@@ -4,7 +4,8 @@ using namespace std;
 
 ConsoleUI::ConsoleUI() {
 }
-
+// initialSetUp(): prints the welcome screen and calls
+// a function to load the exsiting database into a vector.
 void ConsoleUI::initialSetUp() {
     string line;
     ifstream inFile ("welcome.txt");
@@ -16,10 +17,10 @@ void ConsoleUI::initialSetUp() {
         }
     }
     inFile.close();
-    cont();
+    continueOrQuit();
     clear_screen();
 }
-
+// choose(): Initial user interface
 void ConsoleUI::choose(){
     int what;
     string line;
@@ -64,7 +65,7 @@ void ConsoleUI::choose(){
     }while(what != 0);
     clear_screen();
 }
-
+// addUI(): UI to add a new person
 void ConsoleUI::addUI() {
     string line;
     ifstream inFile ("add-ui.txt");
@@ -77,7 +78,8 @@ void ConsoleUI::addUI() {
     }
         inFile.close();
 }
-
+// printUI(): allows the user to choose in what order
+// to print out the list of people.
 void ConsoleUI::printUI() {
     int input;
     string line;
@@ -102,10 +104,10 @@ void ConsoleUI::printUI() {
         else {
         s.sortAll(input);
     }
-    cont();
+    continueOrQuit();
     clear_screen();
 }
-
+// searchUI(): UI for searching the list of people.
 void ConsoleUI::searchUI() {
     int input;
     string search;
@@ -156,10 +158,11 @@ void ConsoleUI::searchUI() {
         default:
             break;
     }
-    cont();
+    continueOrQuit();
     clear_screen();
 }
-
+// removeUI(): prints out a numbered list of people and removes
+// the person chosen.
 void ConsoleUI::removeUI() {
     int input;
     int databaseSize = s.sizeOfDatabase();
@@ -170,20 +173,19 @@ void ConsoleUI::removeUI() {
     }while(!s.UIinputCheck(input-1, databaseSize-1));
     cout << "This person has been removed:" << endl;
     s.printOne(input-1);
-    s.removeFromFile(input-1);
-    cont();
+    s.removeFromVector(input-1);
+    continueOrQuit();
     choose();
 }
-
-
+// clear_screen(): clear the screen for nice visual affect
 void ConsoleUI::clear_screen()
 {
     //system("CLS");
     system("clear");
 
 }
-
-void ConsoleUI::cont() {
+// continueOrQuit(): asks the user if he wants to continue or quit
+void ConsoleUI::continueOrQuit() {
     char c;
     cout << "Please enter 'c' to continue or 'q' to quit: ";
     cin >> c;

@@ -24,7 +24,7 @@ public:
     void printOne(int id);
     void searchAll(int theCase, string name);
     void printAllWithNumber();
-    void removeFromFile(int id);
+    void removeFromVector(int id);
     void clearAndPrintFile();
     void sortAll(int theCase);
     bool UIinputCheck(int input, int maxcases);
@@ -33,6 +33,7 @@ private:
     Search searcher;
     Sort sorter;
     PersonRepository personRepo;
+    char filename[];
 };
 
 #endif // SERVICE_H
