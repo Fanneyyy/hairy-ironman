@@ -18,7 +18,7 @@ void ConsoleUI::initialSetUp() {
         }
     }
     inFile.close();
-    cin >> c;
+    cont();
     clear_screen();
 }
 
