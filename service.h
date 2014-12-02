@@ -1,3 +1,6 @@
+// Service: Takes commands from the user interface, seeks information from the repository
+// and relays the appropriate information back to the user interface.
+
 #ifndef SERVICE_H
 #define SERVICE_H
 #include <fstream>

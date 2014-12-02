@@ -1,3 +1,5 @@
+// Search: Implements a search for a string in a vector filled with persons.
+
 #ifndef SEARCH_H
 #define SEARCH_H
 #include "person.h"

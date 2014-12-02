@@ -1,3 +1,5 @@
+// Search: Implements sort for strings in a vector filled with persons.
+
 #ifndef SORT_H
 #define SORT_H
 #include <iostream>

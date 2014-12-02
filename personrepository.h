@@ -1,4 +1,4 @@
-// PersonRepository: Stores persons in vector and allowes
+// PersonRepository: Stores persons in vector, relays information and handles additions and deletions.
 
 #ifndef PERSONREPOSITORY_H
 #define PERSONREPOSITORY_H
