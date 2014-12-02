@@ -1,3 +1,5 @@
+// PersonRepository: Stores persons in vector and allowes
+
 #ifndef PERSONREPOSITORY_H
 #define PERSONREPOSITORY_H
 

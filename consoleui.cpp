@@ -3,7 +3,6 @@
 using namespace std;
 
 ConsoleUI::ConsoleUI() {
-
 }
 
 void ConsoleUI::initialSetUp() {
@@ -120,8 +119,8 @@ void ConsoleUI::searchUI() {
         }
     }
     do{
-    cin >> input;
-        }while(!s.UIinputCheck(input, 5));
+        cin >> input;
+    }while(!s.UIinputCheck(input, 5));
 
     switch(input) {
         case 1:
@@ -145,7 +144,7 @@ void ConsoleUI::searchUI() {
             s.searchAll(4, search);
             break;
         case 5:
-            cout << "Please enter a birth year: ";
+            cout << "Please enter a death year: ";
             cin >> search;
             s.searchAll(5, search);
             break;
@@ -163,9 +162,12 @@ void ConsoleUI::searchUI() {
 
 void ConsoleUI::removeUI() {
     int input;
+    int databaseSize = s.sizeOfDatabase();
     s.printAllWithNumber();
     cout << "Please enter the number of the person you wish to remove" << endl;
-    cin >> input;
+    do{
+        cin >> input;
+    }while(!s.UIinputCheck(input-1, databaseSize-1));
     cout << "This person has been removed:" << endl;
     s.printOne(input-1);
     s.removeFromFile(input-1);
@@ -183,7 +185,7 @@ void ConsoleUI::clear_screen()
 
 void ConsoleUI::cont() {
     char c;
-    cout << "Please enter 'c' to Continue or 'q' to quit: ";
+    cout << "Please enter 'c' to continue or 'q' to quit: ";
     cin >> c;
 
     if(c == 'q' || c == 'Q')

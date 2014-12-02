@@ -37,6 +37,7 @@ void Service::printOne(int id) {
 
 void Service::searchAll(int theCase, string search) {
     int* ids = new int[personRepo.getSize()];
+    bool personFound = false;
     switch(theCase) {
         case 1: {
             ids = searcher.nameFirst(personRepo.getAll(),search);
@@ -64,7 +65,11 @@ void Service::searchAll(int theCase, string search) {
     for(int i = 0; i < personRepo.getSize(); i++) {
         if(ids[i] == 1) {
             personRepo.get(i).print();
+            personFound = true;
         }
+    }
+    if(!personFound) {
+        cout << "Sorry, nothing match your search" << endl;
     }
     delete [] ids;
 }
@@ -98,6 +103,10 @@ void Service::clearAndPrintFile() {
         }
     }
     outFile.close();
+}
+
+int Service::sizeOfDatabase() {
+    return personRepo.getSize();
 }
 
 void Service::setUp() {
