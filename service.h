@@ -12,7 +12,6 @@
 #include "search.h"
 #include "personrepository.h"
 #include "sort.h"
-
 class Service
 {
 public:
@@ -27,12 +26,14 @@ public:
     void removeFromFile(int id);
     void clearAndPrintFile();
     void sortAll(int theCase);
+    string getFileName();
     bool UIinputCheck(int input, int maxcases);
     int sizeOfDatabase();
 private:
     Search searcher;
     Sort sorter;
     PersonRepository personRepo;
+    char filename[];
 };
 
 #endif // SERVICE_H

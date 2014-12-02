@@ -18,11 +18,6 @@ Atanasoff
 m
 1903
 1995
-George
-Boole
-m
-1815
-1864
 Noam
 Chomsky
 m
@@ -38,3 +33,8 @@ Siggi
 f
 1000
 200
+Tom
+Tommy
+m
+2000
+-

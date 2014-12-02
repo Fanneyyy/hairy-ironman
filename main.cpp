@@ -1,4 +1,3 @@
-#include <QCoreApplication>
 #include "consoleui.h"
 #include <string>
 

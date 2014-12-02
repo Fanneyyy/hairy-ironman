@@ -11,7 +11,6 @@
 #include <cstdlib>
 #include "search.h"
 #include "service.h"
-#include <QUrl>
 
 class ConsoleUI
 {

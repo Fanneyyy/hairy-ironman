@@ -1,6 +1,8 @@
 #include "service.h"
 
+
 Service::Service() {
+    strcpy(filename, "test.txt");
 }
 
 Person Service::get(int id) {
@@ -76,8 +78,8 @@ void Service::searchAll(int theCase, string search) {
 
 void Service::removeFromFile(int id) {
     personRepo.removePerson(id);
-    remove("test.txt");
-    ofstream outFile("test.txt");
+    remove(filename);
+    ofstream outFile(filename);
 
     if(outFile.is_open()) {
         for(int i = 0; i < personRepo.getSize(); i++) {
@@ -95,8 +97,8 @@ void Service::sortAll(int theCase) {
 }
 
 void Service::clearAndPrintFile() {
-    remove("test.txt");
-    ofstream outFile("test.txt");
+    remove(filename);
+    ofstream outFile(filename);
     if(outFile.is_open()) {
         for(int i = 0; i < personRepo.getSize(); i++) {
             outFile << personRepo.get(i);
@@ -112,7 +114,7 @@ int Service::sizeOfDatabase() {
 void Service::setUp() {
     Person p;
     string line;
-    ifstream inFile ("test.txt");
+    ifstream inFile (filename);
 
     //addar Persónunni úr filenum í vectorinn
     if(inFile.is_open()) {
@@ -133,6 +135,12 @@ void Service::setUp() {
         cout << "Sorry, no information at hand" << endl;
     }
 }
+
+string Service::getFileName() {
+
+    return filename;
+}
+
 
 bool Service::UIinputCheck(int input, int maxcases) {
     if(cin.fail())
