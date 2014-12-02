@@ -2,7 +2,7 @@
 
 
 Service::Service() {
-    strcpy(filename, "test.txt");
+    strcpy(filename, "database.txt");
 }
 
 Person Service::get(int id) {
@@ -75,19 +75,6 @@ void Service::searchAll(int theCase, string search) {
 // id from the personRepo database.
 void Service::removeFromVector(int id) {
     personRepo.removePerson(id);
-<<<<<<< HEAD
-    remove(filename);
-    ofstream outFile(filename);
-
-    if(outFile.is_open()) {
-        for(int i = 0; i < personRepo.getSize(); i++) {
-            outFile << personRepo.get(i);
-        }
-    }
-
-    outFile.close();
-=======
->>>>>>> ae3e1321a641d62dfcb9befe2f8c34fdcbdf659b
 }
 // sortAll: calls the correct sorting case and prints the results.
 void Service::sortAll(int theCase) {
@@ -136,17 +123,7 @@ void Service::setUp() {
         cout << "Sorry, no information at hand" << endl;
     }
 }
-<<<<<<< HEAD
-
-string Service::getFileName() {
-
-    return filename;
-}
-
-
-=======
 // UIinputCheck: validates the input for UI choices.
->>>>>>> ae3e1321a641d62dfcb9befe2f8c34fdcbdf659b
 bool Service::UIinputCheck(int input, int maxcases) {
     if(cin.fail())
     {
