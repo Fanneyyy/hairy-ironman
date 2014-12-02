@@ -7,6 +7,7 @@
 | (____/\/\____) || (____/\
 (_______/\_______)(_______/
                            
+                           
 CSC (R) Version 1.0 03/12/2014
 
 
@@ -41,10 +42,10 @@ MAINTAINERS
 ————————————
 
 Current maintainers:
-	* Eva Ingibjörg Ágústsdóttir – eva14@ru.is
-	* Fanney Sigurðardóttir – fanney14@ru.is
-	* Kristinn Þorri Þrastarson – kristinnt14@ru.is
-	* Stefán Þór Halldórsson – stefanth14@ru.is
+	* Eva Ingibjörg Ágústsdóttir - eva14@ru.is
+	* Fanney Sigurðardóttir - fanney14@ru.is
+	* Kristinn Þorri Þrastarson - kristinnt14@ru.is
+	* Stefán Þór Halldórsson - stefanth14@ru.is
 
 
 
