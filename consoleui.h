@@ -20,6 +20,7 @@ public:
     void initialSetUp();
     void clear_screen();
     void addUI();
+    void cont();
 private:
     Service s;
     vector<Person> persons;

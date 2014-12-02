@@ -9,12 +9,12 @@
            |   | Search and thou shall find.                 |    |
            |   | What are you looking for?                   |    |
            |   |                                             |    |
-           |   | 1. Search for first/last name               |    |
-           |   | 2. Search for gender                        |    |
-           |   | 3. Search for year of birth/death           |    |
-           |   | 4. By gender                                |    |
+           |   | 1. Search for first name                    |    |
+           |   | 2. Search for last name                     |    |
+           |   | 3. Search by gender                         |    |
+           |   | 4. Search by birth year                     |    |
+           |   | 5. Search by death year                     |    |
            |   | 0. Get back! You don't know me like that!   |    |
-           |   |                                             |    |
            |   |                                             |    |
            |   |                                             |    |
            |   |                                             |    |

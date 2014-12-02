@@ -33,11 +33,6 @@ Turing
 m
 1912
 1954
-Henrietta
-Leavitt
-f
-1868
-1921
 Grace
 Hopper
 f

@@ -57,7 +57,7 @@ void ConsoleUI::choose(){
                 break;
             case 0:
                 s.clearAndPrintFile();
-                return;
+                exit(0);
                 break;
             default:
                 break;
@@ -82,7 +82,6 @@ void ConsoleUI::addUI() {
 
 void ConsoleUI::printUI() {
     int input;
-    char c;
     string line;
     ifstream inFile ("print-ui.txt");
 
@@ -105,14 +104,12 @@ void ConsoleUI::printUI() {
         else {
         s.sortAll(input);
     }
-    cout << "Press a key to continue";
-    cin >> c;
+    cont();
     clear_screen();
 }
 
 void ConsoleUI::searchUI() {
     int input;
-    char c;
     string search;
     string line;
     ifstream inFile ("search.txt");
@@ -146,12 +143,12 @@ void ConsoleUI::searchUI() {
         case 0:
         clear_screen();
             choose();
+            return;
             break;
         default:
             break;
     }
-    cout << "Press any key to continue: ";
-    cin >> c;
+    cont();
     clear_screen();
 }
 
@@ -175,4 +172,15 @@ void ConsoleUI::clear_screen()
     // Assume POSIX
     std::system ("clear");
 #endif
+}
+
+void ConsoleUI::cont() {
+    char c;
+    cout << "Please enter 'c' to Continue or 'q' to quit: ";
+    cin >> c;
+
+    if(c == 'q')
+    {
+        exit(0);
+    }
 }
