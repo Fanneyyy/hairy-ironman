@@ -2,6 +2,12 @@
 
 using namespace std;
 
+#ifdef _WIN32
+#define CLEAR_COMMAND "CLS"
+#else
+#define CLEAR_COMMAND "clear"
+#endif
+
 ConsoleUI::ConsoleUI() {
 }
 // initialSetUp(): prints the welcome screen and calls
@@ -127,28 +133,18 @@ void ConsoleUI::searchUI() {
     switch(input) {
         case 1:
             cout << "Please enter the first name: ";
-            cin >> search;
-            s.searchAll(1, search);
             break;
         case 2:
             cout << "Please enter the last name: ";
-            cin >> search;
-            s.searchAll(2, search);
             break;
         case 3:
             cout << "Please enter f for female or m for male: ";
-            cin >> search;
-            s.searchAll(3, search);
             break;
         case 4:
             cout << "Please enter a birth year: ";
-            cin >> search;
-            s.searchAll(4, search);
             break;
         case 5:
             cout << "Please enter a death year: ";
-            cin >> search;
-            s.searchAll(5, search);
             break;
         case 0:
             clear_screen();
@@ -158,6 +154,8 @@ void ConsoleUI::searchUI() {
         default:
             break;
     }
+    cin >> search;
+    s.searchAll(input, search);
     continueOrQuit();
     clear_screen();
 }
@@ -180,7 +178,7 @@ void ConsoleUI::removeUI() {
 // clear_screen(): clear the screen for nice visual affect
 void ConsoleUI::clear_screen()
 {
-    system("clear");
+    system(CLEAR_COMMAND);
 }
 // continueOrQuit(): asks the user if he wants to continue or quit
 void ConsoleUI::continueOrQuit() {

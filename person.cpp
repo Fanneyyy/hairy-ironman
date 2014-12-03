@@ -106,22 +106,31 @@ bool Person::validName(string name) {
 }
 // validYear(): checks if the year has only digits from 0 to 2014.
 bool Person::validYear(string year) {
+    if(year.size() > 4)
+    {
+        cout << "Not a valid year, please select another." << endl;
+        return false;
+    }
     for(unsigned int i = 0; i < year.size(); ++i) {
         if(!isdigit(year[i]) && year[i] != '-') {
-            cout << "Not a valid year, please retype" << endl;
+            cout << "Not a valid year, please select another." << endl;
             return false;
         }
     }
     int temp;
     istringstream buffer(year);
     buffer >> temp;
-    if(temp < 0 || temp > 2014) {
-        cout << "Not a valid year, please retype" << endl;
+    if(temp > 2014) {
+        cout << "This year is in the future, please select another" << endl;
+        return false;
+    }
+    else if(temp < 0) {
+        cout << "This year is BC, don't be ridiculous, select another" << endl;
         return false;
     }
     return true;
 }
-// valiGender(): checks if the gender is 'm', 'M', 'f' or 'F'.
+// validGender(): checks if the gender is 'm', 'M', 'f' or 'F'.
 bool Person::validGender(string gender) {
     if(gender != "m" && gender != "M" && gender != "f" && gender != "F") {
         cout << "Not a valid gender, please retype m/f" << endl;
