@@ -57,8 +57,8 @@ bool sortByYearOfDeath(Person p1, Person p2) {
     } else if(p2.getYearOfDeath() == "-") {
         return true;
     }
-    string tempP1 = p1.getYearOfBirth();
-    string tempP2 = p2.getYearOfBirth();
+    string tempP1 = p1.getYearOfDeath();
+    string tempP2 = p2.getYearOfDeath();
     int tempP1int, tempP2int;
 
     istringstream buffer1(tempP1);
