@@ -8,6 +8,7 @@
 #include <string>
 #include <vector>
 #include <limits>
+#include <cstring>
 #include "person.h"
 #include "search.h"
 #include "personrepository.h"
