@@ -106,6 +106,9 @@ bool Person::validName(string name) {
 }
 // validYear(): checks if the year has only digits from 0 to 2014.
 bool Person::validYear(string year) {
+    time_t t = time(NULL);
+    tm* timePtr = localtime(&t);
+
     if(year.size() > 4)
     {
         cout << "Not a valid year, please select another." << endl;
@@ -120,7 +123,7 @@ bool Person::validYear(string year) {
     int temp;
     istringstream buffer(year);
     buffer >> temp;
-    if(temp > 2014) {
+    if(temp > 1900+timePtr->tm_year) {
         cout << "This year is in the future, please select another" << endl;
         return false;
     }
