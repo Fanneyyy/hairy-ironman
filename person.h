@@ -42,6 +42,7 @@ public:
     bool validYear(string year);
     bool validGender(string gender);
     bool validName(string name);
+    bool birthVSDeath(string yearBirth, string yearDeath);
 private:
     fullName name;
     string gender;

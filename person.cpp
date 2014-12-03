@@ -50,7 +50,7 @@ istream& operator >>(istream& ins, Person& p) {
     cout << "Year of death (enter '-' if person is still alive): ";
     do {
         ins >> input;
-    }while(!p.validYear(input));
+    }while(!p.validYear(input) || !p.birthVSDeath(p.yearOfBirth, input));
     p.yearOfDeath = input;
 
     return ins;
@@ -116,7 +116,7 @@ bool Person::validYear(string year) {
     }
     for(unsigned int i = 0; i < year.size(); ++i) {
         if(!isdigit(year[i]) && year[i] != '-') {
-            cout << "Not a valid year, please select another." << endl;
+            cout << "Not a year, please select another." << endl;
             return false;
         }
     }
@@ -139,6 +139,21 @@ bool Person::validGender(string gender) {
         cout << "Not a valid gender, please retype m/f" << endl;
         return false;
     }
+    return true;
+}
+
+bool Person::birthVSDeath(string yearBirth, string yearDeath) {
+    int birth, death;
+    istringstream bbuffer(yearBirth);
+    bbuffer >> birth;
+    istringstream dbuffer(yearDeath);
+    dbuffer >> death;
+
+    if(birth > death) {
+        cout << "Sorry, we do not allow death before birth, Please select another year of death. " << endl;
+        return false;
+    }
+
     return true;
 }
 
