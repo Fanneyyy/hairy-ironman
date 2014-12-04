@@ -21,7 +21,8 @@ SOURCES += main.cpp \
     personrepository.cpp \
     search.cpp \
     service.cpp \
-    sort.cpp
+    sort.cpp \
+    printui.cpp
 
 HEADERS += \
     person.h \
@@ -29,7 +30,8 @@ HEADERS += \
     personrepository.h \
     search.h \
     service.h \
-    sort.h
+    sort.h \
+    printui.h
 
 OTHER_FILES += \
     choose-ui.txt \

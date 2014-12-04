@@ -2,6 +2,7 @@
 
 using namespace std;
 
+
 #ifdef _WIN32
 #define CLEAR_COMMAND "CLS"
 #else
@@ -13,16 +14,17 @@ ConsoleUI::ConsoleUI() {
 // initialSetUp(): prints the welcome screen and calls
 // a function to load the exsiting database into a vector.
 void ConsoleUI::initialSetUp() {
-    string line;
-    ifstream inFile ("welcome.txt");
+//    string line;
+//    ifstream inFile ("welcome.txt");
 
-    s.setUp();
-    if(inFile.is_open()) {
-        while(getline(inFile, line)) {
-            cout << line << endl;
-        }
-    }
-    inFile.close();
+//    s.setUp();
+//    if(inFile.is_open()) {
+//        while(getline(inFile, line)) {
+//            cout << line << endl;
+//        }
+//    }
+//    inFile.close();
+    p.welcomeScreen();
     continueOrQuit();
     clear_screen();
 }
