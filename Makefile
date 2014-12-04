@@ -51,16 +51,14 @@ SOURCES       = main.cpp \
 		personrepository.cpp \
 		search.cpp \
 		service.cpp \
-		sort.cpp \
-		printui.cpp 
+		sort.cpp 
 OBJECTS       = main.o \
 		person.o \
 		consoleui.o \
 		personrepository.o \
 		search.o \
 		service.o \
-		sort.o \
-		printui.o
+		sort.o
 DIST          = ../../../../Qt/5.3/clang_64/mkspecs/features/spec_pre.prf \
 		../../../../Qt/5.3/clang_64/mkspecs/qdevice.pri \
 		../../../../Qt/5.3/clang_64/mkspecs/features/device_config.prf \
@@ -181,8 +179,7 @@ DIST          = ../../../../Qt/5.3/clang_64/mkspecs/features/spec_pre.prf \
 		personrepository.cpp \
 		search.cpp \
 		service.cpp \
-		sort.cpp \
-		printui.cpp
+		sort.cpp
 QMAKE_TARGET  = QtPersons
 DESTDIR       = #avoid trailing-slash linebreak
 TARGET        = QtPersons
@@ -465,7 +462,7 @@ qmake_all: FORCE
 
 dist: 
 	@test -d .tmp/QtPersons1.0.0 || mkdir -p .tmp/QtPersons1.0.0
-	$(COPY_FILE) --parents $(DIST) .tmp/QtPersons1.0.0/ && $(COPY_FILE) --parents person.h consoleui.h personrepository.h search.h service.h sort.h printui.h .tmp/QtPersons1.0.0/ && $(COPY_FILE) --parents main.cpp person.cpp consoleui.cpp personrepository.cpp search.cpp service.cpp sort.cpp printui.cpp .tmp/QtPersons1.0.0/ && (cd `dirname .tmp/QtPersons1.0.0` && $(TAR) QtPersons1.0.0.tar QtPersons1.0.0 && $(COMPRESS) QtPersons1.0.0.tar) && $(MOVE) `dirname .tmp/QtPersons1.0.0`/QtPersons1.0.0.tar.gz . && $(DEL_FILE) -r .tmp/QtPersons1.0.0
+	$(COPY_FILE) --parents $(DIST) .tmp/QtPersons1.0.0/ && $(COPY_FILE) --parents person.h consoleui.h personrepository.h search.h service.h sort.h .tmp/QtPersons1.0.0/ && $(COPY_FILE) --parents main.cpp person.cpp consoleui.cpp personrepository.cpp search.cpp service.cpp sort.cpp .tmp/QtPersons1.0.0/ && (cd `dirname .tmp/QtPersons1.0.0` && $(TAR) QtPersons1.0.0.tar QtPersons1.0.0 && $(COMPRESS) QtPersons1.0.0.tar) && $(MOVE) `dirname .tmp/QtPersons1.0.0`/QtPersons1.0.0.tar.gz . && $(DEL_FILE) -r .tmp/QtPersons1.0.0
 
 
 clean:compiler_clean 
@@ -511,8 +508,7 @@ main.o: main.cpp consoleui.h \
 		person.h \
 		service.h \
 		personrepository.h \
-		sort.h \
-		printui.h
+		sort.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o main.cpp
 
 person.o: person.cpp person.h
@@ -523,8 +519,7 @@ consoleui.o: consoleui.cpp consoleui.h \
 		person.h \
 		service.h \
 		personrepository.h \
-		sort.h \
-		printui.h
+		sort.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o consoleui.o consoleui.cpp
 
 personrepository.o: personrepository.cpp personrepository.h \
@@ -545,9 +540,6 @@ service.o: service.cpp service.h \
 sort.o: sort.cpp sort.h \
 		person.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o sort.o sort.cpp
-
-printui.o: printui.cpp printui.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o printui.o printui.cpp
 
 ####### Install
 
