@@ -30,7 +30,7 @@ void ConsoleUI::initialSetUp() {
 // choose(): Initial user interface
 void ConsoleUI::choose(){
     int what;
-    string line;
+/*    string line;
     clear_screen();
 
     do{
@@ -40,7 +40,11 @@ void ConsoleUI::choose(){
                 cout << line << endl;
             }
         }
-            inFile.close();
+            inFile.close();*/
+   // p.chooseScreen();
+    clear_screen();
+    do{
+        p.chooseScreen();
         do{
         cin >> what;
             }while(!s.UIinputCheck(what, 4));
@@ -74,22 +78,23 @@ void ConsoleUI::choose(){
 }
 // addUI(): UI to add a new person
 void ConsoleUI::addUI() {
-    string line;
-    ifstream inFile ("add-ui.txt");
+//    string line;
+//    ifstream inFile ("add-ui.txt");
 
     clear_screen();
-    if(inFile.is_open()) {
-        while(getline(inFile, line)) {
-            cout << line << endl;
-        }
-    }
-        inFile.close();
+    p.addScreen();
+//    if(inFile.is_open()) {
+//        while(getline(inFile, line)) {
+//            cout << line << endl;
+//        }
+//    }
+//        inFile.close();
 }
 // printUI(): allows the user to choose in what order
 // to print out the list of people.
 void ConsoleUI::printUI() {
     int input;
-    string line;
+    /*string line;
     ifstream inFile ("print-ui.txt");
 
     clear_screen();
@@ -98,7 +103,9 @@ void ConsoleUI::printUI() {
             cout << line << endl;
         }
     }
-        inFile.close();
+        inFile.close();*/
+    clear_screen();
+    p.printScreen();
         do{
         cin >> input;
             }while(!s.UIinputCheck(input, 6));
@@ -118,15 +125,19 @@ void ConsoleUI::printUI() {
 void ConsoleUI::searchUI() {
     int input;
     string search;
-    string line;
+
+    clear_screen();
+   /* string line;
     ifstream inFile ("search.txt");
+
     clear_screen();
 
     if(inFile.is_open()) {
         while(getline(inFile, line)) {
             cout << line << endl;
         }
-    }
+    }*/
+    p.searchScreen();
     do{
         cin >> input;
     }while(!s.UIinputCheck(input, 5));
