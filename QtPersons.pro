@@ -5,7 +5,7 @@
 #-------------------------------------------------
 
 QT       += core
-
+QT       += sql
 QT       -= gui
 
 TARGET = QtPersons
