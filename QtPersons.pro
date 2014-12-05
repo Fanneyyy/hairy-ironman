@@ -5,7 +5,7 @@
 #-------------------------------------------------
 
 QT       += core
-
+QT       += sql
 QT       -= gui
 
 TARGET = QtPersons
@@ -18,18 +18,22 @@ TEMPLATE = app
 SOURCES += main.cpp \
     person.cpp \
     consoleui.cpp \
-    personrepository.cpp \
     search.cpp \
     service.cpp \
-    sort.cpp
+    sort.cpp \
+    repository.cpp \
+    computer.cpp \
+    printui.cpp
 
 HEADERS += \
     person.h \
     consoleui.h \
-    personrepository.h \
     search.h \
     service.h \
-    sort.h
+    sort.h \
+    repository.h \
+    computer.h \
+    printui.h
 
 OTHER_FILES += \
     choose-ui.txt \
@@ -40,4 +44,5 @@ OTHER_FILES += \
     database.txt \
     add-ui.txt \
     README.txt \
-    Persons.sql
+    Persons.sql \
+    TheTestCabinet.sqlite

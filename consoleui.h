@@ -4,13 +4,14 @@
 
 #ifndef CONSOLEUI_H
 #define CONSOLEUI_H
-#include <fstream>
+//#include <fstream>
 #include <string>
 #include <vector>
 #include <cstdlib>
 #include <iostream>
 #include "search.h"
 #include "service.h"
+#include "printui.h"
 
 class ConsoleUI
 {
@@ -26,8 +27,8 @@ public:
     void addUI();
     void continueOrQuit();
 private:
+    PrintUI pr;
     Service s;
-
 };
 
 #endif // CONSOLEUI_H
