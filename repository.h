@@ -17,14 +17,15 @@ private:
 public:
     repository();
     void add(Person a);
-    Person get(int id);
-    int getSize();
-    vector<Person> getAll();
+    Person getPerson(int id);
+    vector<Person> getAllPerson();
+    int getPersonSize();
     void removePerson(int id);
 
     void add(Computer c);
-    Computer get(int id);
-    vector<Computer> getAll();
+    Computer getComputer(int id);
+    vector<Computer> getAllComputer();
+    int getCPUSize();
     void removeComputer(int id);
 };
 

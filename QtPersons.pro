@@ -21,7 +21,8 @@ SOURCES += main.cpp \
     search.cpp \
     service.cpp \
     sort.cpp \
-    repository.cpp
+    repository.cpp \
+    computer.cpp \
 
 HEADERS += \
     person.h \
@@ -29,7 +30,8 @@ HEADERS += \
     search.h \
     service.h \
     sort.h \
-    repository.h
+    repository.h \
+    computer.h \
 
 OTHER_FILES += \
     choose-ui.txt \
