@@ -18,20 +18,20 @@ TEMPLATE = app
 SOURCES += main.cpp \
     person.cpp \
     consoleui.cpp \
-    personrepository.cpp \
     search.cpp \
     service.cpp \
     sort.cpp \
-    computer.cpp
+    repository.cpp \
+    computer.cpp \
 
 HEADERS += \
     person.h \
     consoleui.h \
-    personrepository.h \
     search.h \
     service.h \
     sort.h \
-    computer.h
+    repository.h \
+    computer.h \
 
 OTHER_FILES += \
     choose-ui.txt \
