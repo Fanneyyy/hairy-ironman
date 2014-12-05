@@ -2,7 +2,6 @@
 
 using namespace std;
 
-
 #ifdef _WIN32
 #define CLEAR_COMMAND "CLS"
 #else
@@ -11,47 +10,27 @@ using namespace std;
 
 ConsoleUI::ConsoleUI() {
 }
+
 // initialSetUp(): prints the welcome screen and calls
 // a function to load the exsiting database into a vector.
 void ConsoleUI::initialSetUp() {
-//    string line;
-//    ifstream inFile ("welcome.txt");
-
-//    if(inFile.is_open()) {
-//        while(getline(inFile, line)) {
-//            cout << line << endl;
-//        }
-//    }
-//    inFile.close();
     s.setUp();
     pr.welcomeScreen();
     continueOrQuit();
     clear_screen();
 }
+
 // choose(): Initial user interface
-void ConsoleUI::choose(){
+void ConsoleUI::choose() {
     int what;
-/*    string line;
     clear_screen();
-
-    do{
-        ifstream inFile ("choose-ui.txt");
-        if(inFile.is_open()) {
-            while(getline(inFile, line)) {
-                cout << line << endl;
-            }
-        }
-            inFile.close();*/
-   // p.chooseScreen();
-    clear_screen();
-    do{
+    do {
         pr.chooseScreen();
-        do{
-        cin >> what;
-            }while(!s.UIinputCheck(what, 4));
+        do {
+            cin >> what;
+        }while(!s.UIinputCheck(what, 4));
 
-        switch(what)
-        {
+        switch(what) {
             case 1:
                 addUI();
                 clear_screen();
@@ -72,39 +51,19 @@ void ConsoleUI::choose(){
             default:
                 break;
         }
-
     }while(what != 0);
     clear_screen();
 }
+
 // addUI(): UI to add a new person
 void ConsoleUI::addUI() {
-//    string line;
-//    ifstream inFile ("add-ui.txt");
-
     clear_screen();
     pr.addScreen();
     s.add();
-//    if(inFile.is_open()) {
-//        while(getline(inFile, line)) {
-//            cout << line << endl;
-//        }
-//    }
-//        inFile.close();
 }
-// printUI(): allows the user to choose in what order
-// to print out the list of people.
+
 void ConsoleUI::printUI() {
     int input;
-    /*string line;
-    ifstream inFile ("print-ui.txt");
-
-    clear_screen();
-    if(inFile.is_open()) {
-        while(getline(inFile, line)) {
-            cout << line << endl;
-        }
-    }
-        inFile.close();*/
     clear_screen();
     pr.printScreen();
         do{
@@ -122,22 +81,13 @@ void ConsoleUI::printUI() {
     continueOrQuit();
     clear_screen();
 }
+
 // searchUI(): UI for searching the list of people.
 void ConsoleUI::searchUI() {
     int input;
     string search;
 
     clear_screen();
-   /* string line;
-    ifstream inFile ("search.txt");
-
-    clear_screen();
-
-    if(inFile.is_open()) {
-        while(getline(inFile, line)) {
-            cout << line << endl;
-        }
-    }*/
     pr.searchScreen();
     do{
         cin >> input;
@@ -145,18 +95,15 @@ void ConsoleUI::searchUI() {
 
     switch(input) {
         case 1:
-            cout << "Please enter the first name: ";
+            cout << "Please enter a first or last name: ";
             break;
         case 2:
-            cout << "Please enter the last name: ";
+            cout << "Please enter Female or Male: ";
             break;
         case 3:
-            cout << "Please enter f for female or m for male: ";
-            break;
-        case 4:
             cout << "Please enter a birth year: ";
             break;
-        case 5:
+        case 4:
             cout << "Please enter a death year: ";
             break;
         case 0:
@@ -172,6 +119,7 @@ void ConsoleUI::searchUI() {
     continueOrQuit();
     clear_screen();
 }
+
 // removeUI(): prints out a numbered list of people and removes
 // the person chosen.
 void ConsoleUI::removeUI() {
@@ -188,11 +136,13 @@ void ConsoleUI::removeUI() {
     continueOrQuit();
     choose();
 }
+
 // clear_screen(): clear the screen for nice visual affect
 void ConsoleUI::clear_screen()
 {
     system(CLEAR_COMMAND);
 }
+
 // continueOrQuit(): asks the user if he wants to continue or quit
 void ConsoleUI::continueOrQuit() {
     char c;

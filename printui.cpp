@@ -14,11 +14,11 @@ void PrintUI::searchScreen() {
     cout << "           |   | Search and thou shall find.                 |    |" << endl;
     cout << "           |   | What are you looking for?                   |    |" << endl;
     cout << "           |   |                                             |    |" << endl;
-    cout << "           |   | 1. Search for first name                    |    |" << endl;
-    cout << "           |   | 2. Search for last name                     |    |" << endl;
-    cout << "           |   | 3. Search by gender                         |    |" << endl;
-    cout << "           |   | 4. Search by birth year                     |    |" << endl;
-    cout << "           |   | 5. Search by death year                     |    |" << endl;
+    cout << "           |   |                                             |    |" << endl;
+    cout << "           |   | 1. Search for a first or last name          |    |" << endl;
+    cout << "           |   | 2. Search by gender                         |    |" << endl;
+    cout << "           |   | 3. Search by birth year                     |    |" << endl;
+    cout << "           |   | 4. Search by death year                     |    |" << endl;
     cout << "           |   | 0. Get back! You don't know me like that!   |    |" << endl;
     cout << "           |   |                                             |    |" << endl;
     cout << "           |   |                                             |    |" << endl;

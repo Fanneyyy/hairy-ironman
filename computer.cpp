@@ -75,7 +75,6 @@ string Computer::getBuiltORnot() {
     return builtRnot;
 }
 
-
 // validName(): checks if the name has only alphabetic letters.
 bool Computer::validName(string name) {
     for(unsigned int i = 0; i < name.size(); ++i) {
@@ -86,13 +85,16 @@ bool Computer::validName(string name) {
     }
     return true;
 }
+
 // validYear(): checks if the year has only digits from 0 to current year.
 bool Computer::validYear(string year) {
     time_t t = time(NULL);
     tm* timePtr = localtime(&t);
 
-    if(year.size() > 4)
-    {
+    if(year == "-") {
+        return true;
+    }
+    if(year.size() > 4) {
         cout << "Not a valid year, please select another." << endl;
         return false;
     }
@@ -115,10 +117,11 @@ bool Computer::validYear(string year) {
     }
     return true;
 }
-// validGender(): checks if the gender is 'm', 'M', 'f' or 'F'.
+
+// validGender(): checks if the gender is 'Female' or 'Male'.
 bool Computer::validType(string type) {
-    if(type != "m" && type != "M" && type != "f" && type != "F") {
-        cout << "Not a valid gender, please retype m/f" << endl;
+    if(type != "Female" && type != "Male") {
+        cout << "Not a valid gender, please retype Female/Male" << endl;
         return false;
     }
     return true;

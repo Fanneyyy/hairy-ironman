@@ -10,10 +10,8 @@ Person::Person() {
 
 void Person::print(){
     cout << fixed;
-    cout << setw(3) << name.first << setw(14) << name.last << setw(15) << gender << setw(15) << yearOfBirth << setw(15) << yearOfDeath << endl;
-//    cout << "Gender: " << gender << endl;
-//    cout << "Year of birth: " << yearOfBirth << endl;
-//    cout << "Year of death: " << yearOfDeath << endl << endl;
+    cout << setw(3) << name.first << setw(14) << name.last << setw(15) << gender;
+    cout << setw(15) << yearOfBirth << setw(15) << yearOfDeath << endl;
 }
 
 ostream& operator <<(ostream& outs, const Person& p) {
@@ -22,7 +20,6 @@ ostream& operator <<(ostream& outs, const Person& p) {
     outs << p.gender << endl;
     outs << p.yearOfBirth << endl;
     outs << p.yearOfDeath << endl;
-
     return outs;
 }
 
@@ -33,12 +30,11 @@ istream& operator >>(istream& ins, Person& p) {
         ins >> input;
     } while(!p.validName(input));
     p.name.last = input;
-   // cout << "First name: ";
     do {
         ins >> input;
     } while(!p.validName(input));
     p.name.first = input;
-    cout << "Gender f/m: ";
+    cout << "Gender Female/Male: ";
     do {
         ins >> input;
     } while(!p.validGender(input));
@@ -48,7 +44,7 @@ istream& operator >>(istream& ins, Person& p) {
         ins >> input;
     }while(!p.validYear(input));
     p.yearOfBirth = input;
-    cout << "Year of death (enter '-' if person is still alive): ";
+    cout << "Year of death (please enter '-' if person is still alive): ";
     do {
         ins >> input;
     }while(!p.validYear(input) || !p.birthVSDeath(p.yearOfBirth, input));
@@ -110,8 +106,10 @@ bool Person::validYear(string year) {
     time_t t = time(NULL);
     tm* timePtr = localtime(&t);
 
-    if(year.size() > 4)
-    {
+    if(year == "-") {
+        return true;
+    }
+    if(year.size() > 4) {
         cout << "Not a valid year, please select another." << endl;
         return false;
     }
