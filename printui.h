@@ -9,6 +9,10 @@ class PrintUI
 public:
     PrintUI();
     void welcomeScreen();
+    void chooseScreen();
+    void addScreen();
+    void printScreen();
+    void searchScreen();
 };
 
 #endif // PRINTUI_H
