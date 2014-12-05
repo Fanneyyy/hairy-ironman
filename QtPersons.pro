@@ -39,4 +39,5 @@ OTHER_FILES += \
     welcome.txt \
     database.txt \
     add-ui.txt \
-    README.txt
+    README.txt \
+    Persons.sql

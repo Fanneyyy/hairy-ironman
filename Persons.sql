@@ -1,0 +1,16 @@
+DROP TABLE IF EXISTS "Computer";
+CREATE TABLE "Computer" ("ID" INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL , "Name" VARCHAR NOT NULL , "Build year" INTEGER, "Type" VARCHAR NOT NULL , "Built?" BOOL NOT NULL );
+INSERT INTO "Computer" VALUES(1,'Atanasoff-Berry Computer',1943,'Electronic','TRUE');
+INSERT INTO "Computer" VALUES(2,'Z3',1941,'Electronic','TRUE');
+DROP TABLE IF EXISTS "Person";
+CREATE TABLE "Person" ("ID" INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL , "Name" VARCHAR NOT NULL , "Gender" VARCHAR NOT NULL , "Birth year" INTEGER NOT NULL , "Death year" INTEGER);
+INSERT INTO "Person" VALUES(1,'Blaine Pascal','Male',1623,1662);
+INSERT INTO "Person" VALUES(2,'Ada Lovelace','Female',1815,1852);
+INSERT INTO "Person" VALUES(3,'Charles Babbage','Male',1791,1871);
+INSERT INTO "Person" VALUES(4,'John Atanasoff','Male',1903,1995);
+INSERT INTO "Person" VALUES(5,'George Boole','Male',1815,1995);
+INSERT INTO "Person" VALUES(6,'Noam Chomsky','Male',1928,'');
+INSERT INTO "Person" VALUES(7,'Alan Turing','Male',1912,1954);
+INSERT INTO "Person" VALUES(8,'Henrietta Leavitt','Female',1868,1921);
+INSERT INTO "Person" VALUES(9,'Grace Hopper','Female',1906,1992);
+INSERT INTO "Person" VALUES(10,'Konrad Zuse','Male',1910,1995);
