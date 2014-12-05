@@ -95,7 +95,7 @@ void ConsoleUI::searchUI() {
 
     switch(input) {
         case 1:
-            cout << "Please enter a first or last name: ";
+            cout << "Please enter a name: ";
             break;
         case 2:
             cout << "Please enter Female or Male: ";

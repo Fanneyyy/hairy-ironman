@@ -4,6 +4,7 @@
 #define SEARCH_H
 #include "person.h"
 #include <iostream>
+#include <algorithm>
 #include <vector>
 
 class Search
