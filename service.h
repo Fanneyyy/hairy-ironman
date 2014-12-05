@@ -11,7 +11,7 @@
 #include <cstring>
 #include "person.h"
 #include "search.h"
-#include "personrepository.h"
+#include "repository.h"
 #include "sort.h"
 class Service
 {
@@ -33,7 +33,7 @@ public:
 private:
     Search searcher;
     Sort sorter;
-    PersonRepository personRepo;
+    repository personRepo;
     char filename[];
 };
 
