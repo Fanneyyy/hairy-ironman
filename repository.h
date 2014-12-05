@@ -6,6 +6,10 @@
 #include <vector>
 #include "Person.h"
 #include "Computer.h"
+#include <string>
+#include <QtSql>
+#include <vector>
+#include <QtDebug>
 
 using namespace std;
 

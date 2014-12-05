@@ -42,4 +42,5 @@ OTHER_FILES += \
     database.txt \
     add-ui.txt \
     README.txt \
-    Persons.sql
+    Persons.sql \
+    TheTestCabinet.sqlite
