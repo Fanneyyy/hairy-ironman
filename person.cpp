@@ -9,10 +9,11 @@ Person::Person() {
 }
 
 void Person::print(){
-    cout << "Name: " << name.first << " " << name.last << endl;
-    cout << "Gender: " << gender << endl;
-    cout << "Year of birth: " << yearOfBirth << endl;
-    cout << "Year of death: " << yearOfDeath << endl << endl;
+    cout << fixed;
+    cout << setw(3) << name.first << setw(14) << name.last << setw(15) << gender << setw(15) << yearOfBirth << setw(15) << yearOfDeath << endl;
+//    cout << "Gender: " << gender << endl;
+//    cout << "Year of birth: " << yearOfBirth << endl;
+//    cout << "Year of death: " << yearOfDeath << endl << endl;
 }
 
 ostream& operator <<(ostream& outs, const Person& p) {
@@ -27,12 +28,12 @@ ostream& operator <<(ostream& outs, const Person& p) {
 
 istream& operator >>(istream& ins, Person& p) {
     string input;
-    cout << "Last name: ";
+    cout << "Enter name: ";
     do {
         ins >> input;
     } while(!p.validName(input));
     p.name.last = input;
-    cout << "First name: ";
+   // cout << "First name: ";
     do {
         ins >> input;
     } while(!p.validName(input));

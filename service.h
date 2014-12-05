@@ -30,6 +30,7 @@ public:
     string getFileName();
     bool UIinputCheck(int input, int maxcases);
     int sizeOfDatabase();
+    void headerPrint();
 private:
     Search searcher;
     Sort sorter;

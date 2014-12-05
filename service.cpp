@@ -19,7 +19,13 @@ void Service::add() {
         cin >> c;
     } while(c != 'N' && c != 'n');
 }
+void Service::headerPrint() {
+    cout << fixed;
+    cout << setw(3) << "Name: " << setw(15) << "Gender" << setw(15) << "Year of birth" << setw(15) << "Year of death" << endl;
+    cout << "----------------------------------------------------------------" << endl;
+}
 void Service::printAll() {
+    headerPrint();
     for(int i = 0; i < personRepo.getSize(); i++) {
         personRepo.get(i).print();
     }

@@ -4,11 +4,11 @@
 
 #ifndef CONSOLEUI_H
 #define CONSOLEUI_H
-#include <iostream>
 #include <fstream>
 #include <string>
 #include <vector>
 #include <cstdlib>
+#include <iostream>
 #include "search.h"
 #include "service.h"
 
@@ -27,6 +27,7 @@ public:
     void continueOrQuit();
 private:
     Service s;
+
 };
 
 #endif // CONSOLEUI_H
