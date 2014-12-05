@@ -15,6 +15,7 @@ void Service::add() {
     do {
         cin >> p;
         personRepo.add(p);
+        savePersonToDatabase(p);
         cout << "Want to add another? (y/n?) ";
         cin >> c;
     } while(c != 'N' && c != 'n');
@@ -104,8 +105,8 @@ void Service::clearAndPrintFile() {
 int Service::sizeOfDatabase() {
     return personRepo.getPersonSize();
 }
-// setUp(): reads in information from a file and places it into
-// the personRepo database.
+// setUp(): reads in information from a database and places it into
+// the vector in the repository.
 void Service::setUp() {
     QSqlQuery query;
     Person p;
@@ -135,4 +136,14 @@ bool Service::UIinputCheck(int input, int maxcases) {
     }
     return true;
 
+}
+// Saves a person to the database
+void Service::savePersonToDatabase(Person p) {
+    QSqlQuery query;
+    string col = "(Name, Gender, Birth year, Death year)";
+    string name = "('" + p.getFirstName() + " " + p.getLastName() + "'";
+    string value = ",'" + p.getGender() + "','" + p.getYearOfBirth() + "','" + p.getYearOfDeath() + "')";
+    string command = "INSERT INTO Person " + col + "VALUES " + name + value;
+    QString qcommand = QString::fromUtf8(command.c_str());
+    query.exec(qcommand);
 }

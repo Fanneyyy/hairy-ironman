@@ -9,6 +9,7 @@
 #include <vector>
 #include <limits>
 #include <cstring>
+#include <QString>
 #include "person.h"
 #include "search.h"
 #include "repository.h"
@@ -31,6 +32,7 @@ public:
     bool UIinputCheck(int input, int maxcases);
     int sizeOfDatabase();
     void headerPrint();
+    void savePersonToDatabase(Person p);
 private:
     Search searcher;
     Sort sorter;
