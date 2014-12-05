@@ -148,16 +148,20 @@ bool Service::UIinputCheck(int input, int maxcases) {
 }
 // Saves a person to the database
 void Service::savePersonToDatabase(Person p) {
-    QSqlQuery query;
     if(db.open()) {
         qDebug() << "Opened!";
+        QSqlQuery query;
         string col = "(Name, Gender, 'Birth year', 'Death year')";
         string name = "('" + p.getFirstName() + " " + p.getLastName() + "'";
         string value = ",'" + p.getGender() + "','" + p.getYearOfBirth() + "','" + p.getYearOfDeath() + "')";
         string command = "INSERT INTO Person " + col + "VALUES " + name + value;
         cout << command << endl;
         QString qcommand = QString::fromUtf8(command.c_str());
-        query.exec(qcommand);
+        if(query.exec(qcommand)) {
+            cout << "recorded" << endl;
+        } else {
+            qDebug() << "Error = " << db.lastError().text();
+        }
         db.close();
     } else {
         qDebug() << "Error = " << db.lastError().text();
