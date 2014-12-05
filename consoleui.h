@@ -11,6 +11,7 @@
 #include <iostream>
 #include "search.h"
 #include "service.h"
+#include "printui.h"
 
 class ConsoleUI
 {
@@ -27,6 +28,7 @@ public:
     void continueOrQuit();
 private:
     Service s;
+    PrintUI pr;
 
 };
 

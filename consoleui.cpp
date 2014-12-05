@@ -14,16 +14,17 @@ ConsoleUI::ConsoleUI() {
 // initialSetUp(): prints the welcome screen and calls
 // a function to load the exsiting database into a vector.
 void ConsoleUI::initialSetUp() {
-    string line;
-    ifstream inFile ("welcome.txt");
+//    string line;
+//    ifstream inFile ("welcome.txt");
 
+//    if(inFile.is_open()) {
+//        while(getline(inFile, line)) {
+//            cout << line << endl;
+//        }
+//    }
+//    inFile.close();
     s.setUp();
-    if(inFile.is_open()) {
-        while(getline(inFile, line)) {
-            cout << line << endl;
-        }
-    }
-    inFile.close();
+    pr.welcomeScreen();
     continueOrQuit();
     clear_screen();
 }
@@ -44,7 +45,7 @@ void ConsoleUI::choose(){
    // p.chooseScreen();
     clear_screen();
     do{
-        p.chooseScreen();
+        pr.chooseScreen();
         do{
         cin >> what;
             }while(!s.UIinputCheck(what, 4));
@@ -82,7 +83,7 @@ void ConsoleUI::addUI() {
 //    ifstream inFile ("add-ui.txt");
 
     clear_screen();
-    p.addScreen();
+    pr.addScreen();
 //    if(inFile.is_open()) {
 //        while(getline(inFile, line)) {
 //            cout << line << endl;
@@ -105,7 +106,7 @@ void ConsoleUI::printUI() {
     }
         inFile.close();*/
     clear_screen();
-    p.printScreen();
+    pr.printScreen();
         do{
         cin >> input;
             }while(!s.UIinputCheck(input, 6));
@@ -137,7 +138,7 @@ void ConsoleUI::searchUI() {
             cout << line << endl;
         }
     }*/
-    p.searchScreen();
+    pr.searchScreen();
     do{
         cin >> input;
     }while(!s.UIinputCheck(input, 5));
