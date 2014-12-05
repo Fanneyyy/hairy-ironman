@@ -23,6 +23,7 @@ SOURCES += main.cpp \
     sort.cpp \
     repository.cpp \
     computer.cpp \
+    printui.cpp
 
 HEADERS += \
     person.h \
@@ -32,6 +33,7 @@ HEADERS += \
     sort.h \
     repository.h \
     computer.h \
+    printui.h
 
 OTHER_FILES += \
     choose-ui.txt \
