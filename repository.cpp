@@ -1,16 +1,17 @@
 #include "repository.h"
 
 repository::repository() {
-    QSqlDatabase db;
-    db = QSqlDatabase::addDatabase("QSQLITE");
-    QString dbname = "TheTestCabinet.sqlite";
-    db.setDatabaseName(dbname);
+//    QSqlDatabase db;
+//    db = QSqlDatabase::addDatabase("QSQLITE");
+//    QString dbname = "TheTestCabinet.sqlite";
+//    db.setDatabaseName(dbname);
 
-    if(db.open()) {
-        qDebug() << "Opened!";
-    } else {
-        qDebug() << "Error = " << db.lastError().text();
-    }
+//    if(db.open()) {
+//        qDebug() << "Opened!";
+//        db.close();
+//    } else {
+//        qDebug() << "Error = " << db.lastError().text();
+//    }
     personList = vector<Person>();
 }
 // getAll(): returns the complete vector personList

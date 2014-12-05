@@ -2,6 +2,9 @@
 
 
 Service::Service() {
+    db = QSqlDatabase::addDatabase("QSQLITE");
+    QString dbname = "TheTestCabinet.sqlite";
+    db.setDatabaseName(dbname);
     strcpy(filename, "database.txt");
 }
 
@@ -108,17 +111,23 @@ int Service::sizeOfDatabase() {
 // setUp(): reads in information from a database and places it into
 // the vector in the repository.
 void Service::setUp() {
-    QSqlQuery query;
-    Person p;
+    if(db.open()) {
+        qDebug() << "Opened!";
+        QSqlQuery query;
+        Person p = Person();
 
-    query.exec("SELECT * FROM Person");
+        query.exec("SELECT * FROM Person");
 
-    while(query.next()) {
-        p.setFirstName(query.value("Name").toString().toStdString());
-        p.setGender(query.value("Gender").toString().toStdString());
-        p.setYearOfBirth(query.value("Birth year").toString().toStdString());
-        p.setYearOfDeath(query.value("Death year").toString().toStdString());
-        personRepo.add(p);
+        while(query.next()) {
+            p.setFirstName(query.value("Name").toString().toStdString());
+            p.setGender(query.value("Gender").toString().toStdString());
+            p.setYearOfBirth(query.value("Birth year").toString().toStdString());
+            p.setYearOfDeath(query.value("Death year").toString().toStdString());
+            personRepo.add(p);
+        }
+      db.close();
+    } else {
+        qDebug() << "Error = " << db.lastError().text();
     }
 }
 // UIinputCheck: validates the input for UI choices.
@@ -140,10 +149,17 @@ bool Service::UIinputCheck(int input, int maxcases) {
 // Saves a person to the database
 void Service::savePersonToDatabase(Person p) {
     QSqlQuery query;
-    string col = "(Name, Gender, 'Birth year', 'Death year')";
-    string name = "('" + p.getFirstName() + " " + p.getLastName() + "'";
-    string value = ",'" + p.getGender() + "','" + p.getYearOfBirth() + "','" + p.getYearOfDeath() + "')";
-    string command = "INSERT INTO Person " + col + "VALUES " + name + value;
-    QString qcommand = QString::fromUtf8(command.c_str());
-    query.exec(qcommand);
+    if(db.open()) {
+        qDebug() << "Opened!";
+        string col = "(Name, Gender, 'Birth year', 'Death year')";
+        string name = "('" + p.getFirstName() + " " + p.getLastName() + "'";
+        string value = ",'" + p.getGender() + "','" + p.getYearOfBirth() + "','" + p.getYearOfDeath() + "')";
+        string command = "INSERT INTO Person " + col + "VALUES " + name + value;
+        cout << command << endl;
+        QString qcommand = QString::fromUtf8(command.c_str());
+        query.exec(qcommand);
+        db.close();
+    } else {
+        qDebug() << "Error = " << db.lastError().text();
+    }
 }

@@ -54,7 +54,6 @@ void ConsoleUI::choose(){
         {
             case 1:
                 addUI();
-                s.add();
                 clear_screen();
                 break;
             case 2:
@@ -84,6 +83,7 @@ void ConsoleUI::addUI() {
 
     clear_screen();
     pr.addScreen();
+    s.add();
 //    if(inFile.is_open()) {
 //        while(getline(inFile, line)) {
 //            cout << line << endl;
