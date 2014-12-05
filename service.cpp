@@ -140,7 +140,7 @@ bool Service::UIinputCheck(int input, int maxcases) {
 // Saves a person to the database
 void Service::savePersonToDatabase(Person p) {
     QSqlQuery query;
-    string col = "(Name, Gender, Birth year, Death year)";
+    string col = "(Name, Gender, 'Birth year', 'Death year')";
     string name = "('" + p.getFirstName() + " " + p.getLastName() + "'";
     string value = ",'" + p.getGender() + "','" + p.getYearOfBirth() + "','" + p.getYearOfDeath() + "')";
     string command = "INSERT INTO Person " + col + "VALUES " + name + value;
