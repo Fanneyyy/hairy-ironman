@@ -6,7 +6,7 @@ Service::Service() {
 }
 
 Person Service::get(int id) {
-    return personRepo.get(id);
+    return personRepo.getPerson(id);
 }
 // add(): adds a person to the personRepo database.
 void Service::add() {
@@ -15,6 +15,7 @@ void Service::add() {
     do {
         cin >> p;
         personRepo.add(p);
+        savePersonToDatabase(p);
         cout << "Want to add another? (y/n?) ";
         cin >> c;
     } while(c != 'N' && c != 'n');
@@ -26,49 +27,49 @@ void Service::headerPrint() {
 }
 void Service::printAll() {
     headerPrint();
-    for(int i = 0; i < personRepo.getSize(); i++) {
-        personRepo.get(i).print();
+    for(int i = 0; i < personRepo.getPersonSize(); i++) {
+        personRepo.getPerson(i).print();
     }
 }
 void Service::printAllWithNumber() {
-    for(int i = 0; i < personRepo.getSize(); i++) {
+    for(int i = 0; i < personRepo.getPersonSize(); i++) {
         cout << "Person number: " << i+1 << endl;
-        personRepo.get(i).print();
+        personRepo.getPerson(i).print();
     }
 }
 void Service::printOne(int id) {
-    personRepo.get(id).print();
+    personRepo.getPerson(id).print();
 }
 void Service::searchAll(int theCase, string search) {
-    int* ids = new int[personRepo.getSize()];
+    int* ids = new int[personRepo.getPersonSize()];
     bool personFound = false;
     switch(theCase) {
         case 1: {
-            ids = searcher.nameFirst(personRepo.getAll(),search);
+            ids = searcher.nameFirst(personRepo.getAllPerson(),search);
             break;
         }
         case 2: {
-            ids = searcher.nameLast(personRepo.getAll(),search);
+            ids = searcher.nameLast(personRepo.getAllPerson(),search);
             break;
         }
         case 3: {
-            ids = searcher.gender(personRepo.getAll(),search);
+            ids = searcher.gender(personRepo.getAllPerson(),search);
             break;
         }
         case 4: {
-            ids = searcher.birthYear(personRepo.getAll(),search);
+            ids = searcher.birthYear(personRepo.getAllPerson(),search);
             break;
         }
         case 5: {
-            ids = searcher.deathYear(personRepo.getAll(),search);
+            ids = searcher.deathYear(personRepo.getAllPerson(),search);
             break;
         }
         default:
             break;
     }
-    for(int i = 0; i < personRepo.getSize(); i++) {
+    for(int i = 0; i < personRepo.getPersonSize(); i++) {
         if(ids[i] == 1) {
-            personRepo.get(i).print();
+            personRepo.getPerson(i).print();
             personFound = true;
         }
     }
@@ -84,7 +85,7 @@ void Service::removeFromVector(int id) {
 }
 // sortAll: calls the correct sorting case and prints the results.
 void Service::sortAll(int theCase) {
-    vector<Person> sortedTemp = sorter.sortVector(personRepo.getAll(), theCase);
+    vector<Person> sortedTemp = sorter.sortVector(personRepo.getAllPerson(), theCase);
     for(unsigned int i = 0; i < sortedTemp.size(); i++) {
         sortedTemp[i].print();
     }
@@ -95,38 +96,29 @@ void Service::clearAndPrintFile() {
     remove(filename);
     ofstream outFile(filename);
     if(outFile.is_open()) {
-        for(int i = 0; i < personRepo.getSize(); i++) {
-            outFile << personRepo.get(i);
+        for(int i = 0; i < personRepo.getPersonSize(); i++) {
+            outFile << personRepo.getPerson(i);
         }
     }
     outFile.close();
 }
 int Service::sizeOfDatabase() {
-    return personRepo.getSize();
+    return personRepo.getPersonSize();
 }
-// setUp(): reads in information from a file and places it into
-// the personRepo database.
+// setUp(): reads in information from a database and places it into
+// the vector in the repository.
 void Service::setUp() {
+    QSqlQuery query;
     Person p;
-    string line;
-    ifstream inFile (filename);
 
-    if(inFile.is_open()) {
-        while(getline(inFile, line)) {
-             p.setFirstName(line);
-             getline(inFile, line);
-             p.setLastName(line);
-             getline(inFile, line);
-             p.setGender(line);
-             getline(inFile, line);
-             p.setYearOfBirth(line);
-             getline(inFile, line);
-             p.setYearOfDeath(line);
-             personRepo.add(p);
-        }
-        inFile.close();
-    } else {
-        cout << "Sorry, no information at hand" << endl;
+    query.exec("SELECT * FROM Person");
+
+    while(query.next()) {
+        p.setFirstName(query.value("Name").toString().toStdString());
+        p.setGender(query.value("Gender").toString().toStdString());
+        p.setYearOfBirth(query.value("Birth year").toString().toStdString());
+        p.setYearOfDeath(query.value("Death year").toString().toStdString());
+        personRepo.add(p);
     }
 }
 // UIinputCheck: validates the input for UI choices.
@@ -144,4 +136,14 @@ bool Service::UIinputCheck(int input, int maxcases) {
     }
     return true;
 
+}
+// Saves a person to the database
+void Service::savePersonToDatabase(Person p) {
+    QSqlQuery query;
+    string col = "(Name, Gender, Birth year, Death year)";
+    string name = "('" + p.getFirstName() + " " + p.getLastName() + "'";
+    string value = ",'" + p.getGender() + "','" + p.getYearOfBirth() + "','" + p.getYearOfDeath() + "')";
+    string command = "INSERT INTO Person " + col + "VALUES " + name + value;
+    QString qcommand = QString::fromUtf8(command.c_str());
+    query.exec(qcommand);
 }

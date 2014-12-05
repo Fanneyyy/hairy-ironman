@@ -9,9 +9,10 @@
 #include <vector>
 #include <limits>
 #include <cstring>
+#include <QString>
 #include "person.h"
 #include "search.h"
-#include "personrepository.h"
+#include "repository.h"
 #include "sort.h"
 class Service
 {
@@ -31,10 +32,11 @@ public:
     bool UIinputCheck(int input, int maxcases);
     int sizeOfDatabase();
     void headerPrint();
+    void savePersonToDatabase(Person p);
 private:
     Search searcher;
     Sort sorter;
-    PersonRepository personRepo;
+    repository personRepo;
     char filename[];
 };
 
