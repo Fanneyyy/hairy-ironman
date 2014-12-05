@@ -4,6 +4,7 @@
 #define SEARCH_H
 #include "person.h"
 #include <iostream>
+#include <algorithm>
 #include <vector>
 
 class Search
@@ -11,8 +12,7 @@ class Search
 public:
     Search();
     int* gender(vector<Person> persons, string gender);
-    int *nameFirst(vector<Person> persons, string name);
-    int *nameLast(vector<Person> persons, string name);
+    int *name(vector<Person> persons, string name);
     int *birthYear(vector<Person> persons, string year);
     int *deathYear(vector<Person> persons, string year);
 };

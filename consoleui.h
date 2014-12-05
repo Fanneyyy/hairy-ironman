@@ -27,9 +27,8 @@ public:
     void addUI();
     void continueOrQuit();
 private:
-    Service s;
     PrintUI pr;
-
+    Service s;
 };
 
 #endif // CONSOLEUI_H

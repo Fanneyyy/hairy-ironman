@@ -37,6 +37,7 @@ private:
     Search searcher;
     Sort sorter;
     repository personRepo;
+    QSqlDatabase db;
     char filename[];
 };
 
