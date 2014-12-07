@@ -48,3 +48,13 @@ Konrad Zuse
 Male
 1910
 1995
+Steve Wozniak
+
+male
+1950
+
+John Neumann
+
+male
+1903
+1957
