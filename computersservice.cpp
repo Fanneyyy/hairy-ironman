@@ -1,9 +1,6 @@
 #include "computersservice.h"
 
 ComputersService::ComputersService() {
-    db = QSqlDatabase::addDatabase("QSQLITE");
-    QString dbname = "TheTestCabinet.sqlite";
-    db.setDatabaseName(dbname);
 }
 
 Computer ComputersService::get(int id) {
@@ -94,33 +91,6 @@ int ComputersService::sizeOfDatabase() {
     return computerRepo.getComputerSize();
 }
 
-// setUp(): reads in information from a database and places it into
-// the vector in the repository.
-void ComputersService::setUp() {
-    if(db.open()) {
-        qDebug() << "Opened!";
-        QSqlQuery query;
-        Computer c = Computer();
-
-        query.exec("SELECT * FROM Computer");
-
-        while(query.next()) {
-            c.setComputerName(query.value("Name").toString().toStdString());
-            c.setType(query.value("Type").toString().toStdString());
-            c.setBuildYear(query.value("Build year").toString().toStdString());
-            if(query.value("Built?").toString().toStdString() == "TRUE") {
-                c.setBuiltRnot("yes");
-            } else {
-                c.setBuiltRnot("no");
-            }
-            computerRepo.add(c);
-        }
-      db.close();
-    } else {
-        qDebug() << "Error = " << db.lastError().text();
-    }
-}
-
 // UIinputCheck: validates the input for UI choices.
 bool ComputersService::UIinputCheck(int input, int maxcases) {
     if(cin.fail()) {
@@ -136,8 +106,43 @@ bool ComputersService::UIinputCheck(int input, int maxcases) {
     return true;
 }
 
+QSqlDatabase ComputersService::getDatabaseConnection() {
+    QString connectionName = "PersonConnection";
+    QSqlDatabase db;
+
+    if(QSqlDatabase::contains(connectionName)) {
+        db = QSqlDatabase::database(connectionName);
+    }
+    else {
+        db = QSqlDatabase::addDatabase("QSQLITE", connectionName);
+        db.setDatabaseName("TheTestCabinet.sqlite");
+        db.open();
+    }
+    return db;
+}
+
+// setUp(): reads in information from a database and places it into
+// the vector in the repository.
+void ComputersService::setUp() {
+    db = getDatabaseConnection();
+    QSqlQuery query(QSqlDatabase::database("PersonConnection"));
+    Computer c = Computer();
+
+    query.exec("SELECT * FROM Computer");
+
+    while(query.next()) {
+        c.setComputerName(query.value("Name").toString().toStdString());
+        c.setType(query.value("Type").toString().toStdString());
+        c.setBuildYear(query.value("Build year").toString().toStdString());
+        c.setBuiltRnot(query.value("Built?").toString().toStdString());
+        computerRepo.add(c);
+    }
+    db.close();
+}
+
 // Saves a person to the database
 void ComputersService::saveComputerToDatabase(Computer c) {
+    db = getDatabaseConnection();
     if(db.open()) {
         QSqlQuery query;
         string col = "(Name, Type, 'Build year', 'Built?')";
@@ -150,8 +155,8 @@ void ComputersService::saveComputerToDatabase(Computer c) {
         } else {
             qDebug() << "Error = " << db.lastError().text();
         }
-        db.close();
     } else {
         qDebug() << "Error = " << db.lastError().text();
     }
+    db.close();
 }

@@ -8,18 +8,10 @@ Person::Person() {
     yearOfDeath = "";
 }
 
-void Person::print(){
-    cout << fixed;
-    cout << setw(3) << name.first << setw(14) << name.last << setw(15) << gender;
-    cout << setw(15) << yearOfBirth << setw(15) << yearOfDeath << endl;
-}
-
 ostream& operator <<(ostream& outs, const Person& p) {
-    outs << p.name.first << endl;
-    outs << p.name.last << endl;
-    outs << p.gender << endl;
-    outs << p.yearOfBirth << endl;
-    outs << p.yearOfDeath << endl;
+    outs << fixed;
+    outs << setw(3) << p.name.first << setw(14) << p.name.last << setw(15) << p.gender;
+    outs << setw(15) << p.yearOfBirth << setw(15) << p.yearOfDeath << endl;
     return outs;
 }
 
