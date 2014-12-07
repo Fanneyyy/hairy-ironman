@@ -29,7 +29,6 @@ public:
     void setGender(string newGender);
     void setYearOfBirth(string newYearOfBirth);
     void setYearOfDeath(string newYearOfDeath);
-    void print();
 
     string getLastName();
     string getFirstName();

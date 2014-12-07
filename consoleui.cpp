@@ -15,6 +15,7 @@ ConsoleUI::ConsoleUI() {
 // a function to load the exsiting database into a vector.
 void ConsoleUI::initialSetUp() {
     personService.setUp();
+    computerService.setUp();
     pr.welcomeScreen();
     continueOrQuit();
     clear_screen();
@@ -73,6 +74,7 @@ void ConsoleUI::printUI() {
         choose();
     } else if(input == 1) {
         personService.printAll();
+        computerService.printAll();
     }
         else {
         personService.sortAll(input);

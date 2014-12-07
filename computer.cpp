@@ -1,4 +1,3 @@
-
 #include "computer.h"
 
 Computer::Computer() {
@@ -9,11 +8,9 @@ Computer::Computer() {
 }
 
 ostream& operator <<(ostream& outs, const Computer& c) {
-    outs << c.name << endl;
-    outs << c.buildYear << endl;
-    outs << c.type << endl;
-    outs << c.builtRnot << endl;
-
+    outs << fixed;
+    outs << setw(3) << c.name << setw(15) << c.buildYear;
+    outs << setw(15) << c.type << setw(15) << c.builtRnot << endl;
     return outs;
 }
 

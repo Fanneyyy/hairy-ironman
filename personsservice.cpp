@@ -1,9 +1,6 @@
 #include "personsservice.h"
 
 PersonsService::PersonsService() {
-    db = QSqlDatabase::addDatabase("QSQLITE");
-    QString dbname = "TheTestCabinet.sqlite";
-    db.setDatabaseName(dbname);
 }
 
 Person PersonsService::get(int id) {
@@ -26,19 +23,19 @@ void PersonsService::add() {
 void PersonsService::printAll() {
     personRepo.headerPersonsPrint();
     for(int i = 0; i < personRepo.getPersonSize(); i++) {
-        personRepo.getPerson(i).print();
+        cout << personRepo.getPerson(i);
     }
 }
 
 void PersonsService::printAllWithNumber() {
     for(int i = 0; i < personRepo.getPersonSize(); i++) {
         cout << "Person number: " << i+1 << endl;
-        personRepo.getPerson(i).print();
+        cout << personRepo.getPerson(i);
     }
 }
 
 void PersonsService::printOne(int id) {
-    personRepo.getPerson(id).print();
+    cout << personRepo.getPerson(id);
 }
 
 void PersonsService::searchAll(int theCase, string search) {
@@ -66,7 +63,7 @@ void PersonsService::searchAll(int theCase, string search) {
     }
     for(int i = 0; i < personRepo.getPersonSize(); i++) {
         if(ids[i] == 1) {
-            personRepo.getPerson(i).print();
+            cout << personRepo.getPerson(i);
             personFound = true;
         }
     }
@@ -86,30 +83,7 @@ void PersonsService::removeFromVector(int id) {
 void PersonsService::sortAll(int theCase) {
     vector<Person> sortedTemp = sorter.sortVector(personRepo.getAllPerson(), theCase);
     for(unsigned int i = 0; i < sortedTemp.size(); i++) {
-        sortedTemp[i].print();
-    }
-}
-
-// setUp(): reads in information from a database and places it into
-// the vector in the repository.
-void PersonsService::setUp() {
-    if(db.open()) {
-        qDebug() << "Opened!";
-        QSqlQuery query;
-        Person p = Person();
-
-        query.exec("SELECT * FROM Person");
-
-        while(query.next()) {
-            p.setFirstName(query.value("Name").toString().toStdString());
-            p.setGender(query.value("Gender").toString().toStdString());
-            p.setYearOfBirth(query.value("Birth year").toString().toStdString());
-            p.setYearOfDeath(query.value("Death year").toString().toStdString());
-            personRepo.add(p);
-        }
-      db.close();
-    } else {
-        qDebug() << "Error = " << db.lastError().text();
+        cout << sortedTemp[i];
     }
 }
 
@@ -132,8 +106,43 @@ int PersonsService::sizeOfDatabase() {
     return personRepo.getPersonSize();
 }
 
+QSqlDatabase PersonsService::getDatabaseConnection() {
+    QString connectionName = "ComputerConnection";
+    QSqlDatabase db;
+
+    if(QSqlDatabase::contains(connectionName)) {
+        db = QSqlDatabase::database(connectionName);
+    }
+    else {
+        db = QSqlDatabase::addDatabase("QSQLITE", connectionName);
+        db.setDatabaseName("TheTestCabinet.sqlite");
+        db.open();
+    }
+    return db;
+}
+
+// setUp(): reads in information from a database and places it into
+// the vector in the repository.
+void PersonsService::setUp() {
+    db = getDatabaseConnection();
+    QSqlQuery query(QSqlDatabase::database("ComputerConnection"));
+    Person p = Person();
+
+    query.exec("SELECT * FROM Person");
+
+    while(query.next()) {
+        p.setFirstName(query.value("Name").toString().toStdString());
+        p.setGender(query.value("Gender").toString().toStdString());
+        p.setYearOfBirth(query.value("Birth year").toString().toStdString());
+        p.setYearOfDeath(query.value("Death year").toString().toStdString());
+        personRepo.add(p);
+    }
+    db.close();
+}
+
 // Saves a person to the database
 void PersonsService::savePersonToDatabase(Person p) {
+    db = getDatabaseConnection();
     if(db.open()) {
         QSqlQuery query;
         string col = "(Name, Gender, 'Birth year', 'Death year')";
@@ -146,8 +155,8 @@ void PersonsService::savePersonToDatabase(Person p) {
         } else {
             qDebug() << "Error = " << db.lastError().text();
         }
-        db.close();
     } else {
         qDebug() << "Error = " << db.lastError().text();
     }
+    db.close();
 }
