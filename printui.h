@@ -13,6 +13,9 @@ public:
     void addScreen();
     void printScreen();
     void searchScreen();
+    void printPersonsScreen();
+    void printComputerScreen();
+    void printEverythingScreen();
 };
 
 #endif // PRINTUI_H
