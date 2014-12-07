@@ -14,7 +14,7 @@ ConsoleUI::ConsoleUI() {
 // initialSetUp(): prints the welcome screen and calls
 // a function to load the exsiting database into a vector.
 void ConsoleUI::initialSetUp() {
-    s.setUp();
+    personService.setUp();
     pr.welcomeScreen();
     continueOrQuit();
     clear_screen();
@@ -28,7 +28,7 @@ void ConsoleUI::choose() {
         pr.chooseScreen();
         do {
             cin >> what;
-        }while(!s.UIinputCheck(what, 4));
+        }while(!personService.UIinputCheck(what, 4));
 
         switch(what) {
             case 1:
@@ -58,7 +58,7 @@ void ConsoleUI::choose() {
 void ConsoleUI::addUI() {
     clear_screen();
     pr.addScreen();
-    s.add();
+    personService.add();
 }
 
 void ConsoleUI::printUI() {
@@ -67,15 +67,15 @@ void ConsoleUI::printUI() {
     pr.printScreen();
         do{
         cin >> input;
-            }while(!s.UIinputCheck(input, 6));
+            }while(!personService.UIinputCheck(input, 6));
 
     if(input == 0) {
         choose();
     } else if(input == 1) {
-        s.printAll();
+        personService.printAll();
     }
         else {
-        s.sortAll(input);
+        personService.sortAll(input);
     }
     continueOrQuit();
     clear_screen();
@@ -90,7 +90,7 @@ void ConsoleUI::searchUI() {
     pr.searchScreen();
     do{
         cin >> input;
-    }while(!s.UIinputCheck(input, 5));
+    }while(!personService.UIinputCheck(input, 5));
 
     switch(input) {
         case 1:
@@ -114,7 +114,7 @@ void ConsoleUI::searchUI() {
             break;
     }
     cin >> search;
-    s.searchAll(input, search);
+    personService.searchAll(input, search);
     continueOrQuit();
     clear_screen();
 }
@@ -123,15 +123,15 @@ void ConsoleUI::searchUI() {
 // the person chosen.
 void ConsoleUI::removeUI() {
     int input;
-    int databaseSize = s.sizeOfDatabase();
-    s.printAllWithNumber();
+    int databaseSize = personService.sizeOfDatabase();
+    personService.printAllWithNumber();
     cout << "Please enter the number of the person you wish to remove" << endl;
     do{
         cin >> input;
-    }while(!s.UIinputCheck(input-1, databaseSize-1));
+    }while(!personService.UIinputCheck(input-1, databaseSize-1));
     cout << "This person has been removed:" << endl;
-    s.printOne(input-1);
-    s.removeFromVector(input-1);
+    personService.printOne(input-1);
+    personService.removeFromVector(input-1);
     continueOrQuit();
     choose();
 }
