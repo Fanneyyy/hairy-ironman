@@ -10,10 +10,6 @@
 
 using namespace std;
 
-//struct cpuName {
-//    string cpuName;
-//};
-
 class Computer
 {
 public:
@@ -23,7 +19,6 @@ public:
     void setBuildYear(string newBuildYear);
     void setType(string newType);
     void setBuiltORnot(string newBuiltORnot);
-    void print();
 
     string getCPUname();
     string getBuildYear();
@@ -36,7 +31,8 @@ public:
     bool validYear(string year);
     bool validType(string type);
     bool validName(string name);
-//    bool birthVSDeath(string yearBirth, string yearDeath);
+
+    bool validBuiltRnot(string type);
 private:
     string name;
     string buildYear;

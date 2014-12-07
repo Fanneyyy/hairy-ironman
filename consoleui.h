@@ -10,7 +10,7 @@
 #include <cstdlib>
 #include <iostream>
 #include "search.h"
-#include "service.h"
+#include "PersonsService.h"
 #include "printui.h"
 
 class ConsoleUI
@@ -28,7 +28,7 @@ public:
     void continueOrQuit();
 private:
     PrintUI pr;
-    Service s;
+    PersonsService s;
 };
 
 #endif // CONSOLEUI_H

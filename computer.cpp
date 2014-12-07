@@ -8,10 +8,6 @@ Computer::Computer() {
     builtRnot = "";
 }
 
-void Computer::print(){
-
-}
-
 ostream& operator <<(ostream& outs, const Computer& c) {
     outs << c.name << endl;
     outs << c.buildYear << endl;
@@ -23,23 +19,27 @@ ostream& operator <<(ostream& outs, const Computer& c) {
 
 istream& operator >>(istream& ins, Computer& c) {
     string input;
+    char inputName[256];
     cout << "Enter name: ";
-    do {
-        ins >> input;
-    } while(!c.validName(input));
-    c.name = input;
-   // cout << "First name: ";
-    cout << "Build year: ";
+    cin.getline (inputName,256);
+    c.name = inputName;
+    cout << "Build year (enter '-' if it was never built): ";
     do {
         ins >> input;
     } while(!c.validYear(input));
     c.buildYear = input;
-    cout << "Type: ";
+    cout << "Choose a type for the computer:" << endl;
+    cout << "1 - Electronic computer" << endl;
+    cout << "2 - Transistor computer" << endl;
+    cout << "3 - Mechanical computer" << endl;
     do {
         ins >> input;
     }while(!c.validType(input));
     c.type = input;
-    cout << "Year of death (enter '-' if Computer is still alive): ";
+    cout << "Was this computer built or not Yes/No? ";
+    do {
+        ins >> input;
+    }while(!c.validBuiltRnot(input));
     return ins;
 }
 
@@ -75,17 +75,6 @@ string Computer::getBuiltORnot() {
     return builtRnot;
 }
 
-// validName(): checks if the name has only alphabetic letters.
-bool Computer::validName(string name) {
-    for(unsigned int i = 0; i < name.size(); ++i) {
-        if(!isalpha(name[i])) {
-            cout << "Not a valid name, please use only letters and no spaces" << endl;
-            return false;
-        }
-    }
-    return true;
-}
-
 // validYear(): checks if the year has only digits from 0 to current year.
 bool Computer::validYear(string year) {
     time_t t = time(NULL);
@@ -118,10 +107,21 @@ bool Computer::validYear(string year) {
     return true;
 }
 
-// validGender(): checks if the gender is 'Female' or 'Male'.
+// validType(): checks if the input is valid, i.e. 1, 2 or 3
 bool Computer::validType(string type) {
-    if(type != "Female" && type != "Male") {
-        cout << "Not a valid gender, please retype Female/Male" << endl;
+    if(type != "1" && type != "2" && type != "3") {
+        cout << "This is not a valid choice, please try again" << endl;
+        return false;
+    }
+    return true;
+}
+
+// validBuiltRnot(): checks if the input is either yes or no
+bool Computer::validBuiltRnot(string type) {
+    string temp = type;
+    transform(temp.begin(), temp.end(), temp.begin(), ::tolower);
+    if(temp != "yes" && temp != "no") {
+        cout << "Invalid choice, please enter Yes or No" << endl;
         return false;
     }
     return true;

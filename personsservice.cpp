@@ -1,18 +1,18 @@
-#include "service.h"
+#include "personsservice.h"
 
-Service::Service() {
+PersonsService::PersonsService() {
     db = QSqlDatabase::addDatabase("QSQLITE");
     QString dbname = "TheTestCabinet.sqlite";
     db.setDatabaseName(dbname);
     strcpy(filename, "database.txt");
 }
 
-Person Service::get(int id) {
+Person PersonsService::get(int id) {
     return personRepo.getPerson(id);
 }
 
 // add(): adds a person to the personRepo database.
-void Service::add() {
+void PersonsService::add() {
     Person p;
     char c;
     do {
@@ -24,31 +24,25 @@ void Service::add() {
     } while(c != 'N' && c != 'n');
 }
 
-void Service::headerPrint() {
-    cout << fixed;
-    cout << setw(3) << "Name: " << setw(15) << "Gender" << setw(15) << "Year of birth" << setw(15) << "Year of death" << endl;
-    cout << "----------------------------------------------------------------" << endl;
-}
-
-void Service::printAll() {
-    headerPrint();
+void PersonsService::printAll() {
+    personRepo.headerPersonsPrint();
     for(int i = 0; i < personRepo.getPersonSize(); i++) {
         personRepo.getPerson(i).print();
     }
 }
 
-void Service::printAllWithNumber() {
+void PersonsService::printAllWithNumber() {
     for(int i = 0; i < personRepo.getPersonSize(); i++) {
         cout << "Person number: " << i+1 << endl;
         personRepo.getPerson(i).print();
     }
 }
 
-void Service::printOne(int id) {
+void PersonsService::printOne(int id) {
     personRepo.getPerson(id).print();
 }
 
-void Service::searchAll(int theCase, string search) {
+void PersonsService::searchAll(int theCase, string search) {
     int* ids = new int[personRepo.getPersonSize()];
     bool personFound = false;
     switch(theCase) {
@@ -85,12 +79,12 @@ void Service::searchAll(int theCase, string search) {
 
 // removeFromVector(int id): removes the person with the appropriate
 // id from the personRepo database.
-void Service::removeFromVector(int id) {
+void PersonsService::removeFromVector(int id) {
     personRepo.removePerson(id);
 }
 
 // sortAll: calls the correct sorting case and prints the results.
-void Service::sortAll(int theCase) {
+void PersonsService::sortAll(int theCase) {
     vector<Person> sortedTemp = sorter.sortVector(personRepo.getAllPerson(), theCase);
     for(unsigned int i = 0; i < sortedTemp.size(); i++) {
         sortedTemp[i].print();
@@ -99,7 +93,7 @@ void Service::sortAll(int theCase) {
 
 // clearAndPrintFile(): deletes the original file and makes a new one
 // with all the persons from the personRepo database.
-void Service::clearAndPrintFile() {
+void PersonsService::clearAndPrintFile() {
     remove(filename);
     ofstream outFile(filename);
     if(outFile.is_open()) {
@@ -110,13 +104,13 @@ void Service::clearAndPrintFile() {
     outFile.close();
 }
 
-int Service::sizeOfDatabase() {
+int PersonsService::sizeOfDatabase() {
     return personRepo.getPersonSize();
 }
 
 // setUp(): reads in information from a database and places it into
 // the vector in the repository.
-void Service::setUp() {
+void PersonsService::setUp() {
     if(db.open()) {
         qDebug() << "Opened!";
         QSqlQuery query;
@@ -138,7 +132,7 @@ void Service::setUp() {
 }
 
 // UIinputCheck: validates the input for UI choices.
-bool Service::UIinputCheck(int input, int maxcases) {
+bool PersonsService::UIinputCheck(int input, int maxcases) {
     if(cin.fail())
     {
         cin.clear();
@@ -154,7 +148,7 @@ bool Service::UIinputCheck(int input, int maxcases) {
 }
 
 // Saves a person to the database
-void Service::savePersonToDatabase(Person p) {
+void PersonsService::savePersonToDatabase(Person p) {
     if(db.open()) {
         QSqlQuery query;
         string col = "(Name, Gender, 'Birth year', 'Death year')";
@@ -172,3 +166,4 @@ void Service::savePersonToDatabase(Person p) {
         qDebug() << "Error = " << db.lastError().text();
     }
 }
+

@@ -1,8 +1,9 @@
 // Service: Takes commands from the user interface, seeks information from the repository
 // and relays the appropriate information back to the user interface.
 
-#ifndef SERVICE_H
-#define SERVICE_H
+#ifndef PERSONSSERVICE_H
+#define PERSONSSERVICE_H
+
 #include <fstream>
 #include <iostream>
 #include <string>
@@ -12,12 +13,14 @@
 #include <QString>
 #include "person.h"
 #include "search.h"
-#include "repository.h"
+#include "PersonsRepository.h"
+#include "ComputerRepository.h"
 #include "sort.h"
-class Service
+
+class PersonsService
 {
 public:
-    Service();
+    PersonsService();
     Person get(int id);
     void add();
     void setUp();
@@ -36,9 +39,9 @@ public:
 private:
     Search searcher;
     Sort sorter;
-    repository personRepo;
+    PersonsRepository personRepo;
     QSqlDatabase db;
     char filename[];
 };
 
-#endif // SERVICE_H
+#endif // PERSONSSERVICE_H
