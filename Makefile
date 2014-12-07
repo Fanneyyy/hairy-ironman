@@ -54,7 +54,8 @@ SOURCES       = main.cpp \
 		printui.cpp \
 		computerrepository.cpp \
 		personsrepository.cpp \
-		personsservice.cpp 
+		personsservice.cpp \
+		computersservice.cpp 
 OBJECTS       = main.o \
 		person.o \
 		consoleui.o \
@@ -64,7 +65,8 @@ OBJECTS       = main.o \
 		printui.o \
 		computerrepository.o \
 		personsrepository.o \
-		personsservice.o
+		personsservice.o \
+		computersservice.o
 DIST          = ../../../../Qt/5.3/clang_64/mkspecs/features/spec_pre.prf \
 		../../../../Qt/5.3/clang_64/mkspecs/qdevice.pri \
 		../../../../Qt/5.3/clang_64/mkspecs/features/device_config.prf \
@@ -188,7 +190,8 @@ DIST          = ../../../../Qt/5.3/clang_64/mkspecs/features/spec_pre.prf \
 		printui.cpp \
 		computerrepository.cpp \
 		personsrepository.cpp \
-		personsservice.cpp
+		personsservice.cpp \
+		computersservice.cpp
 QMAKE_TARGET  = QtPersons
 DESTDIR       = #avoid trailing-slash linebreak
 TARGET        = QtPersons
@@ -473,7 +476,7 @@ qmake_all: FORCE
 
 dist: 
 	@test -d .tmp/QtPersons1.0.0 || mkdir -p .tmp/QtPersons1.0.0
-	$(COPY_FILE) --parents $(DIST) .tmp/QtPersons1.0.0/ && $(COPY_FILE) --parents person.h consoleui.h search.h sort.h computer.h printui.h computerrepository.h personsrepository.h personsservice.h .tmp/QtPersons1.0.0/ && $(COPY_FILE) --parents main.cpp person.cpp consoleui.cpp search.cpp sort.cpp computer.cpp printui.cpp computerrepository.cpp personsrepository.cpp personsservice.cpp .tmp/QtPersons1.0.0/ && (cd `dirname .tmp/QtPersons1.0.0` && $(TAR) QtPersons1.0.0.tar QtPersons1.0.0 && $(COMPRESS) QtPersons1.0.0.tar) && $(MOVE) `dirname .tmp/QtPersons1.0.0`/QtPersons1.0.0.tar.gz . && $(DEL_FILE) -r .tmp/QtPersons1.0.0
+	$(COPY_FILE) --parents $(DIST) .tmp/QtPersons1.0.0/ && $(COPY_FILE) --parents person.h consoleui.h search.h sort.h computer.h printui.h computerrepository.h personsrepository.h personsservice.h computersservice.h .tmp/QtPersons1.0.0/ && $(COPY_FILE) --parents main.cpp person.cpp consoleui.cpp search.cpp sort.cpp computer.cpp printui.cpp computerrepository.cpp personsrepository.cpp personsservice.cpp computersservice.cpp .tmp/QtPersons1.0.0/ && (cd `dirname .tmp/QtPersons1.0.0` && $(TAR) QtPersons1.0.0.tar QtPersons1.0.0 && $(COMPRESS) QtPersons1.0.0.tar) && $(MOVE) `dirname .tmp/QtPersons1.0.0`/QtPersons1.0.0.tar.gz . && $(DEL_FILE) -r .tmp/QtPersons1.0.0
 
 
 clean:compiler_clean 
@@ -517,11 +520,11 @@ compiler_clean:
 main.o: main.cpp consoleui.h \
 		search.h \
 		person.h \
+		computer.h \
 		personsservice.h \
 		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QString \
 		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qstring.h \
 		personsrepository.h \
-		computer.h \
 		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/QtSql \
 		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/qsql.h \
 		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/qsqldatabase.h \
@@ -542,6 +545,7 @@ main.o: main.cpp consoleui.h \
 		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qdebug.h \
 		computerrepository.h \
 		sort.h \
+		computersservice.h \
 		printui.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o main.cpp
 
@@ -551,11 +555,11 @@ person.o: person.cpp person.h
 consoleui.o: consoleui.cpp consoleui.h \
 		search.h \
 		person.h \
+		computer.h \
 		personsservice.h \
 		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QString \
 		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qstring.h \
 		personsrepository.h \
-		computer.h \
 		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/QtSql \
 		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/qsql.h \
 		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/qsqldatabase.h \
@@ -576,11 +580,13 @@ consoleui.o: consoleui.cpp consoleui.h \
 		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qdebug.h \
 		computerrepository.h \
 		sort.h \
+		computersservice.h \
 		printui.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o consoleui.o consoleui.cpp
 
 search.o: search.cpp search.h \
-		person.h
+		person.h \
+		computer.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o search.o search.cpp
 
 sort.o: sort.cpp sort.h \
@@ -644,8 +650,8 @@ personsservice.o: personsservice.cpp personsservice.h \
 		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qstring.h \
 		person.h \
 		search.h \
-		personsrepository.h \
 		computer.h \
+		personsrepository.h \
 		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/QtSql \
 		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/qsql.h \
 		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/qsqldatabase.h \
@@ -667,6 +673,35 @@ personsservice.o: personsservice.cpp personsservice.h \
 		computerrepository.h \
 		sort.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o personsservice.o personsservice.cpp
+
+computersservice.o: computersservice.cpp computersservice.h \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QString \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qstring.h \
+		person.h \
+		search.h \
+		computer.h \
+		personsrepository.h \
+		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/QtSql \
+		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/qsql.h \
+		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/qsqldatabase.h \
+		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/qsqldriver.h \
+		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/qsqldriverplugin.h \
+		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/qsqlerror.h \
+		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/qsqlfield.h \
+		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/qsqlindex.h \
+		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/qsqlquery.h \
+		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/qsqlrecord.h \
+		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/qsqlresult.h \
+		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/qsqlquerymodel.h \
+		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/qsqlrelationaldelegate.h \
+		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/qsqlrelationaltablemodel.h \
+		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/qsqltablemodel.h \
+		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/qtsqlversion.h \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QtDebug \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qdebug.h \
+		computerrepository.h \
+		sort.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o computersservice.o computersservice.cpp
 
 ####### Install
 

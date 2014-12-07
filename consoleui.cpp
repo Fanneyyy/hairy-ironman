@@ -22,15 +22,15 @@ void ConsoleUI::initialSetUp() {
 
 // choose(): Initial user interface
 void ConsoleUI::choose() {
-    int what;
+    int input;
     clear_screen();
     do {
         pr.chooseScreen();
         do {
-            cin >> what;
-        }while(!personService.UIinputCheck(what, 4));
+            cin >> input;
+        }while(!personService.UIinputCheck(input, 4));
 
-        switch(what) {
+        switch(input) {
             case 1:
                 addUI();
                 clear_screen();
@@ -50,14 +50,31 @@ void ConsoleUI::choose() {
             default:
                 break;
         }
-    }while(what != 0);
+    }while(input != 0);
     clear_screen();
 }
 
 // addUI(): UI to add a new person
 void ConsoleUI::addUI() {
+    int input = 0;
     clear_screen();
     pr.addScreen();
+    cin >> input;
+    switch(input) {
+        case 1:
+            pr.addPersonScreen();
+            personService.add();
+            break;
+        case 2:
+            pr.addComputerScreen();
+            computerService.add();
+        case 0:
+            return;
+            break;
+        default:
+            break;
+    }
+
     personService.add();
 }
 
@@ -68,16 +85,24 @@ void ConsoleUI::printUI() {
         do{
         cin >> input;
             }while(!personService.UIinputCheck(input, 6));
+    switch(input) {
+        case 1:
+            pr.printPersonsScreen();
+            break;
+        case 2:
+            pr.printComputerScreen();
+            break;
+        case 3:
+            pr.printEverythingScreen();
+            break;
+        case 0:
+            clear_screen();
+            return;
+            break;
+        default:
+            break;
+    }
 
-    if(input == 0) {
-        choose();
-    } else if(input == 1) {
-        personService.printAll();
-    }
-        else {
-        personService.sortAll(input);
-    }
-    continueOrQuit();
     clear_screen();
 }
 
@@ -124,15 +149,27 @@ void ConsoleUI::searchUI() {
 void ConsoleUI::removeUI() {
     int input;
     int databaseSize = personService.sizeOfDatabase();
+    clear_screen();
+    pr.remove();
+    cin >> input;
+    switch(input) {
+        case 1:
+            //remove scientist
+            break;
+        case 2:
+            //remove computer
+            break;
+        case 0:
+            clear_screen();
+            return;
+        default:
+            break;
+    }
+
     personService.printAllWithNumber();
-    cout << "Please enter the number of the person you wish to remove" << endl;
-    do{
-        cin >> input;
-    }while(!personService.UIinputCheck(input-1, databaseSize-1));
     cout << "This person has been removed:" << endl;
     personService.printOne(input-1);
     personService.removeFromVector(input-1);
-    continueOrQuit();
     choose();
 }
 
