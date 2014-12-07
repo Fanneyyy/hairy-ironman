@@ -28,6 +28,11 @@ istream& operator >>(istream& ins, Computer& c) {
         ins >> input;
     } while(!c.validYear(input));
     c.buildYear = input;
+    if(input == "-") {
+        c.setBuiltRnot("FALSE");
+    } else {
+        c.setBuiltRnot("TRUE");
+    }
     cout << "Choose a type for the computer:" << endl;
     cout << "1 - Electronic computer" << endl;
     cout << "2 - Transistor computer" << endl;
@@ -36,14 +41,10 @@ istream& operator >>(istream& ins, Computer& c) {
         ins >> input;
     }while(!c.validType(input));
     c.type = input;
-    cout << "Was this computer built or not Yes/No? ";
-    do {
-        ins >> input;
-    }while(!c.validBuiltRnot(input));
     return ins;
 }
 
-void Computer::setCPUName(string CPUName) {
+void Computer::setComputerName(string CPUName) {
     name = CPUName;
 }
 
@@ -55,11 +56,11 @@ void Computer::setType(string newType) {
     type = newType;
 }
 
-void Computer::setBuiltORnot(string newBuiltORnot) {
+void Computer::setBuiltRnot(string newBuiltORnot) {
     builtRnot = newBuiltORnot;
 }
 
-string Computer::getCPUname() {
+string Computer::getComputerName() {
     return name;
 }
 
@@ -71,7 +72,7 @@ string Computer::getType() {
     return type;
 }
 
-string Computer::getBuiltORnot() {
+string Computer::getBuiltRnot() {
     return builtRnot;
 }
 
@@ -111,17 +112,6 @@ bool Computer::validYear(string year) {
 bool Computer::validType(string type) {
     if(type != "1" && type != "2" && type != "3") {
         cout << "This is not a valid choice, please try again" << endl;
-        return false;
-    }
-    return true;
-}
-
-// validBuiltRnot(): checks if the input is either yes or no
-bool Computer::validBuiltRnot(string type) {
-    string temp = type;
-    transform(temp.begin(), temp.end(), temp.begin(), ::tolower);
-    if(temp != "yes" && temp != "no") {
-        cout << "Invalid choice, please enter Yes or No" << endl;
         return false;
     }
     return true;

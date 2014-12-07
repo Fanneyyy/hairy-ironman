@@ -25,6 +25,7 @@ SOURCES += main.cpp \
     computerrepository.cpp \
     personsrepository.cpp \
     personsservice.cpp \
+    computersservice.cpp \
 
 HEADERS += \
     person.h \
@@ -36,8 +37,9 @@ HEADERS += \
     computerrepository.h \
     personsrepository.h \
     personsservice.h \
+    computersservice.h \
 
 OTHER_FILES += \
     README.txt \
     Persons.sql \
-    TheTestCabinet.sqlite
+    TheTestCabinet.sqlite \

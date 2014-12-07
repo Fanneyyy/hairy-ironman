@@ -1,8 +1,8 @@
 // Service: Takes commands from the user interface, seeks information from the repository
 // and relays the appropriate information back to the user interface.
 
-#ifndef PERSONSSERVICE_H
-#define PERSONSSERVICE_H
+#ifndef COMPUTERSSERVICE_H
+#define COMPUTERSSERVICE_H
 
 #include <fstream>
 #include <iostream>
@@ -17,11 +17,11 @@
 #include "ComputerRepository.h"
 #include "sort.h"
 
-class PersonsService
+class ComputersService
 {
 public:
-    PersonsService();
-    Person get(int id);
+    ComputersService();
+    Computer get(int id);
     void add();
     void setUp();
     void printAll();
@@ -34,12 +34,12 @@ public:
     bool UIinputCheck(int input, int maxcases);
     int sizeOfDatabase();
     void headerPrint();
-    void savePersonToDatabase(Person p);
+    void saveComputerToDatabase(Computer c);
 private:
     Search searcher;
     Sort sorter;
-    PersonsRepository personRepo;
+    ComputerRepository computerRepo;
     QSqlDatabase db;
 };
 
-#endif // PERSONSSERVICE_H
+#endif // COMPUTERSSERVICE_H

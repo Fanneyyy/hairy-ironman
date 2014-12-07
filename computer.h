@@ -15,15 +15,15 @@ class Computer
 public:
     Computer();
 
-    void setCPUName(string CPUName);
+    void setComputerName(string CPUName);
     void setBuildYear(string newBuildYear);
     void setType(string newType);
-    void setBuiltORnot(string newBuiltORnot);
+    void setBuiltRnot(string newBuiltORnot);
 
-    string getCPUname();
+    string getComputerName();
     string getBuildYear();
     string getType();
-    string getBuiltORnot();
+    string getBuiltRnot();
 
     friend ostream& operator <<(ostream& outs, const Computer& c);
     friend istream& operator >>(istream& ins, Computer& c);
@@ -32,7 +32,6 @@ public:
     bool validType(string type);
     bool validName(string name);
 
-    bool validBuiltRnot(string type);
 private:
     string name;
     string buildYear;

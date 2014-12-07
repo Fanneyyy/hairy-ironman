@@ -4,7 +4,6 @@ PersonsService::PersonsService() {
     db = QSqlDatabase::addDatabase("QSQLITE");
     QString dbname = "TheTestCabinet.sqlite";
     db.setDatabaseName(dbname);
-    strcpy(filename, "database.txt");
 }
 
 Person PersonsService::get(int id) {
@@ -47,7 +46,7 @@ void PersonsService::searchAll(int theCase, string search) {
     bool personFound = false;
     switch(theCase) {
         case 1: {
-            ids = searcher.name(personRepo.getAllPerson(),search);
+            ids = searcher.personName(personRepo.getAllPerson(),search);
             break;
         }
         case 2: {
@@ -91,23 +90,6 @@ void PersonsService::sortAll(int theCase) {
     }
 }
 
-// clearAndPrintFile(): deletes the original file and makes a new one
-// with all the persons from the personRepo database.
-void PersonsService::clearAndPrintFile() {
-    remove(filename);
-    ofstream outFile(filename);
-    if(outFile.is_open()) {
-        for(int i = 0; i < personRepo.getPersonSize(); i++) {
-            outFile << personRepo.getPerson(i);
-        }
-    }
-    outFile.close();
-}
-
-int PersonsService::sizeOfDatabase() {
-    return personRepo.getPersonSize();
-}
-
 // setUp(): reads in information from a database and places it into
 // the vector in the repository.
 void PersonsService::setUp() {
@@ -133,8 +115,7 @@ void PersonsService::setUp() {
 
 // UIinputCheck: validates the input for UI choices.
 bool PersonsService::UIinputCheck(int input, int maxcases) {
-    if(cin.fail())
-    {
+    if(cin.fail()) {
         cin.clear();
         cin.ignore(numeric_limits<streamsize>::max(),'\n');
         input = -1;
@@ -145,6 +126,10 @@ bool PersonsService::UIinputCheck(int input, int maxcases) {
         return false;
     }
     return true;
+}
+
+int PersonsService::sizeOfDatabase() {
+    return personRepo.getPersonSize();
 }
 
 // Saves a person to the database
@@ -166,4 +151,3 @@ void PersonsService::savePersonToDatabase(Person p) {
         qDebug() << "Error = " << db.lastError().text();
     }
 }
-
