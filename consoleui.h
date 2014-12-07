@@ -27,6 +27,9 @@ public:
     void clear_screen();
     void addUI();
     void continueOrQuit();
+    void printPerson();
+    void printEverything();
+    void printComputer();
 private:
     PrintUI pr;
     PersonsService personService;

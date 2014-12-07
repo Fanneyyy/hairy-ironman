@@ -82,18 +82,18 @@ void ConsoleUI::printUI() {
     int input;
     clear_screen();
     pr.printScreen();
-        do{
+    do{
         cin >> input;
-            }while(!personService.UIinputCheck(input, 6));
+        }while(!personService.UIinputCheck(input, 3));
     switch(input) {
         case 1:
-            pr.printPersonsScreen();
+            printPerson();
             break;
         case 2:
-            pr.printComputerScreen();
+            printComputer();
             break;
         case 3:
-            pr.printEverythingScreen();
+            printEverything();
             break;
         case 0:
             clear_screen();
@@ -106,6 +106,112 @@ void ConsoleUI::printUI() {
     clear_screen();
 }
 
+void ConsoleUI::printPerson() {
+    int input;
+    clear_screen();
+    pr.printPersonsScreen();
+    do{
+        cin >> input;
+        }while(!personService.UIinputCheck(input, 6));
+    switch(input) {
+    case 1:
+        personService.printAll();
+        break;
+    case 2:
+
+        break;
+    case 3:
+
+        break;
+    case 4:
+
+        break;
+    case 5:
+
+        break;
+    case 6:
+
+        break;
+    case 0:
+        clear_screen();
+        return;
+    default:
+        break;
+    }
+    continueOrQuit();
+}
+
+void ConsoleUI::printComputer() {
+    int input;
+    clear_screen();
+    pr.printComputerScreen();
+    do{
+        cin >> input;
+        }while(!personService.UIinputCheck(input, 6));
+    switch(input) {
+    case 1:
+        computerService.printAll();
+        break;
+    case 2:
+
+        break;
+    case 3:
+
+        break;
+    case 4:
+
+        break;
+    case 5:
+
+        break;
+    case 6:
+
+        break;
+    case 0:
+        clear_screen();
+        return;
+    default:
+        break;
+    }
+    continueOrQuit();
+}
+
+void ConsoleUI::printEverything() {
+    int input;
+    clear_screen();
+    pr.printEverythingScreen();
+    do{
+        cin >> input;
+        }while(!personService.UIinputCheck(input, 6));
+    switch(input) {
+    case 1:
+        personService.printAll();
+        computerService.printAll();
+        break;
+    case 2:
+
+        break;
+    case 3:
+
+        break;
+    case 4:
+
+        break;
+    case 5:
+
+        break;
+    case 6:
+
+        break;
+    case 0:
+        clear_screen();
+        return;
+    default:
+        break;
+    }
+    continueOrQuit();
+}
+
 // searchUI(): UI for searching the list of people.
 void ConsoleUI::searchUI() {
     int input;
@@ -115,7 +221,7 @@ void ConsoleUI::searchUI() {
     pr.searchScreen();
     do{
         cin >> input;
-    }while(!personService.UIinputCheck(input, 5));
+    }while(!personService.UIinputCheck(input, 4));
 
     switch(input) {
         case 1:
@@ -125,10 +231,10 @@ void ConsoleUI::searchUI() {
             cout << "Please enter Female or Male: ";
             break;
         case 3:
-            cout << "Please enter a birth year: ";
+            cout << "Please enter a year to search ";
             break;
         case 4:
-            cout << "Please enter a death year: ";
+            cout << "Please enter a type (E for Electronic / M for Mechanic / T for Transistor) ";
             break;
         case 0:
             clear_screen();
