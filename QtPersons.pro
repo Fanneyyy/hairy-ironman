@@ -33,7 +33,7 @@ HEADERS += \
     sort.h \
     repository.h \
     computer.h \
-    printui.h
+    printui.h \
 
 OTHER_FILES += \
     choose-ui.txt \
