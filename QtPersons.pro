@@ -19,30 +19,25 @@ SOURCES += main.cpp \
     person.cpp \
     consoleui.cpp \
     search.cpp \
-    service.cpp \
     sort.cpp \
-    repository.cpp \
     computer.cpp \
-    printui.cpp
+    printui.cpp \
+    computerrepository.cpp \
+    personsrepository.cpp \
+    personsservice.cpp \
 
 HEADERS += \
     person.h \
     consoleui.h \
     search.h \
-    service.h \
     sort.h \
-    repository.h \
     computer.h \
     printui.h \
+    computerrepository.h \
+    personsrepository.h \
+    personsservice.h \
 
 OTHER_FILES += \
-    choose-ui.txt \
-    print-ui.txt \
-    search.txt \
-    sort-ui.txt \
-    welcome.txt \
-    database.txt \
-    add-ui.txt \
     README.txt \
     Persons.sql \
     TheTestCabinet.sqlite
