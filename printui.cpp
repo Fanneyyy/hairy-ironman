@@ -108,12 +108,12 @@ void PrintUI::printEverythingScreen() {
     cout << "           |   | Lets print EVERYTHING!                      |    |" << endl;
     cout << "           |   | How would you like your print?              |    |" << endl;
     cout << "           |   |                                             |    |" << endl;
-    cout << "           |   | 1. By input order                           |    |" << endl;
-    cout << "           |   | 2. By name                                  |    |" << endl;
-    cout << "           |   | 3. By type                                  |    |" << endl;
-    cout << "           |   | 4. By year of build                         |    |" << endl;
-    cout << "           |   | 5. By most contributions                    |    |" << endl;
+    cout << "           |   | 1. Print Scientists with connections        |    |" << endl;
+    cout << "           |   | 2. Print Computers with connections         |    |" << endl;
     cout << "           |   | 0. Backstreet's back, alright               |    |" << endl;
+    cout << "           |   |                                             |    |" << endl;
+    cout << "           |   |                                             |    |" << endl;
+    cout << "           |   |                                             |    |" << endl;
     cout << "           |   |                                             |    |" << endl;
     cout << "           |   |                                             |    |" << endl;
     cout << "           |   |                                             |    |" << endl;
@@ -300,7 +300,7 @@ void PrintUI::chooseScreen() {
     cout << "           |   |                                             |    |" << endl;
     cout << "           |   | Please choose wisely                        |    |" << endl;
     cout << "           |   |                                             |    |" << endl;
-    cout << "           |   | 1. Add name to list                         |    |" << endl;
+    cout << "           |   | 1. Add to database                          |    |" << endl;
     cout << "           |   | 2. Print out list                           |    |" << endl;
     cout << "           |   | 3. Search list                              |    |" << endl;
     cout << "           |   | 4. Remove from list                         |    |" << endl;
