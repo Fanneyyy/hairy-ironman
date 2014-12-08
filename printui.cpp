@@ -213,7 +213,7 @@ void PrintUI::addPersonScreen() {
     cout << "           |   |   Gender (m/f)                              |    |" << endl;
     cout << "           |   |   Year of birth                             |    |" << endl;
     cout << "           |   |   Year of death                             |    |" << endl;
-    cout << "           |   |                      Press \"0\" to cancel  |    |" << endl;
+    cout << "           |   |                      Press \"0\" to cancel    |    |" << endl;
     cout << "           |   |                                             |    |" << endl;
     cout << "           |   | Thank you!                                  |    |" << endl;
     cout << "           |   |_____________________________________________|    |" << endl;
@@ -242,10 +242,10 @@ void PrintUI::addComputerScreen() {
     cout << "           |   | in this order:                              |    |" << endl;
     cout << "           |   |                                             |    |" << endl;
     cout << "           |   |   Name                                      |    |" << endl;
-    cout << "           |   |   Build year (\"-\" if it wasn't built)     |    |" << endl;
+    cout << "           |   |   Build year (\"-\" if it wasn't built)       |    |" << endl;
     cout << "           |   |   Type (Electronic/Mechanical/Transistor)   |    |" << endl;
     cout << "           |   |                                             |    |" << endl;
-    cout << "           |   |                      Press \"0\" to cancel  |    |" << endl;
+    cout << "           |   |                      Press \"0\" to cancel    |    |" << endl;
     cout << "           |   |                                             |    |" << endl;
     cout << "           |   | Thank you!                                  |    |" << endl;
     cout << "           |   |_____________________________________________|    |" << endl;
