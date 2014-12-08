@@ -26,6 +26,9 @@ SOURCES += main.cpp \
     personsrepository.cpp \
     personsservice.cpp \
     computersservice.cpp \
+    connectionsrepository.cpp \
+    connection.cpp \
+    connectionsservice.cpp
 
 HEADERS += \
     person.h \
@@ -38,6 +41,9 @@ HEADERS += \
     personsrepository.h \
     personsservice.h \
     computersservice.h \
+    connectionsrepository.h \
+    connection.h \
+    connectionsservice.h
 
 OTHER_FILES += \
     README.txt \
