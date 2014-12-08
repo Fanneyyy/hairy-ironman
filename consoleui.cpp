@@ -75,7 +75,7 @@ void ConsoleUI::addUI() {
             break;
         case 3:
             clear_screen();
-            //pr.addConnectionScreen();
+            // pr.addConnectionScreen();
             connectionsService.add(personService.getSizeOfRepo(),computerService.getSizeOfRepo());
             break;
         case 0:
@@ -192,11 +192,9 @@ void ConsoleUI::printEverything() {
         }while(!personService.UIinputCheck(input, 6));
     switch(input) {
     case 1:
-        pr.personHeader();
         connectionsService.printAllPerson(personService.getAll(), computerService.getAll(), personService.getSizeOfRepo());
         break;
     case 2:
-        pr.computerHeader();
         connectionsService.printAllComputer(computerService.getAll(), personService.getAll(), computerService.getSizeOfRepo());
         break;
     case 3:        
