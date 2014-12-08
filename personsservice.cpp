@@ -29,7 +29,6 @@ void PersonsService::add() {
 }
 
 void PersonsService::printAll() {
-    personRepo.headerPersonsPrint();
     for(int i = 0; i < personRepo.getPersonSize(); i++) {
         cout << personRepo.getPerson(i);
     }
@@ -46,41 +45,6 @@ void PersonsService::printOne(int id) {
     cout << personRepo.getPerson(id);
 }
 
-void PersonsService::searchAll(int theCase, string search) {
-    int* ids = new int[personRepo.getPersonSize()];
-    bool personFound = false;
-    switch(theCase) {
-        case 1: {
-            ids = searcher.personName(personRepo.getAllPerson(),search);
-            break;
-        }
-        case 2: {
-            ids = searcher.gender(personRepo.getAllPerson(),search);
-            break;
-        }
-        case 3: {
-            ids = searcher.birthYear(personRepo.getAllPerson(),search);
-            break;
-        }
-        case 4: {
-            ids = searcher.deathYear(personRepo.getAllPerson(),search);
-            break;
-        }
-        default:
-            break;
-    }
-    for(int i = 0; i < personRepo.getPersonSize(); i++) {
-        if(ids[i] == 1) {
-            cout << personRepo.getPerson(i);
-            personFound = true;
-        }
-    }
-    if(!personFound) {
-        cout << "Sorry, nothing match your search" << endl;
-    }
-    delete [] ids;
-}
-
 // removeFromVector(int id): removes the person with the appropriate
 // id from the personRepo database.
 void PersonsService::removeFromVector(int id) {
@@ -93,21 +57,6 @@ void PersonsService::sortAll(int theCase) {
     for(unsigned int i = 0; i < sortedTemp.size(); i++) {
         cout << sortedTemp[i];
     }
-}
-
-// UIinputCheck: validates the input for UI choices.
-bool PersonsService::UIinputCheck(int input, int maxcases) {
-    if(cin.fail()) {
-        cin.clear();
-        cin.ignore(numeric_limits<streamsize>::max(),'\n');
-        input = -1;
-    }
-
-    if(input < 0 || input > maxcases) {
-        cout << "Wrong input, please try again" << endl;
-        return false;
-    }
-    return true;
 }
 
 int PersonsService::sizeOfDatabase() {

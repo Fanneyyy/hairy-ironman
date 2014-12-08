@@ -32,6 +32,7 @@ istream& operator >>(istream& ins, Person& p) {
     do {
         ins >> input;
     } while(!p.validGender(input));
+    transform(input.begin(), input.end(), input.begin(), ::tolower);
     p.gender = input;
     cout << "Year of birth: ";
     do {

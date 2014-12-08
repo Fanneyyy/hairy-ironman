@@ -12,14 +12,12 @@ class Search
 {
 public:
     Search();
-    int* gender(vector<Person> persons, string gender);
-    int *personName(vector<Person> persons, string name);
-    int *birthYear(vector<Person> persons, string year);
-    int *deathYear(vector<Person> persons, string year);
-    int *computerName(vector<Computer> computers, string name);
-    int *type(vector<Computer> computers, string type);
-    int *buildYear(vector<Computer> computers, string year);
-    int *builtRnot(vector<Computer> computers, string built);
+    void gender(vector<Person> persons, string gender);
+    void type(vector<Computer> computers, string type);
+    void searchAllNames(vector<Person> persons, vector<Computer> computers, string name);
+    bool printPersonsFromVector(vector<Person> persons, int *idPerson);
+    bool printComputerFromVector(vector<Computer> computers, int *idComputer);
+    void searchAllYears(vector<Person> persons, vector<Computer> computers, string year);
 };
 
 #endif // SEARCH_H

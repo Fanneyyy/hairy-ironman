@@ -26,20 +26,15 @@ public:
     void setUp();
     void printAll();
     void printOne(int id);
-    void searchAll(int theCase, string name);
     void printAllWithNumber();
     void removeFromVector(int id);
     void sortAll(int theCase);
-    string getFileName();
-    bool UIinputCheck(int input, int maxcases);
     int sizeOfDatabase();
-    void headerPrint();
     void savePersonToDatabase(Person p);
     QSqlDatabase getDatabaseConnection();
     vector<Person> getAll();
     int getSizeOfRepo();
 private:
-    Search searcher;
     Sort sorter;
     PersonsRepository personRepo;
     QSqlDatabase db;

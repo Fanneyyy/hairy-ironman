@@ -22,6 +22,9 @@ ostream& operator <<(ostream& outs, const Computer& c) {
 
 istream& operator >>(istream& ins, Computer& c) {
     string input;
+    string E = "Electronic";
+    string T = "Transistor";
+    string M = "Mechanical";
     char inputName[256];
     cout << "Enter name: ";
     cin.ignore();
@@ -38,13 +41,17 @@ istream& operator >>(istream& ins, Computer& c) {
         c.setBuiltRnot("TRUE");
     }
     cout << "Choose a type for the computer:" << endl;
-    cout << "1 - Electronic computer" << endl;
-    cout << "2 - Transistor computer" << endl;
-    cout << "3 - Mechanical computer" << endl;
+    cout << "1 - " << E << "\n" << "2 - " << T << "\n" << "3 - " << M << endl;
     do {
         ins >> input;
     }while(!c.validType(input));
-    c.type = input;
+    if(input == "1") {
+        c.type = E;
+    } else if(input == "2") {
+        c.type = T;
+    } else if(input == "3") {
+        c.type = M;
+    }
     return ins;
 }
 

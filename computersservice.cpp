@@ -46,41 +46,6 @@ void ComputersService::printOne(int id) {
     cout << computerRepo.getComputer(id);
 }
 
-void ComputersService::searchAll(int theCase, string search) {
-    int* ids = new int[computerRepo.getComputerSize()];
-    bool computerFound = false;
-    switch(theCase) {
-        case 1: {
-            ids = searcher.computerName(computerRepo.getAllComputer(),search);
-            break;
-        }
-        case 2: {
-            ids = searcher.type(computerRepo.getAllComputer(),search);
-            break;
-        }
-        case 3: {
-            ids = searcher.buildYear(computerRepo.getAllComputer(),search);
-            break;
-        }
-        case 4: {
-            ids = searcher.builtRnot(computerRepo.getAllComputer(),search);
-            break;
-        }
-        default:
-            break;
-    }
-    for(int i = 0; i < computerRepo.getComputerSize(); i++) {
-        if(ids[i] == 1) {
-            cout << computerRepo.getComputer(i);
-            computerFound = true;
-        }
-    }
-    if(!computerFound) {
-        cout << "Sorry, nothing match your search" << endl;
-    }
-    delete [] ids;
-}
-
 // removeFromVector(int id): removes the person with the appropriate
 // id from the computerRepo database.
 void ComputersService::removeFromVector(int id) {

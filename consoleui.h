@@ -31,11 +31,13 @@ public:
     void printPerson();
     void printEverything();
     void printComputer();
+    bool inputCheck(int input, int max);
 private:
     PrintUI pr;
     PersonsService personService;
     ComputersService computerService;
     ConnectionsService connectionsService;
+    Search searcher;
 };
 
 #endif // CONSOLEUI_H

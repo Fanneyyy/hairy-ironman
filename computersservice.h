@@ -26,7 +26,6 @@ public:
     void setUp();
     void printAll();
     void printOne(int id);
-    void searchAll(int theCase, string name);
     void printAllWithNumber();
     void removeFromVector(int id);
     void sortAll(int theCase);

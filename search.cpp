@@ -5,14 +5,12 @@ using namespace std;
 Search::Search() {
 }
 
-// nameFirst: search the vector persons for a person with a
-// first name equal to name.
-int* Search::personName(vector<Person> persons, string name) {
+void Search::searchAllNames(vector<Person> persons, vector<Computer> computers, string name) {
     string tempName = name;
     string first;
     string last;
     transform(tempName.begin(), tempName.end(), tempName.begin(), ::tolower);
-    int* ids = new int[persons.size()]();
+    int* idPerson = new int[persons.size()]();
     for(unsigned int i = 0; i < persons.size(); i++) {
         first = persons[i].getFirstName();
         last = persons[i].getLastName();
@@ -21,92 +19,119 @@ int* Search::personName(vector<Person> persons, string name) {
         size_t foundFirst = first.find(tempName);
         size_t foundLast = last.find(tempName);
         if(foundFirst != string::npos) {
-            ids[i] = 1;
+            idPerson[i] = 1;
         } else if(foundLast != string::npos) {
-            ids[i] = 1;
+            idPerson[i] = 1;
         }
     }
-    return ids;
+    string computerName;
+    int* idComputer = new int[computers.size()]();
+    for(unsigned int i = 0; i < computers.size(); i++) {
+        computerName = computers[i].getComputerName();
+        transform(computerName.begin(), computerName.end(), computerName.begin(), ::tolower);
+        size_t found = computerName.find(tempName);
+        if(found != string::npos) {
+            idComputer[i] = 1;
+        }
+    }
+    bool personFound = printPersonsFromVector(persons, idPerson);
+    bool computerFound = printComputerFromVector(computers, idComputer);
+    if(!personFound && !computerFound) {
+        cout << "Sorry, nothing match your search" << endl;
+    }
+    delete [] idPerson;
+    delete [] idComputer;
 }
 
 // gender: search the vector persons for a person with a
 // gender equal to the string gender.
-int* Search::gender(vector<Person> persons, string gender) {
-    int* ids = new int[persons.size()]();
+void Search::gender(vector<Person> persons, string gender) {
+    string temp = gender;
+    transform(temp.begin(), temp.end(), temp.begin(), ::tolower);
+    int* idPerson = new int[persons.size()]();
     for(unsigned int i = 0; i < persons.size(); i++) {
-        if(persons[i].getGender() == gender) {
-            ids[i] = 1;
+        if(persons[i].getGender() == temp) {
+            idPerson[i] = 1;
         }
     }
-    return ids;
+    bool genderFound = printPersonsFromVector(persons, idPerson);
+    if(!genderFound) {
+        cout << "Sorry, nothing match your search" << endl;
+    }
+    delete [] idPerson;
 }
 
 // birthYear: search the vector persons for a person with a
 // birth year equal to the string year.
-int* Search::birthYear(vector<Person> persons, string year) {
-    int* ids = new int[persons.size()]();
+void Search::searchAllYears(vector<Person> persons, vector<Computer> computers, string year) {
+    int* idPerson = new int[persons.size()]();
     for(unsigned int i = 0; i < persons.size(); i++) {
         if(persons[i].getYearOfBirth() == year) {
-            ids[i] = 1;
+            idPerson[i] = 1;
+        } else if(persons[i].getYearOfDeath() == year) {
+            idPerson[i] = 1;
         }
     }
-    return ids;
-}
-
-// deathYear: search the vector persons for a person with a
-// death year equal to the string year.
-int* Search::deathYear(vector<Person> persons, string year) {
-    int* ids = new int[persons.size()]();
-    for(unsigned int i = 0; i < persons.size(); i++) {
-        if(persons[i].getYearOfDeath() == year) {
-            ids[i] = 1;
-        }
-    }
-    return ids;
-}
-
-int* Search::computerName(vector<Computer> computers, string name) {
-    string tempName = name;
-    string computerName;
-    transform(tempName.begin(), tempName.end(), tempName.begin(), ::tolower);
-    int* ids = new int[computers.size()]();
-    for(unsigned int i = 0; i < computers.size(); i++) {
-        computerName = computers[i].getComputerName();
-        transform(computerName.begin(), computerName.end(), computerName.begin(), ::tolower);
-        size_t foundComputer = computerName.find(tempName);
-        if(foundComputer != string::npos) {
-            ids[i] = 1;
-        }
-    }
-    return ids;
-}
-
-int* Search::type(vector<Computer> computers, string type) {
-    int* ids = new int[computers.size()]();
-    for(unsigned int i = 0; i < computers.size(); i++) {
-        if(computers[i].getType() == type) {
-            ids[i] = 1;
-        }
-    }
-    return ids;
-}
-
-int* Search::buildYear(vector<Computer> computers, string year) {
-    int* ids = new int[computers.size()]();
+    int* idComputer = new int[computers.size()]();
     for(unsigned int i = 0; i < computers.size(); i++) {
         if(computers[i].getBuildYear() == year) {
-            ids[i] = 1;
+            idComputer[i] = 1;
+        } else if(computers[i].getBuiltRnot() == year) {
+            idComputer[i] = 1;
         }
     }
-    return ids;
+    bool personFound = printPersonsFromVector(persons, idPerson);
+    bool computerFound = printComputerFromVector(computers, idComputer);
+    if(!personFound && !computerFound) {
+        cout << "Sorry, nothing match your search" << endl;
+    }
+    delete [] idPerson;
+    delete [] idComputer;
 }
 
-int* Search::builtRnot(vector<Computer> computers, string built) {
-    int* ids = new int[computers.size()]();
+void Search::type(vector<Computer> computers, string type) {
+    int* idComputer = new int[computers.size()]();
+    string temp;
+    string E = "Electronic";
+    string T = "Transistor";
+    string M = "Mechanical";
+    if(type == "E") {
+        temp = E;
+    } else if(type == "T") {
+        temp = T;
+    } else if(type == "M") {
+        temp = M;
+    }
     for(unsigned int i = 0; i < computers.size(); i++) {
-        if(computers[i].getBuiltRnot() == built) {
-            ids[i] = 1;
+        if(computers[i].getType() == temp) {
+            idComputer[i] = 1;
         }
     }
-    return ids;
+    bool computerFound = printComputerFromVector(computers, idComputer);
+    if(!computerFound) {
+        cout << "Sorry, nothing match your search" << endl;
+    }
+    delete [] idComputer;
+}
+
+bool Search::printPersonsFromVector(vector<Person> persons, int* idPerson) {
+    bool somethingFound = false;
+    for(unsigned int i = 0; i < persons.size(); i++) {
+        if(idPerson[i] == 1) {
+            cout << persons[i];
+            somethingFound = true;
+        }
+    }
+    return somethingFound;
+}
+
+bool Search::printComputerFromVector(vector<Computer> computers, int* idComputer) {
+    bool somethingFound = false;
+    for(unsigned int i = 0; i < computers.size(); i++) {
+        if(idComputer[i] == 1) {
+            cout << computers[i];
+            somethingFound = true;
+        }
+    }
+    return somethingFound;
 }

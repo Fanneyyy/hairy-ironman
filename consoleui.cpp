@@ -30,7 +30,7 @@ void ConsoleUI::choose() {
         pr.chooseScreen();
         do {
             cin >> input;
-        }while(!personService.UIinputCheck(input, 4));
+        }while(!inputCheck(input, 4));
 
         switch(input) {
             case 1:
@@ -99,7 +99,7 @@ void ConsoleUI::printUI() {
     pr.printScreen();
     do{
         cin >> input;
-        }while(!personService.UIinputCheck(input, 3));
+        }while(!inputCheck(input, 3));
     switch(input) {
         case 1:
             printPerson();
@@ -127,7 +127,7 @@ void ConsoleUI::printPerson() {
     pr.printPersonsScreen();
     do{
         cin >> input;
-        }while(!personService.UIinputCheck(input, 6));
+        }while(!inputCheck(input, 6));
     switch(input) {
     case 1:
         personService.printAll();
@@ -161,7 +161,7 @@ void ConsoleUI::printComputer() {
     pr.printComputerScreen();
     do{
         cin >> input;
-        }while(!personService.UIinputCheck(input, 6));
+        }while(!inputCheck(input, 6));
     switch(input) {
     case 1:
         computerService.printAll();
@@ -196,7 +196,7 @@ void ConsoleUI::printEverything() {
     pr.printEverythingScreen();
     do{
         cin >> input;
-        }while(!personService.UIinputCheck(input, 6));
+        }while(!inputCheck(input, 6));
     switch(input) {
     case 1:
         pr.personHeader();
@@ -232,20 +232,28 @@ void ConsoleUI::searchUI() {
     pr.searchScreen();
     do{
         cin >> input;
-    }while(!personService.UIinputCheck(input, 4));
+    }while(!inputCheck(input, 4));
 
     switch(input) {
         case 1:
             cout << "Please enter a name: ";
+            cin >> search;
+            searcher.searchAllNames(personService.getAll(), computerService.getAll(),search);
             break;
         case 2:
             cout << "Please enter Female or Male: ";
+            cin >> search;
+            searcher.gender(personService.getAll(),search);
             break;
         case 3:
             cout << "Please enter a year to search ";
+            cin >> search;
+            searcher.searchAllYears(personService.getAll(), computerService.getAll(),search);
             break;
         case 4:
             cout << "Please enter a type (E for Electronic / M for Mechanic / T for Transistor) ";
+            cin >> search;
+            searcher.type(computerService.getAll(),search);
             break;
         case 0:
             clear_screen();
@@ -255,8 +263,6 @@ void ConsoleUI::searchUI() {
         default:
             break;
     }
-    cin >> search;
-    personService.searchAll(input, search);
     continueOrQuit();
     clear_screen();
 }
@@ -291,8 +297,7 @@ void ConsoleUI::removeUI() {
 }
 
 // clear_screen(): clear the screen for nice visual affect
-void ConsoleUI::clear_screen()
-{
+void ConsoleUI::clear_screen() {
     system(CLEAR_COMMAND);
 }
 
@@ -306,4 +311,18 @@ void ConsoleUI::continueOrQuit() {
     {
         exit(0);
     }
+}
+
+bool ConsoleUI::inputCheck(int input, int max) {
+    if(cin.fail()) {
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(),'\n');
+        input = -1;
+    }
+
+    if(input < 0 || input > max) {
+        cout << "Wrong input, please try again" << endl;
+        return false;
+    }
+    return true;
 }
