@@ -4,19 +4,17 @@ ConnectionsService::ConnectionsService() {
 }
 
 void ConnectionsService::printAllPerson(vector<Person> personList, vector<Computer>computerList, int size) {
-    // connectionRepo.headerConnectionPrint();
     for(int i = 0; i < size; i++) {
         cout << personList[i];
         for(int j = 0; j < connectionRepo.getConnectionSize(); j++) {
             if(i == (connectionRepo.getConnection(j).getPersonID()-1)) {
-                cout << computerList[connectionRepo.getConnection(j).getComputerID()-1];
+                cout << setw(3) << " " << computerList[connectionRepo.getConnection(j).getComputerID()-1];
             }
         }
     }
 }
 
 void ConnectionsService::printAllComputer(vector<Computer>computerList, vector<Person> personList, int size) {
-    // connectionRepo.headerConnectionPrint();
     for(int i = 0; i < size; i++) {
         cout << computerList[i];
         for(int j = 0; j < connectionRepo.getConnectionSize(); j++) {
@@ -24,7 +22,6 @@ void ConnectionsService::printAllComputer(vector<Computer>computerList, vector<P
                 cout << setw(3) << " " << personList[connectionRepo.getConnection(j).getPersonID()-1];
             }
         }
-        cout << endl;
     }
 }
 

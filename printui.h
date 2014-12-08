@@ -1,6 +1,7 @@
 #ifndef PRINTUI_H
 #define PRINTUI_H
 #include <iostream>
+#include <iomanip>
 
 using namespace std;
 
@@ -19,6 +20,8 @@ public:
     void addComputerScreen();
     void addPersonScreen();
     void remove();
+    void computerHeader();
+    void personHeader();
 };
 
 #endif // PRINTUI_H

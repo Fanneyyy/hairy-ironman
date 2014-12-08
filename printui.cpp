@@ -357,3 +357,15 @@ void PrintUI::remove() {
     cout << ":-----------------------------------------------------------------------------:" << endl;
     cout << "`---._.-----------------------------------------------------------------._.---'" << endl;
 }
+
+void PrintUI::computerHeader() {
+    cout << fixed;
+    cout << left << setw(25) << "Name: " << setw(15) << "Type:" << setw(15) << "Build year" << setw(15) << "Built?" << endl;
+    cout << "----------------------------------------------------------------" << endl;
+}
+
+void PrintUI::personHeader() {
+    cout << fixed;
+    cout << left << setw(25) << "Name: " << setw(15) << "Gender" << setw(15)  << "Year of birth" << setw(15) << "Year of death" << endl;
+    cout << "-------------------------------------------------------------------" << endl;
+}
