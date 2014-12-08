@@ -7,9 +7,9 @@ Person PersonsService::get(int id) {
     return personRepo.getPerson(id);
 }
 
-// add(): adds a person to the personRepo database.
+// add(): adds a person to the personRepo database and to sqlite databasinn.
 void PersonsService::add() {
-    Person p;
+    Person p = Person();
     char c;
     do {
         cin >> p;
