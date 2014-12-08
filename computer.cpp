@@ -8,9 +8,15 @@ Computer::Computer() {
 }
 
 ostream& operator <<(ostream& outs, const Computer& c) {
+    string built;
+    if(c.builtRnot == "TRUE") {
+        built = "Yes";
+    } else {
+        built = "No";
+    }
     outs << fixed;
-    outs << setw(3) << c.name << setw(15) << c.buildYear;
-    outs << setw(15) << c.type << setw(15) << c.builtRnot << endl;
+    outs << setw(3) << c.name << setw(15) << c.type;
+    outs << setw(15) << c.buildYear << setw(15) << built << endl;
     return outs;
 }
 

@@ -125,7 +125,7 @@ QSqlDatabase PersonsService::getDatabaseConnection() {
 // the vector in the repository.
 void PersonsService::setUp() {
     db = getDatabaseConnection();
-    QSqlQuery query(QSqlDatabase::database("ComputerConnection"));
+    QSqlQuery query(QSqlDatabase::database("PersonConnection"));
     Person p = Person();
 
     query.exec("SELECT * FROM Person");
@@ -144,7 +144,7 @@ void PersonsService::setUp() {
 void PersonsService::savePersonToDatabase(Person p) {
     db = getDatabaseConnection();
     if(db.open()) {
-        QSqlQuery query;
+        QSqlQuery query(QSqlDatabase::database("ComputerConnection"));
         string col = "(Name, Gender, 'Birth year', 'Death year')";
         string name = "('" + p.getFirstName() + " " + p.getLastName() + "'";
         string value = ",'" + p.getGender() + "','" + p.getYearOfBirth() + "','" + p.getYearOfDeath() + "')";
