@@ -78,6 +78,10 @@ string Person::getGender() {
     return gender;
 }
 
+string Person::getFullName() {
+    return name.first + " " + name.last;
+}
+
 string Person::getYearOfBirth() {
     return yearOfBirth;
 }
