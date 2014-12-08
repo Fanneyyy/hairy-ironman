@@ -107,7 +107,7 @@ int PersonsService::sizeOfDatabase() {
 }
 
 QSqlDatabase PersonsService::getDatabaseConnection() {
-    QString connectionName = "ComputerConnection";
+    QString connectionName = "PersonConnection";
     QSqlDatabase db;
 
     if(QSqlDatabase::contains(connectionName)) {
@@ -144,7 +144,7 @@ void PersonsService::setUp() {
 void PersonsService::savePersonToDatabase(Person p) {
     db = getDatabaseConnection();
     if(db.open()) {
-        QSqlQuery query(QSqlDatabase::database("ComputerConnection"));
+        QSqlQuery query(QSqlDatabase::database("PersonConnection"));
         string col = "(Name, Gender, 'Birth year', 'Death year')";
         string name = "('" + p.getFirstName() + " " + p.getLastName() + "'";
         string value = ",'" + p.getGender() + "','" + p.getYearOfBirth() + "','" + p.getYearOfDeath() + "')";
