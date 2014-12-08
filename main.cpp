@@ -1,7 +1,6 @@
 #include "consoleui.h"
 
-int main()
-{
+int main() {
     ConsoleUI ui;
     ui.initialSetUp();
     ui.choose();

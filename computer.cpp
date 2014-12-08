@@ -1,4 +1,3 @@
-
 #include "computer.h"
 
 Computer::Computer() {
@@ -8,42 +7,48 @@ Computer::Computer() {
     builtRnot = "";
 }
 
-void Computer::print(){
-
-}
-
 ostream& operator <<(ostream& outs, const Computer& c) {
-    outs << c.name << endl;
-    outs << c.buildYear << endl;
-    outs << c.type << endl;
-    outs << c.builtRnot << endl;
-
+    string built;
+    if(c.builtRnot == "TRUE") {
+        built = "Yes";
+    } else {
+        built = "No";
+    }
+    outs << fixed;
+    outs << setw(3) << c.name << setw(15) << c.type;
+    outs << setw(15) << c.buildYear << setw(15) << built << endl;
     return outs;
 }
 
 istream& operator >>(istream& ins, Computer& c) {
     string input;
+    char inputName[256];
     cout << "Enter name: ";
-    do {
-        ins >> input;
-    } while(!c.validName(input));
-    c.name = input;
-   // cout << "First name: ";
-    cout << "Build year: ";
+    cin.ignore();
+    cin.getline (inputName,256);
+    c.name = inputName;
+    cout << "Build year (enter '-' if it was never built): ";
     do {
         ins >> input;
     } while(!c.validYear(input));
     c.buildYear = input;
-    cout << "Type: ";
+    if(input == "-") {
+        c.setBuiltRnot("FALSE");
+    } else {
+        c.setBuiltRnot("TRUE");
+    }
+    cout << "Choose a type for the computer:" << endl;
+    cout << "1 - Electronic computer" << endl;
+    cout << "2 - Transistor computer" << endl;
+    cout << "3 - Mechanical computer" << endl;
     do {
         ins >> input;
     }while(!c.validType(input));
     c.type = input;
-    cout << "Year of death (enter '-' if Computer is still alive): ";
     return ins;
 }
 
-void Computer::setCPUName(string CPUName) {
+void Computer::setComputerName(string CPUName) {
     name = CPUName;
 }
 
@@ -55,11 +60,11 @@ void Computer::setType(string newType) {
     type = newType;
 }
 
-void Computer::setBuiltORnot(string newBuiltORnot) {
+void Computer::setBuiltRnot(string newBuiltORnot) {
     builtRnot = newBuiltORnot;
 }
 
-string Computer::getCPUname() {
+string Computer::getComputerName() {
     return name;
 }
 
@@ -71,28 +76,19 @@ string Computer::getType() {
     return type;
 }
 
-string Computer::getBuiltORnot() {
+string Computer::getBuiltRnot() {
     return builtRnot;
 }
 
-
-// validName(): checks if the name has only alphabetic letters.
-bool Computer::validName(string name) {
-    for(unsigned int i = 0; i < name.size(); ++i) {
-        if(!isalpha(name[i])) {
-            cout << "Not a valid name, please use only letters and no spaces" << endl;
-            return false;
-        }
-    }
-    return true;
-}
 // validYear(): checks if the year has only digits from 0 to current year.
 bool Computer::validYear(string year) {
     time_t t = time(NULL);
     tm* timePtr = localtime(&t);
 
-    if(year.size() > 4)
-    {
+    if(year == "-") {
+        return true;
+    }
+    if(year.size() > 4) {
         cout << "Not a valid year, please select another." << endl;
         return false;
     }
@@ -115,10 +111,11 @@ bool Computer::validYear(string year) {
     }
     return true;
 }
-// validGender(): checks if the gender is 'm', 'M', 'f' or 'F'.
+
+// validType(): checks if the input is valid, i.e. 1, 2 or 3
 bool Computer::validType(string type) {
-    if(type != "m" && type != "M" && type != "f" && type != "F") {
-        cout << "Not a valid gender, please retype m/f" << endl;
+    if(type != "1" && type != "2" && type != "3") {
+        cout << "This is not a valid choice, please try again" << endl;
         return false;
     }
     return true;

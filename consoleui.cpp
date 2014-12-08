@@ -2,7 +2,6 @@
 
 using namespace std;
 
-
 #ifdef _WIN32
 #define CLEAR_COMMAND "CLS"
 #else
@@ -11,47 +10,28 @@ using namespace std;
 
 ConsoleUI::ConsoleUI() {
 }
+
 // initialSetUp(): prints the welcome screen and calls
 // a function to load the exsiting database into a vector.
 void ConsoleUI::initialSetUp() {
-//    string line;
-//    ifstream inFile ("welcome.txt");
-
-//    if(inFile.is_open()) {
-//        while(getline(inFile, line)) {
-//            cout << line << endl;
-//        }
-//    }
-//    inFile.close();
-    s.setUp();
+    personService.setUp();
+    computerService.setUp();
     pr.welcomeScreen();
     continueOrQuit();
     clear_screen();
 }
+
 // choose(): Initial user interface
-void ConsoleUI::choose(){
-    int what;
-/*    string line;
+void ConsoleUI::choose() {
+    int input;
     clear_screen();
-
-    do{
-        ifstream inFile ("choose-ui.txt");
-        if(inFile.is_open()) {
-            while(getline(inFile, line)) {
-                cout << line << endl;
-            }
-        }
-            inFile.close();*/
-   // p.chooseScreen();
-    clear_screen();
-    do{
+    do {
         pr.chooseScreen();
-        do{
-        cin >> what;
-            }while(!s.UIinputCheck(what, 4));
+        do {
+            cin >> input;
+        }while(!personService.UIinputCheck(input, 4));
 
-        switch(what)
-        {
+        switch(input) {
             case 1:
                 addUI();
                 clear_screen();
@@ -66,98 +46,196 @@ void ConsoleUI::choose(){
                 removeUI();
                 break;
             case 0:
-                s.clearAndPrintFile();
                 exit(0);
                 break;
             default:
                 break;
         }
-
-    }while(what != 0);
+    }while(input != 0);
     clear_screen();
 }
+
 // addUI(): UI to add a new person
 void ConsoleUI::addUI() {
-//    string line;
-//    ifstream inFile ("add-ui.txt");
-
+    int input = 0;
     clear_screen();
     pr.addScreen();
-    s.add();
-//    if(inFile.is_open()) {
-//        while(getline(inFile, line)) {
-//            cout << line << endl;
-//        }
-//    }
-//        inFile.close();
+    cin >> input;
+    switch(input) {
+        case 1:
+            clear_screen();
+            pr.addPersonScreen();
+            personService.add();
+            break;
+        case 2:
+            clear_screen();
+            pr.addComputerScreen();
+            computerService.add();
+        case 0:
+            return;
+            break;
+        default:
+            break;
+    }
 }
-// printUI(): allows the user to choose in what order
-// to print out the list of people.
+
 void ConsoleUI::printUI() {
     int input;
-    /*string line;
-    ifstream inFile ("print-ui.txt");
-
-    clear_screen();
-    if(inFile.is_open()) {
-        while(getline(inFile, line)) {
-            cout << line << endl;
-        }
-    }
-        inFile.close();*/
     clear_screen();
     pr.printScreen();
-        do{
+    do{
         cin >> input;
-            }while(!s.UIinputCheck(input, 6));
+        }while(!personService.UIinputCheck(input, 3));
+    switch(input) {
+        case 1:
+            printPerson();
+            break;
+        case 2:
+            printComputer();
+            break;
+        case 3:
+            printEverything();
+            break;
+        case 0:
+            clear_screen();
+            return;
+            break;
+        default:
+            break;
+    }
 
-    if(input == 0) {
-        choose();
-    } else if(input == 1) {
-        s.printAll();
-    }
-        else {
-        s.sortAll(input);
-    }
-    continueOrQuit();
     clear_screen();
 }
+
+void ConsoleUI::printPerson() {
+    int input;
+    clear_screen();
+    pr.printPersonsScreen();
+    do{
+        cin >> input;
+        }while(!personService.UIinputCheck(input, 6));
+    switch(input) {
+    case 1:
+        personService.printAll();
+        break;
+    case 2:
+
+        break;
+    case 3:
+
+        break;
+    case 4:
+
+        break;
+    case 5:
+
+        break;
+    case 6:
+
+        break;
+    case 0:
+        clear_screen();
+        return;
+    default:
+        break;
+    }
+    continueOrQuit();
+}
+
+void ConsoleUI::printComputer() {
+    int input;
+    clear_screen();
+    pr.printComputerScreen();
+    do{
+        cin >> input;
+        }while(!personService.UIinputCheck(input, 6));
+    switch(input) {
+    case 1:
+        computerService.printAll();
+        break;
+    case 2:
+
+        break;
+    case 3:
+
+        break;
+    case 4:
+
+        break;
+    case 5:
+
+        break;
+    case 6:
+
+        break;
+    case 0:
+        clear_screen();
+        return;
+    default:
+        break;
+    }
+    continueOrQuit();
+}
+
+void ConsoleUI::printEverything() {
+    int input;
+    clear_screen();
+    pr.printEverythingScreen();
+    do{
+        cin >> input;
+        }while(!personService.UIinputCheck(input, 6));
+    switch(input) {
+    case 1:
+        personService.printAll();
+        computerService.printAll();
+        break;
+    case 2:
+
+        break;
+    case 3:
+
+        break;
+    case 4:
+
+        break;
+    case 5:
+
+        break;
+    case 6:
+
+        break;
+    case 0:
+        clear_screen();
+        return;
+    default:
+        break;
+    }
+    continueOrQuit();
+}
+
 // searchUI(): UI for searching the list of people.
 void ConsoleUI::searchUI() {
     int input;
     string search;
 
     clear_screen();
-   /* string line;
-    ifstream inFile ("search.txt");
-
-    clear_screen();
-
-    if(inFile.is_open()) {
-        while(getline(inFile, line)) {
-            cout << line << endl;
-        }
-    }*/
     pr.searchScreen();
     do{
         cin >> input;
-    }while(!s.UIinputCheck(input, 5));
+    }while(!personService.UIinputCheck(input, 4));
 
     switch(input) {
         case 1:
-            cout << "Please enter the first name: ";
+            cout << "Please enter a name: ";
             break;
         case 2:
-            cout << "Please enter the last name: ";
+            cout << "Please enter Female or Male: ";
             break;
         case 3:
-            cout << "Please enter f for female or m for male: ";
+            cout << "Please enter a year to search ";
             break;
         case 4:
-            cout << "Please enter a birth year: ";
-            break;
-        case 5:
-            cout << "Please enter a death year: ";
+            cout << "Please enter a type (E for Electronic / M for Mechanic / T for Transistor) ";
             break;
         case 0:
             clear_screen();
@@ -168,31 +246,46 @@ void ConsoleUI::searchUI() {
             break;
     }
     cin >> search;
-    s.searchAll(input, search);
+    personService.searchAll(input, search);
     continueOrQuit();
     clear_screen();
 }
+
 // removeUI(): prints out a numbered list of people and removes
 // the person chosen.
 void ConsoleUI::removeUI() {
     int input;
-    int databaseSize = s.sizeOfDatabase();
-    s.printAllWithNumber();
-    cout << "Please enter the number of the person you wish to remove" << endl;
-    do{
-        cin >> input;
-    }while(!s.UIinputCheck(input-1, databaseSize-1));
+    // int databaseSize = personService.sizeOfDatabase();
+    clear_screen();
+    pr.remove();
+    cin >> input;
+    switch(input) {
+        case 1:
+            //remove scientist
+            break;
+        case 2:
+            //remove computer
+            break;
+        case 0:
+            clear_screen();
+            return;
+        default:
+            break;
+    }
+
+    personService.printAllWithNumber();
     cout << "This person has been removed:" << endl;
-    s.printOne(input-1);
-    s.removeFromVector(input-1);
-    continueOrQuit();
+    personService.printOne(input-1);
+    personService.removeFromVector(input-1);
     choose();
 }
+
 // clear_screen(): clear the screen for nice visual affect
 void ConsoleUI::clear_screen()
 {
     system(CLEAR_COMMAND);
 }
+
 // continueOrQuit(): asks the user if he wants to continue or quit
 void ConsoleUI::continueOrQuit() {
     char c;

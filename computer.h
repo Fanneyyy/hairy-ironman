@@ -10,25 +10,20 @@
 
 using namespace std;
 
-//struct cpuName {
-//    string cpuName;
-//};
-
 class Computer
 {
 public:
     Computer();
 
-    void setCPUName(string CPUName);
+    void setComputerName(string CPUName);
     void setBuildYear(string newBuildYear);
     void setType(string newType);
-    void setBuiltORnot(string newBuiltORnot);
-    void print();
+    void setBuiltRnot(string newBuiltORnot);
 
-    string getCPUname();
+    string getComputerName();
     string getBuildYear();
     string getType();
-    string getBuiltORnot();
+    string getBuiltRnot();
 
     friend ostream& operator <<(ostream& outs, const Computer& c);
     friend istream& operator >>(istream& ins, Computer& c);
@@ -36,7 +31,7 @@ public:
     bool validYear(string year);
     bool validType(string type);
     bool validName(string name);
-//    bool birthVSDeath(string yearBirth, string yearDeath);
+
 private:
     string name;
     string buildYear;

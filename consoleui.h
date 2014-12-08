@@ -10,7 +10,8 @@
 #include <cstdlib>
 #include <iostream>
 #include "search.h"
-#include "service.h"
+#include "PersonsService.h"
+#include "computersservice.h"
 #include "printui.h"
 
 class ConsoleUI
@@ -26,9 +27,13 @@ public:
     void clear_screen();
     void addUI();
     void continueOrQuit();
+    void printPerson();
+    void printEverything();
+    void printComputer();
 private:
     PrintUI pr;
-    Service s;
+    PersonsService personService;
+    ComputersService computerService;
 };
 
 #endif // CONSOLEUI_H
