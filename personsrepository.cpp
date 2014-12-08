@@ -29,7 +29,3 @@ int PersonsRepository::getPersonSize() {
 void PersonsRepository::removePerson(int id) {
     personList.erase(personList.begin()+id);
 }
-
-void PersonsRepository::headerPersonsPrint() {
-
-}

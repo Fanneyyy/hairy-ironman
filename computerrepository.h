@@ -6,7 +6,6 @@
 #include "Computer.h"
 #include <string>
 #include <QtSql>
-#include <vector>
 #include <iomanip>
 #include <QtDebug>
 
@@ -21,14 +20,8 @@ public:
     vector<Computer> getAllComputer();
     int getComputerSize();
     void removeComputer(int id);
-    void headerComputerPrint();
-    vector<Computer> sortVector(vector<Computer> computers, int theCase);
 private:
     vector<Computer> computerList;
 };
-    bool sortByName(Computer c1, Computer c2);
-    bool sortByType(Computer c1, Computer c2);
-    bool sortByBuildYear(Computer c1, Computer c2);
-    bool sortByBuiltRnot(Computer c1, Computer c2);
 
 #endif // COMPUTERREPOSITORY_H

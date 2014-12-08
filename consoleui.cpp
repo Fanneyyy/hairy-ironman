@@ -117,69 +117,65 @@ void ConsoleUI::printUI() {
         default:
             break;
     }
-
     clear_screen();
 }
 
 void ConsoleUI::printPerson() {
     int input;
+    vector<Person> sortedTemp;
     clear_screen();
     pr.printPersonsScreen();
     do{
         cin >> input;
         }while(!inputCheck(input, 6));
     switch(input) {
-    case 1:
-        personService.printAll();
-        break;
-    case 2:
-        break;
-    case 3:
-
-        break;
-    case 4:
-
-        break;
-    case 5:
-
-        break;
-    case 6:
-
-        break;
-    case 0:
-        clear_screen();
-        return;
-    default:
-        break;
+        case 1:
+            personService.printAll();;
+            break;
+        case 2:
+            sortedTemp = sorter.sortVectorFirstName(personService.getAll());
+            break;
+        case 3:
+            sortedTemp = sorter.sortVectorLastName(personService.getAll());
+            break;
+        case 4:
+            sortedTemp = sorter.sortVectorGender(personService.getAll());
+            break;
+        case 5:
+            sortedTemp = sorter.sortVectorBirthYear(personService.getAll());
+            break;
+        case 6:
+            sortedTemp = sorter.sortVectorDeathYear(personService.getAll());
+            break;
+        default:
+            break;
+    }
+    for(unsigned int i = 0; i < sortedTemp.size(); i++) {
+        cout << sortedTemp[i];
     }
     continueOrQuit();
 }
 
 void ConsoleUI::printComputer() {
     int input;
+    vector<Computer> sortedTemp;
     clear_screen();
     pr.printComputerScreen();
     do{
         cin >> input;
-        }while(!inputCheck(input, 6));
+        }while(!inputCheck(input, 4));
     switch(input) {
     case 1:
         computerService.printAll();
         break;
     case 2:
-
+        sortedTemp = sorter.sortVectorName(computerService.getAll());
         break;
     case 3:
-
+        sortedTemp = sorter.sortVectorType(computerService.getAll());
         break;
     case 4:
-
-        break;
-    case 5:
-
-        break;
-    case 6:
-
+        sortedTemp = sorter.sortVectorBuildYear(computerService.getAll());
         break;
     case 0:
         clear_screen();
@@ -187,11 +183,16 @@ void ConsoleUI::printComputer() {
     default:
         break;
     }
+    for(unsigned int i = 0; i < sortedTemp.size(); i++) {
+        cout << sortedTemp[i];
+    }
     continueOrQuit();
 }
 
 void ConsoleUI::printEverything() {
     int input;
+    vector<Person> sortedTempPersons;
+    vector<Computer> sortedTempComputers;
     clear_screen();
     pr.printEverythingScreen();
     do{
@@ -206,13 +207,15 @@ void ConsoleUI::printEverything() {
         pr.computerHeader();
         connectionsService.printAllComputer(computerService.getAll(), personService.getAll(), computerService.getSizeOfRepo());
         break;
-    case 3:        
+    case 3:
+        sortedTempPersons = sorter.sortVectorFirstName(personService.getAll());
+        pr.personHeader();
+        connectionsService.printAllPerson(sortedTempPersons, computerService.getAll(), personService.getSizeOfRepo());
         break;
     case 4:
-        break;
-    case 5:
-        break;
-    case 6:
+        sortedTempComputers = sorter.sortVectorName(computerService.getAll());
+        pr.personHeader();
+        connectionsService.printAllPerson(personService.getAll(), sortedTempComputers, personService.getSizeOfRepo());
         break;
     case 0:
         clear_screen();
@@ -223,7 +226,7 @@ void ConsoleUI::printEverything() {
     continueOrQuit();
 }
 
-// searchUI(): UI for searching the list of people.
+// searchUI(): UI for searching the database
 void ConsoleUI::searchUI() {
     int input;
     string search;

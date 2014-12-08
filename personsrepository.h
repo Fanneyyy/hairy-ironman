@@ -21,7 +21,6 @@ public:
     vector<Person> getAllPerson();
     int getPersonSize();
     void removePerson(int id);
-    void headerPersonsPrint();
 private:
     vector<Person> personList;
 };

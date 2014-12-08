@@ -29,7 +29,7 @@ int ComputersService::getSizeOfRepo() {
 }
 
 void ComputersService::printAll() {
-    computerRepo.headerComputerPrint();
+    print.computerHeader();
     for(int i = 0; i < computerRepo.getComputerSize(); i++) {
         cout << computerRepo.getComputer(i);
     }
@@ -50,14 +50,6 @@ void ComputersService::printOne(int id) {
 // id from the computerRepo database.
 void ComputersService::removeFromVector(int id) {
     computerRepo.removeComputer(id);
-}
-
-// sortAll: calls the correct sorting case and prints the results.
-void ComputersService::sortAll(int theCase) {
-    vector<Computer> sortedTemp = computerRepo.sortVector(computerRepo.getAllComputer(), theCase);
-    for(unsigned int i = 0; i < sortedTemp.size(); i++) {
-        cout << sortedTemp[i];
-    }
 }
 
 int ComputersService::sizeOfDatabase() {

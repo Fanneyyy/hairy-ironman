@@ -16,6 +16,7 @@
 #include "PersonsRepository.h"
 #include "ComputerRepository.h"
 #include "sort.h"
+#include "printui.h"
 
 class ComputersService
 {
@@ -28,7 +29,6 @@ public:
     void printOne(int id);
     void printAllWithNumber();
     void removeFromVector(int id);
-    void sortAll(int theCase);
     string getFileName();
     bool UIinputCheck(int input, int maxcases);
     int sizeOfDatabase();
@@ -38,10 +38,9 @@ public:
     vector<Computer> getAll();
     int getSizeOfRepo();
 private:
-    Search searcher;
-    Sort sorter;
     ComputerRepository computerRepo;
     QSqlDatabase db;
+    PrintUI print;
 };
 
 #endif // COMPUTERSSERVICE_H

@@ -51,14 +51,6 @@ void PersonsService::removeFromVector(int id) {
     personRepo.removePerson(id);
 }
 
-// sortAll: calls the correct sorting case and prints the results.
-void PersonsService::sortAll(int theCase) {
-    vector<Person> sortedTemp = sorter.sortVector(personRepo.getAllPerson(), theCase);
-    for(unsigned int i = 0; i < sortedTemp.size(); i++) {
-        cout << sortedTemp[i];
-    }
-}
-
 int PersonsService::sizeOfDatabase() {
     return personRepo.getPersonSize();
 }

@@ -15,7 +15,6 @@
 #include "search.h"
 #include "PersonsRepository.h"
 #include "ComputerRepository.h"
-#include "sort.h"
 
 class PersonsService
 {
@@ -35,7 +34,6 @@ public:
     vector<Person> getAll();
     int getSizeOfRepo();
 private:
-    Sort sorter;
     PersonsRepository personRepo;
     QSqlDatabase db;
 };
