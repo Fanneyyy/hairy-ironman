@@ -176,8 +176,8 @@ void PrintUI::addScreen() {
     cout << "           |   |                                             |    |" << endl;
     cout << "           |   | 1. Add a new Scientist                      |    |" << endl;
     cout << "           |   | 2. Add a new Computer                       |    |" << endl;
+    cout << "           |   | 3. Add a new connection                     |    |" << endl;
     cout << "           |   | 0. Cause I, I, I, I, I, I want you back     |    |" << endl;
-    cout << "           |   |                                             |    |" << endl;
     cout << "           |   |                                             |    |" << endl;
     cout << "           |   |                                             |    |" << endl;
     cout << "           |   |                                             |    |" << endl;
