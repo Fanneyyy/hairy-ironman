@@ -76,8 +76,11 @@ void ConsoleUI::addUI() {
         case 3:
             clear_screen();
             pr.addConnectionScreen();
+            cout << "Nr. ";
             pr.personHeader();
             personService.printAllWithNumber();
+            cout << endl;
+            cout << "Nr. ";
             pr.computerHeader();
             computerService.printAllWithNumber();
             connectionsService.add(personService.getSizeOfRepo(),computerService.getSizeOfRepo());
