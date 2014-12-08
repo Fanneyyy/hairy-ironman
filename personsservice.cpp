@@ -7,6 +7,14 @@ Person PersonsService::get(int id) {
     return personRepo.getPerson(id);
 }
 
+vector<Person> PersonsService::getAll() {
+    return personRepo.getAllPerson();
+}
+
+int PersonsService::getSizeOfRepo() {
+    return personRepo.getPersonSize();
+}
+
 // add(): adds a person to the personRepo database and to sqlite databasinn.
 void PersonsService::add() {
     Person p = Person();

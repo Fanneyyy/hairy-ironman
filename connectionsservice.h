@@ -14,6 +14,8 @@
 #include "PersonsRepository.h"
 #include "ComputerRepository.h"
 #include "sort.h"
+#include "personsservice.h"
+#include "computersservice.h"
 
 class ConnectionsService
 {
@@ -22,6 +24,10 @@ public:
     QSqlDatabase getDatabaseConnection();
     void setUp();
     void saveConnectionToDatabase(Connection c);
+    int getSizeOfRepo();
+    vector<Connection> getAll();
+    void printAllPerson(vector<Person> personList, vector<Computer> computerList, int size);
+    void printAllComputer(vector<Computer> computerList, vector<Person> personList, int size);
 private:
     ConnectionsRepository connectionRepo;
     QSqlDatabase db;
