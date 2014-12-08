@@ -75,8 +75,6 @@ void ConsoleUI::addUI() {
         default:
             break;
     }
-
-    personService.add();
 }
 
 void ConsoleUI::printUI() {
