@@ -63,10 +63,12 @@ void ConsoleUI::addUI() {
     cin >> input;
     switch(input) {
         case 1:
+            clear_screen();
             pr.addPersonScreen();
             personService.add();
             break;
         case 2:
+            clear_screen();
             pr.addComputerScreen();
             computerService.add();
         case 0:
