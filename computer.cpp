@@ -24,6 +24,7 @@ istream& operator >>(istream& ins, Computer& c) {
     string input;
     char inputName[256];
     cout << "Enter name: ";
+    cin.ignore();
     cin.getline (inputName,256);
     c.name = inputName;
     cout << "Build year (enter '-' if it was never built): ";
