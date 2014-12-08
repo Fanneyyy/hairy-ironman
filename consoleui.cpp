@@ -72,6 +72,12 @@ void ConsoleUI::addUI() {
             clear_screen();
             pr.addComputerScreen();
             computerService.add();
+            break;
+        case 3:
+            clear_screen();
+            //pr.addConnectionScreen();
+            connectionsService.add(personService.getSizeOfRepo(),computerService.getSizeOfRepo());
+            break;
         case 0:
             return;
             break;

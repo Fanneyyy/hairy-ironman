@@ -28,6 +28,8 @@ public:
     vector<Connection> getAll();
     void printAllPerson(vector<Person> personList, vector<Computer> computerList, int size);
     void printAllComputer(vector<Computer> computerList, vector<Person> personList, int size);
+    void add(int sizeOfPersons, int sizeOfComputers);
+    bool inputCheck(int input, int max);
 private:
     ConnectionsRepository connectionRepo;
     QSqlDatabase db;
