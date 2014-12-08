@@ -22,6 +22,7 @@ public:
     void remove();
     void computerHeader();
     void personHeader();
+    void addConnectionScreen();
 };
 
 #endif // PRINTUI_H
