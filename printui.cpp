@@ -78,7 +78,7 @@ void PrintUI::printEverythingScreen() {
     cout << "           |   | Lets print EVERYTHING!                      |    |" << endl;
     cout << "           |   | How would you like your print?              |    |" << endl;
     cout << "           |   |                                             |    |" << endl;
-    cout << "           |   | 1. By ID order                              |    |" << endl;
+    cout << "           |   | 1. By input order                           |    |" << endl;
     cout << "           |   | 2. By name                                  |    |" << endl;
     cout << "           |   | 3. By type                                  |    |" << endl;
     cout << "           |   | 4. By year of build                         |    |" << endl;
@@ -110,7 +110,7 @@ void PrintUI::printComputerScreen() {
     cout << "           |   | Lets print Computers!                       |    |" << endl;
     cout << "           |   | How would you like your print?              |    |" << endl;
     cout << "           |   |                                             |    |" << endl;
-    cout << "           |   | 1. By ID order                              |    |" << endl;
+    cout << "           |   | 1. By input order                           |    |" << endl;
     cout << "           |   | 2. By name                                  |    |" << endl;
     cout << "           |   | 3. By type                                  |    |" << endl;
     cout << "           |   | 4. By year of build                         |    |" << endl;

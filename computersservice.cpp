@@ -148,7 +148,7 @@ void ComputersService::saveComputerToDatabase(Computer c) {
         string col = "(Name, Type, 'Build year', 'Built?')";
         string name = "('" + c.getComputerName() + "'";
         string value = ",'" + c.getType() + "','" + c.getBuildYear() + "','" + c.getBuiltRnot() + "')";
-        string command = "INSERT INTO Person " + col + "VALUES " + name + value;
+        string command = "INSERT INTO Computer " + col + "VALUES " + name + value;
         QString qcommand = QString::fromUtf8(command.c_str());
         if(query.exec(qcommand)) {
             cout << "The computer has been added to the database." << endl;
