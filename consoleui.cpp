@@ -16,6 +16,7 @@ ConsoleUI::ConsoleUI() {
 void ConsoleUI::initialSetUp() {
     personService.setUp();
     computerService.setUp();
+    connectionsService.setUp();
     pr.welcomeScreen();
     continueOrQuit();
     clear_screen();
@@ -119,7 +120,6 @@ void ConsoleUI::printPerson() {
         personService.printAll();
         break;
     case 2:
-
         break;
     case 3:
 
@@ -186,23 +186,18 @@ void ConsoleUI::printEverything() {
         }while(!personService.UIinputCheck(input, 6));
     switch(input) {
     case 1:
-        personService.printAll();
-        computerService.printAll();
+        connectionsService.printAllPerson(personService.getAll(), computerService.getAll(), personService.getSizeOfRepo());
         break;
     case 2:
-
+        connectionsService.printAllComputer(computerService.getAll(), personService.getAll(), computerService.getSizeOfRepo());
         break;
-    case 3:
-
+    case 3:        
         break;
     case 4:
-
         break;
     case 5:
-
         break;
     case 6:
-
         break;
     case 0:
         clear_screen();

@@ -20,3 +20,8 @@ void Connection::setPersonID(int id) {
 void Connection::setComputerID(int id) {
     computerID = id;
 }
+
+ostream& operator <<(ostream& outs, const Connection& c) {
+    outs << c.personID << " " << c.computerID << endl;
+    return outs;
+}

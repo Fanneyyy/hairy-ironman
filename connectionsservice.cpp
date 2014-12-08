@@ -3,6 +3,38 @@
 ConnectionsService::ConnectionsService() {
 }
 
+void ConnectionsService::printAllPerson(vector<Person> personList, vector<Computer>computerList, int size) {
+    // connectionRepo.headerConnectionPrint();
+    for(int i = 0; i < size; i++) {
+        cout << personList[i] << endl;
+        for(int j = 0; j < connectionRepo.getConnectionSize(); j++) {
+            if((i+1) == connectionRepo.getConnection(j).getPersonID()) {
+                cout << computerList[j+1];
+            }
+        }
+    }
+}
+
+void ConnectionsService::printAllComputer(vector<Computer>computerList, vector<Person> personList, int size) {
+    // connectionRepo.headerConnectionPrint();
+    for(int i = 0; i < size; i++) {
+        cout << computerList[i] << endl;
+        for(int j = 0; j < connectionRepo.getConnectionSize(); j++) {
+            if((i+1) == connectionRepo.getConnection(j).getComputerID()) {
+                cout << personList[j+1];
+            }
+        }
+    }
+}
+
+vector<Connection> ConnectionsService::getAll() {
+    return connectionRepo.getAllConnections();
+}
+
+int ConnectionsService::getSizeOfRepo() {
+    return connectionRepo.getConnectionSize();
+}
+
 QSqlDatabase ConnectionsService::getDatabaseConnection() {
     QString connectionName = "ConnectionsConnection";
     QSqlDatabase db;
