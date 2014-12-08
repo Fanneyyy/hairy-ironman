@@ -36,6 +36,8 @@ public:
     void headerPrint();
     void savePersonToDatabase(Person p);
     QSqlDatabase getDatabaseConnection();
+    vector<Person> getAll();
+    int getSizeOfRepo();
 private:
     Search searcher;
     Sort sorter;

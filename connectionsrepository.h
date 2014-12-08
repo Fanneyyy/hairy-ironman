@@ -11,6 +11,9 @@ class ConnectionsRepository
 public:
     ConnectionsRepository();
     void add(Connection c);
+    Connection getConnection(int id);
+    int getConnectionSize();
+    vector<Connection> getAllConnections();
 private:
     vector<Connection> connectionList;
 };

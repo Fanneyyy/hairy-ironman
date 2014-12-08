@@ -20,6 +20,14 @@ void ComputersService::add() {
     } while(c != 'N' && c != 'n');
 }
 
+vector<Computer> ComputersService::getAll() {
+    return computerRepo.getAllComputer();
+}
+
+int ComputersService::getSizeOfRepo() {
+    return computerRepo.getComputerSize();
+}
+
 void ComputersService::printAll() {
     computerRepo.headerComputerPrint();
     for(int i = 0; i < computerRepo.getComputerSize(); i++) {

@@ -12,6 +12,7 @@
 #include "search.h"
 #include "PersonsService.h"
 #include "computersservice.h"
+#include "connectionsservice.h"
 #include "printui.h"
 
 class ConsoleUI
@@ -34,6 +35,7 @@ private:
     PrintUI pr;
     PersonsService personService;
     ComputersService computerService;
+    ConnectionsService connectionsService;
 };
 
 #endif // CONSOLEUI_H
