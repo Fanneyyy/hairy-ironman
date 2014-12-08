@@ -76,6 +76,10 @@ void ConsoleUI::addUI() {
         case 3:
             clear_screen();
             pr.addConnectionScreen();
+            pr.personHeader();
+            personService.printAllWithNumber();
+            pr.computerHeader();
+            computerService.printAllWithNumber();
             connectionsService.add(personService.getSizeOfRepo(),computerService.getSizeOfRepo());
             break;
         case 0:

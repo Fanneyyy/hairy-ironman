@@ -37,7 +37,7 @@ void ComputersService::printAll() {
 
 void ComputersService::printAllWithNumber() {
     for(int i = 0; i < computerRepo.getComputerSize(); i++) {
-        cout << "Computer number: " << i+1 << endl;
+        cout << left << setw(3) << i+1;
         cout << computerRepo.getComputer(i);
     }
 }

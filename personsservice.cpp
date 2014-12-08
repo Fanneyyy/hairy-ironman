@@ -37,7 +37,7 @@ void PersonsService::printAll() {
 
 void PersonsService::printAllWithNumber() {
     for(int i = 0; i < personRepo.getPersonSize(); i++) {
-        cout << "Person number: " << i+1 << endl;
+        cout << left << setw(3) << i+1;
         cout << personRepo.getPerson(i);
     }
 }
