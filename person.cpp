@@ -9,9 +9,11 @@ Person::Person() {
 }
 
 ostream& operator <<(ostream& outs, const Person& p) {
+    string name;
+    name = p.name.first + " " + p.name.last;
     outs << fixed;
-    outs << setw(3) << p.name.first << setw(14) << p.name.last << setw(15) << p.gender;
-    outs << setw(15) << p.yearOfBirth << setw(15) << p.yearOfDeath << endl;
+    outs << left << setw(25) << name << setw(15) << p.gender << setw(15) <<   p.yearOfBirth;
+    outs << left <<setw(15) << p.yearOfDeath << endl;
     return outs;
 }
 

@@ -32,7 +32,7 @@ void ComputerRepository::removeComputer(int id) {
 
 void ComputerRepository::headerComputerPrint() {
     cout << fixed;
-    cout << setw(3) << "Name: " << setw(15) << "Type:" << setw(15) << "Build year" << setw(15) << "Built?" << endl;
+    cout << left << setw(25) << "Name: " << setw(15) << "Type:" << setw(15) << "Build year" << setw(15) << "Built?" << endl;
     cout << "----------------------------------------------------------------" << endl;
 }
 

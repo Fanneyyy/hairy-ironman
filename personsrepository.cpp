@@ -32,6 +32,6 @@ void PersonsRepository::removePerson(int id) {
 
 void PersonsRepository::headerPersonsPrint() {
     cout << fixed;
-    cout << setw(3) << "Name: " << setw(15) << "Gender" << setw(15) << "Year of birth" << setw(15) << "Year of death" << endl;
-    cout << "----------------------------------------------------------------" << endl;
+    cout << left << setw(25) << "Name: " << setw(15) << "Gender" << setw(15)  << "Year of birth" << setw(15) << "Year of death" << endl;
+    cout << "-------------------------------------------------------------------" << endl;
 }
