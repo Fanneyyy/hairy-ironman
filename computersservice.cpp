@@ -107,7 +107,7 @@ bool ComputersService::UIinputCheck(int input, int maxcases) {
 }
 
 QSqlDatabase ComputersService::getDatabaseConnection() {
-    QString connectionName = "PersonConnection";
+    QString connectionName = "ComputerConnection";
     QSqlDatabase db;
 
     if(QSqlDatabase::contains(connectionName)) {
@@ -125,7 +125,7 @@ QSqlDatabase ComputersService::getDatabaseConnection() {
 // the vector in the repository.
 void ComputersService::setUp() {
     db = getDatabaseConnection();
-    QSqlQuery query(QSqlDatabase::database("PersonConnection"));
+    QSqlQuery query(QSqlDatabase::database("ComputerConnection"));
     Computer c = Computer();
 
     query.exec("SELECT * FROM Computer");
@@ -144,7 +144,7 @@ void ComputersService::setUp() {
 void ComputersService::saveComputerToDatabase(Computer c) {
     db = getDatabaseConnection();
     if(db.open()) {
-        QSqlQuery query;
+        QSqlQuery query(QSqlDatabase::database("ComputerConnection"));
         string col = "(Name, Type, 'Build year', 'Built?')";
         string name = "('" + c.getComputerName() + "'";
         string value = ",'" + c.getType() + "','" + c.getBuildYear() + "','" + c.getBuiltRnot() + "')";

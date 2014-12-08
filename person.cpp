@@ -124,10 +124,12 @@ bool Person::validYear(string year) {
     }
     return true;
 }
-// validGender(): checks if the gender is 'm', 'M', 'f' or 'F'.
+// validGender(): checks if the gender is 'Male' or 'Female' not case sensitive.
 bool Person::validGender(string gender) {
-    if(gender != "m" && gender != "M" && gender != "f" && gender != "F") {
-        cout << "Not a valid gender, please retype m/f" << endl;
+    string temp;
+    transform(temp.begin(), temp.end(), temp.begin(), ::tolower);
+    if(gender != "female" && gender != "male") {
+        cout << "Not a valid gender, please retype Male/Female" << endl;
         return false;
     }
     return true;

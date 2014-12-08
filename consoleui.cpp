@@ -255,7 +255,7 @@ void ConsoleUI::searchUI() {
 // the person chosen.
 void ConsoleUI::removeUI() {
     int input;
-    int databaseSize = personService.sizeOfDatabase();
+    // int databaseSize = personService.sizeOfDatabase();
     clear_screen();
     pr.remove();
     cin >> input;
