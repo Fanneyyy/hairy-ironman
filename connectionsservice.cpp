@@ -3,6 +3,29 @@
 ConnectionsService::ConnectionsService() {
 }
 
+void ConnectionsService::add(int sizeOfPersons, int sizeOfComputers) {
+    Connection connection = Connection();
+    int input;
+    char c;
+    do {
+        cout << "Number of person to connect: " << endl;
+        do {
+        cin >> input;
+        } while(!inputCheck(input, sizeOfPersons));
+        connection.setPersonID(input);
+        cout << "Number of computer to connect with that person: " << endl;
+        do {
+        cin >> input;
+        } while(!inputCheck(input, sizeOfComputers));
+        connection.setComputerID(input);
+
+        connectionRepo.add(connection);
+        saveConnectionToDatabase(connection);
+        cout << "Want to add another? (y/n?) ";
+        cin >> c;
+    } while(c != 'N' && c != 'n');
+}
+
 void ConnectionsService::printAllPerson(vector<Person> personList, vector<Computer>computerList, int size) {
     for(int i = 0; i < size; i++) {
         cout << personList[i];
@@ -91,4 +114,18 @@ void ConnectionsService::saveConnectionToDatabase(Connection c) {
         qDebug() << "Error = " << db.lastError().text();
     }
     db.close();
+}
+
+bool ConnectionsService::inputCheck(int input, int max) {
+    if(cin.fail()) {
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(),'\n');
+        input = -1;
+    }
+
+    if(input <= 0 || input > max) {
+        cout << "Wrong input, please try again" << endl;
+        return false;
+    }
+    return true;
 }
