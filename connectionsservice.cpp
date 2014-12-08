@@ -6,10 +6,10 @@ ConnectionsService::ConnectionsService() {
 void ConnectionsService::printAllPerson(vector<Person> personList, vector<Computer>computerList, int size) {
     // connectionRepo.headerConnectionPrint();
     for(int i = 0; i < size; i++) {
-        cout << personList[i] << endl;
+        cout << personList[i];
         for(int j = 0; j < connectionRepo.getConnectionSize(); j++) {
-            if((i+1) == connectionRepo.getConnection(j).getPersonID()) {
-                cout << computerList[j+1];
+            if(i == (connectionRepo.getConnection(j).getPersonID()-1)) {
+                cout << computerList[connectionRepo.getConnection(j).getComputerID()-1];
             }
         }
     }
@@ -18,12 +18,13 @@ void ConnectionsService::printAllPerson(vector<Person> personList, vector<Comput
 void ConnectionsService::printAllComputer(vector<Computer>computerList, vector<Person> personList, int size) {
     // connectionRepo.headerConnectionPrint();
     for(int i = 0; i < size; i++) {
-        cout << computerList[i] << endl;
+        cout << computerList[i];
         for(int j = 0; j < connectionRepo.getConnectionSize(); j++) {
-            if((i+1) == connectionRepo.getConnection(j).getComputerID()) {
-                cout << personList[j+1];
+            if(i == (connectionRepo.getConnection(j).getComputerID()-1)) {
+                cout << setw(3) << " " << personList[connectionRepo.getConnection(j).getPersonID()-1];
             }
         }
+        cout << endl;
     }
 }
 
@@ -80,8 +81,8 @@ void ConnectionsService::saveConnectionToDatabase(Connection c) {
         QSqlQuery query(QSqlDatabase::database("ConnectionsConnection"));
         personID = static_cast<ostringstream*>( &(ostringstream() << c.getPersonID()) )->str();
         computerID = static_cast<ostringstream*>( &(ostringstream() << c.getComputerID()) )->str();
-        string col = "(p_ID, c_ID)";
-        string value = "('" + personID + "','" + computerID + "')";
+        string col = "(c_ID, p_ID)";
+        string value = "('" + computerID + "','" + personID + "')";
         string command = "INSERT INTO Contributers " + col + "VALUES " + value;
         QString qcommand = QString::fromUtf8(command.c_str());
         if(query.exec(qcommand)) {
