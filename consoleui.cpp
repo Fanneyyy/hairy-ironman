@@ -208,12 +208,6 @@ void ConsoleUI::printEverything() {
     case 2:
         printEverythingComputer();
         break;
-    case 3:
-
-        break;
-    case 4:
-
-        break;
     case 0:
         clear_screen();
         printUI();
@@ -238,20 +232,19 @@ void ConsoleUI::printEverythingPerson() {
     }
     switch(input) {
         case 1:
-            connectionsService.printAllPerson(personService.getAll(), computerService.getAll(), personService.getSizeOfRepo());
+            sortedTempPersons = personService.getAll();
             break;
         case 2:
             sortedTempPersons = sorter.sortVectorFirstName(personService.getAll());
-            connectionsService.printAllPerson(sortedTempPersons, computerService.getAll(), personService.getSizeOfRepo());
             break;
         case 3:
-            //print person by gender
+            sortedTempPersons = sorter.sortVectorGender(personService.getAll());
             break;
         case 4:
-            //print person by year of birth
+            sortedTempPersons = sorter.sortVectorBirthYear(personService.getAll());
             break;
         case 5:
-            //print person by year of death
+            sortedTempPersons = sorter.sortVectorDeathYear(personService.getAll());
             break;
         case 0:
             clear_screen();
@@ -260,7 +253,7 @@ void ConsoleUI::printEverythingPerson() {
         default:
             break;
     }
-    continueOrQuit();
+    connectionsService.printAllPerson(sortedTempPersons, computerService.getAll(), personService.getSizeOfRepo());
 }
 
 void ConsoleUI::printEverythingComputer() {
@@ -276,13 +269,13 @@ void ConsoleUI::printEverythingComputer() {
     }
     switch(input) {
         case 1:
-            connectionsService.printAllComputer(computerService.getAll(), personService.getAll(), computerService.getSizeOfRepo());        break;
+            sortedTempComputers = computerService.getAll();
+            break;
         case 2:
             sortedTempComputers = sorter.sortVectorName(computerService.getAll());
-            pr.personHeader();
-            connectionsService.printAllPerson(personService.getAll(), sortedTempComputers, personService.getSizeOfRepo());        break;
+            break;
         case 3:
-            //print computer by type
+            sortedTempComputers = sorter.sortVectorType(computerService.getAll());
             break;
         case 4:
             //print computer by built year
@@ -294,7 +287,7 @@ void ConsoleUI::printEverythingComputer() {
         default:
             break;
     }
-    continueOrQuit();
+    connectionsService.printAllPerson(personService.getAll(), sortedTempComputers, personService.getSizeOfRepo());
 }
 
 // searchUI(): UI for searching the database
