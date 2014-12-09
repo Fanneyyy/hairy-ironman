@@ -367,7 +367,6 @@ void PrintUI::chooseScreen() {
     cout << "           |   | 1. Add to database                          |    |" << endl;
     cout << "           |   | 2. Print out list                           |    |" << endl;
     cout << "           |   | 3. Search list                              |    |" << endl;
-    cout << "           |   | 4. Remove from list                         |    |" << endl;
     cout << "           |   | 0. Stop right now, thank you very much      |    |" << endl;
     cout << "           |   |                                             |    |" << endl;
     cout << "           |   |                                             |    |" << endl;

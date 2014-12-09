@@ -49,3 +49,4 @@ OTHER_FILES += \
     README.txt \
     Persons.sql \
     TheTestCabinet.sqlite \
+    ../build-QtPersons-Desktop_Qt_5_3_clang_64bit-Debug/readme.txt
