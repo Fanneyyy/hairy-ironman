@@ -21,15 +21,14 @@ istream& operator >>(istream& ins, Person& p) {
     string input;
     cout << "Enter name: ";
     do {
-        ins >> input;
-    } while(!p.validName(input));
-    first = input;
+        ins >> first;
+    } while(!p.validName(first));
+    first = first;
     do {
-        ins >> input;
-    } while(!p.validName(input));
-    last = input;
+        ins >> last;
+    } while(!p.validName(last));
     p.name = first + " " + last;
-    cout << "Gender Female/Male: ";
+    cout << "Gender (male/female): ";
     do {
         ins >> input;
     } while(!p.validGender(input));
