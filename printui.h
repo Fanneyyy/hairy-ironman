@@ -21,7 +21,6 @@ public:
     void printEverythingScreen();
     void addComputerScreen();
     void addPersonScreen();
-    void remove();
     void computerHeader();
     void personHeader();
     void addConnectionScreen();
