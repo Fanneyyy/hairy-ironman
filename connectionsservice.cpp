@@ -3,17 +3,22 @@
 ConnectionsService::ConnectionsService() {
 }
 
+// add: adds a connection between a person and a computer to the database
 void ConnectionsService::add(int sizeOfPersons, int sizeOfComputers) {
     Connection connection = Connection();
     int input;
     char c;
+
     do {
         cout << "Number of person to connect: " << endl;
+
         do {
         cin >> input;
         } while(!inputCheck(input, sizeOfPersons));
         connection.setPersonID(input);
+
         cout << "Number of computer to connect with that person: " << endl;
+
         do {
         cin >> input;
         } while(!inputCheck(input, sizeOfComputers));
@@ -21,14 +26,17 @@ void ConnectionsService::add(int sizeOfPersons, int sizeOfComputers) {
 
         connectionRepo.add(connection);
         saveConnectionToDatabase(connection);
+
         cout << "Want to add another? (y/n?) ";
         cin >> c;
     } while(c != 'N' && c != 'n');
 }
 
+// printAllPerson: prints a list of persons with the appropriate connected computers
 void ConnectionsService::printAllPerson(vector<Person> personList, vector<Computer>computerList, int size) {
     int computerIDtemp;
     string name;
+
     for(int i = 0; i < size; i++) {
         cout << personList[i];
         for(int j = 0; j < connectionRepo.getConnectionSize(); j++) {
@@ -45,10 +53,12 @@ void ConnectionsService::printAllPerson(vector<Person> personList, vector<Comput
     }
 }
 
+// printAllComputer: prints a list of computers with the appropriate connected persons
 void ConnectionsService::printAllComputer(vector<Computer>computerList, vector<Person> personList, int size) {
     int personIDtemp;
     string nameFirst;
     string nameLast;
+
     for(int i = 0; i < size; i++) {
         cout << computerList[i];
         for(int j = 0; j < connectionRepo.getConnectionSize(); j++) {
@@ -97,8 +107,9 @@ void ConnectionsService::setUp() {
     db = getDatabaseConnection();
     string personID;
     string computerID;
-    QSqlQuery query(QSqlDatabase::database("ConnectionsConnection"));
     Connection c = Connection();
+
+    QSqlQuery query(QSqlDatabase::database("ConnectionsConnection"));
 
     query.exec("SELECT * FROM Contributers");
 
@@ -116,15 +127,19 @@ void ConnectionsService::setUp() {
 void ConnectionsService::saveConnectionToDatabase(Connection c) {
     string personID;
     string computerID;
+
     db = getDatabaseConnection();
+
     if(db.open()) {
         QSqlQuery query(QSqlDatabase::database("ConnectionsConnection"));
+
         personID = static_cast<ostringstream*>( &(ostringstream() << c.getPersonID()) )->str();
         computerID = static_cast<ostringstream*>( &(ostringstream() << c.getComputerID()) )->str();
         string col = "(c_ID, p_ID)";
         string value = "('" + computerID + "','" + personID + "')";
         string command = "INSERT INTO Contributers " + col + "VALUES " + value;
         QString qcommand = QString::fromUtf8(command.c_str());
+
         if(query.exec(qcommand)) {
             cout << "The connection has been added to the database." << endl;
         } else {
@@ -136,6 +151,7 @@ void ConnectionsService::saveConnectionToDatabase(Connection c) {
     db.close();
 }
 
+// inputCheck(input, max): checks if the input is between 0 and max
 bool ConnectionsService::inputCheck(int input, int max) {
     if(cin.fail()) {
         cin.clear();

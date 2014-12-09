@@ -3,11 +3,13 @@
 ComputersService::ComputersService() {
 }
 
+// get: returns the computer with the id within the vector
+// (not necessarily the same as the database id)
 Computer ComputersService::get(int id) {
     return computerRepo.getComputer(id);
 }
 
-// add(): adds a person to the computerRepo database.
+// add(): adds a computer to the computerRepo database.
 void ComputersService::add() {
     Computer computer;
     char c;
@@ -41,15 +43,11 @@ void ComputersService::printAllWithNumber() {
     }
 }
 
-void ComputersService::printOne(int id) {
-    cout << computerRepo.getComputer(id);
-}
-
 int ComputersService::sizeOfDatabase() {
     return computerRepo.getComputerSize();
 }
 
-// UIinputCheck: validates the input for UI choices.
+// inputCheck(input, max): checks if the input is between 0 and max
 bool ComputersService::UIinputCheck(int input, int maxcases) {
     if(cin.fail()) {
         cin.clear();

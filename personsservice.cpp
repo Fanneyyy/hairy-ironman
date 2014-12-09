@@ -21,6 +21,7 @@ int PersonsService::getSizeOfRepo() {
 void PersonsService::add() {
     Person p = Person();
     char c;
+
     do {
         cin >> p;
         personRepo.add(p);
@@ -43,12 +44,12 @@ void PersonsService::printAllWithNumber() {
     }
 }
 
-// getPersonID():
+// getPersonID(): returns the ID of the person from the database
 string PersonsService::getPersonID() {
     db = getDatabaseConnection();
-    QSqlQuery query(QSqlDatabase::database("PersonConnection"));
     Person p = Person();
     string ID;
+    QSqlQuery query(QSqlDatabase::database("PersonConnection"));
 
     query.exec("SELECT last_insert_rowid() FROM Person");
     while(query.next()) {
@@ -67,8 +68,7 @@ QSqlDatabase PersonsService::getDatabaseConnection() {
 
     if(QSqlDatabase::contains(connectionName)) {
         db = QSqlDatabase::database(connectionName);
-    }
-    else {
+    } else {
         db = QSqlDatabase::addDatabase("QSQLITE", connectionName);
         db.setDatabaseName("TheTestCabinet.sqlite");
         db.open();
@@ -80,13 +80,13 @@ QSqlDatabase PersonsService::getDatabaseConnection() {
 // the vector in the repository.
 void PersonsService::setUp() {
     db = getDatabaseConnection();
-    QSqlQuery query(QSqlDatabase::database("PersonConnection"));
     Person p = Person();
+
+    QSqlQuery query(QSqlDatabase::database("PersonConnection"));
 
     query.exec("SELECT * FROM Person");
 
     while(query.next()) {
-
         p.setID(query.value("ID").toString().toStdString());
         p.setFirstName(query.value("Name").toString().toStdString());
         p.setGender(query.value("Gender").toString().toStdString());
@@ -100,13 +100,16 @@ void PersonsService::setUp() {
 // Saves a person to the database
 void PersonsService::savePersonToDatabase(Person p) {
     db = getDatabaseConnection();
+
     if(db.open()) {
         QSqlQuery query(QSqlDatabase::database("PersonConnection"));
+
         string col = "(Name, Gender, 'Birth year', 'Death year')";
         string name = "('" + p.getFirstName() + " " + p.getLastName() + "'";
         string value = ",'" + p.getGender() + "','" + p.getYearOfBirth() + "','" + p.getYearOfDeath() + "')";
         string command = "INSERT INTO Person " + col + "VALUES " + name + value;
         QString qcommand = QString::fromUtf8(command.c_str());
+
         if(query.exec(qcommand)) {
             cout << "The person has been added to the database." << endl;
         } else {

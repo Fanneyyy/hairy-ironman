@@ -1,24 +1,19 @@
+// Service: Takes commands from the user interface, seeks information from the repository
+// and relays the appropriate information back to the user interface.
+
 #ifndef CONNECTIONSSERVICE_H
 #define CONNECTIONSSERVICE_H
 
-#include "connectionsrepository.h"
 #include <QString>
-#include <fstream>
-#include <iostream>
 #include <string>
 #include <vector>
 #include <limits>
 #include <cstring>
-#include "person.h"
-#include "search.h"
-#include "PersonsRepository.h"
-#include "ComputerRepository.h"
-#include "sort.h"
-#include "personsservice.h"
-#include "computersservice.h"
+#include "connectionsrepository.h"
+#include "personsrepository.h"
+#include "computerrepository.h"
 
-class ConnectionsService
-{
+class ConnectionsService {
 public:
     ConnectionsService();
     QSqlDatabase getDatabaseConnection();
