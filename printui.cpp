@@ -77,8 +77,8 @@ void PrintUI::printScreen() {
     cout << "           |   | What would you like to print?               |    |" << endl;
     cout << "           |   |                                             |    |" << endl;
     cout << "           |   | 1. Scientists                               |    |" << endl;
-    cout << "           |   | 2. Computers                                |    |" << endl;
-    cout << "           |   | 3. Scientists with computer connections     |    |" << endl;
+    cout << "           |   | 2. Scientists with computer connections     |    |" << endl;
+    cout << "           |   | 3. Computers                                |    |" << endl;
     cout << "           |   | 4. Computers with scientist connections     |    |" << endl;
     cout << "           |   | 0. Shady's back, back again                 |    |" << endl;
     cout << "           |   |                                             |    |" << endl;

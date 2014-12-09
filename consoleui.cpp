@@ -113,13 +113,14 @@ void ConsoleUI::printUI() {
             printPerson();
             break;
         case 2:
-            printComputer();
+            printEverythingPerson();
             break;
         case 3:
-            printEverythingPerson();
+            printComputer();
             break;
         case 4:
             printEverythingComputer();
+            break;
         case 0:
             clear_screen();
             return;
