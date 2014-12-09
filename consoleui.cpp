@@ -124,10 +124,10 @@ void ConsoleUI::printUI() {
         case 0:
             clear_screen();
             return;
-            break;
         default:
             break;
     }
+    continueOrQuit();
     clear_screen();
 }
 
@@ -173,7 +173,6 @@ void ConsoleUI::printPerson() {
     for(unsigned int i = 0; i < sortedTemp.size(); i++) {
         cout << sortedTemp[i];
     }
-    continueOrQuit();
 }
 
 // printComputer(): UI to choose how the list of computers is sorted
@@ -215,7 +214,6 @@ void ConsoleUI::printComputer() {
     for(unsigned int i = 0; i < sortedTemp.size(); i++) {
         cout << sortedTemp[i];
     }
-    continueOrQuit();
 }
 
 // printEverything(): choose if you want to print a list if persons
