@@ -10,8 +10,7 @@
 
 using namespace std;
 
-class Computer
-{
+class Computer {
 public:
     Computer();
 
@@ -33,7 +32,6 @@ public:
     bool validYear(string year);
     bool validType(string type);
     bool validName(string name);
-
 
 private:
     string name;

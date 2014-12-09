@@ -49,7 +49,6 @@ istream& operator >>(istream& ins, Person& p) {
     } else {
         p.yearOfDeath = input;
     }
-
     return ins;
 }
 
@@ -100,6 +99,7 @@ string Person::getYearOfDeath() {
     return yearOfDeath;
 }
 
+// getID(): returns the ID from the database not the vector
 int Person::getID() {
     int temp;
 
@@ -118,6 +118,7 @@ bool Person::validName(string name) {
     }
     return true;
 }
+
 // validYear(): checks if the year has only digits from 0 to 2014.
 bool Person::validYear(string year) {
     time_t t = time(NULL);
@@ -149,6 +150,7 @@ bool Person::validYear(string year) {
     }
     return true;
 }
+
 // validGender(): checks if the gender is 'Male' or 'Female' not case sensitive.
 bool Person::validGender(string gender) {
     string temp = gender;
@@ -171,7 +173,6 @@ bool Person::birthVSDeath(string yearBirth, string yearDeath) {
         cout << "Sorry, we do not allow death before birth, Please select another year of death. " << endl;
         return false;
     }
-
     return true;
 }
 

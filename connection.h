@@ -1,14 +1,13 @@
 #ifndef CONNECTION_H
+// Connection: A class that stores information about a connection between a person and a computer.
+
 #define CONNECTION_H
 
 #include <iostream>
-#include "personsservice.h"
-#include "computersservice.h"
 
 using namespace std;
 
-class Connection
-{
+class Connection {
 public:
     Connection();
     int getPersonID();

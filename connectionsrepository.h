@@ -1,3 +1,6 @@
+// Repository: Stores in a vector instances of connections, handles add and relays information
+// about the repository
+
 #ifndef CONNECTIONSREPOSITORY_H
 #define CONNECTIONSREPOSITORY_H
 
@@ -6,8 +9,7 @@
 
 using namespace std;
 
-class ConnectionsRepository
-{
+class ConnectionsRepository {
 public:
     ConnectionsRepository();
     void add(Connection c);

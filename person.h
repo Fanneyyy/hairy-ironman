@@ -1,6 +1,6 @@
 // Person: A class that stores information about a person. Valid names are strings that include
-// only alphabetic letters, valid genders are only the strings 'm', 'M', 'f' and 'F' and valid
-// years are only digits from 0 to 2014. cout and cin operators have been overloaded.
+// only alphabetic letters, valid genders are only the strings male or female (not case sensitive)
+// and valid years are only digits from 0 to the current year. cout and cin operators have been overloaded.
 
 #ifndef PERSON_H
 #define PERSON_H
@@ -20,8 +20,7 @@ struct fullName {
     string last;
 };
 
-class Person
-{
+class Person {
 public:
     Person();
 

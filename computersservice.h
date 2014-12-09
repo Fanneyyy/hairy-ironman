@@ -9,10 +9,11 @@
 #include <limits>
 #include <cstring>
 #include <QString>
+#include <QtSql>
+#include <QtDebug>
 #include "computerrepository.h"
 
-class ComputersService
-{
+class ComputersService {
 public:
     ComputersService();
     Computer get(int id);

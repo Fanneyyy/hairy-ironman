@@ -1,19 +1,17 @@
+// Repository: Stores in a vector instances of persons, handles add and relays information
+// about the repository
+
 #ifndef PERSONSREPOSITORY_H
 #define PERSONSREPOSITORY_H
 
 #include <vector>
+#include <string>
 #include "Person.h"
 #include "Computer.h"
-#include <string>
-#include <QtSql>
-#include <vector>
-#include <QtDebug>
-#include <iomanip>
 
 using namespace std;
 
-class PersonsRepository
-{
+class PersonsRepository {
 public:
     PersonsRepository();
     void add(Person a);

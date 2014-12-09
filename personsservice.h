@@ -9,6 +9,8 @@
 #include <limits>
 #include <cstring>
 #include <QString>
+#include <QtSql>
+#include <QtDebug>
 #include "PersonsRepository.h"
 
 class PersonsService {

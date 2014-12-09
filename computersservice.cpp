@@ -13,6 +13,7 @@ Computer ComputersService::get(int id) {
 void ComputersService::add() {
     Computer computer;
     char c;
+
     do {
         cin >> computer;
         computerRepo.add(computer);
@@ -83,8 +84,8 @@ QSqlDatabase ComputersService::getDatabaseConnection() {
 // the vector in the repository.
 void ComputersService::setUp() {
     db = getDatabaseConnection();
-    QSqlQuery query(QSqlDatabase::database("ComputerConnection"));
     Computer c = Computer();
+    QSqlQuery query(QSqlDatabase::database("ComputerConnection"));
 
     query.exec("SELECT * FROM Computer");
 
@@ -102,6 +103,7 @@ void ComputersService::setUp() {
 // Saves a computer to the database
 void ComputersService::saveComputerToDatabase(Computer c) {
     db = getDatabaseConnection();
+
     if(db.open()) {
         QSqlQuery query(QSqlDatabase::database("ComputerConnection"));
         string col = "(Name, Type, 'Build year', 'Built?')";
@@ -109,6 +111,7 @@ void ComputersService::saveComputerToDatabase(Computer c) {
         string value = ",'" + c.getType() + "','" + c.getBuildYear() + "','" + c.getBuiltRnot() + "')";
         string command = "INSERT INTO Computer " + col + "VALUES " + name + value;
         QString qcommand = QString::fromUtf8(command.c_str());
+
         if(query.exec(qcommand)) {
             cout << "The computer has been added to the database." << endl;
         } else {

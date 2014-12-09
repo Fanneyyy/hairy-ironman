@@ -9,6 +9,8 @@
 #include <vector>
 #include <limits>
 #include <cstring>
+#include <QtSql>
+#include <QtDebug>
 #include "connectionsrepository.h"
 #include "personsrepository.h"
 #include "computerrepository.h"

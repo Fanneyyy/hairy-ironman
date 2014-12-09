@@ -1,18 +1,17 @@
+// Repository: Stores in a vector instances of computers, handles add and relays information
+// about the repository
+
 #ifndef COMPUTERREPOSITORY_H
 #define COMPUTERREPOSITORY_H
 
 #include <vector>
+#include <string>
 #include "Person.h"
 #include "Computer.h"
-#include <string>
-#include <QtSql>
-#include <iomanip>
-#include <QtDebug>
 
 using namespace std;
 
-class ComputerRepository
-{
+class ComputerRepository {
 public:
     ComputerRepository();
     void add(Computer c);
