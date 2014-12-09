@@ -152,15 +152,12 @@ void ConsoleUI::printPerson() {
             sortedTemp = sorter.sortVectorFirstName(personService.getAll());
             break;
         case 3:
-            sortedTemp = sorter.sortVectorLastName(personService.getAll());
-            break;
-        case 4:
             sortedTemp = sorter.sortVectorGender(personService.getAll());
             break;
-        case 5:
+        case 4:
             sortedTemp = sorter.sortVectorBirthYear(personService.getAll());
             break;
-        case 6:
+        case 5:
             sortedTemp = sorter.sortVectorDeathYear(personService.getAll());
             break;
         case 0:

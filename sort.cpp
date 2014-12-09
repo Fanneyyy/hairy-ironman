@@ -9,12 +9,6 @@ vector<Person> Sort::sortVectorFirstName(vector<Person> persons) {
     return sortedTemp;
 }
 
-vector<Person> Sort::sortVectorLastName(vector<Person> persons) {
-    vector<Person> sortedTemp = persons;
-    sort(sortedTemp.begin(), sortedTemp.end(), sortByLastName);
-    return sortedTemp;
-}
-
 vector<Person> Sort::sortVectorGender(vector<Person> persons) {
     vector<Person> sortedTemp = persons;
     sort(sortedTemp.begin(), sortedTemp.end(), sortByGender);

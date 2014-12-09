@@ -238,11 +238,11 @@ void PrintUI::printPersonsScreen() {
     cout << "           |   |                                             |    |" << endl;
     cout << "           |   | 1. By input order                           |    |" << endl;
     cout << "           |   | 2. By first name                            |    |" << endl;
-    cout << "           |   | 3. By last name                             |    |" << endl;
-    cout << "           |   | 4. By gender                                |    |" << endl;
-    cout << "           |   | 5. By year of birth                         |    |" << endl;
-    cout << "           |   | 6. By year of death                         |    |" << endl;
+    cout << "           |   | 3. By gender                                |    |" << endl;
+    cout << "           |   | 4. By year of birth                         |    |" << endl;
+    cout << "           |   | 5. By year of death                         |    |" << endl;
     cout << "           |   | 0. Back it up! Back it up! You got it!      |    |" << endl;
+    cout << "           |   |                                             |    |" << endl;
     cout << "           |   |                                             |    |" << endl;
     cout << "           |   |                                             |    |" << endl;
     cout << "           |   |_____________________________________________|    |" << endl;

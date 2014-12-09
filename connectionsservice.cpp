@@ -6,26 +6,34 @@ ConnectionsService::ConnectionsService() {
 // add: adds a connection between a person and a computer to the database
 void ConnectionsService::add(vector<Person> personList, vector<Computer>computerList) {
     Connection connection = Connection();
-    int input;
+    int inputPerson;
+    int inputComputer;
+    char input;
     char c;
 
     do {
         cout << "Number of person to connect: " << endl;
 
         do {
-        cin >> input;
-        } while(!inputCheck(input, personList.size()));
-        connection.setPersonID(personList[input-1].getID());
+        cin >> inputPerson;
+        } while(!inputCheck(inputPerson, personList.size()));
+        connection.setPersonID(personList[inputPerson-1].getID());
 
         cout << "Number of computer to connect with that person: " << endl;
 
         do {
-        cin >> input;
-        } while(!inputCheck(input, computerList.size()));
-        connection.setComputerID(computerList[input-1].getID());
+        cin >> inputComputer;
+        } while(!inputCheck(inputComputer, computerList.size()));
+        connection.setComputerID(computerList[inputComputer-1].getID());
 
-        connectionRepo.add(connection);
-        saveConnectionToDatabase(connection);
+        cout << "Do you wish to make a connection between " << personList[inputPerson-1].getFirstName() << endl;
+        cout << "and the computer " << computerList[inputComputer-1].getComputerName() << " y/n?" << endl;
+        cin >> input;
+
+        if(input == 'y' || input == 'Y') {
+            connectionRepo.add(connection);
+            saveConnectionToDatabase(connection);
+        }
 
         cout << "Want to add another? (y/n?) ";
         cin >> c;
