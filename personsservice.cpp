@@ -43,6 +43,22 @@ void PersonsService::printAllWithNumber() {
     }
 }
 
+// getPersonID():
+string PersonsService::getPersonID() {
+    db = getDatabaseConnection();
+    QSqlQuery query(QSqlDatabase::database("PersonConnection"));
+    Person p = Person();
+    string ID;
+
+    query.exec("SELECT last_insert_rowid() FROM Person");
+    while(query.next()) {
+
+       ID = query.value("ID").toString().toStdString();
+    }
+    db.close();
+    return ID;
+}
+
 // getDatabaseConnection(): checks if a connection has already been made
 // and connects to it if it has but otherwise makes a new connection
 QSqlDatabase PersonsService::getDatabaseConnection() {
@@ -100,19 +116,4 @@ void PersonsService::savePersonToDatabase(Person p) {
         qDebug() << "Error = " << db.lastError().text();
     }
     db.close();
-}
-
-string PersonsService::getPersonID() {
-    db = getDatabaseConnection();
-    QSqlQuery query(QSqlDatabase::database("PersonConnection"));
-    Person p = Person();
-    string ID;
-
-    query.exec("SELECT last_insert_rowid() FROM Person");
-    while(query.next()) {
-
-       ID = query.value("ID").toString().toStdString();
-    }
-    db.close();
-    return ID;
 }

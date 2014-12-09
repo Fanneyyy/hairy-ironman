@@ -29,7 +29,6 @@ int ComputersService::getSizeOfRepo() {
 }
 
 void ComputersService::printAll() {
-    print.computerHeader();
     for(int i = 0; i < computerRepo.getComputerSize(); i++) {
         cout << computerRepo.getComputer(i);
     }
@@ -102,7 +101,7 @@ void ComputersService::setUp() {
     db.close();
 }
 
-// Saves a person to the database
+// Saves a computer to the database
 void ComputersService::saveComputerToDatabase(Computer c) {
     db = getDatabaseConnection();
     if(db.open()) {
