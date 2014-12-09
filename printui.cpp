@@ -169,7 +169,7 @@ void PrintUI::printEverythingComputer() {
     cout << "            /                                                    \\" << endl;
     cout << "           |    _____________________________________________     |" << endl;
     cout << "           |   |                                             |    |" << endl;
-    cout << "           |   | Printing Scientists with connections!       |    |" << endl;
+    cout << "           |   | Printing Computers with connections!        |    |" << endl;
     cout << "           |   | How would you like your print?              |    |" << endl;
     cout << "           |   |                                             |    |" << endl;
     cout << "           |   | 1. By input order                           |    |" << endl;
@@ -236,12 +236,12 @@ void PrintUI::printPersonsScreen() {
     cout << "           |   | Lets print Scientists!                      |    |" << endl;
     cout << "           |   | How would you like your print?              |    |" << endl;
     cout << "           |   |                                             |    |" << endl;
-    cout << "           |   | 1. By ID order                              |    |" << endl;
-    cout << "           |   | 2. By name                                  |    |" << endl;
-    cout << "           |   | 3. By gender                                |    |" << endl;
-    cout << "           |   | 4. By year of birth                         |    |" << endl;
-    cout << "           |   | 5. By year of death                         |    |" << endl;
-    cout << "           |   | 6. By most contributions                    |    |" << endl;
+    cout << "           |   | 1. By input order                           |    |" << endl;
+    cout << "           |   | 2. By first name                            |    |" << endl;
+    cout << "           |   | 3. By last name                             |    |" << endl;
+    cout << "           |   | 4. By gender                                |    |" << endl;
+    cout << "           |   | 5. By year of birth                         |    |" << endl;
+    cout << "           |   | 6. By year of death                         |    |" << endl;
     cout << "           |   | 0. Back it up! Back it up! You got it!      |    |" << endl;
     cout << "           |   |                                             |    |" << endl;
     cout << "           |   |                                             |    |" << endl;
