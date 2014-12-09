@@ -7,6 +7,7 @@
 #include <cstring>
 #include <ctime>
 #include <iomanip>
+#include <Qstring>
 
 using namespace std;
 
@@ -33,6 +34,7 @@ public:
     bool validType(string type);
     bool validName(string name);
 
+    void trimWhiteSpace(string &input);
 private:
     string name;
     string buildYear;

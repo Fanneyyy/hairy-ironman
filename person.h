@@ -12,6 +12,7 @@
 #include <ctime>
 #include <iomanip>
 #include <algorithm>
+#include <Qstring>
 
 using namespace std;
 
@@ -39,6 +40,7 @@ public:
     bool validName(string name);
     bool birthVSDeath(string yearBirth, string yearDeath);
 
+    void trimWhiteSpace(string &input);
 private:
     string name;
     string gender;

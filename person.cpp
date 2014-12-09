@@ -23,18 +23,23 @@ istream& operator >>(istream& ins, Person& p) {
         cin.ignore();
         cin.getline (inputName,256);
     } while(!p.validName(inputName));
-    p.name = inputName;
+    input = inputName;
+    p.trimWhiteSpace(input);
+    p.name = input;
+
     cout << "Gender (male/female): ";
     do {
         ins >> input;
     } while(!p.validGender(input));
     transform(input.begin(), input.end(), input.begin(), ::tolower);
     p.gender = input;
+
     cout << "Year of birth: ";
     do {
         ins >> input;
     }while(!p.validYear(input));
     p.yearOfBirth = input;
+
     cout << "Year of death (please enter '-' if person is still alive): ";
     do {
         ins >> input;
@@ -94,13 +99,18 @@ int Person::getID() {
 
 // validName(): checks if the name has only alphabetic letters.
 bool Person::validName(string name) {
+    bool validChar = true;
+    bool onlySpaces = true;
     for(unsigned int i = 0; i < name.size(); ++i) {
-        if(!isalpha(name[i]) && name[i] != ' ') {
+        if(!isspace(name[i])) {
+            onlySpaces = false;
+        }
+        if(!isalpha(name[i]) && !isspace(name[i])) {
             cout << "Not a valid name, please use only letters and no spaces" << endl;
-            return false;
+            validChar = false;
         }
     }
-    return true;
+    return (validChar && !onlySpaces);
 }
 
 // validYear(): checks if the year has only digits from 0 to 2014.
@@ -161,3 +171,10 @@ bool Person::birthVSDeath(string yearBirth, string yearDeath) {
     return true;
 }
 
+// trimWhiteSpace: removes whitespaces at beginning and end of a string
+// and leaves only one whitespace, where two or more are enter inside string
+void Person::trimWhiteSpace(string& input) {
+    QString stringInput = QString::fromUtf8(input.c_str());
+    stringInput = stringInput.simplified();
+    input = stringInput.toUtf8().constData();
+}

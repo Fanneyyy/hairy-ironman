@@ -27,10 +27,14 @@ istream& operator >>(istream& ins, Computer& c) {
     string T = "Transistor";
     string M = "Mechanical";
     char inputName[256];
+
     cout << "Enter name: ";
     cin.ignore();
     cin.getline (inputName,256);
-    c.name = inputName;
+    input = inputName;
+    c.trimWhiteSpace(input);
+    c.name = input;
+
     cout << "Build year (enter '-' if it was never built): ";
     do {
         ins >> input;
@@ -143,4 +147,12 @@ bool Computer::validType(string type) {
         return false;
     }
     return true;
+}
+
+// trimWhiteSpace: removes whitespaces at beginning and end of a string
+// and leaves only one whitespace, where two or more are enter inside string
+void Computer::trimWhiteSpace(string& input) {
+    QString stringInput = QString::fromUtf8(input.c_str());
+    stringInput = stringInput.simplified();
+    input = stringInput.toUtf8().constData();
 }
