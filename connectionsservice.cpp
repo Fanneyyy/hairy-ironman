@@ -26,7 +26,7 @@ void ConnectionsService::add(vector<Person> personList, vector<Computer>computer
         } while(!inputCheck(inputComputer, computerList.size()));
         connection.setComputerID(computerList[inputComputer-1].getID());
 
-        cout << "\nDo you wish to make a connection between " << personList[inputPerson-1].getFirstName() << endl;
+        cout << "\nDo you wish to make a connection between " << personList[inputPerson-1].getName() << endl;
         cout << "and the computer " << computerList[inputComputer-1].getComputerName() << " (y/n?) ";
         cin >> input;
 

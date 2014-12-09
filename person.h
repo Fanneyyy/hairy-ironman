@@ -29,7 +29,6 @@ public:
     string getGender();
     string getYearOfBirth();
     string getYearOfDeath();
-    string getFullName();
     int getID();
 
     friend ostream& operator <<(ostream& outs, const Person& p);
