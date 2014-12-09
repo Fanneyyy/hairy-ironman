@@ -1,3 +1,6 @@
+// PrintUI: Helper class for the UI to make the user interface
+// more aesthetically pleasing
+
 #ifndef PRINTUI_H
 #define PRINTUI_H
 #include <iostream>
@@ -5,8 +8,7 @@
 
 using namespace std;
 
-class PrintUI
-{
+class PrintUI {
 public:
     PrintUI();
     void welcomeScreen();

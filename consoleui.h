@@ -1,23 +1,18 @@
-// ConsoleUI: Calls a function to read in a file to fill the vector with stored information.
-// It initializes the user interface and calls relevant functions from the Service as demanded
+// ConsoleUI: Calls a function to read in a database to fill the vectors with stored information.
+// It initializes the user interface and calls relevant functions from the Services as demanded
 // by the user.
 
 #ifndef CONSOLEUI_H
 #define CONSOLEUI_H
-//#include <fstream>
-#include <string>
-#include <vector>
 #include <cstdlib>
-//#include <iostream>
-#include "search.h"
-#include "PersonsService.h"
+#include "personsservice.h"
 #include "computersservice.h"
 #include "connectionsservice.h"
 #include "printui.h"
 #include "sort.h"
+#include "search.h"
 
-class ConsoleUI
-{
+class ConsoleUI {
 public:
     ConsoleUI();
     void choose();

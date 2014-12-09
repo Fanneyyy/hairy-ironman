@@ -1,15 +1,13 @@
-// Search: Implements a search for a string in a vector filled with persons.
+// Search: Implements a search for a string in a vector filled with persons or computers.
 
 #ifndef SEARCH_H
 #define SEARCH_H
 #include "person.h"
 #include "computer.h"
-#include <iostream>
 #include <algorithm>
 #include <vector>
 
-class Search
-{
+class Search {
 public:
     Search();
     void gender(vector<Person> persons, string gender);
