@@ -77,10 +77,10 @@ void PrintUI::printScreen() {
     cout << "           |   | What would you like to print?               |    |" << endl;
     cout << "           |   |                                             |    |" << endl;
     cout << "           |   | 1. Scientists                               |    |" << endl;
-    cout << "           |   | 2. Computers                                |    |" << endl;
-    cout << "           |   | 3. EVERYTHING!                              |    |" << endl;
+    cout << "           |   | 2. Scientists with computer connections     |    |" << endl;
+    cout << "           |   | 3. Computers                                |    |" << endl;
+    cout << "           |   | 4. Computers with scientist connections     |    |" << endl;
     cout << "           |   | 0. Shady's back, back again                 |    |" << endl;
-    cout << "           |   |                                             |    |" << endl;
     cout << "           |   |                                             |    |" << endl;
     cout << "           |   |                                             |    |" << endl;
     cout << "           |   |                                             |    |" << endl;
@@ -237,7 +237,7 @@ void PrintUI::printPersonsScreen() {
     cout << "           |   | How would you like your print?              |    |" << endl;
     cout << "           |   |                                             |    |" << endl;
     cout << "           |   | 1. By input order                           |    |" << endl;
-    cout << "           |   | 2. By first name                            |    |" << endl;
+    cout << "           |   | 2. By name                                  |    |" << endl;
     cout << "           |   | 3. By gender                                |    |" << endl;
     cout << "           |   | 4. By year of birth                         |    |" << endl;
     cout << "           |   | 5. By year of death                         |    |" << endl;

@@ -106,25 +106,28 @@ void ConsoleUI::printUI() {
 
     do{
         cin >> input;
-        }while(!inputCheck(input, 3));
+        }while(!inputCheck(input, 4));
 
     switch(input) {
         case 1:
             printPerson();
             break;
         case 2:
-            printComputer();
+            printEverythingPerson();
             break;
         case 3:
-            printEverything();
+            printComputer();
+            break;
+        case 4:
+            printEverythingComputer();
             break;
         case 0:
             clear_screen();
             return;
-            break;
         default:
             break;
     }
+    continueOrQuit();
     clear_screen();
 }
 
@@ -170,7 +173,6 @@ void ConsoleUI::printPerson() {
     for(unsigned int i = 0; i < sortedTemp.size(); i++) {
         cout << sortedTemp[i];
     }
-    continueOrQuit();
 }
 
 // printComputer(): UI to choose how the list of computers is sorted
@@ -212,7 +214,6 @@ void ConsoleUI::printComputer() {
     for(unsigned int i = 0; i < sortedTemp.size(); i++) {
         cout << sortedTemp[i];
     }
-    continueOrQuit();
 }
 
 // printEverything(): choose if you want to print a list if persons
@@ -278,7 +279,7 @@ void ConsoleUI::printEverythingPerson() {
             break;
         case 0:
             clear_screen();
-            printEverything();
+            printUI();
             return;
         default:
             break;
@@ -318,7 +319,7 @@ void ConsoleUI::printEverythingComputer() {
             break;
         case 0:
             clear_screen();
-            printEverything();
+            printUI();
             return;
         default:
             break;
