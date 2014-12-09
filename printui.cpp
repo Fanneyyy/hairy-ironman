@@ -105,7 +105,7 @@ void PrintUI::printEverythingScreen() {
     cout << "            /                                                    \\" << endl;
     cout << "           |    _____________________________________________     |" << endl;
     cout << "           |   |                                             |    |" << endl;
-    cout << "           |   | Lets print EVERYTHING!                      |    |" << endl;
+    cout << "           |   | Lets print a combination                    |    |" << endl;
     cout << "           |   | How would you like your print?              |    |" << endl;
     cout << "           |   |                                             |    |" << endl;
     cout << "           |   | 1. Print Scientists with connections        |    |" << endl;
@@ -113,6 +113,70 @@ void PrintUI::printEverythingScreen() {
     cout << "           |   | 0. Backstreet's back, alright               |    |" << endl;
     cout << "           |   |                                             |    |" << endl;
     cout << "           |   |                                             |    |" << endl;
+    cout << "           |   |                                             |    |" << endl;
+    cout << "           |   |                                             |    |" << endl;
+    cout << "           |   |                                             |    |" << endl;
+    cout << "           |   |                                             |    |" << endl;
+    cout << "           |   |_____________________________________________|    |" << endl;
+    cout << "           |                                                      |" << endl;
+    cout << "            \\_____________________________________________________/" << endl;
+    cout << "                   \\_______________________________________/" << endl;
+    cout << "                _______________________________________________" << endl;
+    cout << "             _-'    .-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.  --- `-_" << endl;
+    cout << "          _-'.-.-. .---.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.--.  .-.-.`-_" << endl;
+    cout << "       _-'.-.-.-. .---.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-`__`. .-.-.-.`-_" << endl;
+    cout << "    _-'.-.-.-.-. .-----.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-----. .-.-.-.-.`-_" << endl;
+    cout << " _-'.-.-.-.-.-. .---.-. .-----------------------------. .-.---. .---.-.-.-.`-_" << endl;
+    cout << ":-----------------------------------------------------------------------------:" << endl;
+    cout << "`---._.-----------------------------------------------------------------._.---'" << endl;
+}
+
+void PrintUI::printEverythingPerson() {
+    cout << "\n\n\n\n";
+    cout << "             ____________________________________________________" << endl;
+    cout << "            /                                                    \\" << endl;
+    cout << "           |    _____________________________________________     |" << endl;
+    cout << "           |   |                                             |    |" << endl;
+    cout << "           |   | Printing Scientists with connections!       |    |" << endl;
+    cout << "           |   | How would you like your print?              |    |" << endl;
+    cout << "           |   |                                             |    |" << endl;
+    cout << "           |   | 1. By input order                           |    |" << endl;
+    cout << "           |   | 2. By name                                  |    |" << endl;
+    cout << "           |   | 3. By gender                                |    |" << endl;
+    cout << "           |   | 4. By year of birth                         |    |" << endl;
+    cout << "           |   | 5. By year of death                         |    |" << endl;
+    cout << "           |   | 0. Back message                             |    |" << endl;
+    cout << "           |   |                                             |    |" << endl;
+    cout << "           |   |                                             |    |" << endl;
+    cout << "           |   |                                             |    |" << endl;
+    cout << "           |   |_____________________________________________|    |" << endl;
+    cout << "           |                                                      |" << endl;
+    cout << "            \\_____________________________________________________/" << endl;
+    cout << "                   \\_______________________________________/" << endl;
+    cout << "                _______________________________________________" << endl;
+    cout << "             _-'    .-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.  --- `-_" << endl;
+    cout << "          _-'.-.-. .---.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.--.  .-.-.`-_" << endl;
+    cout << "       _-'.-.-.-. .---.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-`__`. .-.-.-.`-_" << endl;
+    cout << "    _-'.-.-.-.-. .-----.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-----. .-.-.-.-.`-_" << endl;
+    cout << " _-'.-.-.-.-.-. .---.-. .-----------------------------. .-.---. .---.-.-.-.`-_" << endl;
+    cout << ":-----------------------------------------------------------------------------:" << endl;
+    cout << "`---._.-----------------------------------------------------------------._.---'" << endl;
+}
+
+void PrintUI::printEverythingComputer() {
+    cout << "\n\n\n\n";
+    cout << "             ____________________________________________________" << endl;
+    cout << "            /                                                    \\" << endl;
+    cout << "           |    _____________________________________________     |" << endl;
+    cout << "           |   |                                             |    |" << endl;
+    cout << "           |   | Printing Scientists with connections!       |    |" << endl;
+    cout << "           |   | How would you like your print?              |    |" << endl;
+    cout << "           |   |                                             |    |" << endl;
+    cout << "           |   | 1. By input order                           |    |" << endl;
+    cout << "           |   | 2. By name                                  |    |" << endl;
+    cout << "           |   | 3. By type                                  |    |" << endl;
+    cout << "           |   | 4. By build year                            |    |" << endl;
+    cout << "           |   | 0. Back message                             |    |" << endl;
     cout << "           |   |                                             |    |" << endl;
     cout << "           |   |                                             |    |" << endl;
     cout << "           |   |                                             |    |" << endl;

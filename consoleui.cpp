@@ -147,6 +147,10 @@ void ConsoleUI::printPerson() {
         case 6:
             sortedTemp = sorter.sortVectorDeathYear(personService.getAll());
             break;
+        case 0:
+            clear_screen();
+            printUI();
+            return;
         default:
             break;
     }
@@ -179,6 +183,7 @@ void ConsoleUI::printComputer() {
         break;
     case 0:
         clear_screen();
+        printUI();
         return;
     default:
         break;
@@ -191,37 +196,103 @@ void ConsoleUI::printComputer() {
 
 void ConsoleUI::printEverything() {
     int input;
-    vector<Person> sortedTempPersons;
-    vector<Computer> sortedTempComputers;
     clear_screen();
     pr.printEverythingScreen();
     do{
         cin >> input;
-        }while(!inputCheck(input, 6));
+        }while(!inputCheck(input, 2));
     switch(input) {
     case 1:
-        pr.personHeader();
-        connectionsService.printAllPerson(personService.getAll(), computerService.getAll(), personService.getSizeOfRepo());
+        printEverythingPerson();
         break;
     case 2:
-        pr.computerHeader();
-        connectionsService.printAllComputer(computerService.getAll(), personService.getAll(), computerService.getSizeOfRepo());
+        printEverythingComputer();
         break;
     case 3:
-        sortedTempPersons = sorter.sortVectorFirstName(personService.getAll());
-        pr.personHeader();
-        connectionsService.printAllPerson(sortedTempPersons, computerService.getAll(), personService.getSizeOfRepo());
+
         break;
     case 4:
-        sortedTempComputers = sorter.sortVectorName(computerService.getAll());
-        pr.personHeader();
-        connectionsService.printAllPerson(personService.getAll(), sortedTempComputers, personService.getSizeOfRepo());
+
         break;
     case 0:
         clear_screen();
+        printUI();
         return;
     default:
         break;
+    }
+    continueOrQuit();
+}
+
+void ConsoleUI::printEverythingPerson() {
+    int input;
+    vector<Person> sortedTempPersons;
+
+    clear_screen();
+    pr.printEverythingPerson();
+    do{
+        cin >> input;
+    }while(!inputCheck(input, 5));
+    if(input != 0) {
+        pr.personHeader();
+    }
+    switch(input) {
+        case 1:
+            connectionsService.printAllPerson(personService.getAll(), computerService.getAll(), personService.getSizeOfRepo());
+            break;
+        case 2:
+            sortedTempPersons = sorter.sortVectorFirstName(personService.getAll());
+            connectionsService.printAllPerson(sortedTempPersons, computerService.getAll(), personService.getSizeOfRepo());
+            break;
+        case 3:
+            //print person by gender
+            break;
+        case 4:
+            //print person by year of birth
+            break;
+        case 5:
+            //print person by year of death
+            break;
+        case 0:
+            clear_screen();
+            printEverything();
+            return;
+        default:
+            break;
+    }
+    continueOrQuit();
+}
+
+void ConsoleUI::printEverythingComputer() {
+    int input;
+    vector<Computer> sortedTempComputers;
+    clear_screen();
+    pr.printEverythingComputer();
+    do{
+        cin >> input;
+    }while(!inputCheck(input, 4));
+    if(input != 0) {
+        pr.computerHeader();
+    }
+    switch(input) {
+        case 1:
+            connectionsService.printAllComputer(computerService.getAll(), personService.getAll(), computerService.getSizeOfRepo());        break;
+        case 2:
+            sortedTempComputers = sorter.sortVectorName(computerService.getAll());
+            pr.personHeader();
+            connectionsService.printAllPerson(personService.getAll(), sortedTempComputers, personService.getSizeOfRepo());        break;
+        case 3:
+            //print computer by type
+            break;
+        case 4:
+            //print computer by built year
+            break;
+        case 0:
+            clear_screen();
+            printEverything();
+            return;
+        default:
+            break;
     }
     continueOrQuit();
 }

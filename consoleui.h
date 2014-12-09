@@ -33,6 +33,8 @@ public:
     void printEverything();
     void printComputer();
     bool inputCheck(int input, int max);
+    void printEverythingPerson();
+    void printEverythingComputer();
 private:
     PrintUI pr;
     PersonsService personService;

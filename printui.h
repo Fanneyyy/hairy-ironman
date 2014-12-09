@@ -23,6 +23,8 @@ public:
     void computerHeader();
     void personHeader();
     void addConnectionScreen();
+    void printEverythingPerson();
+    void printEverythingComputer();
 };
 
 #endif // PRINTUI_H
