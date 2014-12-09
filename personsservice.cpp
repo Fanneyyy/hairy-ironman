@@ -80,6 +80,8 @@ void PersonsService::setUp() {
     query.exec("SELECT * FROM Person");
 
     while(query.next()) {
+
+        p.setID(query.value("ID").toString().toStdString());
         p.setFirstName(query.value("Name").toString().toStdString());
         p.setGender(query.value("Gender").toString().toStdString());
         p.setYearOfBirth(query.value("Birth year").toString().toStdString());
@@ -108,4 +110,19 @@ void PersonsService::savePersonToDatabase(Person p) {
         qDebug() << "Error = " << db.lastError().text();
     }
     db.close();
+}
+
+string PersonsService::getPersonID() {
+    db = getDatabaseConnection();
+    QSqlQuery query(QSqlDatabase::database("PersonConnection"));
+    Person p = Person();
+    string ID;
+
+    query.exec("SELECT last_insert_rowid() FROM Person");
+    while(query.next()) {
+
+       ID = query.value("ID").toString().toStdString();
+    }
+    db.close();
+    return ID;
 }

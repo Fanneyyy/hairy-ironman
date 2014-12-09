@@ -96,6 +96,7 @@ void ComputersService::setUp() {
     query.exec("SELECT * FROM Computer");
 
     while(query.next()) {
+        c.setID(query.value("ID").toString().toStdString());
         c.setComputerName(query.value("Name").toString().toStdString());
         c.setType(query.value("Type").toString().toStdString());
         c.setBuildYear(query.value("Build year").toString().toStdString());

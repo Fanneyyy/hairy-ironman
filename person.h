@@ -30,12 +30,15 @@ public:
     void setGender(string newGender);
     void setYearOfBirth(string newYearOfBirth);
     void setYearOfDeath(string newYearOfDeath);
+    void setID(string newID);
 
     string getLastName();
     string getFirstName();
     string getGender();
     string getYearOfBirth();
     string getYearOfDeath();
+    string getFullName();
+    int getID();
 
     friend ostream& operator <<(ostream& outs, const Person& p);
     friend istream& operator >>(istream& ins, Person& p);
@@ -44,12 +47,13 @@ public:
     bool validGender(string gender);
     bool validName(string name);
     bool birthVSDeath(string yearBirth, string yearDeath);
-    string getFullName();
+
 private:
     fullName name;
     string gender;
     string yearOfBirth;
     string yearOfDeath;
+    string ID;
 };
 
 #endif // PERSON_H

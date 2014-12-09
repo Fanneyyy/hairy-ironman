@@ -33,6 +33,7 @@ public:
     QSqlDatabase getDatabaseConnection();
     vector<Person> getAll();
     int getSizeOfRepo();
+    string getPersonID();
 private:
     PersonsRepository personRepo;
     QSqlDatabase db;

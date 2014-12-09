@@ -1,6 +1,7 @@
 #include "computer.h"
 
 Computer::Computer() {
+    ID = "";
     name = "";
     buildYear = "";
     type = "";
@@ -75,6 +76,10 @@ void Computer::setBuiltRnot(string newBuiltORnot) {
     builtRnot = newBuiltORnot;
 }
 
+void Computer::setID(string newID) {
+    ID = newID;
+}
+
 string Computer::getComputerName() {
     return name;
 }
@@ -89,6 +94,14 @@ string Computer::getType() {
 
 string Computer::getBuiltRnot() {
     return builtRnot;
+}
+
+int Computer::getID() {
+    int temp;
+
+    istringstream buffer(ID);
+    buffer >> temp;
+    return temp;
 }
 
 // validYear(): checks if the year has only digits from 0 to current year.

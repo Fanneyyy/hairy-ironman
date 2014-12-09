@@ -30,8 +30,8 @@ void ConnectionsService::printAllPerson(vector<Person> personList, vector<Comput
     for(int i = 0; i < size; i++) {
         cout << personList[i];
         for(int j = 0; j < connectionRepo.getConnectionSize(); j++) {
-            if(i == (connectionRepo.getConnection(j).getPersonID()-1)) {
-                cout << setw(3) << " " << computerList[connectionRepo.getConnection(j).getComputerID()-1].getComputerName() << endl;
+            if(personList[i].getID() == (connectionRepo.getConnection(j).getPersonID())) {
+                cout << setw(3) << " " << computerList[connectionRepo.getConnection(j).getComputerID()].getComputerName() << endl;
             }
         }
     }
@@ -41,8 +41,8 @@ void ConnectionsService::printAllComputer(vector<Computer>computerList, vector<P
     for(int i = 0; i < size; i++) {
         cout << computerList[i];
         for(int j = 0; j < connectionRepo.getConnectionSize(); j++) {
-            if(i == (connectionRepo.getConnection(j).getComputerID()-1)) {
-                cout << setw(3) << " " << personList[connectionRepo.getConnection(j).getPersonID()-1].getFullName() << endl;
+            if(computerList[i].getID() == (connectionRepo.getConnection(j).getComputerID())) {
+                cout << setw(3) << " " << personList[connectionRepo.getConnection(j).getPersonID()].getFullName() << endl;
             }
         }
     }
