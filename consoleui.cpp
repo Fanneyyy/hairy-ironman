@@ -278,7 +278,7 @@ void ConsoleUI::printEverythingComputer() {
             sortedTempComputers = sorter.sortVectorType(computerService.getAll());
             break;
         case 4:
-            //print computer by built year
+            sortedTempComputers = sorter.sortVectorBuildYear(computerService.getAll());
             break;
         case 0:
             clear_screen();
