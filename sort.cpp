@@ -81,9 +81,9 @@ bool sortByYearOfBirth(Person p1, Person p2) {
 
 // helper function for sort.
 bool sortByYearOfDeath(Person p1, Person p2) {
-    if(p1.getYearOfDeath() == "-") {
+    if(p1.getYearOfDeath() == "") {
         return false;
-    } else if(p2.getYearOfDeath() == "-") {
+    } else if(p2.getYearOfDeath() == "") {
         return true;
     }
     string tempP1 = p1.getYearOfDeath();
@@ -112,6 +112,12 @@ bool sortByBuildYear(Computer c1, Computer c2) {
     string tempP1 = c1.getBuildYear();
     string tempP2 = c2.getBuildYear();
     int tempP1int, tempP2int;
+
+    if(c1.getBuildYear() == "") {
+        return true;
+    } else if(c2.getBuildYear() == "") {
+        return false;
+    }
 
     istringstream buffer1(tempP1);
     buffer1 >> tempP1int;
