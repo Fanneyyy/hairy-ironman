@@ -18,7 +18,7 @@ void PrintUI::addConnectionScreen() {
     cout << "           |   |        Number of the Person.                |    |" << endl;
     cout << "           |   |        Number of the Computer.              |    |" << endl;
     cout << "           |   |                                             |    |" << endl;
-    cout << "           |   |                      Press \"0\" to cancel    |    |" << endl;
+    cout << "           |   |                    Press \"0\" to cancel    |    |" << endl;
     cout << "           |   |                                             |    |" << endl;
     cout << "           |   | Thank you!                                  |    |" << endl;
     cout << "           |   |_____________________________________________|    |" << endl;
@@ -108,8 +108,8 @@ void PrintUI::printEverythingScreen() {
     cout << "           |   | Lets print a combination                    |    |" << endl;
     cout << "           |   | How would you like your print?              |    |" << endl;
     cout << "           |   |                                             |    |" << endl;
-    cout << "           |   | 1. Print Scientists with connections        |    |" << endl;
-    cout << "           |   | 2. Print Computers with connections         |    |" << endl;
+    cout << "           |   | 1. Print scientists with connections        |    |" << endl;
+    cout << "           |   | 2. Print computers with connections         |    |" << endl;
     cout << "           |   | 0. Backstreet's back, alright               |    |" << endl;
     cout << "           |   |                                             |    |" << endl;
     cout << "           |   |                                             |    |" << endl;
@@ -137,7 +137,7 @@ void PrintUI::printEverythingPerson() {
     cout << "            /                                                    \\" << endl;
     cout << "           |    _____________________________________________     |" << endl;
     cout << "           |   |                                             |    |" << endl;
-    cout << "           |   | Printing Scientists with connections!       |    |" << endl;
+    cout << "           |   | Printing scientists with connections!       |    |" << endl;
     cout << "           |   | How would you like your print?              |    |" << endl;
     cout << "           |   |                                             |    |" << endl;
     cout << "           |   | 1. By input order                           |    |" << endl;
@@ -145,7 +145,7 @@ void PrintUI::printEverythingPerson() {
     cout << "           |   | 3. By gender                                |    |" << endl;
     cout << "           |   | 4. By year of birth                         |    |" << endl;
     cout << "           |   | 5. By year of death                         |    |" << endl;
-    cout << "           |   | 0. Back message                             |    |" << endl;
+    cout << "           |   | 0. Back to back                             |    |" << endl;
     cout << "           |   |                                             |    |" << endl;
     cout << "           |   |                                             |    |" << endl;
     cout << "           |   |                                             |    |" << endl;
@@ -169,14 +169,14 @@ void PrintUI::printEverythingComputer() {
     cout << "            /                                                    \\" << endl;
     cout << "           |    _____________________________________________     |" << endl;
     cout << "           |   |                                             |    |" << endl;
-    cout << "           |   | Printing Computers with connections!        |    |" << endl;
+    cout << "           |   | Printing computers with connections!        |    |" << endl;
     cout << "           |   | How would you like your print?              |    |" << endl;
     cout << "           |   |                                             |    |" << endl;
     cout << "           |   | 1. By input order                           |    |" << endl;
     cout << "           |   | 2. By name                                  |    |" << endl;
     cout << "           |   | 3. By type                                  |    |" << endl;
     cout << "           |   | 4. By build year                            |    |" << endl;
-    cout << "           |   | 0. Back message                             |    |" << endl;
+    cout << "           |   | 0. Back for you                             |    |" << endl;
     cout << "           |   |                                             |    |" << endl;
     cout << "           |   |                                             |    |" << endl;
     cout << "           |   |                                             |    |" << endl;
@@ -268,8 +268,8 @@ void PrintUI::addScreen() {
     cout << "           |   | What would you like to add?                 |    |" << endl;
     cout << "           |   |                                             |    |" << endl;
     cout << "           |   |                                             |    |" << endl;
-    cout << "           |   | 1. Add a new Scientist                      |    |" << endl;
-    cout << "           |   | 2. Add a new Computer                       |    |" << endl;
+    cout << "           |   | 1. Add a new scientist                      |    |" << endl;
+    cout << "           |   | 2. Add a new computer                       |    |" << endl;
     cout << "           |   | 3. Add a new connection                     |    |" << endl;
     cout << "           |   | 0. Cause I, I, I, I, I, I want you back     |    |" << endl;
     cout << "           |   |                                             |    |" << endl;
@@ -307,7 +307,7 @@ void PrintUI::addPersonScreen() {
     cout << "           |   |   Gender (m/f)                              |    |" << endl;
     cout << "           |   |   Year of birth                             |    |" << endl;
     cout << "           |   |   Year of death                             |    |" << endl;
-    cout << "           |   |                      Press \"0\" to cancel    |    |" << endl;
+    cout << "           |   |                    Press \"0\" to cancel    |    |" << endl;
     cout << "           |   |                                             |    |" << endl;
     cout << "           |   | Thank you!                                  |    |" << endl;
     cout << "           |   |_____________________________________________|    |" << endl;
@@ -336,10 +336,10 @@ void PrintUI::addComputerScreen() {
     cout << "           |   | in this order:                              |    |" << endl;
     cout << "           |   |                                             |    |" << endl;
     cout << "           |   |   Name                                      |    |" << endl;
-    cout << "           |   |   Build year (\"-\" if it wasn't built)       |    |" << endl;
+    cout << "           |   |   Build year (\"-\" if it wasn't built)     |    |" << endl;
     cout << "           |   |   Type (Electronic/Mechanical/Transistor)   |    |" << endl;
     cout << "           |   |                                             |    |" << endl;
-    cout << "           |   |                      Press \"0\" to cancel    |    |" << endl;
+    cout << "           |   |                    Press \"0\" to cancel    |    |" << endl;
     cout << "           |   |                                             |    |" << endl;
     cout << "           |   | Thank you!                                  |    |" << endl;
     cout << "           |   |_____________________________________________|    |" << endl;
@@ -367,8 +367,8 @@ void PrintUI::chooseScreen() {
     cout << "           |   | 1. Add to database                          |    |" << endl;
     cout << "           |   | 2. Print out list                           |    |" << endl;
     cout << "           |   | 3. Search list                              |    |" << endl;
-    cout << "           |   | 4. Remove from list                         |    |" << endl;
     cout << "           |   | 0. Stop right now, thank you very much      |    |" << endl;
+    cout << "           |   |                                             |    |" << endl;
     cout << "           |   |                                             |    |" << endl;
     cout << "           |   |                                             |    |" << endl;
     cout << "           |   |                                             |    |" << endl;
