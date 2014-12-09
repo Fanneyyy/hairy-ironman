@@ -287,7 +287,7 @@ void ConsoleUI::printEverythingComputer() {
         default:
             break;
     }
-    connectionsService.printAllPerson(personService.getAll(), sortedTempComputers, personService.getSizeOfRepo());
+    connectionsService.printAllComputer(sortedTempComputers, personService.getAll(), computerService.getSizeOfRepo());
 }
 
 // searchUI(): UI for searching the database
