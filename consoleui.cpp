@@ -87,7 +87,7 @@ void ConsoleUI::addUI() {
             cout << "Nr. ";
             pr.computerHeader();
             computerService.printAllWithNumber();
-            connectionsService.add(personService.getSizeOfRepo(),computerService.getSizeOfRepo());
+            connectionsService.add(personService.getAll(),computerService.getAll());
             break;
         case 0:
             return;
