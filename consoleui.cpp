@@ -106,7 +106,7 @@ void ConsoleUI::printUI() {
 
     do{
         cin >> input;
-        }while(!inputCheck(input, 3));
+        }while(!inputCheck(input, 4));
 
     switch(input) {
         case 1:
@@ -116,8 +116,10 @@ void ConsoleUI::printUI() {
             printComputer();
             break;
         case 3:
-            printEverything();
+            printEverythingPerson();
             break;
+        case 4:
+            printEverythingComputer();
         case 0:
             clear_screen();
             return;
@@ -278,7 +280,7 @@ void ConsoleUI::printEverythingPerson() {
             break;
         case 0:
             clear_screen();
-            printEverything();
+            printUI();
             return;
         default:
             break;
@@ -318,7 +320,7 @@ void ConsoleUI::printEverythingComputer() {
             break;
         case 0:
             clear_screen();
-            printEverything();
+            printUI();
             return;
         default:
             break;
