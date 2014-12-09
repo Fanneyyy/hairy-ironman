@@ -46,12 +46,6 @@ void ComputersService::printOne(int id) {
     cout << computerRepo.getComputer(id);
 }
 
-// removeFromVector(int id): removes the person with the appropriate
-// id from the computerRepo database.
-void ComputersService::removeFromVector(int id) {
-    computerRepo.removeComputer(id);
-}
-
 int ComputersService::sizeOfDatabase() {
     return computerRepo.getComputerSize();
 }
