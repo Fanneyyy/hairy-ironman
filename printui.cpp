@@ -302,11 +302,11 @@ void PrintUI::addPersonScreen() {
     cout << "           |   | Please insert information about the         |    |" << endl;
     cout << "           |   | scientist in this order:                    |    |" << endl;
     cout << "           |   |                                             |    |" << endl;
-    cout << "           |   |   Name                                      |    |" << endl;
-    cout << "           |   |   Gender (m/f)                              |    |" << endl;
+    cout << "           |   |   Name (firstname lastname)                 |    |" << endl;
+    cout << "           |   |   Gender (male/female)                      |    |" << endl;
     cout << "           |   |   Year of birth                             |    |" << endl;
     cout << "           |   |   Year of death                             |    |" << endl;
-    cout << "           |   |                    Press \"0\" to cancel    |    |" << endl;
+    cout << "           |   |                                             |    |" << endl;
     cout << "           |   |                                             |    |" << endl;
     cout << "           |   | Thank you!                                  |    |" << endl;
     cout << "           |   |_____________________________________________|    |" << endl;
@@ -338,7 +338,7 @@ void PrintUI::addComputerScreen() {
     cout << "           |   |   Build year (\"-\" if it wasn't built)     |    |" << endl;
     cout << "           |   |   Type (Electronic/Mechanical/Transistor)   |    |" << endl;
     cout << "           |   |                                             |    |" << endl;
-    cout << "           |   |                    Press \"0\" to cancel    |    |" << endl;
+    cout << "           |   |                                             |    |" << endl;
     cout << "           |   |                                             |    |" << endl;
     cout << "           |   | Thank you!                                  |    |" << endl;
     cout << "           |   |_____________________________________________|    |" << endl;

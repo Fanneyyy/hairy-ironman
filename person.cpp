@@ -29,7 +29,7 @@ istream& operator >>(istream& ins, Person& p) {
         ins >> input;
     } while(!p.validName(input));
     p.name.last = input;
-    cout << "Gender Female/Male: ";
+    cout << "Gender (male/female): ";
     do {
         ins >> input;
     } while(!p.validGender(input));
