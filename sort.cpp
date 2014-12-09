@@ -3,9 +3,9 @@
 Sort::Sort() {
 }
 
-vector<Person> Sort::sortVectorFirstName(vector<Person> persons) {
+vector<Person> Sort::sortVectorPersonName(vector<Person> persons) {
     vector<Person> sortedTemp = persons;
-    sort(sortedTemp.begin(), sortedTemp.end(), sortByFirstName);
+    sort(sortedTemp.begin(), sortedTemp.end(), sortByPersonName);
     return sortedTemp;
 }
 
@@ -27,9 +27,9 @@ vector<Person> Sort::sortVectorDeathYear(vector<Person> persons) {
     return sortedTemp;
 }
 
-vector<Computer> Sort::sortVectorName(vector<Computer> computers) {
+vector<Computer> Sort::sortVectorComputerName(vector<Computer> computers) {
     vector<Computer> sortedTemp = computers;
-    sort(sortedTemp.begin(), sortedTemp.end(), sortByName);
+    sort(sortedTemp.begin(), sortedTemp.end(), sortByComputerName);
     return sortedTemp;
 }
 
@@ -46,18 +46,9 @@ vector<Computer> Sort::sortVectorBuildYear(vector<Computer> computers) {
 }
 
 // helper function for sort.
-bool sortByLastName(Person p1, Person p2) {
-    string p1string = p1.getLastName();
-    string p2string = p2.getLastName();
-    transform(p1string.begin(), p1string.end(), p1string.begin(), ::tolower);
-    transform(p2string.begin(), p2string.end(), p2string.begin(), ::tolower);
-    return p1string < p2string;
-}
-
-// helper function for sort.
-bool sortByFirstName(Person p1, Person p2) {
-    string p1string = p1.getFirstName();
-    string p2string = p2.getFirstName();
+bool sortByPersonName(Person p1, Person p2) {
+    string p1string = p1.getName();
+    string p2string = p2.getName();
     transform(p1string.begin(), p1string.end(), p1string.begin(), ::tolower);
     transform(p2string.begin(), p2string.end(), p2string.begin(), ::tolower);
     return p1string < p2string;
@@ -100,7 +91,7 @@ bool sortByYearOfDeath(Person p1, Person p2) {
 }
 
 // helper function for sort.
-bool sortByName(Computer c1, Computer c2) {
+bool sortByComputerName(Computer c1, Computer c2) {
     string c1string = c1.getComputerName();
     string c2string = c2.getComputerName();
     transform(c1string.begin(), c1string.end(), c1string.begin(), ::tolower);

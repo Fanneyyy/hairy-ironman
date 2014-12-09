@@ -149,7 +149,7 @@ void ConsoleUI::printPerson() {
             personService.printAll();;
             break;
         case 2:
-            sortedTemp = sorter.sortVectorFirstName(personService.getAll());
+            sortedTemp = sorter.sortVectorPersonName(personService.getAll());
             break;
         case 3:
             sortedTemp = sorter.sortVectorGender(personService.getAll());
@@ -194,7 +194,7 @@ void ConsoleUI::printComputer() {
             computerService.printAll();
             break;
         case 2:
-            sortedTemp = sorter.sortVectorName(computerService.getAll());
+            sortedTemp = sorter.sortVectorComputerName(computerService.getAll());
             break;
         case 3:
             sortedTemp = sorter.sortVectorType(computerService.getAll());
@@ -265,7 +265,7 @@ void ConsoleUI::printEverythingPerson() {
             sortedTempPersons = personService.getAll();
             break;
         case 2:
-            sortedTempPersons = sorter.sortVectorFirstName(personService.getAll());
+            sortedTempPersons = sorter.sortVectorPersonName(personService.getAll());
             break;
         case 3:
             sortedTempPersons = sorter.sortVectorGender(personService.getAll());
@@ -308,7 +308,7 @@ void ConsoleUI::printEverythingComputer() {
             sortedTempComputers = computerService.getAll();
             break;
         case 2:
-            sortedTempComputers = sorter.sortVectorName(computerService.getAll());
+            sortedTempComputers = sorter.sortVectorComputerName(computerService.getAll());
             break;
         case 3:
             sortedTempComputers = sorter.sortVectorType(computerService.getAll());

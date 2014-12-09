@@ -10,22 +10,16 @@ Search::Search() {
 void Search::searchAllNames(vector<Person> persons, vector<Computer> computers, string name) {
     int* idPerson = new int[persons.size()]();
     string tempName = name;
-    string first;
-    string last;   
+    string fullName;
     transform(tempName.begin(), tempName.end(), tempName.begin(), ::tolower);
 
     for(unsigned int i = 0; i < persons.size(); i++) {
-        first = persons[i].getFirstName();
-        last = persons[i].getLastName();
-        transform(first.begin(), first.end(), first.begin(), ::tolower);
-        transform(last.begin(), last.end(), last.begin(), ::tolower);
+        fullName = persons[i].getName();
+        transform(fullName.begin(), fullName.end(), fullName.begin(), ::tolower);
 
-        size_t foundFirst = first.find(tempName);
-        size_t foundLast = last.find(tempName);
+        size_t found = fullName.find(tempName);
 
-        if(foundFirst != string::npos) {
-            idPerson[i] = 1;
-        } else if(foundLast != string::npos) {
+        if(found != string::npos) {
             idPerson[i] = 1;
         }
     }

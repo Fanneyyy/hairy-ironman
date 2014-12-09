@@ -88,7 +88,7 @@ void PersonsService::setUp() {
 
     while(query.next()) {
         p.setID(query.value("ID").toString().toStdString());
-        p.setFirstName(query.value("Name").toString().toStdString());
+        p.setName(query.value("Name").toString().toStdString());
         p.setGender(query.value("Gender").toString().toStdString());
         p.setYearOfBirth(query.value("Birth year").toString().toStdString());
         p.setYearOfDeath(query.value("Death year").toString().toStdString());
@@ -105,7 +105,7 @@ void PersonsService::savePersonToDatabase(Person p) {
         QSqlQuery query(QSqlDatabase::database("PersonConnection"));
 
         string col = "(Name, Gender, 'Birth year', 'Death year')";
-        string name = "('" + p.getFirstName() + " " + p.getLastName() + "'";
+        string name = "('" + p.getName() + "'";
         string value = ",'" + p.getGender() + "','" + p.getYearOfBirth() + "','" + p.getYearOfDeath() + "')";
         string command = "INSERT INTO Person " + col + "VALUES " + name + value;
         QString qcommand = QString::fromUtf8(command.c_str());

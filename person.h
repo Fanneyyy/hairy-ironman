@@ -15,24 +15,17 @@
 
 using namespace std;
 
-struct fullName {
-    string first;
-    string last;
-};
-
 class Person {
 public:
     Person();
 
-    void setFirstName(string newFirst);
-    void setLastName(string newLast);
+    void setName(string newName);
     void setGender(string newGender);
     void setYearOfBirth(string newYearOfBirth);
     void setYearOfDeath(string newYearOfDeath);
     void setID(string newID);
 
-    string getLastName();
-    string getFirstName();
+    string getName();
     string getGender();
     string getYearOfBirth();
     string getYearOfDeath();
@@ -48,7 +41,7 @@ public:
     bool birthVSDeath(string yearBirth, string yearDeath);
 
 private:
-    fullName name;
+    string name;
     string gender;
     string yearOfBirth;
     string yearOfDeath;

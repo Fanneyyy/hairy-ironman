@@ -2,33 +2,33 @@
 
 Person::Person() {
     ID = "";
-    name.last = "";
-    name.first = "";
+    name = "";
     gender = "";
     yearOfBirth = "";
     yearOfDeath = "";
 }
 
 ostream& operator <<(ostream& outs, const Person& p) {
-    string name;
-    name = p.name.first + " " + p.name.last;
     outs << fixed;
-    outs << left << setw(25) << name << setw(15) << p.gender << setw(15) <<   p.yearOfBirth;
+    outs << left << setw(25) << p.name << setw(15) << p.gender << setw(15) <<   p.yearOfBirth;
     outs << left <<setw(15) << p.yearOfDeath << endl;
     return outs;
 }
 
 istream& operator >>(istream& ins, Person& p) {
+    string first;
+    string last;
     string input;
     cout << "Enter name: ";
     do {
         ins >> input;
     } while(!p.validName(input));
-    p.name.first = input;
+    first = input;
     do {
         ins >> input;
     } while(!p.validName(input));
-    p.name.last = input;
+    last = input;
+    p.name = first + " " + last;
     cout << "Gender Female/Male: ";
     do {
         ins >> input;
@@ -52,11 +52,8 @@ istream& operator >>(istream& ins, Person& p) {
     return ins;
 }
 
-void Person::setFirstName(string newFirst) {
-    name.first = newFirst;
-}
-void Person::setLastName(string newLast) {
-    name.last = newLast;
+void Person::setName(string newName) {
+    name = newName;
 }
 
 void Person::setGender(string newGender) {
@@ -75,20 +72,12 @@ void Person::setID(string newID) {
     ID = newID;
 }
 
-string Person::getLastName() {
-    return name.last;
-}
-
-string Person::getFirstName() {
-    return name.first;
+string Person::getName() {
+    return name;
 }
 
 string Person::getGender() {
     return gender;
-}
-
-string Person::getFullName() {
-    return name.first + " " + name.last;
 }
 
 string Person::getYearOfBirth() {

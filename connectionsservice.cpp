@@ -26,7 +26,7 @@ void ConnectionsService::add(vector<Person> personList, vector<Computer>computer
         } while(!inputCheck(inputComputer, computerList.size()));
         connection.setComputerID(computerList[inputComputer-1].getID());
 
-        cout << "Do you wish to make a connection between " << personList[inputPerson-1].getFirstName() << endl;
+        cout << "Do you wish to make a connection between " << personList[inputPerson-1].getName() << endl;
         cout << "and the computer " << computerList[inputComputer-1].getComputerName() << " y/n?" << endl;
         cin >> input;
 
@@ -64,8 +64,7 @@ void ConnectionsService::printAllPerson(vector<Person> personList, vector<Comput
 // printAllComputer: prints a list of computers with the appropriate connected persons
 void ConnectionsService::printAllComputer(vector<Computer>computerList, vector<Person> personList, int size) {
     int personIDtemp;
-    string nameFirst;
-    string nameLast;
+    string name;
 
     for(int i = 0; i < size; i++) {
         cout << computerList[i];
@@ -74,11 +73,10 @@ void ConnectionsService::printAllComputer(vector<Computer>computerList, vector<P
                 personIDtemp = connectionRepo.getConnection(j).getPersonID();
                 for(unsigned int i = 0; i < personList.size(); i++) {
                     if(personIDtemp == personList[i].getID()) {
-                        nameFirst = personList[i].getFirstName();
-                        nameLast = personList[i].getLastName();
+                        name = personList[i].getName();
                     }
                 }
-                cout << setw(3) << " " << nameFirst + " " + nameLast << endl;
+                cout << setw(3) << " " << name << endl;
             }
         }
     }
