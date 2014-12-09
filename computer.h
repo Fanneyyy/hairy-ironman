@@ -19,11 +19,13 @@ public:
     void setBuildYear(string newBuildYear);
     void setType(string newType);
     void setBuiltRnot(string newBuiltORnot);
+    void setID(string newID);
 
     string getComputerName();
     string getBuildYear();
     string getType();
     string getBuiltRnot();
+    int getID();
 
     friend ostream& operator <<(ostream& outs, const Computer& c);
     friend istream& operator >>(istream& ins, Computer& c);
@@ -32,11 +34,13 @@ public:
     bool validType(string type);
     bool validName(string name);
 
+
 private:
     string name;
     string buildYear;
     string type;
     string builtRnot;
+    string ID;
 };
 
 #endif // COMPUTER_H

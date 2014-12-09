@@ -1,6 +1,7 @@
 #include "person.h"
 
 Person::Person() {
+    ID = "";
     name.last = "";
     name.first = "";
     gender = "";
@@ -71,6 +72,10 @@ void Person::setYearOfDeath(string newYearOfDeath) {
     yearOfDeath = newYearOfDeath;
 }
 
+void Person::setID(string newID) {
+    ID = newID;
+}
+
 string Person::getLastName() {
     return name.last;
 }
@@ -94,6 +99,15 @@ string Person::getYearOfBirth() {
 string Person::getYearOfDeath() {
     return yearOfDeath;
 }
+
+int Person::getID() {
+    int temp;
+
+    istringstream buffer(ID);
+    buffer >> temp;
+    return temp;
+}
+
 // validName(): checks if the name has only alphabetic letters.
 bool Person::validName(string name) {
     for(unsigned int i = 0; i < name.size(); ++i) {

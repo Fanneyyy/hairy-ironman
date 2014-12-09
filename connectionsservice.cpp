@@ -27,22 +27,40 @@ void ConnectionsService::add(int sizeOfPersons, int sizeOfComputers) {
 }
 
 void ConnectionsService::printAllPerson(vector<Person> personList, vector<Computer>computerList, int size) {
+    int computerIDtemp;
+    string name;
     for(int i = 0; i < size; i++) {
         cout << personList[i];
         for(int j = 0; j < connectionRepo.getConnectionSize(); j++) {
-            if(i == (connectionRepo.getConnection(j).getPersonID()-1)) {
-                cout << setw(3) << " " << computerList[connectionRepo.getConnection(j).getComputerID()-1].getComputerName() << endl;
+            if(personList[i].getID() == (connectionRepo.getConnection(j).getPersonID())) {
+                computerIDtemp = connectionRepo.getConnection(j).getComputerID();
+                for(unsigned int i = 0; i < computerList.size(); i++) {
+                    if(computerIDtemp == computerList[i].getID()) {
+                        name = computerList[i].getComputerName();
+                    }
+                }
+                cout << setw(3) << " " << name << endl;
             }
         }
     }
 }
 
 void ConnectionsService::printAllComputer(vector<Computer>computerList, vector<Person> personList, int size) {
+    int personIDtemp;
+    string nameFirst;
+    string nameLast;
     for(int i = 0; i < size; i++) {
         cout << computerList[i];
         for(int j = 0; j < connectionRepo.getConnectionSize(); j++) {
-            if(i == (connectionRepo.getConnection(j).getComputerID()-1)) {
-                cout << setw(3) << " " << personList[connectionRepo.getConnection(j).getPersonID()-1].getFullName() << endl;
+            if(computerList[i].getID() == (connectionRepo.getConnection(j).getComputerID())) {
+                personIDtemp = connectionRepo.getConnection(j).getPersonID();
+                for(unsigned int i = 0; i < personList.size(); i++) {
+                    if(personIDtemp == personList[i].getID()) {
+                        nameFirst = personList[i].getFirstName();
+                        nameLast = personList[i].getLastName();
+                    }
+                }
+                cout << setw(3) << " " << nameFirst + " " + nameLast << endl;
             }
         }
     }
