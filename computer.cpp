@@ -34,7 +34,11 @@ istream& operator >>(istream& ins, Computer& c) {
     do {
         ins >> input;
     } while(!c.validYear(input));
-    c.buildYear = input;
+    if(input == "-") {
+        c.buildYear = "";
+    } else {
+        c.buildYear = input;
+    }
     if(input == "-") {
         c.setBuiltRnot("FALSE");
     } else {

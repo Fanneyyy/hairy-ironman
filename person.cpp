@@ -43,7 +43,11 @@ istream& operator >>(istream& ins, Person& p) {
     do {
         ins >> input;
     }while(!p.validYear(input) || !p.birthVSDeath(p.yearOfBirth, input));
-    p.yearOfDeath = input;
+    if(input == "-") {
+        p.yearOfDeath = "";
+    } else {
+        p.yearOfDeath = input;
+    }
 
     return ins;
 }
