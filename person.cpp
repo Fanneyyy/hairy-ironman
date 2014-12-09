@@ -16,18 +16,14 @@ ostream& operator <<(ostream& outs, const Person& p) {
 }
 
 istream& operator >>(istream& ins, Person& p) {
-    string first;
-    string last;
     string input;
+    char inputName[256];
     cout << "Enter name: ";
     do {
-        ins >> first;
-    } while(!p.validName(first));
-    first = first;
-    do {
-        ins >> last;
-    } while(!p.validName(last));
-    p.name = first + " " + last;
+        cin.ignore();
+        cin.getline (inputName,256);
+    } while(!p.validName(inputName));
+    p.name = inputName;
     cout << "Gender (male/female): ";
     do {
         ins >> input;
@@ -99,7 +95,7 @@ int Person::getID() {
 // validName(): checks if the name has only alphabetic letters.
 bool Person::validName(string name) {
     for(unsigned int i = 0; i < name.size(); ++i) {
-        if(!isalpha(name[i])) {
+        if(!isalpha(name[i]) && name[i] != ' ') {
             cout << "Not a valid name, please use only letters and no spaces" << endl;
             return false;
         }
@@ -150,6 +146,7 @@ bool Person::validGender(string gender) {
     return true;
 }
 
+// birthVSDeath: makes sure you can not die before you are born
 bool Person::birthVSDeath(string yearBirth, string yearDeath) {
     int birth, death;
     istringstream bbuffer(yearBirth);
