@@ -3,6 +3,8 @@
 PersonsService::PersonsService() {
 }
 
+// get: returns the person with the id within the vector
+// (not necessarily the same as the database id)
 Person PersonsService::get(int id) {
     return personRepo.getPerson(id);
 }
@@ -15,7 +17,7 @@ int PersonsService::getSizeOfRepo() {
     return personRepo.getPersonSize();
 }
 
-// add(): adds a person to the personRepo database and to sqlite databasinn.
+// add(): adds a person to the personRepo database and to the sqlite database.
 void PersonsService::add() {
     Person p = Person();
     char c;
@@ -41,14 +43,8 @@ void PersonsService::printAllWithNumber() {
     }
 }
 
-void PersonsService::printOne(int id) {
-    cout << personRepo.getPerson(id);
-}
-
-int PersonsService::sizeOfDatabase() {
-    return personRepo.getPersonSize();
-}
-
+// getDatabaseConnection(): checks if a connection has already been made
+// and connects to it if it has but otherwise makes a new connection
 QSqlDatabase PersonsService::getDatabaseConnection() {
     QString connectionName = "PersonConnection";
     QSqlDatabase db;

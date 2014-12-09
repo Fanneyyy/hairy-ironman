@@ -24,9 +24,7 @@ public:
     void add();
     void setUp();
     void printAll();
-    void printOne(int id);
     void printAllWithNumber();
-    void sortAll(int theCase);
     int sizeOfDatabase();
     void savePersonToDatabase(Person p);
     QSqlDatabase getDatabaseConnection();

@@ -1,8 +1,7 @@
-// Search: Implements sort for strings in a vector filled with persons.
+// Sort: Implements sort for strings in a vector filled with persons or computers.
 
 #ifndef SORT_H
 #define SORT_H
-#include <iostream>
 #include <algorithm>
 #include <vector>
 #include <sstream>
@@ -11,8 +10,7 @@
 
 using namespace std;
 
-class Sort
-{
+class Sort {
 public:
     Sort();
     vector<Person> sortVectorFirstName(vector<Person> persons);

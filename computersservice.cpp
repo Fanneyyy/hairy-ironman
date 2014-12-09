@@ -65,6 +65,8 @@ bool ComputersService::UIinputCheck(int input, int maxcases) {
     return true;
 }
 
+// getDatabaseConnection(): checks if a connection has already been made
+// and connects to it if it has but otherwise makes a new connection
 QSqlDatabase ComputersService::getDatabaseConnection() {
     QString connectionName = "ComputerConnection";
     QSqlDatabase db;
