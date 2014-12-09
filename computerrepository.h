@@ -19,7 +19,6 @@ public:
     Computer getComputer(int id);
     vector<Computer> getAllComputer();
     int getComputerSize();
-    void removeComputer(int id);
 private:
     vector<Computer> computerList;
 };

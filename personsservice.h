@@ -26,7 +26,6 @@ public:
     void printAll();
     void printOne(int id);
     void printAllWithNumber();
-    void removeFromVector(int id);
     void sortAll(int theCase);
     int sizeOfDatabase();
     void savePersonToDatabase(Person p);

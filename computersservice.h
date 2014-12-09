@@ -28,7 +28,6 @@ public:
     void printAll();
     void printOne(int id);
     void printAllWithNumber();
-    void removeFromVector(int id);
     string getFileName();
     bool UIinputCheck(int input, int maxcases);
     int sizeOfDatabase();

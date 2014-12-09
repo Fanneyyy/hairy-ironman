@@ -53,12 +53,20 @@ vector<Computer> Sort::sortVectorBuildYear(vector<Computer> computers) {
 
 // helper function for sort.
 bool sortByLastName(Person p1, Person p2) {
-    return p1.getLastName() < p2.getLastName();
+    string p1string = p1.getLastName();
+    string p2string = p2.getLastName();
+    transform(p1string.begin(), p1string.end(), p1string.begin(), ::tolower);
+    transform(p2string.begin(), p2string.end(), p2string.begin(), ::tolower);
+    return p1string < p2string;
 }
 
 // helper function for sort.
 bool sortByFirstName(Person p1, Person p2) {
-    return p1.getFirstName() < p2.getFirstName();
+    string p1string = p1.getFirstName();
+    string p2string = p2.getFirstName();
+    transform(p1string.begin(), p1string.end(), p1string.begin(), ::tolower);
+    transform(p2string.begin(), p2string.end(), p2string.begin(), ::tolower);
+    return p1string < p2string;
 }
 
 // helper function for sort.
@@ -99,7 +107,11 @@ bool sortByYearOfDeath(Person p1, Person p2) {
 
 // helper function for sort.
 bool sortByName(Computer c1, Computer c2) {
-    return c1.getComputerName() < c2.getComputerName();
+    string c1string = c1.getComputerName();
+    string c2string = c2.getComputerName();
+    transform(c1string.begin(), c1string.end(), c1string.begin(), ::tolower);
+    transform(c2string.begin(), c2string.end(), c2string.begin(), ::tolower);
+    return c1string < c2string;
 }
 
 // helper function for sort.

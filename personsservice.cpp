@@ -45,12 +45,6 @@ void PersonsService::printOne(int id) {
     cout << personRepo.getPerson(id);
 }
 
-// removeFromVector(int id): removes the person with the appropriate
-// id from the personRepo database.
-void PersonsService::removeFromVector(int id) {
-    personRepo.removePerson(id);
-}
-
 int PersonsService::sizeOfDatabase() {
     return personRepo.getPersonSize();
 }

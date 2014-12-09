@@ -43,9 +43,6 @@ void ConsoleUI::choose() {
             case 3:
                 searchUI();
                 break;
-            case 4:
-                removeUI();
-                break;
             case 0:
                 exit(0);
                 break;
@@ -332,35 +329,6 @@ void ConsoleUI::searchUI() {
     }
     continueOrQuit();
     clear_screen();
-}
-
-// removeUI(): prints out a numbered list of people and removes
-// the person chosen.
-void ConsoleUI::removeUI() {
-    int input;
-    // int databaseSize = personService.sizeOfDatabase();
-    clear_screen();
-    pr.remove();
-    cin >> input;
-    switch(input) {
-        case 1:
-            //remove scientist
-            break;
-        case 2:
-            //remove computer
-            break;
-        case 0:
-            clear_screen();
-            return;
-        default:
-            break;
-    }
-
-    personService.printAllWithNumber();
-    cout << "This person has been removed:" << endl;
-    personService.printOne(input-1);
-    personService.removeFromVector(input-1);
-    choose();
 }
 
 // clear_screen(): clear the screen for nice visual affect

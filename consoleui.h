@@ -23,7 +23,6 @@ public:
     void choose();
     void searchUI();
     void printUI();
-    void removeUI();
     void sortUI();
     void initialSetUp();
     void clear_screen();

@@ -20,7 +20,6 @@ public:
     Person getPerson(int id);
     vector<Person> getAllPerson();
     int getPersonSize();
-    void removePerson(int id);
 private:
     vector<Person> personList;
 };

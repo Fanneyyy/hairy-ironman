@@ -23,9 +23,3 @@ Computer ComputerRepository::getComputer(int id){
 int ComputerRepository::getComputerSize() {
     return computerList.size();
 }
-
-// removePerson(int id): removes the Computer with the id
-// from the vector computerList.
-void ComputerRepository::removeComputer(int id) {
-    computerList.erase(computerList.begin()+id);
-}

@@ -23,9 +23,3 @@ Person PersonsRepository::getPerson(int id){
 int PersonsRepository::getPersonSize() {
     return personList.size();
 }
-
-// removePerson(int id): removes the Person with the id
-// from the vector personList.
-void PersonsRepository::removePerson(int id) {
-    personList.erase(personList.begin()+id);
-}
