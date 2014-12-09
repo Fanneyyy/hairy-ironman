@@ -141,6 +141,8 @@ void ConnectionsService::saveConnectionToDatabase(Connection c) {
     if(db.open()) {
         QSqlQuery query(QSqlDatabase::database("ConnectionsConnection"));
 
+        query.exec("PRAGMA foreign_keys ON");
+
         personID = static_cast<ostringstream*>( &(ostringstream() << c.getPersonID()) )->str();
         computerID = static_cast<ostringstream*>( &(ostringstream() << c.getComputerID()) )->str();
         string col = "(c_ID, p_ID)";
@@ -151,7 +153,7 @@ void ConnectionsService::saveConnectionToDatabase(Connection c) {
         if(query.exec(qcommand)) {
             cout << "The connection has been added to the database." << endl;
         } else {
-            qDebug() << "Error = " << db.lastError().text();
+            cout << "Sorry, unable to make that connection" << endl;
         }
     } else {
         qDebug() << "Error = " << db.lastError().text();
