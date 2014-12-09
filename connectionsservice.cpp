@@ -12,22 +12,22 @@ void ConnectionsService::add(vector<Person> personList, vector<Computer>computer
     char c;
 
     do {
-        cout << "Number of person to connect: " << endl;
+        cout << "Number of person to connect: ";
 
         do {
         cin >> inputPerson;
         } while(!inputCheck(inputPerson, personList.size()));
         connection.setPersonID(personList[inputPerson-1].getID());
 
-        cout << "Number of computer to connect with that person: " << endl;
+        cout << "Number of computer to connect with that person: ";
 
         do {
         cin >> inputComputer;
         } while(!inputCheck(inputComputer, computerList.size()));
         connection.setComputerID(computerList[inputComputer-1].getID());
 
-        cout << "Do you wish to make a connection between " << personList[inputPerson-1].getName() << endl;
-        cout << "and the computer " << computerList[inputComputer-1].getComputerName() << " y/n?" << endl;
+        cout << "\nDo you wish to make a connection between " << personList[inputPerson-1].getFirstName() << endl;
+        cout << "and the computer " << computerList[inputComputer-1].getComputerName() << " (y/n?) ";
         cin >> input;
 
         if(input == 'y' || input == 'Y') {
@@ -35,7 +35,7 @@ void ConnectionsService::add(vector<Person> personList, vector<Computer>computer
             saveConnectionToDatabase(connection);
         }
 
-        cout << "Want to add another? (y/n?) ";
+        cout << "\nWant to add another? (y/n?) ";
         cin >> c;
     } while(c != 'N' && c != 'n');
 }
