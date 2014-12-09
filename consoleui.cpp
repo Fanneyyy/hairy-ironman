@@ -25,12 +25,14 @@ void ConsoleUI::initialSetUp() {
 // choose(): Initial user interface
 void ConsoleUI::choose() {
     int input;
+
     clear_screen();
+
     do {
         pr.chooseScreen();
         do {
             cin >> input;
-        }while(!inputCheck(input, 4));
+        }while(!inputCheck(input, 3));
 
         switch(input) {
             case 1:
@@ -53,12 +55,17 @@ void ConsoleUI::choose() {
     clear_screen();
 }
 
-// addUI(): UI to add a new person
+// addUI(): UI to add to the database
 void ConsoleUI::addUI() {
     int input = 0;
+
     clear_screen();
     pr.addScreen();
-    cin >> input;
+
+    do{
+        cin >> input;
+        }while(!inputCheck(input, 3));
+
     switch(input) {
         case 1:
             clear_screen();
@@ -90,13 +97,17 @@ void ConsoleUI::addUI() {
     }
 }
 
+// printUI(): UI to choose what the user wants printed
 void ConsoleUI::printUI() {
     int input;
+
     clear_screen();
     pr.printScreen();
+
     do{
         cin >> input;
         }while(!inputCheck(input, 3));
+
     switch(input) {
         case 1:
             printPerson();
@@ -117,14 +128,18 @@ void ConsoleUI::printUI() {
     clear_screen();
 }
 
+// printPerson(): UI to choose how the list of persons is sorted
 void ConsoleUI::printPerson() {
     int input;
     vector<Person> sortedTemp;
+
     clear_screen();
     pr.printPersonsScreen();
+
     do{
         cin >> input;
         }while(!inputCheck(input, 6));
+
     switch(input) {
         case 1:
             personService.printAll();;
@@ -157,33 +172,37 @@ void ConsoleUI::printPerson() {
     continueOrQuit();
 }
 
+// printComputer(): UI to choose how the list of computers is sorted
 void ConsoleUI::printComputer() {
     int input;
     vector<Computer> sortedTemp;
+
     clear_screen();
     pr.printComputerScreen();
+
     do{
         cin >> input;
         }while(!inputCheck(input, 4));
+
     switch(input) {
-    case 1:
-        computerService.printAll();
-        break;
-    case 2:
-        sortedTemp = sorter.sortVectorName(computerService.getAll());
-        break;
-    case 3:
-        sortedTemp = sorter.sortVectorType(computerService.getAll());
-        break;
-    case 4:
-        sortedTemp = sorter.sortVectorBuildYear(computerService.getAll());
-        break;
-    case 0:
-        clear_screen();
-        printUI();
-        return;
-    default:
-        break;
+        case 1:
+            computerService.printAll();
+            break;
+        case 2:
+            sortedTemp = sorter.sortVectorName(computerService.getAll());
+            break;
+        case 3:
+            sortedTemp = sorter.sortVectorType(computerService.getAll());
+            break;
+        case 4:
+            sortedTemp = sorter.sortVectorBuildYear(computerService.getAll());
+            break;
+        case 0:
+            clear_screen();
+            printUI();
+            return;
+        default:
+            break;
     }
     for(unsigned int i = 0; i < sortedTemp.size(); i++) {
         cout << sortedTemp[i];
@@ -191,42 +210,50 @@ void ConsoleUI::printComputer() {
     continueOrQuit();
 }
 
+// printEverything(): choose if you want to print a list if persons
+// with their connected computers or vice versa
 void ConsoleUI::printEverything() {
     int input;
+
     clear_screen();
     pr.printEverythingScreen();
+
     do{
         cin >> input;
         }while(!inputCheck(input, 2));
     switch(input) {
-    case 1:
-        printEverythingPerson();
-        break;
-    case 2:
-        printEverythingComputer();
-        break;
-    case 0:
-        clear_screen();
-        printUI();
-        return;
-    default:
-        break;
+        case 1:
+            printEverythingPerson();
+            break;
+        case 2:
+            printEverythingComputer();
+            break;
+        case 0:
+            clear_screen();
+            printUI();
+            return;
+        default:
+            break;
     }
     continueOrQuit();
 }
 
+// printEverythingPerson(): UI to choose how the list of persons is sorted
+// and prints the appropriate connected computers
 void ConsoleUI::printEverythingPerson() {
     int input;
     vector<Person> sortedTempPersons;
 
     clear_screen();
     pr.printEverythingPerson();
+
     do{
         cin >> input;
     }while(!inputCheck(input, 5));
     if(input != 0) {
         pr.personHeader();
     }
+
     switch(input) {
         case 1:
             sortedTempPersons = personService.getAll();
@@ -253,17 +280,22 @@ void ConsoleUI::printEverythingPerson() {
     connectionsService.printAllPerson(sortedTempPersons, computerService.getAll(), personService.getSizeOfRepo());
 }
 
+// printEverythingComputer(): UI to choose how the list of computers is sorted
+// and prints the appropriate connected persons
 void ConsoleUI::printEverythingComputer() {
     int input;
     vector<Computer> sortedTempComputers;
+
     clear_screen();
     pr.printEverythingComputer();
+
     do{
         cin >> input;
     }while(!inputCheck(input, 4));
     if(input != 0) {
         pr.computerHeader();
     }
+
     switch(input) {
         case 1:
             sortedTempComputers = computerService.getAll();
@@ -294,6 +326,7 @@ void ConsoleUI::searchUI() {
 
     clear_screen();
     pr.searchScreen();
+
     do{
         cin >> input;
     }while(!inputCheck(input, 4));
@@ -339,15 +372,15 @@ void ConsoleUI::clear_screen() {
 // continueOrQuit(): asks the user if he wants to continue or quit
 void ConsoleUI::continueOrQuit() {
     char c;
+
     cout << "Please enter 'c' to continue or 'q' to quit: ";
     cin >> c;
-
-    if(c == 'q' || c == 'Q')
-    {
+    if(c == 'q' || c == 'Q') {
         exit(0);
     }
 }
 
+// inputCheck(input, max): checks if the input is between 0 and max
 bool ConsoleUI::inputCheck(int input, int max) {
     if(cin.fail()) {
         cin.clear();
