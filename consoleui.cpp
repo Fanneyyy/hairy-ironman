@@ -140,6 +140,10 @@ void ConsoleUI::printPerson() {
         cin >> input;
         }while(!inputCheck(input, 6));
 
+    if(input != 0) {
+        pr.personHeader();
+    }
+
     switch(input) {
         case 1:
             personService.printAll();;
@@ -183,6 +187,10 @@ void ConsoleUI::printComputer() {
     do{
         cin >> input;
         }while(!inputCheck(input, 4));
+
+    if(input != 0) {
+        pr.computerHeader();
+    }
 
     switch(input) {
         case 1:
@@ -250,6 +258,7 @@ void ConsoleUI::printEverythingPerson() {
     do{
         cin >> input;
     }while(!inputCheck(input, 5));
+
     if(input != 0) {
         pr.personHeader();
     }
@@ -292,6 +301,7 @@ void ConsoleUI::printEverythingComputer() {
     do{
         cin >> input;
     }while(!inputCheck(input, 4));
+
     if(input != 0) {
         pr.computerHeader();
     }
