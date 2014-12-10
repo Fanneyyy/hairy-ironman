@@ -216,34 +216,6 @@ void ConsoleUI::printComputer() {
     }
 }
 
-// printEverything(): choose if you want to print a list if persons
-// with their connected computers or vice versa
-void ConsoleUI::printEverything() {
-    int input;
-
-    clear_screen();
-    pr.printEverythingScreen();
-
-    do{
-        cin >> input;
-        }while(!inputCheck(input, 2));
-    switch(input) {
-        case 1:
-            printEverythingPerson();
-            break;
-        case 2:
-            printEverythingComputer();
-            break;
-        case 0:
-            clear_screen();
-            printUI();
-            return;
-        default:
-            break;
-    }
-    continueOrQuit();
-}
-
 // printEverythingPerson(): UI to choose how the list of persons is sorted
 // and prints the appropriate connected computers
 void ConsoleUI::printEverythingPerson() {
