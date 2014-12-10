@@ -390,11 +390,11 @@ void PrintUI::welcomeScreen() {
 void PrintUI::computerHeader() {
     cout << fixed;
     cout << left << setw(30) << "Name: " << setw(15) << "Type:" << setw(15) << "Build year" << setw(15) << "Built?" << endl;
-    cout << "--------------------------------------------------------------------" << endl;
+    cout << "--------------------------------------------------------------------------" << endl;
 }
 
 void PrintUI::personHeader() {
     cout << fixed;
     cout << left << setw(30) << "Name: " << setw(15) << "Gender" << setw(15)  << "Year of birth" << setw(15) << "Year of death" << endl;
-    cout << "--------------------------------------------------------------------" << endl;
+    cout << "--------------------------------------------------------------------------" << endl;
 }
