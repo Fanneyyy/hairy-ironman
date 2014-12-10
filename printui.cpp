@@ -270,7 +270,7 @@ void PrintUI::addPersonScreen() {
     cout << "           |   | Please insert information about the         |    |" << endl;
     cout << "           |   | scientist in this order:                    |    |" << endl;
     cout << "           |   |                                             |    |" << endl;
-    cout << "           |   |   Name (firstname lastname)                 |    |" << endl;
+    cout << "           |   |   Full name                                 |    |" << endl;
     cout << "           |   |   Gender (male/female)                      |    |" << endl;
     cout << "           |   |   Year of birth                             |    |" << endl;
     cout << "           |   |   Year of death                             |    |" << endl;
@@ -389,12 +389,12 @@ void PrintUI::welcomeScreen() {
 
 void PrintUI::computerHeader() {
     cout << fixed;
-    cout << left << setw(25) << "Name: " << setw(15) << "Type:" << setw(15) << "Build year" << setw(15) << "Built?" << endl;
-    cout << "----------------------------------------------------------------" << endl;
+    cout << left << setw(30) << "Name: " << setw(15) << "Type:" << setw(15) << "Build year" << setw(15) << "Built?" << endl;
+    cout << "--------------------------------------------------------------------" << endl;
 }
 
 void PrintUI::personHeader() {
     cout << fixed;
-    cout << left << setw(25) << "Name: " << setw(15) << "Gender" << setw(15)  << "Year of birth" << setw(15) << "Year of death" << endl;
-    cout << "-------------------------------------------------------------------" << endl;
+    cout << left << setw(30) << "Name: " << setw(15) << "Gender" << setw(15)  << "Year of birth" << setw(15) << "Year of death" << endl;
+    cout << "--------------------------------------------------------------------" << endl;
 }

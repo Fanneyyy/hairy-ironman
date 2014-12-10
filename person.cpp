@@ -10,7 +10,7 @@ Person::Person() {
 
 ostream& operator <<(ostream& outs, const Person& p) {
     outs << fixed;
-    outs << left << setw(25) << p.name << setw(15) << p.gender << setw(15) <<   p.yearOfBirth;
+    outs << left << setw(30) << p.name << setw(15) << p.gender << setw(15) <<   p.yearOfBirth;
     outs << left <<setw(15) << p.yearOfDeath << endl;
     return outs;
 }

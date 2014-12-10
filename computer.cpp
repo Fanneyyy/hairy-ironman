@@ -16,7 +16,7 @@ ostream& operator <<(ostream& outs, const Computer& c) {
         built = "No";
     }
     outs << fixed;
-    outs << left << setw(25) << c.name << setw(15) << c.type;
+    outs << left << setw(30) << c.name << setw(15) << c.type;
     outs << left << setw(15) << c.buildYear << setw(15) << built << endl;
     return outs;
 }
