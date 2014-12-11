@@ -106,7 +106,7 @@ bool Person::validName(string name) {
             onlySpaces = false;
         }
         if(!isalpha(name[i]) && !isspace(name[i])) {
-            cout << "Not a valid name, please use only letters and no spaces" << endl;
+            cout << "Not a valid name, please use only letters" << endl;
             validChar = false;
         }
     }
@@ -150,7 +150,7 @@ bool Person::validGender(string gender) {
     string temp = gender;
     transform(temp.begin(), temp.end(), temp.begin(), ::tolower);
     if(temp != "female" && temp != "male") {
-        cout << "Not a valid gender, please retype Male/Female" << endl;
+        cout << "Not a valid gender, please retype male/female" << endl;
         return false;
     }
     return true;

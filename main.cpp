@@ -1,12 +1,11 @@
-// initializes a User interface, calls the setup function
-// and runs the first User interface screen.
+#include "mainwindow.h"
+#include <QApplication>
 
-#include "consoleui.h"
+int main(int argc, char *argv[])
+{
+    QApplication a(argc, argv);
+    MainWindow w;
+    w.show();
 
-int main() {
-    ConsoleUI ui;
-    ui.initialSetUp();
-    ui.choose();
-
-    return 0;
+    return a.exec();
 }
