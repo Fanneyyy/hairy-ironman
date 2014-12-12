@@ -30,6 +30,10 @@ private slots:
 
     void on_buttonAddComputer_clicked();
 
+    void on_tablePersons_cellActivated(int row, int column);
+
+    void on_tableComputers_cellActivated(int row, int column);
+
 private:
     Ui::MainWindow *ui;
     AddPersonWindow addperson;

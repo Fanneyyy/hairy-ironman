@@ -9,7 +9,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    ui->viewWikipage->load(QUrl("http://www.google.com"));
     personsService.setUp();
     computersService.setUp();
     displayPersonTable();
@@ -53,4 +52,14 @@ void MainWindow::on_buttonAddPerson_clicked()
 void MainWindow::on_buttonAddComputer_clicked()
 {
     addcomputer.show();
+}
+
+void MainWindow::on_tablePersons_cellActivated(int row, int column)
+{
+    ui->viewWikipage->load(QUrl("http://en.wikipedia.org/wiki/"+ui->tablePersons->item(row, 0)->text()));
+}
+
+void MainWindow::on_tableComputers_cellActivated(int row, int column)
+{
+    ui->viewWikipage->load(QUrl("http://en.wikipedia.org/wiki/"+ui->tableComputers->item(row, 0)->text()));
 }
