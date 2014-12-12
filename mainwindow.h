@@ -21,7 +21,8 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
-    void displayTable();
+    void displayComputerTable();
+    void displayPersonTable();
 private slots:
 
 
