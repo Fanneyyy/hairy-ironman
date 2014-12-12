@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AddPersonWindow</class>
+ <widget class="QDialog" name="AddPersonWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QLineEdit" name="lineFullname"/>
+   </item>
+   <item>
+    <widget class="QLineEdit" name="lineGender"/>
+   </item>
+   <item>
+    <widget class="QLineEdit" name="lineYearOfBirth"/>
+   </item>
+   <item>
+    <widget class="QLineEdit" name="lineYearOfDeath"/>
+   </item>
+   <item>
+    <widget class="QPushButton" name="AddPersonButton">
+     <property name="text">
+      <string>Add Person!</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
