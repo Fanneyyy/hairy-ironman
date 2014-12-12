@@ -12,8 +12,6 @@ int main(int argc, char *argv[])
     p.setUp();
     QApplication a(argc, argv);
     MainWindow w;
-    AddPersonWindow addp;
-    AddComputerWindow addc;
     //addp.show();
     //addc.show();
     w.show();

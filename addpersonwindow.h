@@ -2,6 +2,7 @@
 #define ADDPERSONWINDOW_H
 
 #include <QDialog>
+#include "personsservice.h"
 
 namespace Ui {
 class AddPersonWindow;
@@ -15,6 +16,7 @@ public:
     explicit AddPersonWindow(QWidget *parent = 0);
     ~AddPersonWindow();
 
+    void addPerson();
 private slots:
     void on_lineFullname_textChanged(const QString &arg1);
 

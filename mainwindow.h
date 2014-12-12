@@ -21,15 +21,20 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
+    void displayTable();
 private slots:
-    void on_buttonAddComputer_clicked();
+
 
     void on_buttonAddPerson_clicked();
+
+    void on_buttonAddComputer_clicked();
 
 private:
     Ui::MainWindow *ui;
     AddPersonWindow addperson;
     AddComputerWindow addcomputer;
+    PersonsService personsService;
+    ComputersService computersService;
 };
 
 #endif // MAINWINDOW_H

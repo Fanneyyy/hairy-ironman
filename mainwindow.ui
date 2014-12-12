@@ -2,6 +2,14 @@
 <ui version="4.0">
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>524</width>
+    <height>504</height>
+   </rect>
+  </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
@@ -9,6 +17,9 @@
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
      <widget class="QPushButton" name="buttonAddPerson">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
       <property name="text">
        <string>AddPerson!</string>
       </property>
@@ -16,13 +27,40 @@
     </item>
     <item>
      <widget class="QPushButton" name="buttonAddComputer">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
       <property name="text">
        <string>AddComputer!</string>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QTableWidget" name="tableWidget"/>
+     <widget class="QTableWidget" name="tablePersons">
+      <property name="sortingEnabled">
+       <bool>true</bool>
+      </property>
+      <column>
+       <property name="text">
+        <string>Name</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Gender</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Year of birth</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Year of death</string>
+       </property>
+      </column>
+     </widget>
     </item>
    </layout>
   </widget>

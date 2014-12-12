@@ -18,17 +18,10 @@ int PersonsService::getSizeOfRepo() {
 }
 
 // add(): adds a person to the personRepo database and to the sqlite database.
-void PersonsService::add() {
-    Person p = Person();
-    char c;
+void PersonsService::add(Person p) {
 
-    do {
-        cin >> p;
         personRepo.add(p);
         savePersonToDatabase(p);
-        cout << "Want to add another? (y/n?) ";
-        cin >> c;
-    } while(c != 'N' && c != 'n');
 }
 
 void PersonsService::printAll() {
