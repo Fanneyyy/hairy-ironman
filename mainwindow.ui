@@ -8,18 +8,21 @@
   <widget class="QWidget" name="centralWidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="buttonAddPerson">
       <property name="text">
-       <string>Add Computer</string>
+       <string>AddPerson!</string>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QPushButton" name="pushToAddPerson">
+     <widget class="QPushButton" name="buttonAddComputer">
       <property name="text">
-       <string>Add Person</string>
+       <string>AddComputer!</string>
       </property>
      </widget>
+    </item>
+    <item>
+     <widget class="QTableWidget" name="tableWidget"/>
     </item>
    </layout>
   </widget>

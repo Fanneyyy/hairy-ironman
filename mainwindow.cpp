@@ -14,12 +14,12 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::on_pushToAddPerson_clicked()
-{
-    addperson.show();
-}
-
-void MainWindow::on_pushButton_clicked()
+void MainWindow::on_buttonAddComputer_clicked()
 {
     addcomputer.show();
+}
+
+void MainWindow::on_buttonAddPerson_clicked()
+{
+    addperson.show();
 }
