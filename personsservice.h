@@ -17,7 +17,7 @@ class PersonsService {
 public:
     PersonsService();
     Person get(int id);
-    void add();
+    void add(Person p);
     void setUp();
     void printAll();
     void printAllWithNumber();

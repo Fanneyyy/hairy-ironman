@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui sql
+QT       += core gui sql webkitwidgets
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -25,7 +25,10 @@ SOURCES += main.cpp\
     personsservice.cpp \
     readperson.cpp \
     search.cpp \
-    sort.cpp
+    sort.cpp \
+    addpersonwindow.cpp \
+    addcomputerwindow.cpp \
+    addconnectionwindow.cpp
 
 HEADERS  += mainwindow.h \
     computer.h \
@@ -39,6 +42,12 @@ HEADERS  += mainwindow.h \
     personsservice.h \
     readperson.h \
     search.h \
-    sort.h
+    sort.h \
+    addpersonwindow.h \
+    addcomputerwindow.h \
+    addconnectionwindow.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    addpersonwindow.ui \
+    addcomputerwindow.ui \
+    addconnectionwindow.ui
