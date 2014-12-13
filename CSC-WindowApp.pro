@@ -23,7 +23,6 @@ SOURCES += main.cpp\
     person.cpp \
     personsrepository.cpp \
     personsservice.cpp \
-    readperson.cpp \
     search.cpp \
     sort.cpp
 

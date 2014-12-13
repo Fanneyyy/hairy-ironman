@@ -84,7 +84,11 @@ void PersonsService::setUp() {
 
     QSqlQuery query(QSqlDatabase::database("PersonConnection"));
 
-    query.exec("SELECT * FROM Person");
+    if(query.exec("SELECT * FROM Person")) {
+        cout << "works" << endl;
+    } else {
+        cout << "doesn't works" << endl;
+    }
 
     while(query.next()) {
         p.setID(query.value("ID").toString().toStdString());
