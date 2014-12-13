@@ -27,7 +27,8 @@ SOURCES += main.cpp\
     search.cpp \
     sort.cpp \
     addpersonwindow.cpp \
-    addcomputerwindow.cpp
+    addcomputerwindow.cpp \
+    addconnectionwindow.cpp
 
 HEADERS  += mainwindow.h \
     computer.h \
@@ -43,8 +44,10 @@ HEADERS  += mainwindow.h \
     search.h \
     sort.h \
     addpersonwindow.h \
-    addcomputerwindow.h
+    addcomputerwindow.h \
+    addconnectionwindow.h
 
 FORMS    += mainwindow.ui \
     addpersonwindow.ui \
-    addcomputerwindow.ui
+    addcomputerwindow.ui \
+    addconnectionwindow.ui

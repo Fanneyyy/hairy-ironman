@@ -8,6 +8,7 @@
 
 #include "addpersonwindow.h"
 #include "addcomputerwindow.h"
+#include "addconnectionwindow.h"
 
 namespace Ui {
 class MainWindow;
@@ -34,10 +35,14 @@ private slots:
 
     void on_tableComputers_cellActivated(int row, int column);
 
+    void on_buttonAddConnection_clicked();
+
 private:
     Ui::MainWindow *ui;
     AddPersonWindow addperson;
     AddComputerWindow addcomputer;
+    AddConnectionWindow addconnection;
+
     PersonsService personsService;
     ComputersService computersService;
 };

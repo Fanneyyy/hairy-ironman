@@ -63,3 +63,8 @@ void MainWindow::on_tableComputers_cellActivated(int row, int column)
 {
     ui->viewWikipage->load(QUrl("http://en.wikipedia.org/wiki/"+ui->tableComputers->item(row, 0)->text()));
 }
+
+void MainWindow::on_buttonAddConnection_clicked()
+{
+    addconnection.show();
+}

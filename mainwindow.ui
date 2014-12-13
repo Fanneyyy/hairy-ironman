@@ -29,7 +29,7 @@
          </size>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>1</number>
         </property>
         <widget class="QWidget" name="tabComputers">
          <attribute name="title">
@@ -50,6 +50,9 @@
           <property name="selectionBehavior">
            <enum>QAbstractItemView::SelectRows</enum>
           </property>
+          <property name="showGrid">
+           <bool>false</bool>
+          </property>
           <property name="sortingEnabled">
            <bool>true</bool>
           </property>
@@ -69,8 +72,6 @@
            </property>
           </column>
          </widget>
-         <zorder>tablePersons</zorder>
-         <zorder>tableComputers</zorder>
         </widget>
         <widget class="QWidget" name="tabPersons">
          <attribute name="title">
@@ -150,6 +151,13 @@
         </property>
         <property name="text">
          <string>AddPerson!</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="buttonAddConnection">
+        <property name="text">
+         <string>AddConnection!</string>
         </property>
        </widget>
       </item>
