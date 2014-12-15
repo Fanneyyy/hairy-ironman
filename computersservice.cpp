@@ -10,17 +10,11 @@ Computer ComputersService::get(int id) {
 }
 
 // add(): adds a computer to the computerRepo database.
-void ComputersService::add() {
-    Computer computer;
-    char c;
+void ComputersService::add(Computer c) {
 
-    do {
-        cin >> computer;
-        computerRepo.add(computer);
-        saveComputerToDatabase(computer);
-        cout << "Want to add another? (y/n?) ";
-        cin >> c;
-    } while(c != 'N' && c != 'n');
+        computerRepo.add(c);
+        saveComputerToDatabase(c);
+
 }
 
 vector<Computer> ComputersService::getAll() {

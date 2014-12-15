@@ -37,7 +37,6 @@ void AddPersonWindow::addPerson() {
     temp = ui->lineYearOfDeath->text().toStdString();
     p.setYearOfDeath(temp);
 
-    personsService.savePersonToDatabase(p);
     personsService.add(p);
 
 }

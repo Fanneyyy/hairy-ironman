@@ -18,7 +18,7 @@ MainWindow::MainWindow(QWidget *parent) :
 MainWindow::~MainWindow() {
     delete ui;
 }
-
+/*
 void MainWindow::displayPersonTable() {
 
     ui->tablePersons->setRowCount(personsService.getSizeOfRepo());
@@ -30,7 +30,51 @@ void MainWindow::displayPersonTable() {
         ui->tablePersons->setItem(i,4,new QTableWidgetItem(QString::number(personsService.get(i).getID())));
     }
 }
+*/
+void MainWindow::displayPersonTable() {
+    ui->tablePersons->clear();
 
+    vector<Person> temp;
+    string searchString;
+    for(int i = 0; i < personsService.getSizeOfRepo(); i++) {
+        searchString = ui->lineSearch->text().toStdString();
+        if(personsService.get(i).contains(searchString)) {
+            temp.push_back(personsService.get(i));
+        }
+    }
+
+    ui->tablePersons->setRowCount(personsService.getSizeOfRepo());
+    for(unsigned int i = 0; i < temp.size(); i++) {
+        ui->tablePersons->setItem(i,0,new QTableWidgetItem(QString::fromStdString(temp[i].getName())));
+        ui->tablePersons->setItem(i,1,new QTableWidgetItem(QString::fromStdString(temp[i].getGender())));
+        ui->tablePersons->setItem(i,2,new QTableWidgetItem(QString::fromStdString(temp[i].getYearOfBirth())));
+        ui->tablePersons->setItem(i,3,new QTableWidgetItem(QString::fromStdString(temp[i].getYearOfDeath())));
+        ui->tablePersons->setItem(i,4,new QTableWidgetItem(QString::number(temp[i].getID())));
+    }
+}
+
+/*void MainWindow::displayComputerTable() {
+    ui->tableComputers->clear();
+
+    vector<Computer> temp;
+    string searchString;
+    for(int i = 0; i < computersService.getSizeOfRepo(); i++) {
+        searchString = ui->lineSearch->text().toStdString();
+        if(computersService.get(i).contains(searchString)) {
+            temp.push_back(computersService.get(i));
+        }
+    }
+
+    ui->tableComputers->setRowCount(computersService.getSizeOfRepo());
+    for(int i = 0; i < computersService.getSizeOfRepo(); i++) {
+        ui->tableComputers->setItem(i,0,new QTableWidgetItem(QString::fromStdString(computersService.get(i).getComputerName())));
+        ui->tableComputers->setItem(i,1,new QTableWidgetItem(QString::fromStdString(computersService.get(i).getType())));
+        ui->tableComputers->setItem(i,2,new QTableWidgetItem(QString::fromStdString(computersService.get(i).getBuildYear())));
+        ui->tableComputers->setItem(i,3,new QTableWidgetItem(QString::fromStdString(computersService.get(i).getBuiltRnot())));
+        ui->tableComputers->setItem(i,4,new QTableWidgetItem(QString::number(computersService.get(i).getID())));
+    }
+}
+*/
 void MainWindow::displayComputerTable() {
 
     ui->tableComputers->setRowCount(computersService.getSizeOfRepo());
@@ -42,7 +86,6 @@ void MainWindow::displayComputerTable() {
         ui->tableComputers->setItem(i,4,new QTableWidgetItem(QString::number(computersService.get(i).getID())));
     }
 }
-
 
 void MainWindow::on_buttonAddPerson_clicked() {
     addperson.show();
@@ -73,6 +116,7 @@ void MainWindow::on_buttonAddConnection_clicked() {
     addconnection.show();
 }
 
-void MainWindow::on_listConnections_activated(const QModelIndex &index) {
-
+void MainWindow::on_lineSearch_textChanged(const QString &arg1)
+{
+    displayPersonTable();
 }

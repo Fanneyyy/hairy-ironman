@@ -37,8 +37,7 @@ private slots:
 
     void on_buttonAddConnection_clicked();
 
-    void on_listConnections_activated(const QModelIndex &index);
-
+    void on_lineSearch_textChanged(const QString &arg1);
 private:
     Ui::MainWindow *ui;
     AddPersonWindow addperson;

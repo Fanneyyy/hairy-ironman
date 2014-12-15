@@ -17,7 +17,7 @@ class ComputersService {
 public:
     ComputersService();
     Computer get(int id);
-    void add();
+    void add(Computer c);
     void setUp();
     void printAll();
     void printAllWithNumber();
