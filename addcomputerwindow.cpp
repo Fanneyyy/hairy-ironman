@@ -37,6 +37,11 @@ bool AddComputerWindow::linesAreValid() {
 void AddComputerWindow::on_buttonAddComputer_clicked()
 {
     addComputer();
+    ui->lineComputerName->clear();
+    ui->lineType->clear();
+    ui->lineYearOfBuild->clear();
+    close();
+
 }
 void AddComputerWindow::addComputer() {
     Computer c = Computer();

@@ -20,6 +20,7 @@ public:
 
     void displayPersonTable();
     void displayComputerTable();
+    void addConnection();
 private slots:
     void on_buttonPushToClose_clicked();
 

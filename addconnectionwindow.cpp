@@ -19,7 +19,7 @@ AddConnectionWindow::~AddConnectionWindow()
 
 void AddConnectionWindow::on_buttonPushToClose_clicked()
 {
-
+    close();
 }
 
 void AddConnectionWindow::displayPersonTable() {
@@ -44,4 +44,9 @@ void AddConnectionWindow::displayComputerTable() {
         ui->computerTableConnection->setItem(i,2,new QTableWidgetItem(QString::fromStdString(computersService.get(i).getBuildYear())));
         ui->computerTableConnection->setItem(i,3,new QTableWidgetItem(QString::fromStdString(computersService.get(i).getBuiltRnot())));
     }
+}
+
+void AddConnectionWindow::addConnection() {
+
+
 }

@@ -21,6 +21,7 @@ void AddPersonWindow::on_AddPersonButton_clicked() {
     ui->lineGender->clear();
     ui->lineYearOfBirth->clear();
     ui->lineYearOfDeath->clear();
+    close();
 
 }
 
@@ -40,25 +41,3 @@ void AddPersonWindow::addPerson() {
     personsService.add(p);
 
 }
-
-/*
-void AddPersonWindow::on_lineFullname_textChanged(const QString &arg1) {
-
-}
-
-
-void AddPersonWindow::on_lineGender_textChanged(const QString &arg1)
-{
-
-}
-
-void AddPersonWindow::on_lineYearOfBirth_textChanged(const QString &arg1)
-{
-
-}
-
-void AddPersonWindow::on_lineYearOfDeath_textChanged(const QString &arg1)
-{
-
-}
-*/

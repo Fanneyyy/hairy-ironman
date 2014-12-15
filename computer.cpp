@@ -158,7 +158,6 @@ void Computer::trimWhiteSpace(string& input) {
 }
 
 string Computer::toString() {
-    cout << "123";
     return name + " " + type + " " + buildYear;
 }
 

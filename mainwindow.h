@@ -24,6 +24,7 @@ public:
 
     void displayComputerTable();
     void displayPersonTable();
+
 private slots:
 
 
@@ -37,7 +38,8 @@ private slots:
 
     void on_buttonAddConnection_clicked();
 
-    void on_lineSearch_textChanged(const QString &arg1);
+    void on_lineSearchComputer_textChanged(const QString &arg1);
+    void on_lineSearchPerson_textChanged(const QString &arg1);
 private:
     Ui::MainWindow *ui;
     AddPersonWindow addperson;
