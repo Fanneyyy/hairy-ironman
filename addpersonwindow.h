@@ -18,6 +18,9 @@ public:
 
     void addPerson();
 private slots:
+
+    void on_AddPersonButton_clicked();
+/*
     void on_lineFullname_textChanged(const QString &arg1);
 
     void on_lineGender_textChanged(const QString &arg1);
@@ -25,11 +28,10 @@ private slots:
     void on_lineYearOfBirth_textChanged(const QString &arg1);
 
     void on_lineYearOfDeath_textChanged(const QString &arg1);
-
-    void on_AddPersonButton_clicked();
-
+*/
 private:
     Ui::AddPersonWindow *ui;
+    PersonsService personsService;
 };
 
 #endif // ADDPERSONWINDOW_H

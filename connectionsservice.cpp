@@ -41,25 +41,33 @@ void ConnectionsService::add(vector<Person> personList, vector<Computer>computer
 }
 
 // printAllPerson: prints a list of persons with the appropriate connected computers
-void ConnectionsService::printAllPerson(vector<Person> personList, vector<Computer>computerList, int size) {
+vector<Computer> ConnectionsService::printAllPerson(int ID, vector<Computer>computerList) {
+    vector<Computer> findings;
     int computerIDtemp;
-    string name;
-
-    for(int i = 0; i < size; i++) {
-        cout << personList[i];
+    cout << "ConnectionRepo size = " << connectionRepo.getConnectionSize() << endl;
+    //for(int i = 0; i < size; i++) {
         for(int j = 0; j < connectionRepo.getConnectionSize(); j++) {
-            if(personList[i].getID() == (connectionRepo.getConnection(j).getPersonID())) {
+            if(ID == (connectionRepo.getConnection(j).getPersonID())) {
                 computerIDtemp = connectionRepo.getConnection(j).getComputerID();
                 for(unsigned int i = 0; i < computerList.size(); i++) {
                     if(computerIDtemp == computerList[i].getID()) {
-                        name = computerList[i].getComputerName();
+                        findings.push_back(computerList[i]);
                     }
                 }
-                cout << setw(3) << " " << name << endl;
             }
         }
-    }
+    //}
+    return findings;
 }
+
+//void ConnectionsService::listConnections(string personName, vector<Computer>computerList, int size) {
+//    string name;
+
+//    cout << personName << " is connected to ";
+//    for(int i = 0; i < size; i++) {
+//        if(personName == per)
+//    }
+//}
 
 // printAllComputer: prints a list of computers with the appropriate connected persons
 void ConnectionsService::printAllComputer(vector<Computer>computerList, vector<Person> personList, int size) {
@@ -173,3 +181,18 @@ bool ConnectionsService::inputCheck(int input, int max) {
     }
     return true;
 }
+
+//vector<Computer> ConnectionsService::findConnections(int ID, vector<Computer> computerList) {
+//    vector<Computer> findings;
+//    int computerIDtemp;
+//    for(int i = 0; i < getSizeOfRepo(); i++) {
+//        if(ID == connectionRepo.getConnection(i).getComputerID()) {
+
+//            for(int i = 0; i < computerList; i++) {
+//                if()
+//                findings.push_back();
+//            }
+//        }
+//    }
+
+//}

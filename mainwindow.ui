@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1226</width>
-    <height>576</height>
+    <width>1224</width>
+    <height>657</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,6 +20,9 @@
       <property name="sizeConstraint">
        <enum>QLayout::SetDefaultConstraint</enum>
       </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
       <item>
        <widget class="QTabWidget" name="tabWidget">
         <property name="minimumSize">
@@ -29,7 +32,7 @@
          </size>
         </property>
         <property name="currentIndex">
-         <number>1</number>
+         <number>0</number>
         </property>
         <widget class="QWidget" name="tabComputers">
          <attribute name="title">
@@ -68,9 +71,30 @@
           </column>
           <column>
            <property name="text">
-            <string>Built?</string>
+            <string>New Column</string>
            </property>
           </column>
+          <column>
+           <property name="text">
+            <string>Build Year</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>ID</string>
+           </property>
+          </column>
+         </widget>
+         <widget class="QWidget" name="horizontalLayoutWidget">
+          <property name="geometry">
+           <rect>
+            <x>-10</x>
+            <y>0</y>
+            <width>401</width>
+            <height>331</height>
+           </rect>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_3"/>
          </widget>
         </widget>
         <widget class="QWidget" name="tabPersons">
@@ -130,8 +154,23 @@
             <string>Year of death</string>
            </property>
           </column>
+          <column>
+           <property name="text">
+            <string>ID</string>
+           </property>
+          </column>
          </widget>
         </widget>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineSearch"/>
+      </item>
+      <item>
+       <widget class="QPushButton" name="buttonAddConnection">
+        <property name="text">
+         <string>AddConnection!</string>
+        </property>
        </widget>
       </item>
       <item>
@@ -155,9 +194,15 @@
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="buttonAddConnection">
-        <property name="text">
-         <string>AddConnection!</string>
+       <widget class="QListWidget" name="listConnections">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>420</width>
+          <height>100</height>
+         </size>
         </property>
        </widget>
       </item>
