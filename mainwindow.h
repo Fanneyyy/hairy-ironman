@@ -37,6 +37,8 @@ private slots:
 
     void on_buttonAddConnection_clicked();
 
+    void on_listConnections_activated(const QModelIndex &index);
+
 private:
     Ui::MainWindow *ui;
     AddPersonWindow addperson;
@@ -45,6 +47,7 @@ private:
 
     PersonsService personsService;
     ComputersService computersService;
+    ConnectionsService connectionsService;
 };
 
 #endif // MAINWINDOW_H

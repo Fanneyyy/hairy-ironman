@@ -23,10 +23,11 @@ public:
     void saveConnectionToDatabase(Connection c);
     int getSizeOfRepo();
     vector<Connection> getAll();
-    void printAllPerson(vector<Person> personList, vector<Computer> computerList, int size);
+    vector<Computer> printAllPerson(int ID, vector<Computer> computerList);
     void printAllComputer(vector<Computer> computerList, vector<Person> personList, int size);
     void add(vector<Person> personList, vector<Computer>computerList);
     bool inputCheck(int input, int max);
+    int *findConnections(int ID);
 private:
     ConnectionsRepository connectionRepo;
     QSqlDatabase db;
