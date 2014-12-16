@@ -11,6 +11,9 @@ AddConnectionWindow::AddConnectionWindow(QWidget *parent) :
     computersService.setUp();
     displayComputerTable();
     displayPersonTable();
+    ui->personTableConnection->setColumnHidden(4,true);
+    ui->computerTableConnection->setColumnHidden(4,true);
+    ui->computerTableConnection->setColumnHidden(3,true);
 }
 
 AddConnectionWindow::~AddConnectionWindow()

@@ -14,6 +14,7 @@ int main(int argc, char *argv[])
     MainWindow w;
     //addp.show();
     //addc.show();
+    w.setGeometry(30,200,300,700);
     w.show();
 
 
