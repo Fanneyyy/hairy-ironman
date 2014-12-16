@@ -13,9 +13,13 @@ MainWindow::MainWindow(QWidget *parent) :
     connectionsService.setUp();
     displayPersonTable();
     displayComputerTable();
+    ui->lineSearchComputer->setPlaceholderText("Search..");
+    ui->lineSearchPerson->setPlaceholderText("Search..");
+
 }
 
 MainWindow::~MainWindow() {
+
     delete ui;
 }
 
@@ -101,10 +105,23 @@ void MainWindow::on_tablePersons_cellActivated(int row) {
 }
 
 void MainWindow::on_tableComputers_cellActivated(int row) {
+    ui->listConnections->clear();
+    vector<Person> temp = connectionsService.printAllComputer(ui->tableComputers->item(row,4)->text().toInt(), personsService.getAll());
+
     ui->viewWikipage->load(QUrl("http://en.wikipedia.org/wiki/"+ui->tableComputers->item(row, 0)->text()));
+    if(temp.size() > 0) {
+    ui->listConnections->addItem("The Computer "+ui->tableComputers->item(row,0)->text()+" is connected to: ");
+    for(unsigned int i = 0; i < temp.size(); i++) {
+        ui->listConnections->addItem(QString::fromStdString(temp[i].getName()));
+        }
+    }
 }
 
-void MainWindow::on_buttonAddConnection_clicked() {
+void MainWindow::on_buttonAddConnectionPerson_clicked() {
+    addconnection.exec();
+}
+
+void MainWindow::on_buttonAddConnectionComputer_clicked() {
     addconnection.exec();
 }
 

@@ -36,7 +36,8 @@ private slots:
 
     void on_tableComputers_cellActivated(int row);
 
-    void on_buttonAddConnection_clicked();
+    void on_buttonAddConnectionPerson_clicked();
+    void on_buttonAddConnectionComputer_clicked();
 
     void on_lineSearchComputer_textChanged();
     void on_lineSearchPerson_textChanged();

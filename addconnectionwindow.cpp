@@ -52,14 +52,12 @@ void AddConnectionWindow::addConnection() {
 void AddConnectionWindow::on_computerTableConnection_cellClicked(int row, int column)
 {
     int computerID = ui->computerTableConnection->item(row,4)->text().toInt();
-    cout << "computerID : " << computerID << endl;
     connection.setComputerID(computerID);
 }
 
 void AddConnectionWindow::on_personTableConnection_cellClicked(int row, int column)
 {
     int personID = ui->personTableConnection->item(row,4)->text().toInt();
-    cout << "personID : " << personID;
     connection.setPersonID(personID);
 }
 

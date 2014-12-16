@@ -595,7 +595,6 @@ moc_mainwindow.cpp: ../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions
 		../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qdialog.h \
 		addcomputerwindow.h \
 		addconnectionwindow.h \
-		mainwindow.h \
 		mainwindow.h
 	/Users/kthorri/Qt/5.3/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -I/Users/kthorri/Qt/5.3/clang_64/mkspecs/macx-clang -I/Users/kthorri/Dropbox/Verklegt/Vika3/CSC-WindowApp -I/Users/kthorri/Qt/5.3/clang_64/lib/QtWebKitWidgets.framework/Headers -I/Users/kthorri/Qt/5.3/clang_64/lib/QtWebKit.framework/Headers -I/Users/kthorri/Qt/5.3/clang_64/lib/QtWidgets.framework/Headers -I/Users/kthorri/Qt/5.3/clang_64/lib/QtNetwork.framework/Headers -I/Users/kthorri/Qt/5.3/clang_64/lib/QtSql.framework/Headers -I/Users/kthorri/Qt/5.3/clang_64/lib/QtGui.framework/Headers -I/Users/kthorri/Qt/5.3/clang_64/lib/QtCore.framework/Headers -F/Users/kthorri/Qt/5.3/clang_64/lib mainwindow.h -o moc_mainwindow.cpp
 
@@ -631,14 +630,36 @@ moc_addpersonwindow.cpp: ../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Ver
 
 moc_addcomputerwindow.cpp: ../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QDialog \
 		../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qdialog.h \
+		computersservice.h \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QString \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qstring.h \
+		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/QtSql \
+		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/qsql.h \
+		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/qsqldatabase.h \
+		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/qsqldriver.h \
+		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/qsqldriverplugin.h \
+		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/qsqlerror.h \
+		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/qsqlfield.h \
+		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/qsqlindex.h \
+		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/qsqlquery.h \
+		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/qsqlrecord.h \
+		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/qsqlresult.h \
+		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/qsqlquerymodel.h \
+		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/qsqlrelationaldelegate.h \
+		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/qsqlrelationaltablemodel.h \
+		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/qsqltablemodel.h \
+		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/qtsqlversion.h \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QtDebug \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qdebug.h \
+		computerrepository.h \
+		person.h \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/Qstring \
+		computer.h \
 		addcomputerwindow.h
 	/Users/kthorri/Qt/5.3/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -I/Users/kthorri/Qt/5.3/clang_64/mkspecs/macx-clang -I/Users/kthorri/Dropbox/Verklegt/Vika3/CSC-WindowApp -I/Users/kthorri/Qt/5.3/clang_64/lib/QtWebKitWidgets.framework/Headers -I/Users/kthorri/Qt/5.3/clang_64/lib/QtWebKit.framework/Headers -I/Users/kthorri/Qt/5.3/clang_64/lib/QtWidgets.framework/Headers -I/Users/kthorri/Qt/5.3/clang_64/lib/QtNetwork.framework/Headers -I/Users/kthorri/Qt/5.3/clang_64/lib/QtSql.framework/Headers -I/Users/kthorri/Qt/5.3/clang_64/lib/QtGui.framework/Headers -I/Users/kthorri/Qt/5.3/clang_64/lib/QtCore.framework/Headers -F/Users/kthorri/Qt/5.3/clang_64/lib addcomputerwindow.h -o moc_addcomputerwindow.cpp
 
 moc_addconnectionwindow.cpp: ../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QDialog \
 		../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qdialog.h \
-		mainwindow.h \
-		../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QMainWindow \
-		../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qmainwindow.h \
 		personsservice.h \
 		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QString \
 		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qstring.h \
@@ -669,9 +690,6 @@ moc_addconnectionwindow.cpp: ../../../../Qt/5.3/clang_64/lib/QtWidgets.framework
 		connectionsservice.h \
 		connectionsrepository.h \
 		connection.h \
-		addpersonwindow.h \
-		addcomputerwindow.h \
-		addconnectionwindow.h \
 		addconnectionwindow.h
 	/Users/kthorri/Qt/5.3/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -I/Users/kthorri/Qt/5.3/clang_64/mkspecs/macx-clang -I/Users/kthorri/Dropbox/Verklegt/Vika3/CSC-WindowApp -I/Users/kthorri/Qt/5.3/clang_64/lib/QtWebKitWidgets.framework/Headers -I/Users/kthorri/Qt/5.3/clang_64/lib/QtWebKit.framework/Headers -I/Users/kthorri/Qt/5.3/clang_64/lib/QtWidgets.framework/Headers -I/Users/kthorri/Qt/5.3/clang_64/lib/QtNetwork.framework/Headers -I/Users/kthorri/Qt/5.3/clang_64/lib/QtSql.framework/Headers -I/Users/kthorri/Qt/5.3/clang_64/lib/QtGui.framework/Headers -I/Users/kthorri/Qt/5.3/clang_64/lib/QtCore.framework/Headers -F/Users/kthorri/Qt/5.3/clang_64/lib addconnectionwindow.h -o moc_addconnectionwindow.cpp
 
@@ -959,6 +977,31 @@ addpersonwindow.o: addpersonwindow.cpp addpersonwindow.h \
 addcomputerwindow.o: addcomputerwindow.cpp addcomputerwindow.h \
 		../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QDialog \
 		../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qdialog.h \
+		computersservice.h \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QString \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qstring.h \
+		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/QtSql \
+		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/qsql.h \
+		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/qsqldatabase.h \
+		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/qsqldriver.h \
+		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/qsqldriverplugin.h \
+		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/qsqlerror.h \
+		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/qsqlfield.h \
+		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/qsqlindex.h \
+		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/qsqlquery.h \
+		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/qsqlrecord.h \
+		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/qsqlresult.h \
+		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/qsqlquerymodel.h \
+		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/qsqlrelationaldelegate.h \
+		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/qsqlrelationaltablemodel.h \
+		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/qsqltablemodel.h \
+		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/qtsqlversion.h \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QtDebug \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qdebug.h \
+		computerrepository.h \
+		person.h \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/Qstring \
+		computer.h \
 		ui_addcomputerwindow.h \
 		../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QMessageBox \
 		../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qmessagebox.h
@@ -967,9 +1010,6 @@ addcomputerwindow.o: addcomputerwindow.cpp addcomputerwindow.h \
 addconnectionwindow.o: addconnectionwindow.cpp addconnectionwindow.h \
 		../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QDialog \
 		../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qdialog.h \
-		mainwindow.h \
-		../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QMainWindow \
-		../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qmainwindow.h \
 		personsservice.h \
 		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QString \
 		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qstring.h \
@@ -1000,8 +1040,6 @@ addconnectionwindow.o: addconnectionwindow.cpp addconnectionwindow.h \
 		connectionsservice.h \
 		connectionsrepository.h \
 		connection.h \
-		addpersonwindow.h \
-		addcomputerwindow.h \
 		ui_addconnectionwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o addconnectionwindow.o addconnectionwindow.cpp
 

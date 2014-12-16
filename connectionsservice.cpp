@@ -70,7 +70,7 @@ vector<Computer> ConnectionsService::printAllPerson(int ID, vector<Computer>comp
 //}
 
 // printAllComputer: prints a list of computers with the appropriate connected persons
-void ConnectionsService::printAllComputer(vector<Computer>computerList, vector<Person> personList, int size) {
+/*void ConnectionsService::printAllComputer(vector<Computer>computerList, vector<Person> personList, int size) {
     int personIDtemp;
     string name;
 
@@ -89,7 +89,22 @@ void ConnectionsService::printAllComputer(vector<Computer>computerList, vector<P
         }
     }
 }
-
+*/
+vector<Person> ConnectionsService::printAllComputer(int ID, vector<Person> personList) {
+    vector<Person> findings;
+    int personIDtemp;
+    for(int j = 0; j < connectionRepo.getConnectionSize(); j++) {
+        if(ID == (connectionRepo.getConnection(j).getComputerID())) {
+            personIDtemp = connectionRepo.getConnection(j).getPersonID();
+            for(unsigned int i = 0; i < personList.size(); i++) {
+                if(personIDtemp == personList[i].getID()) {
+                    findings.push_back(personList[i]);
+                }
+            }
+        }
+    }
+    return findings;
+}
 vector<Connection> ConnectionsService::getAll() {
     return connectionRepo.getAllConnections();
 }
