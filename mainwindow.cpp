@@ -103,6 +103,9 @@ void MainWindow::on_buttonAddComputer_clicked() {
 
 void MainWindow::on_tablePersons_cellActivated(int row) {
     ui->listConnectionsPerson->clear();
+    connectionsService.removeAll();
+    connectionsService.setUp();
+
     vector<Computer> temp = connectionsService.printAllPerson(ui->tablePersons->item(row,4)->text().toInt(), computersService.getAll());
 
     ui->viewWikipage->load(QUrl("http://en.wikipedia.org/wiki/"+ui->tablePersons->item(row, 0)->text()));
@@ -117,6 +120,9 @@ void MainWindow::on_tablePersons_cellActivated(int row) {
 
 void MainWindow::on_tableComputers_cellActivated(int row) {
     ui->listConnectionsComputer->clear();
+    connectionsService.removeAll();
+    connectionsService.setUp();
+
     vector<Person> temp = connectionsService.printAllComputer(ui->tableComputers->item(row,4)->text().toInt(), personsService.getAll());
 
     ui->viewWikipage->load(QUrl("http://en.wikipedia.org/wiki/"+ui->tableComputers->item(row, 0)->text()));
