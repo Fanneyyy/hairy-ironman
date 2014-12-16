@@ -6,6 +6,13 @@
 
 #include "connection.h"
 #include <vector>
+#include <QtSql>
+#include <QtDebug>
+#include <QString>
+#include <string>
+#include <vector>
+#include <limits>
+#include <cstring>
 
 using namespace std;
 
@@ -16,8 +23,13 @@ public:
     Connection getConnection(int id);
     int getConnectionSize();
     vector<Connection> getAllConnections();
+    QSqlDatabase getDatabaseConnection();
+    void setUp();
+    void saveConnectionToDatabase(Connection c);
+    void addConnectionToVectorAndDatabase(Connection c);
 private:
     vector<Connection> connectionList;
+    QSqlDatabase db;
 };
 
 #endif // CONNECTIONSREPOSITORY_H
