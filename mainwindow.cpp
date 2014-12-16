@@ -87,18 +87,12 @@ void MainWindow::displayComputerTable() {
 
 void MainWindow::on_buttonAddPerson_clicked() {
     addperson.exec();
-    //personsRepo.emptyRepo();
-    //personsService.setUp();
     displayPersonTable();
-    //ui->labelPerson->setText("A person has been successfully added to the database");
 }
 
 void MainWindow::on_buttonAddComputer_clicked() {
     addcomputer.exec();
-    //computersRepo.emptyRepo();
-    //computersService.setUp();
     displayComputerTable();
-    //ui->labelComputer->setText("A computer has successfully been added to the database");
 }
 
 void MainWindow::on_tablePersons_cellActivated(int row) {

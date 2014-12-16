@@ -16,23 +16,6 @@ AddComputerWindow::~AddComputerWindow()
     delete ui;
 }
 
-
-/*
-bool AddComputerWindow::linesAreValid() {
-    ui->label_error->setText("");
-
-    if(ui->lineComputerName->text().isEmpty()) {
-        ui->label_error->setText("<span style='color: red'>Please enter a name</span>");
-        return false;
-    }
-    if(ui->lineType->text().isEmpty()) {
-        ui->label_error->setText("<span style='color: red'>Please enter a type</span>");
-        return false;
-    }
-    return true;
-}
-*/
-
 void AddComputerWindow::on_buttonAddComputer_clicked()
 {
     if(ui->lineComputerName->text().isEmpty()) {
