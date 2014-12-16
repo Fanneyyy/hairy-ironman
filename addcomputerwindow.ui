@@ -13,24 +13,78 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout">
-   <item>
-    <widget class="QLineEdit" name="lineComputerName"/>
-   </item>
-   <item>
-    <widget class="QLineEdit" name="lineType"/>
-   </item>
-   <item>
-    <widget class="QLineEdit" name="lineYearOfBuild"/>
-   </item>
-   <item>
-    <widget class="QPushButton" name="buttonAddComputer">
-     <property name="text">
-      <string>Add computer!</string>
-     </property>
-    </widget>
-   </item>
-  </layout>
+  <widget class="QLineEdit" name="lineComputerName">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>46</y>
+     <width>351</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineYearOfBuild">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>169</y>
+     <width>351</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="buttonAddComputer">
+   <property name="geometry">
+    <rect>
+     <x>6</x>
+     <y>228</y>
+     <width>137</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Add computer</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="ElectronicButton">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>110</y>
+     <width>102</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Electronic</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="MechanicalButton">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>110</y>
+     <width>102</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Mechanical</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="TransistorButton">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>110</y>
+     <width>102</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Transistor</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

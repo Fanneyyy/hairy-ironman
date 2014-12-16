@@ -8,13 +8,19 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow) {
     ui->setupUi(this);
-    personsService.setUp();
-    computersService.setUp();
     connectionsService.setUp();
     displayPersonTable();
     displayComputerTable();
     ui->lineSearchComputer->setPlaceholderText("Search..");
     ui->lineSearchPerson->setPlaceholderText("Search..");
+    ui->tablePersons->setColumnHidden(4,true);
+    ui->tableComputers->setColumnHidden(4,true);
+    ui->tableComputers->setColumnHidden(3,true);
+    ui->tablePersons->horizontalHeader()->resizeSection(0, 185);
+    ui->tableComputers->horizontalHeader()->resizeSection(0,185);
+    ui->tablePersons->horizontalHeader()->resizeSection(1, 120);
+    ui->tableComputers->horizontalHeader()->resizeSection(1,120);
+
 
 }
 
@@ -24,9 +30,10 @@ MainWindow::~MainWindow() {
 }
 
 void MainWindow::displayPersonTable() {
-    ui->tablePersons->clear();
+    ui->tablePersons->clearContents();
     ui->tablePersons->setSortingEnabled(false);
 
+    personsService.setUp();
     vector<Person> temp;
     string searchString;
     for(int i = 0; i < personsService.getSizeOfRepo(); i++) {
@@ -48,9 +55,10 @@ void MainWindow::displayPersonTable() {
 }
 
 void MainWindow::displayComputerTable() {
-    ui->tableComputers->clear();
+    ui->tableComputers->clearContents();
     ui->tableComputers->setSortingEnabled(false);
 
+    computersService.setUp();
     vector<Computer> temp;
     string searchString;
     for(int i = 0; i < computersService.getSizeOfRepo(); i++) {
@@ -70,51 +78,54 @@ void MainWindow::displayComputerTable() {
     }
     ui->tableComputers->setSortingEnabled(true);
 }
-/*
-void MainWindow::displayComputerTable() {
 
-    ui->tableComputers->setRowCount(computersService.getSizeOfRepo());
-    for(int i = 0; i < computersService.getSizeOfRepo(); i++) {
-        ui->tableComputers->setItem(i,0,new QTableWidgetItem(QString::fromStdString(computersService.get(i).getComputerName())));
-        ui->tableComputers->setItem(i,1,new QTableWidgetItem(QString::fromStdString(computersService.get(i).getType())));
-        ui->tableComputers->setItem(i,2,new QTableWidgetItem(QString::fromStdString(computersService.get(i).getBuildYear())));
-        ui->tableComputers->setItem(i,3,new QTableWidgetItem(QString::fromStdString(computersService.get(i).getBuiltRnot())));
-        ui->tableComputers->setItem(i,4,new QTableWidgetItem(QString::number(computersService.get(i).getID())));
-    }
-}
-*/
 void MainWindow::on_buttonAddPerson_clicked() {
     addperson.exec();
+    displayPersonTable();
 }
 
 void MainWindow::on_buttonAddComputer_clicked() {
     addcomputer.exec();
+    displayComputerTable();
 }
 
+/*
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1350</width>
+      <height>751</height>
+     </rect>
+    </property>
+    */
+
 void MainWindow::on_tablePersons_cellActivated(int row) {
-    ui->listConnections->clear();
+    ui->listConnectionsPerson->clear();
     vector<Computer> temp = connectionsService.printAllPerson(ui->tablePersons->item(row,4)->text().toInt(), computersService.getAll());
 
     ui->viewWikipage->load(QUrl("http://en.wikipedia.org/wiki/"+ui->tablePersons->item(row, 0)->text()));
     if(temp.size() > 0) {
-    ui->listConnections->addItem("The Scientist "+ui->tablePersons->item(row,0)->text()+" is connected to: ");
+    ui->listConnectionsPerson->addItem("The Scientist "+ui->tablePersons->item(row,0)->text()+" is connected to: ");
     for(unsigned int i = 0; i < temp.size(); i++) {
-        ui->listConnections->addItem(QString::fromStdString(temp[i].getComputerName()));
+        ui->listConnectionsPerson->addItem(QString::fromStdString(temp[i].getComputerName()));
         }
     }
+    setMinimumWidth(1337);
 }
 
 void MainWindow::on_tableComputers_cellActivated(int row) {
-    ui->listConnections->clear();
+    ui->listConnectionsComputer->clear();
     vector<Person> temp = connectionsService.printAllComputer(ui->tableComputers->item(row,4)->text().toInt(), personsService.getAll());
 
     ui->viewWikipage->load(QUrl("http://en.wikipedia.org/wiki/"+ui->tableComputers->item(row, 0)->text()));
     if(temp.size() > 0) {
-    ui->listConnections->addItem("The Computer "+ui->tableComputers->item(row,0)->text()+" is connected to: ");
+    ui->listConnectionsComputer->addItem("The Computer "+ui->tableComputers->item(row,0)->text()+" is connected to: ");
     for(unsigned int i = 0; i < temp.size(); i++) {
-        ui->listConnections->addItem(QString::fromStdString(temp[i].getName()));
+        ui->listConnectionsComputer->addItem(QString::fromStdString(temp[i].getName()));
         }
     }
+    setMinimumWidth(1337);
 }
 
 void MainWindow::on_buttonAddConnectionPerson_clicked() {

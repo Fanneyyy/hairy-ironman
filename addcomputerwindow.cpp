@@ -8,7 +8,6 @@ AddComputerWindow::AddComputerWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->lineComputerName->setPlaceholderText("Please enter name of computer");
-    ui->lineType->setPlaceholderText("Please enter type (Mechanical, Electronic or Transistor)");
     ui->lineYearOfBuild->setPlaceholderText("Year of build (leave empty if it wasn't)");
 }
 
@@ -38,7 +37,6 @@ void AddComputerWindow::on_buttonAddComputer_clicked()
 {
     addComputer();
     ui->lineComputerName->clear();
-    ui->lineType->clear();
     ui->lineYearOfBuild->clear();
     close();
 
@@ -49,8 +47,16 @@ void AddComputerWindow::addComputer() {
 
     temp = ui->lineComputerName->text().toStdString();
     c.setComputerName(temp);
-    temp = ui->lineType->text().toStdString();
-    c.setType(temp);
+    if(ui->ElectronicButton->isChecked()) {
+            temp = "Electronic";
+        }
+        else if(ui->MechanicalButton->isChecked()) {
+            temp = "Mechanical";
+        }
+        else if(ui->TransistorButton->isChecked()) {
+            temp = "Transistor";
+        }
+        c.setType(temp);
     temp = ui->lineYearOfBuild->text().toStdString();
     c.setBuildYear(temp);
 
