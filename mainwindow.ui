@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>600</width>
+    <width>630</width>
     <height>751</height>
    </rect>
   </property>
@@ -142,6 +142,13 @@
               </property>
              </widget>
             </item>
+            <item>
+             <widget class="QLabel" name="labelComputer">
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
            </layout>
           </item>
          </layout>
@@ -239,6 +246,13 @@
                 <width>16777215</width>
                 <height>100</height>
                </size>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="labelPerson">
+              <property name="text">
+               <string/>
               </property>
              </widget>
             </item>
