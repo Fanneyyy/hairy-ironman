@@ -97,9 +97,9 @@ void ConnectionsRepository::saveConnectionToDatabase(Connection c) {
         QString qcommand = "INSERT INTO Contributers " + col + "VALUES " + value;
 
         if(query.exec(qcommand)) {
-            cout << "The connection has been added to the database." << endl;
+            qDebug() << "The connection has been added to the database." << endl;
         } else {
-            cout << "Sorry, unable to make that connection" << endl;
+            qDebug() << "Sorry, unable to make that connection" << endl;
         }
     } else {
         qDebug() << "Error = " << db.lastError().text();

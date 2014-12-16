@@ -12,7 +12,6 @@ bool Utilities::validName(string name) {
             onlySpaces = false;
         }
         if(!isalpha(name[i]) && !isspace(name[i])) {
-            cout << "Not a valid name, please use only letters" << endl;
             validChar = false;
         }
     }
@@ -28,12 +27,10 @@ bool Utilities::validYear(string year) {
         return true;
     }
     if(year.size() > 4) {
-        cout << "Not a valid year, please select another." << endl;
         return false;
     }
     for(unsigned int i = 0; i < year.size(); ++i) {
         if(!isdigit(year[i])) {
-            cout << "Not a year, please select another." << endl;
             return false;
         }
     }
@@ -41,11 +38,9 @@ bool Utilities::validYear(string year) {
     istringstream buffer(year);
     buffer >> temp;
     if(temp > 1900+timePtr->tm_year) {
-        cout << "This year is in the future, please select another" << endl;
         return false;
     }
     else if(temp < 0) {
-        cout << "This year is BC, don't be ridiculous, select another" << endl;
         return false;
     }
     return true;
@@ -60,7 +55,6 @@ bool Utilities::birthVSDeath(string yearBirth, string yearDeath) {
     dbuffer >> death;
 
     if(birth > death) {
-        cout << "Sorry, we do not allow death before birth, Please select another year of death. " << endl;
         return false;
     }
     return true;
