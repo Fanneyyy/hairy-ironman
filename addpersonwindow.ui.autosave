@@ -14,41 +14,25 @@
    <string>Dialog</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="sizeConstraint">
+    <enum>QLayout::SetMinimumSize</enum>
+   </property>
    <item>
     <widget class="QLineEdit" name="lineFullname"/>
    </item>
    <item>
-    <layout class="QHBoxLayout" name="horizontalLayout">
-     <property name="spacing">
-      <number>1</number>
+    <widget class="QCheckBox" name="checkBox">
+     <property name="text">
+      <string>CheckBox</string>
      </property>
-     <property name="leftMargin">
-      <number>2</number>
+    </widget>
+   </item>
+   <item>
+    <widget class="QCheckBox" name="checkBox_2">
+     <property name="text">
+      <string>CheckBox</string>
      </property>
-     <property name="topMargin">
-      <number>2</number>
-     </property>
-     <property name="rightMargin">
-      <number>2</number>
-     </property>
-     <property name="bottomMargin">
-      <number>2</number>
-     </property>
-     <item>
-      <widget class="QCheckBox" name="checkBox">
-       <property name="text">
-        <string>CheckBox</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QCheckBox" name="checkBox_2">
-       <property name="text">
-        <string>CheckBox</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
+    </widget>
    </item>
    <item>
     <widget class="QLineEdit" name="lineYearOfBirth"/>

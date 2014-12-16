@@ -36,7 +36,7 @@
         </property>
         <widget class="QWidget" name="tabComputers">
          <attribute name="title">
-          <string>Tab 1</string>
+          <string>Computers</string>
          </attribute>
          <widget class="QTableWidget" name="tableComputers">
           <property name="geometry">
@@ -75,6 +75,9 @@
            <property name="text">
             <string>Name</string>
            </property>
+           <property name="textAlignment">
+            <set>AlignLeft|AlignVCenter</set>
+           </property>
           </column>
           <column>
            <property name="text">
@@ -110,7 +113,7 @@
         </widget>
         <widget class="QWidget" name="tabPersons">
          <attribute name="title">
-          <string>Tab 2</string>
+          <string>Persons</string>
          </attribute>
          <widget class="QTableWidget" name="tablePersons">
           <property name="geometry">
@@ -147,7 +150,7 @@
           </property>
           <column>
            <property name="text">
-            <string>Name</string>
+            <string>Names</string>
            </property>
           </column>
           <column>
@@ -181,9 +184,6 @@
            </rect>
           </property>
          </widget>
-         <zorder>tablePersons</zorder>
-         <zorder>lineSearch</zorder>
-         <zorder>lineSearchPerson</zorder>
         </widget>
        </widget>
       </item>
