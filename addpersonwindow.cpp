@@ -16,11 +16,6 @@ AddPersonWindow::~AddPersonWindow() {
 
 void AddPersonWindow::on_AddPersonButton_clicked() {
     addPerson();
-    ui->lineFullname->clear();
-    ui->lineYearOfBirth->clear();
-    ui->lineYearOfDeath->clear();
-    close();
-
 }
 
 void AddPersonWindow::addPerson() {
@@ -35,11 +30,9 @@ void AddPersonWindow::addPerson() {
         temp = "female";
     }
     p.setGender(temp);
+
     temp = ui->lineYearOfBirth->text().toStdString();
     p.setYearOfBirth(temp);
     temp = ui->lineYearOfDeath->text().toStdString();
     p.setYearOfDeath(temp);
-
-    personsService.add(p);
-
 }

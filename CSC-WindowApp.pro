@@ -23,12 +23,11 @@ SOURCES += main.cpp\
     person.cpp \
     personsrepository.cpp \
     personsservice.cpp \
-    readperson.cpp \
     search.cpp \
-    sort.cpp \
     addpersonwindow.cpp \
     addcomputerwindow.cpp \
-    addconnectionwindow.cpp
+    addconnectionwindow.cpp \
+    utilities.cpp
 
 HEADERS  += mainwindow.h \
     computer.h \
@@ -40,12 +39,11 @@ HEADERS  += mainwindow.h \
     person.h \
     personsrepository.h \
     personsservice.h \
-    readperson.h \
     search.h \
-    sort.h \
     addpersonwindow.h \
     addcomputerwindow.h \
-    addconnectionwindow.h
+    addconnectionwindow.h \
+    utilities.h
 
 FORMS    += mainwindow.ui \
     addpersonwindow.ui \

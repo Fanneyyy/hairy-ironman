@@ -6,21 +6,29 @@
 
 #include <vector>
 #include <string>
+#include <QString>
+#include <QtSql>
+#include <QtDebug>
 #include "Person.h"
-#include "Computer.h"
 
 using namespace std;
 
 class PersonsRepository {
 public:
     PersonsRepository();
-    void add(Person a);
+    void add(Person p);
     Person getPerson(int id);
     vector<Person> getAllPerson();
     int getPersonSize();
     void emptyRepo();
+    void setUp();
+    string getPersonID();
+    void savePersonToDatabase(Person p);
+    QSqlDatabase getDatabaseConnection();
+    void addPersonToVectorAndDatabase(Person p);
 private:
     vector<Person> personList;
+    QSqlDatabase db;
 };
 
 #endif // PERSONSREPOSITORY_H

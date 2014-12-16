@@ -8,9 +8,6 @@
 #include <vector>
 #include <limits>
 #include <cstring>
-#include <QString>
-#include <QtSql>
-#include <QtDebug>
 #include "PersonsRepository.h"
 
 class PersonsService {
@@ -18,17 +15,11 @@ public:
     PersonsService();
     Person get(int id);
     void add(Person p);
-    void setUp();
-    void printAll();
-    void printAllWithNumber();
     int getSizeOfRepo();
-    string getPersonID();
-    void savePersonToDatabase(Person p);
-    QSqlDatabase getDatabaseConnection();
     vector<Person> getAll();
+    void setUp();
 private:
     PersonsRepository personRepo;
-    QSqlDatabase db;
 };
 
 #endif // PERSONSSERVICE_H

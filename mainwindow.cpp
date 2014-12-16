@@ -11,8 +11,18 @@ MainWindow::MainWindow(QWidget *parent) :
     connectionsService.setUp();
     personsService.setUp();
     computersService.setUp();
+    config();
     displayPersonTable();
     displayComputerTable();
+}
+
+MainWindow::~MainWindow() {
+
+
+    delete ui;
+}
+
+void MainWindow::config() {
     ui->lineSearchComputer->setPlaceholderText("Search..");
     ui->lineSearchPerson->setPlaceholderText("Search..");
     ui->tablePersons->setColumnHidden(4,true);
@@ -22,14 +32,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->tableComputers->horizontalHeader()->resizeSection(0,185);
     ui->tablePersons->horizontalHeader()->resizeSection(1, 120);
     ui->tableComputers->horizontalHeader()->resizeSection(1,120);
-
-
-}
-
-MainWindow::~MainWindow() {
-
-
-    delete ui;
 }
 
 void MainWindow::displayPersonTable() {

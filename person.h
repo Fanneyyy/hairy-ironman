@@ -13,6 +13,7 @@
 #include <iomanip>
 #include <algorithm>
 #include <Qstring>
+#include "utilities.h"
 
 using namespace std;
 
@@ -24,7 +25,7 @@ public:
     void setGender(string newGender);
     void setYearOfBirth(string newYearOfBirth);
     void setYearOfDeath(string newYearOfDeath);
-    void setID(string newID);
+    void setID(string id);
 
     string getName();
     string getGender();
@@ -32,16 +33,6 @@ public:
     string getYearOfDeath();
     int getID();
 
-    friend ostream& operator <<(ostream& outs, const Person& p);
-    friend istream& operator >>(istream& ins, Person& p);
-
-    bool validYear(string year);
-    bool validGender(string gender);
-    bool validName(string name);
-    bool birthVSDeath(string yearBirth, string yearDeath);
-
-    void trimWhiteSpace(string &input);
-    string stringToLower(string original);
     string toString();
     bool contains(string search);
 private:
@@ -50,6 +41,7 @@ private:
     string yearOfBirth;
     string yearOfDeath;
     string ID;
+    Utilities utilities;
 };
 
 #endif // PERSON_H
