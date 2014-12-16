@@ -6,8 +6,8 @@ AddPersonWindow::AddPersonWindow(QWidget *parent) :
     ui(new Ui::AddPersonWindow) {
     ui->setupUi(this);
     ui->lineFullname->setPlaceholderText("Please enter full name");
-    ui->lineYearOfBirth->setPlaceholderText("Please enter the year of birth (Example: 1994)");
-    ui->lineYearOfDeath->setPlaceholderText("Please enter the year of death (Example: 1999)");
+    ui->lineYearOfBirth->setPlaceholderText("Please enter the year of birth");
+    ui->lineYearOfDeath->setPlaceholderText("Please enter the year of death ('-' if person still alive)");
 }
 
 AddPersonWindow::~AddPersonWindow() {
@@ -15,20 +15,25 @@ AddPersonWindow::~AddPersonWindow() {
 }
 
 void AddPersonWindow::on_AddPersonButton_clicked() {
-    if(ui->lineFullname->text().isEmpty() | ui->lineYearOfBirth->text().isEmpty() | ui->lineYearOfDeath->text().isEmpty()) {
-        ui->labelError->setText("<font color='red'>Please enter information in all required fields</font>");
+    if(!p.validYear(ui->lineYearOfBirth->text().toStdString())) {
+        ui->labelError->setText("<font color='red'>The birth year you selected is not valid</font>");
+    }
+    else if(!p.validYear(ui->lineYearOfDeath->text().toStdString())) {
+            ui->labelError->setText("<font color='red'>The death year you selected is not valid</font>");
+    }
+    else if(ui->lineFullname->text().isEmpty()) {
+            ui->labelError->setText("<font color='red'>Please enter a name</font>");
     }
     else if(!ui->male_checkbox->isChecked() && !ui->female_checkbox->isChecked()) {
-        ui->labelError->setText("<font color='red'>Please check a box to select a gender</font>");
+            ui->labelError->setText("<font color='red'>Please check a box to select a gender</font>");
     }
     else {
-    addPerson();
-    ui->lineFullname->clear();
-    ui->lineYearOfBirth->clear();
-    ui->lineYearOfDeath->clear();
-    close();
+        addPerson();
+        ui->lineFullname->clear();
+        ui->lineYearOfBirth->clear();
+        ui->lineYearOfDeath->clear();
+        close();
     }
-
 }
 
 void AddPersonWindow::addPerson() {

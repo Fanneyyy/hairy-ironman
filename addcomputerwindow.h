@@ -16,7 +16,6 @@ public:
     explicit AddComputerWindow(QWidget *parent = 0);
     ~AddComputerWindow();
 
-    bool linesAreValid();
     void addComputer();
 private slots:
 
@@ -25,6 +24,7 @@ private slots:
 private:
     Ui::AddComputerWindow *ui;
     ComputersService computersService;
+    Computer c;
 };
 
 #endif // ADDCOMPUTERWINDOW_H

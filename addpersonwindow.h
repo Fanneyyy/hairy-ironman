@@ -24,6 +24,7 @@ private slots:
 private:
     Ui::AddPersonWindow *ui;
     PersonsService personsService;
+    Person p;
 };
 
 #endif // ADDPERSONWINDOW_H
