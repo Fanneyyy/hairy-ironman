@@ -15,11 +15,19 @@ AddPersonWindow::~AddPersonWindow() {
 }
 
 void AddPersonWindow::on_AddPersonButton_clicked() {
+    if(ui->lineFullname->text().isEmpty() | ui->lineYearOfBirth->text().isEmpty() | ui->lineYearOfDeath->text().isEmpty()) {
+        ui->labelError->setText("<font color='red'>Please enter information in all required fields</font>");
+    }
+    else if(!ui->male_checkbox->isChecked() && !ui->female_checkbox->isChecked()) {
+        ui->labelError->setText("<font color='red'>Please check a box to select a gender</font>");
+    }
+    else {
     addPerson();
     ui->lineFullname->clear();
     ui->lineYearOfBirth->clear();
     ui->lineYearOfDeath->clear();
     close();
+    }
 
 }
 

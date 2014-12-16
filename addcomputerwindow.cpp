@@ -35,11 +35,18 @@ bool AddComputerWindow::linesAreValid() {
 
 void AddComputerWindow::on_buttonAddComputer_clicked()
 {
-    addComputer();
-    ui->lineComputerName->clear();
-    ui->lineYearOfBuild->clear();
-    close();
-
+    if(ui->lineComputerName->text().isEmpty() | ui->lineYearOfBuild->text().isEmpty()) {
+        ui->labelError->setText("<font color='red'>Please enter information in all required fields</font>");
+    }
+    else if(!ui->ElectronicButton->isChecked() && !ui->MechanicalButton->isChecked() && !ui->TransistorButton->isChecked()) {
+        ui->labelError->setText("<font color='red'>Please check a box to select a type</font>");
+    }
+    else {
+        addComputer();
+        ui->lineComputerName->clear();
+        ui->lineYearOfBuild->clear();
+        close();
+    }
 }
 void AddComputerWindow::addComputer() {
     Computer c = Computer();
