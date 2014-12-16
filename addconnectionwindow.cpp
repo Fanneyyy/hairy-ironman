@@ -22,7 +22,8 @@ AddConnectionWindow::~AddConnectionWindow()
 }
 
 void AddConnectionWindow::displayPersonTable() {
-
+    personsService.removeAll();
+    personsService.setUp();
     ui->personTableConnection->setRowCount(personsService.getSizeOfRepo());
     for(int i = 0; i < personsService.getSizeOfRepo(); i++)
     {
@@ -36,7 +37,8 @@ void AddConnectionWindow::displayPersonTable() {
 }
 
 void AddConnectionWindow::displayComputerTable() {
-
+    computersService.removeAll();
+    computersService.setUp();
     ui->computerTableConnection->setRowCount(computersService.getSizeOfRepo());
     for(int i = 0; i < computersService.getSizeOfRepo(); i++) {
         ui->computerTableConnection->setItem(i,0,new QTableWidgetItem(QString::fromStdString(computersService.get(i).getComputerName())));
