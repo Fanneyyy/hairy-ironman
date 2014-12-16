@@ -136,15 +136,13 @@ void MainWindow::on_tableComputers_cellActivated(int row) {
 }
 
 void MainWindow::on_buttonAddConnectionPerson_clicked() {
+    AddConnectionWindow addconnection;
     addconnection.exec();
-    //ui->labelPerson->setText("A connection has been successfully added to the database");
-    //ui->labelComputer->setText("A connection has been successfully added to the database");
 }
 
 void MainWindow::on_buttonAddConnectionComputer_clicked() {
+    AddConnectionWindow addconnection;
     addconnection.exec();
-    //ui->labelComputer->setText("A connection has been successfully added to the database");
-    //ui->labelPerson->setText("A connection has been successfully added to the database");
 }
 
 void MainWindow::on_lineSearchPerson_textChanged() {

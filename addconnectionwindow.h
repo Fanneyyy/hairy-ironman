@@ -30,9 +30,9 @@ private slots:
 
 private:
     Ui::AddConnectionWindow *ui;
+    ConnectionsService connectionsService;
     PersonsService personsService;
     ComputersService computersService;
-    ConnectionsService connectionsService;
     Connection connection;
     ConnectionsRepository connectionRepo;
 };
