@@ -24,12 +24,15 @@ bool Utilities::validYear(string year) {
     time_t t = time(NULL);
     tm* timePtr = localtime(&t);
 
+    if(year == "") {
+        return true;
+    }
     if(year.size() > 4) {
         cout << "Not a valid year, please select another." << endl;
         return false;
     }
     for(unsigned int i = 0; i < year.size(); ++i) {
-        if(!isdigit(year[i]) && year[i] != '-') {
+        if(!isdigit(year[i])) {
             cout << "Not a year, please select another." << endl;
             return false;
         }
