@@ -142,14 +142,14 @@
   <widget class="QPushButton" name="buttonPushToClose">
    <property name="geometry">
     <rect>
-     <x>680</x>
+     <x>654</x>
      <y>630</y>
-     <width>115</width>
+     <width>141</width>
      <height>32</height>
     </rect>
    </property>
    <property name="text">
-    <string>Ok!</string>
+    <string>Add connection</string>
    </property>
   </widget>
  </widget>

@@ -51,12 +51,12 @@ void AddConnectionWindow::addConnection() {
 
 }
 
-void AddConnectionWindow::on_computerTableConnection_cellClicked(int row, int column) {
+void AddConnectionWindow::on_computerTableConnection_cellClicked(int row) {
     int computerID = ui->computerTableConnection->item(row,4)->text().toInt();
     connection.setComputerID(computerID);
 }
 
-void AddConnectionWindow::on_personTableConnection_cellClicked(int row, int column) {
+void AddConnectionWindow::on_personTableConnection_cellClicked(int row) {
     int personID = ui->personTableConnection->item(row,4)->text().toInt();
     connection.setPersonID(personID);
 }

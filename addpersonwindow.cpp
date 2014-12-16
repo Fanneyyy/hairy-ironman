@@ -56,4 +56,5 @@ void AddPersonWindow::addPerson() {
     p.setYearOfBirth(temp);
     temp = ui->lineYearOfDeath->text().toStdString();
     p.setYearOfDeath(temp);
+    personsService.add(p);
 }
