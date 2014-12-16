@@ -14,6 +14,7 @@ void PersonsRepository::add(Person p){
     personList.push_back(p);
 }
 
+// adds to the vector and to the database.
 void PersonsRepository::addPersonToVectorAndDatabase(Person p) {
     savePersonToDatabase(p);
     p.setID(getPersonID());
@@ -30,6 +31,7 @@ int PersonsRepository::getPersonSize() {
     return personList.size();
 }
 
+// clears out the vector repository
 void PersonsRepository::emptyRepo() {
     personList = vector<Person>();
 }

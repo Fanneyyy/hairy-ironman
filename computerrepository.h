@@ -6,6 +6,9 @@
 
 #include <vector>
 #include <string>
+#include <QString>
+#include <QtSql>
+#include <QtDebug>
 #include "Person.h"
 #include "Computer.h"
 
@@ -19,8 +22,14 @@ public:
     vector<Computer> getAllComputer();
     int getComputerSize();
     void emptyRepo();
+    void saveComputerToDatabase(Computer c);
+    QSqlDatabase getDatabaseConnection();
+    void setUp();
+    void addComputerToVectorAndDatabase(Computer c);
+    string getComputerID();
 private:
     vector<Computer> computerList;
+    QSqlDatabase db;
 };
 
 #endif // COMPUTERREPOSITORY_H
