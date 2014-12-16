@@ -15,10 +15,10 @@ AddPersonWindow::~AddPersonWindow() {
 }
 
 void AddPersonWindow::on_AddPersonButton_clicked() {
-    if(!p.validYear(ui->lineYearOfBirth->text().toStdString())) {
+    if(!utilities.validYear(ui->lineYearOfBirth->text().toStdString())) {
         ui->labelError->setText("<font color='red'>The birth year you selected is not valid</font>");
     }
-    else if(!p.validYear(ui->lineYearOfDeath->text().toStdString())) {
+    else if(!utilities.validYear(ui->lineYearOfDeath->text().toStdString())) {
             ui->labelError->setText("<font color='red'>The death year you selected is not valid</font>");
     }
     else if(ui->lineFullname->text().isEmpty()) {
@@ -48,11 +48,9 @@ void AddPersonWindow::addPerson() {
         temp = "female";
     }
     p.setGender(temp);
+
     temp = ui->lineYearOfBirth->text().toStdString();
     p.setYearOfBirth(temp);
     temp = ui->lineYearOfDeath->text().toStdString();
     p.setYearOfDeath(temp);
-
-    personsService.add(p);
-
 }

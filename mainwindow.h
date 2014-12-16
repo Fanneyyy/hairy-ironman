@@ -14,31 +14,22 @@ namespace Ui {
 class MainWindow;
 }
 
-class MainWindow : public QMainWindow
-{
+class MainWindow : public QMainWindow {
     Q_OBJECT
 
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
-
     void displayComputerTable();
     void displayPersonTable();
-
+    void config();
 private slots:
-
-
     void on_buttonAddPerson_clicked();
-
     void on_buttonAddComputer_clicked();
-
     void on_tablePersons_cellActivated(int row);
-
     void on_tableComputers_cellActivated(int row);
-
     void on_buttonAddConnectionPerson_clicked();
     void on_buttonAddConnectionComputer_clicked();
-
     void on_lineSearchComputer_textChanged();
     void on_lineSearchPerson_textChanged();
 private:

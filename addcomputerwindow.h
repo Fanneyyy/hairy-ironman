@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include "computersservice.h"
+#include "utilities.h"
 
 namespace Ui {
 class AddComputerWindow;
@@ -24,7 +25,7 @@ private slots:
 private:
     Ui::AddComputerWindow *ui;
     ComputersService computersService;
-    Computer c;
+    Utilities utilities;
 };
 
 #endif // ADDCOMPUTERWINDOW_H
