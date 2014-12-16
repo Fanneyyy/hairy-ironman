@@ -7,7 +7,7 @@ AddPersonWindow::AddPersonWindow(QWidget *parent) :
     ui->setupUi(this);
     ui->lineFullname->setPlaceholderText("Please enter full name");
     ui->lineYearOfBirth->setPlaceholderText("Please enter the year of birth");
-    ui->lineYearOfDeath->setPlaceholderText("Please enter the year of death ('-' if person still alive)");
+    ui->lineYearOfDeath->setPlaceholderText("Please enter the year of death (leave empty if person still alive)");
 }
 
 AddPersonWindow::~AddPersonWindow() {
@@ -15,7 +15,7 @@ AddPersonWindow::~AddPersonWindow() {
 }
 
 void AddPersonWindow::on_AddPersonButton_clicked() {
-    if(!utilities.validYear(ui->lineYearOfBirth->text().toStdString())) {
+    if(!utilities.validYear(ui->lineYearOfBirth->text().toStdString()) || ui->lineYearOfBirth->text().toStdString() == "") {
         ui->labelError->setText("<font color='red'>The birth year you selected is not valid</font>");
     }
     else if(!utilities.validYear(ui->lineYearOfDeath->text().toStdString())) {
@@ -27,7 +27,7 @@ void AddPersonWindow::on_AddPersonButton_clicked() {
     else if(!ui->male_checkbox->isChecked() && !ui->female_checkbox->isChecked()) {
         ui->labelError->setText("<font color='red'>Please check a box to select a gender</font>");
     }
-    else if(ui->lineYearOfBirth->text().toInt() > ui->lineYearOfDeath->text().toInt()) {
+    else if(ui->lineYearOfBirth->text().toInt() > ui->lineYearOfDeath->text().toInt() && ui->lineYearOfDeath->text().toStdString() != "") {
         ui->labelError->setText("<font color='red'>Sorry, you can't die before being born</font>");
     }
     else {

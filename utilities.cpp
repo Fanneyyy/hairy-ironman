@@ -24,7 +24,7 @@ bool Utilities::validYear(string year) {
     time_t t = time(NULL);
     tm* timePtr = localtime(&t);
 
-    if(year == "-") {
+    if(year == "") {
         return true;
     }
     if(year.size() > 4) {
