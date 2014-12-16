@@ -17,6 +17,8 @@ void ConnectionsService::add(vector<Person> personList, vector<Computer>computer
         do {
         cin >> inputPerson;
         } while(!inputCheck(inputPerson, personList.size()));
+
+        //númer persónunar í listanum
         connection.setPersonID(personList[inputPerson-1].getID());
 
         cout << "Number of computer to connect with that person: ";
@@ -24,6 +26,7 @@ void ConnectionsService::add(vector<Person> personList, vector<Computer>computer
         do {
         cin >> inputComputer;
         } while(!inputCheck(inputComputer, computerList.size()));
+        //númer tölvunar í listanum
         connection.setComputerID(computerList[inputComputer-1].getID());
 
         cout << "\nDo you wish to make a connection between " << personList[inputPerson-1].getName() << endl;

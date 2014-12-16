@@ -178,3 +178,32 @@ void Person::trimWhiteSpace(string& input) {
     stringInput = stringInput.simplified();
     input = stringInput.toUtf8().constData();
 }
+
+string Person::toString() {
+    return name + " " + gender + " " + yearOfBirth + " " + yearOfDeath;
+}
+
+bool Person::contains(string search) {
+    if(search == "") {
+        return true;
+    }
+
+    string searchStringToLower = stringToLower(search);
+
+    if(stringToLower(this->toString()).find(searchStringToLower) != string::npos) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+string Person::stringToLower(string original) {
+    string result = "";
+
+    for(unsigned int i = 0; i < original.length(); ++i) {
+        result += tolower(original[i]);
+    }
+
+    return result;
+}

@@ -35,6 +35,9 @@ public:
     bool validName(string name);
 
     void trimWhiteSpace(string &input);
+    string stringToLower(string original);
+    bool contains(string search);
+    string toString();
 private:
     string name;
     string buildYear;

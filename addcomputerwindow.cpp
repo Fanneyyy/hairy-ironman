@@ -17,20 +17,6 @@ AddComputerWindow::~AddComputerWindow()
     delete ui;
 }
 
-void AddComputerWindow::on_lineComputerName_textChanged(const QString &arg1)
-{
-    //TODO: Computer name = arg1;
-}
-
-void AddComputerWindow::on_lineType_textChanged(const QString &arg1)
-{
-    //TODO: Computer type = arg1;
-}
-
-void AddComputerWindow::on_lineYearOfBuild_textChanged(const QString &arg1)
-{
-    //TODO: Computer year of build = arg1;
-}
 
 /*
 bool AddComputerWindow::linesAreValid() {
@@ -50,5 +36,23 @@ bool AddComputerWindow::linesAreValid() {
 
 void AddComputerWindow::on_buttonAddComputer_clicked()
 {
-    //TODO: Add all stöff into computer;
+    addComputer();
+    ui->lineComputerName->clear();
+    ui->lineType->clear();
+    ui->lineYearOfBuild->clear();
+    close();
+
+}
+void AddComputerWindow::addComputer() {
+    Computer c = Computer();
+    string temp;
+
+    temp = ui->lineComputerName->text().toStdString();
+    c.setComputerName(temp);
+    temp = ui->lineType->text().toStdString();
+    c.setType(temp);
+    temp = ui->lineYearOfBuild->text().toStdString();
+    c.setBuildYear(temp);
+
+    computersService.add(c);
 }

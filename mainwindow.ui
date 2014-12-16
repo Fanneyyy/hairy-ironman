@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1224</width>
-    <height>657</height>
+    <width>1326</width>
+    <height>751</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -43,9 +43,21 @@
            <rect>
             <x>-5</x>
             <y>0</y>
-            <width>411</width>
-            <height>421</height>
+            <width>471</width>
+            <height>411</height>
            </rect>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777208</width>
+            <height>16777215</height>
+           </size>
           </property>
           <property name="editTriggers">
            <set>QAbstractItemView::NoEditTriggers</set>
@@ -85,16 +97,15 @@
            </property>
           </column>
          </widget>
-         <widget class="QWidget" name="horizontalLayoutWidget">
+         <widget class="QLineEdit" name="lineSearchComputer">
           <property name="geometry">
            <rect>
-            <x>-10</x>
-            <y>0</y>
-            <width>401</width>
-            <height>331</height>
+            <x>2</x>
+            <y>410</y>
+            <width>461</width>
+            <height>41</height>
            </rect>
           </property>
-          <layout class="QHBoxLayout" name="horizontalLayout_3"/>
          </widget>
         </widget>
         <widget class="QWidget" name="tabPersons">
@@ -106,7 +117,7 @@
            <rect>
             <x>-10</x>
             <y>0</y>
-            <width>405</width>
+            <width>471</width>
             <height>411</height>
            </rect>
           </property>
@@ -160,11 +171,21 @@
            </property>
           </column>
          </widget>
+         <widget class="QLineEdit" name="lineSearchPerson">
+          <property name="geometry">
+           <rect>
+            <x>2</x>
+            <y>410</y>
+            <width>461</width>
+            <height>41</height>
+           </rect>
+          </property>
+         </widget>
+         <zorder>tablePersons</zorder>
+         <zorder>lineSearch</zorder>
+         <zorder>lineSearchPerson</zorder>
         </widget>
        </widget>
-      </item>
-      <item>
-       <widget class="QLineEdit" name="lineSearch"/>
       </item>
       <item>
        <widget class="QPushButton" name="buttonAddConnection">
@@ -200,7 +221,7 @@
         </property>
         <property name="maximumSize">
          <size>
-          <width>420</width>
+          <width>470</width>
           <height>100</height>
          </size>
         </property>

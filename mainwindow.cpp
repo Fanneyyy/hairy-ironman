@@ -20,17 +20,53 @@ MainWindow::~MainWindow() {
 }
 
 void MainWindow::displayPersonTable() {
+    ui->tablePersons->clear();
+    ui->tablePersons->setSortingEnabled(false);
+
+    vector<Person> temp;
+    string searchString;
+    for(int i = 0; i < personsService.getSizeOfRepo(); i++) {
+        searchString = ui->lineSearchPerson->text().toStdString();
+        if(personsService.get(i).contains(searchString)) {
+            temp.push_back(personsService.get(i));
+        }
+    }
 
     ui->tablePersons->setRowCount(personsService.getSizeOfRepo());
-    for(int i = 0; i < personsService.getSizeOfRepo(); i++) {
-        ui->tablePersons->setItem(i,0,new QTableWidgetItem(QString::fromStdString(personsService.get(i).getName())));
-        ui->tablePersons->setItem(i,1,new QTableWidgetItem(QString::fromStdString(personsService.get(i).getGender())));
-        ui->tablePersons->setItem(i,2,new QTableWidgetItem(QString::fromStdString(personsService.get(i).getYearOfBirth())));
-        ui->tablePersons->setItem(i,3,new QTableWidgetItem(QString::fromStdString(personsService.get(i).getYearOfDeath())));
-        ui->tablePersons->setItem(i,4,new QTableWidgetItem(QString::number(personsService.get(i).getID())));
+    for(unsigned int i = 0; i < temp.size(); i++) {
+        ui->tablePersons->setItem(i,0,new QTableWidgetItem(QString::fromStdString(temp[i].getName())));
+        ui->tablePersons->setItem(i,1,new QTableWidgetItem(QString::fromStdString(temp[i].getGender())));
+        ui->tablePersons->setItem(i,2,new QTableWidgetItem(QString::fromStdString(temp[i].getYearOfBirth())));
+        ui->tablePersons->setItem(i,3,new QTableWidgetItem(QString::fromStdString(temp[i].getYearOfDeath())));
+        ui->tablePersons->setItem(i,4,new QTableWidgetItem(QString::number(temp[i].getID())));
     }
+    ui->tablePersons->setSortingEnabled(true);
 }
 
+void MainWindow::displayComputerTable() {
+    ui->tableComputers->clear();
+    ui->tableComputers->setSortingEnabled(false);
+
+    vector<Computer> temp;
+    string searchString;
+    for(int i = 0; i < computersService.getSizeOfRepo(); i++) {
+        searchString = ui->lineSearchComputer->text().toStdString();
+        if(computersService.get(i).contains(searchString)) {
+            temp.push_back(computersService.get(i));
+        }
+    }
+
+    ui->tableComputers->setRowCount(computersService.getSizeOfRepo());
+    for(int i = 0; i < temp.size(); i++) {
+        ui->tableComputers->setItem(i,0,new QTableWidgetItem(QString::fromStdString(temp[i].getComputerName())));
+        ui->tableComputers->setItem(i,1,new QTableWidgetItem(QString::fromStdString(temp[i].getType())));
+        ui->tableComputers->setItem(i,2,new QTableWidgetItem(QString::fromStdString(temp[i].getBuildYear())));
+        ui->tableComputers->setItem(i,3,new QTableWidgetItem(QString::fromStdString(temp[i].getBuiltRnot())));
+        ui->tableComputers->setItem(i,4,new QTableWidgetItem(QString::number(temp[i].getID())));
+    }
+    ui->tableComputers->setSortingEnabled(true);
+}
+/*
 void MainWindow::displayComputerTable() {
 
     ui->tableComputers->setRowCount(computersService.getSizeOfRepo());
@@ -42,14 +78,13 @@ void MainWindow::displayComputerTable() {
         ui->tableComputers->setItem(i,4,new QTableWidgetItem(QString::number(computersService.get(i).getID())));
     }
 }
-
-
+*/
 void MainWindow::on_buttonAddPerson_clicked() {
-    addperson.show();
+    addperson.exec();
 }
 
 void MainWindow::on_buttonAddComputer_clicked() {
-    addcomputer.show();
+    addcomputer.exec();
 }
 
 void MainWindow::on_tablePersons_cellActivated(int row, int column) {
@@ -70,9 +105,12 @@ void MainWindow::on_tableComputers_cellActivated(int row, int column) {
 }
 
 void MainWindow::on_buttonAddConnection_clicked() {
-    addconnection.show();
+    addconnection.exec();
 }
 
-void MainWindow::on_listConnections_activated(const QModelIndex &index) {
-
+void MainWindow::on_lineSearchPerson_textChanged(const QString &arg1) {
+    displayPersonTable();
+}
+void MainWindow::on_lineSearchComputer_textChanged(const QString &arg1) {
+    displayComputerTable();
 }

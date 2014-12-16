@@ -41,6 +41,9 @@ public:
     bool birthVSDeath(string yearBirth, string yearDeath);
 
     void trimWhiteSpace(string &input);
+    string stringToLower(string original);
+    string toString();
+    bool contains(string search);
 private:
     string name;
     string gender;

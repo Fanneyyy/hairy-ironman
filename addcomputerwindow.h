@@ -2,6 +2,7 @@
 #define ADDCOMPUTERWINDOW_H
 
 #include <QDialog>
+#include "computersservice.h"
 
 namespace Ui {
 class AddComputerWindow;
@@ -16,17 +17,14 @@ public:
     ~AddComputerWindow();
 
     bool linesAreValid();
+    void addComputer();
 private slots:
-    void on_lineComputerName_textChanged(const QString &arg1);
-
-    void on_lineType_textChanged(const QString &arg1);
-
-    void on_lineYearOfBuild_textChanged(const QString &arg1);
 
     void on_buttonAddComputer_clicked();
 
 private:
     Ui::AddComputerWindow *ui;
+    ComputersService computersService;
 };
 
 #endif // ADDCOMPUTERWINDOW_H
