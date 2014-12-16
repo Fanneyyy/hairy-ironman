@@ -19,6 +19,9 @@ public:
     vector<Person> getAll();
     void setUp();
     void removeAll();
+    void remove(int personID, string ID);
+    int findPosition(int ID);
+    bool validPersonID(vector<Person> persons, int ID);
 private:
     PersonsRepository personRepo;
 };

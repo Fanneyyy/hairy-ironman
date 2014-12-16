@@ -147,3 +147,19 @@ void MainWindow::on_lineSearchPerson_textChanged() {
 void MainWindow::on_lineSearchComputer_textChanged() {
     displayComputerTable();
 }
+
+void MainWindow::on_removePerson_clicked() {
+    int activeRow = ui->tablePersons->currentRow();
+    string ID = ui->tablePersons->item(activeRow,4)->text().toStdString();
+    int personID = ui->tablePersons->item(activeRow,4)->text().toInt();
+    personsService.remove(personID,ID);
+    displayPersonTable();
+}
+
+void MainWindow::on_removeComputer_clicked() {
+    int activeRow = ui->tableComputers->currentRow();
+    string ID = ui->tableComputers->item(activeRow,4)->text().toStdString();
+    int computerID = ui->tableComputers->item(activeRow,4)->text().toInt();
+    computersService.remove(computerID,ID);
+    displayComputerTable();
+}

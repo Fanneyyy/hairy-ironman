@@ -27,6 +27,30 @@ void PersonsService::setUp() {
     personRepo.setUp();
 }
 
+void PersonsService::remove(int personID, string ID) {
+    personRepo.remove(findPosition(personID));
+    personRepo.removeFromDatabase(ID);
+}
+
 void PersonsService::removeAll() {
     personRepo.emptyRepo();
+}
+
+bool PersonsService::validPersonID(vector<Person> persons, int ID) {
+    for(unsigned int i = 0; i < persons.size(); i++) {
+        if(persons[i].getID() == ID) {
+            return true;
+        }
+    }
+    return false;
+}
+
+int PersonsService::findPosition(int ID) {
+    int temp;
+    for(int i = 0; i < personRepo.getPersonSize(); i++) {
+        if(personRepo.getPerson(i).getID() == ID) {
+            temp = i;
+        }
+    }
+    return temp;
 }

@@ -14,6 +14,10 @@ void PersonsRepository::add(Person p){
     personList.push_back(p);
 }
 
+void PersonsRepository::remove(int id){
+    personList.erase(personList.begin()+id);
+}
+
 // adds to the vector and to the database.
 void PersonsRepository::addPersonToVectorAndDatabase(Person p) {
     savePersonToDatabase(p);
@@ -111,3 +115,27 @@ void PersonsRepository::savePersonToDatabase(Person p) {
     db.close();
 }
 
+void PersonsRepository::removeFromDatabase(string ID) {
+    db = getDatabaseConnection();
+
+    if(db.open()) {
+        QSqlQuery query(QSqlDatabase::database("PersonConnection"));
+
+        query.prepare("DELETE FROM Person WHERE ID = :ID");
+        query.bindValue(":ID", atoi(ID.c_str()));
+
+        query.exec();
+
+        query.prepare("DELETE FROM Contributers WHERE p_ID = :ID");
+        query.bindValue(":ID", atoi(ID.c_str()));
+
+        if(query.exec()) {
+            cout << "The person has been added to the database." << endl;
+        } else {
+            qDebug() << "Error = " << db.lastError().text();
+        }
+    } else {
+        qDebug() << "Error = " << db.lastError().text();
+    }
+    db.close();
+}

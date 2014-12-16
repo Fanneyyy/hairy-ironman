@@ -31,3 +31,27 @@ int ComputersService::getSizeOfRepo() {
 void ComputersService::removeAll() {
     computerRepo.emptyRepo();
 }
+
+void ComputersService::remove(int computerID, string ID) {
+    computerRepo.remove(findPosition(computerID));
+    computerRepo.removeFromDatabase(ID);
+}
+
+bool ComputersService::validComputerID(vector<Computer> computers, int ID) {
+    for(unsigned int i = 0; i < computers.size(); i++) {
+        if(computers[i].getID() == ID) {
+            return true;
+        }
+    }
+    return false;
+}
+
+int ComputersService::findPosition(int ID) {
+    int temp;
+    for(int i = 0; i < computerRepo.getComputerSize(); i++) {
+        if(computerRepo.getComputer(i).getID() == ID) {
+            temp = i;
+        }
+    }
+    return temp;
+}

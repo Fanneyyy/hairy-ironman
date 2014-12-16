@@ -32,7 +32,7 @@
          </size>
         </property>
         <property name="currentIndex">
-         <number>1</number>
+         <number>0</number>
         </property>
         <widget class="QWidget" name="tabComputers">
          <property name="minimumSize">
@@ -119,6 +119,13 @@
               </property>
               <property name="text">
                <string>Add Computer</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="removeComputer">
+              <property name="text">
+               <string>Remove Computer</string>
               </property>
              </widget>
             </item>
@@ -226,6 +233,13 @@
               </property>
               <property name="text">
                <string>Add Scientist</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="removePerson">
+              <property name="text">
+               <string>Remove Scientist</string>
               </property>
              </widget>
             </item>

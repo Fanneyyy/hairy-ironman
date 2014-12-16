@@ -26,6 +26,8 @@ public:
     void savePersonToDatabase(Person p);
     QSqlDatabase getDatabaseConnection();
     void addPersonToVectorAndDatabase(Person p);
+    void remove(int id);
+    void removeFromDatabase(string ID);
 private:
     vector<Person> personList;
     QSqlDatabase db;

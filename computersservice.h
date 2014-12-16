@@ -23,6 +23,9 @@ public:
     int getSizeOfRepo();
     void setUp();
     void removeAll();
+    int findPosition(int ID);
+    bool validComputerID(vector<Computer> computers, int ID);
+    void remove(int computerID, string ID);
 private:
     ComputerRepository computerRepo;
     QSqlDatabase db;

@@ -27,6 +27,8 @@ public:
     void setUp();
     void addComputerToVectorAndDatabase(Computer c);
     string getComputerID();
+    void removeFromDatabase(string ID);
+    void remove(int id);
 private:
     vector<Computer> computerList;
     QSqlDatabase db;

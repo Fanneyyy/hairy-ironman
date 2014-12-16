@@ -14,6 +14,10 @@ void ComputerRepository::add(Computer c){
     computerList.push_back(c);
 }
 
+void ComputerRepository::remove(int id){
+    computerList.erase(computerList.begin()+id);
+}
+
 // adds to the vector and to the database.
 void ComputerRepository::addComputerToVectorAndDatabase(Computer c) {
     saveComputerToDatabase(c);
@@ -101,6 +105,31 @@ void ComputerRepository::saveComputerToDatabase(Computer c) {
 
         if(query.exec(qcommand)) {
             cout << "The computer has been added to the database." << endl;
+        } else {
+            qDebug() << "Error = " << db.lastError().text();
+        }
+    } else {
+        qDebug() << "Error = " << db.lastError().text();
+    }
+    db.close();
+}
+
+void ComputerRepository::removeFromDatabase(string ID) {
+    db = getDatabaseConnection();
+
+    if(db.open()) {
+        QSqlQuery query(QSqlDatabase::database("ComputerConnection"));
+
+        query.prepare("DELETE FROM Computer WHERE ID = :ID");
+        query.bindValue(":ID", atoi(ID.c_str()));
+
+        query.exec();
+
+        query.prepare("DELETE FROM Contributers WHERE p_ID = :ID");
+        query.bindValue(":ID", atoi(ID.c_str()));
+
+        if(query.exec()) {
+            cout << "The person has been added to the database." << endl;
         } else {
             qDebug() << "Error = " << db.lastError().text();
         }

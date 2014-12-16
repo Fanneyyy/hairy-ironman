@@ -33,6 +33,10 @@ private slots:
     void on_lineSearchComputer_textChanged();
     void on_lineSearchPerson_textChanged();
 
+    void on_removePerson_clicked();
+
+    void on_removeComputer_clicked();
+
 private:
     Ui::MainWindow *ui;
     AddPersonWindow addperson;
