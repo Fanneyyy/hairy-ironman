@@ -24,11 +24,17 @@ public:
 private slots:
     void on_buttonPushToClose_clicked();
 
+    void on_computerTableConnection_cellClicked(int row, int column);
+
+    void on_personTableConnection_cellClicked(int row, int column);
 
 private:
     Ui::AddConnectionWindow *ui;
     PersonsService personsService;
     ComputersService computersService;
+    ConnectionsService connectionsService;
+    Connection connection;
+    ConnectionsRepository connectionRepo;
 };
 
 #endif // ADDCONNECTIONWINDOW_H

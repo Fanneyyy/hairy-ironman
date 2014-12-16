@@ -57,7 +57,7 @@ void MainWindow::displayComputerTable() {
     }
 
     ui->tableComputers->setRowCount(computersService.getSizeOfRepo());
-    for(int i = 0; i < temp.size(); i++) {
+    for(unsigned int i = 0; i < temp.size(); i++) {
         ui->tableComputers->setItem(i,0,new QTableWidgetItem(QString::fromStdString(temp[i].getComputerName())));
         ui->tableComputers->setItem(i,1,new QTableWidgetItem(QString::fromStdString(temp[i].getType())));
         ui->tableComputers->setItem(i,2,new QTableWidgetItem(QString::fromStdString(temp[i].getBuildYear())));
@@ -87,7 +87,7 @@ void MainWindow::on_buttonAddComputer_clicked() {
     addcomputer.exec();
 }
 
-void MainWindow::on_tablePersons_cellActivated(int row, int column) {
+void MainWindow::on_tablePersons_cellActivated(int row) {
     ui->listConnections->clear();
     vector<Computer> temp = connectionsService.printAllPerson(ui->tablePersons->item(row,4)->text().toInt(), computersService.getAll());
 
@@ -100,7 +100,7 @@ void MainWindow::on_tablePersons_cellActivated(int row, int column) {
     }
 }
 
-void MainWindow::on_tableComputers_cellActivated(int row, int column) {
+void MainWindow::on_tableComputers_cellActivated(int row) {
     ui->viewWikipage->load(QUrl("http://en.wikipedia.org/wiki/"+ui->tableComputers->item(row, 0)->text()));
 }
 
@@ -108,9 +108,9 @@ void MainWindow::on_buttonAddConnection_clicked() {
     addconnection.exec();
 }
 
-void MainWindow::on_lineSearchPerson_textChanged(const QString &arg1) {
+void MainWindow::on_lineSearchPerson_textChanged() {
     displayPersonTable();
 }
-void MainWindow::on_lineSearchComputer_textChanged(const QString &arg1) {
+void MainWindow::on_lineSearchComputer_textChanged() {
     displayComputerTable();
 }

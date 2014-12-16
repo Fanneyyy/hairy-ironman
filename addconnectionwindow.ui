@@ -34,7 +34,7 @@
          <bool>false</bool>
         </property>
         <property name="dragDropMode">
-         <enum>QAbstractItemView::DragOnly</enum>
+         <enum>QAbstractItemView::NoDragDrop</enum>
         </property>
         <property name="alternatingRowColors">
          <bool>false</bool>
@@ -45,11 +45,9 @@
         <property name="showGrid">
          <bool>false</bool>
         </property>
-        <column>
-         <property name="text">
-          <string>New Column</string>
-         </property>
-        </column>
+        <property name="gridStyle">
+         <enum>Qt::SolidLine</enum>
+        </property>
         <column>
          <property name="text">
           <string>Name</string>
@@ -57,7 +55,22 @@
         </column>
         <column>
          <property name="text">
+          <string>Type</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
           <string>Build Year</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Built?</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>ID</string>
          </property>
         </column>
        </widget>
@@ -87,7 +100,7 @@
          <bool>false</bool>
         </property>
         <property name="dragDropMode">
-         <enum>QAbstractItemView::DragOnly</enum>
+         <enum>QAbstractItemView::NoDragDrop</enum>
         </property>
         <property name="selectionBehavior">
          <enum>QAbstractItemView::SelectRows</enum>
@@ -95,11 +108,6 @@
         <property name="showGrid">
          <bool>false</bool>
         </property>
-        <column>
-         <property name="text">
-          <string>New Column</string>
-         </property>
-        </column>
         <column>
          <property name="text">
           <string>Name</string>
@@ -112,7 +120,17 @@
         </column>
         <column>
          <property name="text">
+          <string>Birth year</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
           <string>Death year</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>ID</string>
          </property>
         </column>
        </widget>

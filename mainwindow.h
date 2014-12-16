@@ -32,14 +32,14 @@ private slots:
 
     void on_buttonAddComputer_clicked();
 
-    void on_tablePersons_cellActivated(int row, int column);
+    void on_tablePersons_cellActivated(int row);
 
-    void on_tableComputers_cellActivated(int row, int column);
+    void on_tableComputers_cellActivated(int row);
 
     void on_buttonAddConnection_clicked();
 
-    void on_lineSearchComputer_textChanged(const QString &arg1);
-    void on_lineSearchPerson_textChanged(const QString &arg1);
+    void on_lineSearchComputer_textChanged();
+    void on_lineSearchPerson_textChanged();
 private:
     Ui::MainWindow *ui;
     AddPersonWindow addperson;
