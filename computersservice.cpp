@@ -27,3 +27,7 @@ vector<Computer> ComputersService::getAll() {
 int ComputersService::getSizeOfRepo() {
     return computerRepo.getComputerSize();
 }
+
+void ComputersService::removeAll() {
+    computerRepo.emptyRepo();
+}

@@ -22,6 +22,7 @@ public:
     vector<Computer> getAll();
     int getSizeOfRepo();
     void setUp();
+    void removeAll();
 private:
     ComputerRepository computerRepo;
     QSqlDatabase db;

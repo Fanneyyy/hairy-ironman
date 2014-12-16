@@ -26,3 +26,7 @@ void PersonsService::add(Person p) {
 void PersonsService::setUp() {
     personRepo.setUp();
 }
+
+void PersonsService::removeAll() {
+    personRepo.emptyRepo();
+}

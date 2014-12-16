@@ -37,6 +37,8 @@ void MainWindow::config() {
 void MainWindow::displayPersonTable() {
     ui->tablePersons->clearContents();
     ui->tablePersons->setSortingEnabled(false);
+    personsService.removeAll();
+    personsService.setUp();
 
     vector<Person> temp;
     string searchString;
@@ -61,6 +63,8 @@ void MainWindow::displayPersonTable() {
 void MainWindow::displayComputerTable() {
     ui->tableComputers->clearContents();
     ui->tableComputers->setSortingEnabled(false);
+    computersService.removeAll();
+    computersService.setUp();
 
     vector<Computer> temp;
     string searchString;

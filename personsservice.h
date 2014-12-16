@@ -18,6 +18,7 @@ public:
     int getSizeOfRepo();
     vector<Person> getAll();
     void setUp();
+    void removeAll();
 private:
     PersonsRepository personRepo;
 };
