@@ -18,15 +18,10 @@ public:
     ComputersService();
     Computer get(int id);
     void add(Computer c);
-    void setUp();
-    void printAll();
-    void printAllWithNumber();
-    bool UIinputCheck(int input, int maxcases);
     int sizeOfDatabase();
-    void saveComputerToDatabase(Computer c);
-    QSqlDatabase getDatabaseConnection();
     vector<Computer> getAll();
     int getSizeOfRepo();
+    void setUp();
 private:
     ComputerRepository computerRepo;
     QSqlDatabase db;

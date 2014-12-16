@@ -23,7 +23,6 @@ SOURCES += main.cpp\
     person.cpp \
     personsrepository.cpp \
     personsservice.cpp \
-    search.cpp \
     addpersonwindow.cpp \
     addcomputerwindow.cpp \
     addconnectionwindow.cpp \
@@ -39,7 +38,6 @@ HEADERS  += mainwindow.h \
     person.h \
     personsrepository.h \
     personsservice.h \
-    search.h \
     addpersonwindow.h \
     addcomputerwindow.h \
     addconnectionwindow.h \

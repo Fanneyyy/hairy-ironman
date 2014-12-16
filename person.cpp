@@ -57,6 +57,7 @@ string Person::toString() {
     return name + " " + yearOfBirth + " " + yearOfDeath;
 }
 
+// contains: search for a string in a persons name, yearOfBirth eða yearOfDeath.
 bool Person::contains(string search) {
     if(search == "") {
         return true;

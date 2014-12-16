@@ -51,17 +51,6 @@ bool Utilities::validYear(string year) {
     return true;
 }
 
-// validGender(): checks if the gender is 'Male' or 'Female' not case sensitive.
-bool Utilities::validGender(string gender) {
-    string temp = gender;
-    transform(temp.begin(), temp.end(), temp.begin(), ::tolower);
-    if(temp != "female" && temp != "male") {
-        cout << "Not a valid gender, please retype male/female" << endl;
-        return false;
-    }
-    return true;
-}
-
 // birthVSDeath: makes sure you can not die before you are born
 bool Utilities::birthVSDeath(string yearBirth, string yearDeath) {
     int birth, death;

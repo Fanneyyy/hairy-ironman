@@ -8,6 +8,7 @@
 #include <ctime>
 #include <iomanip>
 #include <Qstring>
+#include "utilities.h"
 
 using namespace std;
 
@@ -27,15 +28,6 @@ public:
     string getBuiltRnot();
     int getID();
 
-    friend ostream& operator <<(ostream& outs, const Computer& c);
-    friend istream& operator >>(istream& ins, Computer& c);
-
-    bool validYear(string year);
-    bool validType(string type);
-    bool validName(string name);
-
-    void trimWhiteSpace(string &input);
-    string stringToLower(string original);
     bool contains(string search);
     string toString();
 private:
@@ -44,6 +36,7 @@ private:
     string type;
     string builtRnot;
     string ID;
+    Utilities utilities;
 };
 
 #endif // COMPUTER_H
