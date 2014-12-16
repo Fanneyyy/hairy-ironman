@@ -32,7 +32,7 @@
          </size>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>1</number>
         </property>
         <widget class="QWidget" name="tabComputers">
          <property name="minimumSize">
@@ -118,14 +118,14 @@
                <bool>true</bool>
               </property>
               <property name="text">
-               <string>Add Computer!</string>
+               <string>Add Computer</string>
               </property>
              </widget>
             </item>
             <item>
              <widget class="QPushButton" name="buttonAddConnectionComputer">
               <property name="text">
-               <string>Add Connection!</string>
+               <string>Add Connection</string>
               </property>
              </widget>
             </item>
@@ -225,14 +225,14 @@
                <bool>true</bool>
               </property>
               <property name="text">
-               <string>Add Person!</string>
+               <string>Add Scientist</string>
               </property>
              </widget>
             </item>
             <item>
              <widget class="QPushButton" name="buttonAddConnectionPerson">
               <property name="text">
-               <string>Add Connection!</string>
+               <string>Add Connection</string>
               </property>
              </widget>
             </item>
