@@ -28,7 +28,7 @@ SOURCES += main.cpp\
     sort.cpp \
     addpersonwindow.cpp \
     addcomputerwindow.cpp \
-    addconnectionwindow.cpp
+    addconnectionwindow.cpp \
 
 HEADERS  += mainwindow.h \
     computer.h \
@@ -45,9 +45,9 @@ HEADERS  += mainwindow.h \
     sort.h \
     addpersonwindow.h \
     addcomputerwindow.h \
-    addconnectionwindow.h
+    addconnectionwindow.h \
 
 FORMS    += mainwindow.ui \
     addpersonwindow.ui \
     addcomputerwindow.ui \
-    addconnectionwindow.ui
+    addconnectionwindow.ui \
