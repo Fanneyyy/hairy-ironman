@@ -6,34 +6,85 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>386</width>
+    <height>295</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout">
-   <item>
-    <widget class="QLineEdit" name="lineFullname"/>
-   </item>
-   <item>
-    <widget class="QLineEdit" name="lineGender"/>
-   </item>
-   <item>
-    <widget class="QLineEdit" name="lineYearOfBirth"/>
-   </item>
-   <item>
-    <widget class="QLineEdit" name="lineYearOfDeath"/>
-   </item>
-   <item>
-    <widget class="QPushButton" name="AddPersonButton">
-     <property name="text">
-      <string>Add Person!</string>
-     </property>
-    </widget>
-   </item>
-  </layout>
+  <widget class="QLineEdit" name="lineFullname">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>40</y>
+     <width>341</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineYearOfBirth">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>140</y>
+     <width>341</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineYearOfDeath">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>190</y>
+     <width>341</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="AddPersonButton">
+   <property name="geometry">
+    <rect>
+     <x>6</x>
+     <y>259</y>
+     <width>118</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Add Person!</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="female_checkbox">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>90</y>
+     <width>70</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
+   </property>
+   <property name="text">
+    <string>Female</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="male_checkbox">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>90</y>
+     <width>55</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Male</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>
