@@ -62,7 +62,6 @@ void AddConnectionWindow::on_personTableConnection_cellClicked(int row) {
 }
 
 void AddConnectionWindow::on_buttonPushToClose_clicked() {
-    connectionRepo.add(connection);
-    connectionsService.saveConnectionToDatabase(connection);
+    connectionsService.add(connection);
     close();
 }
