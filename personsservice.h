@@ -14,13 +14,16 @@ class PersonsService {
 public:
     PersonsService();
     Person get(int id);
-    void add(Person p);
-    int getSizeOfRepo();
     vector<Person> getAll();
+
+    void add(Person p);
     void setUp();
     void removeAll();
     void remove(int personID, string ID);
+
+    int getSizeOfRepo();
     int findPosition(int ID);
+
     bool validPersonID(vector<Person> persons, int ID);
 private:
     PersonsRepository personRepo;

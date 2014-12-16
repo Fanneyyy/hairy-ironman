@@ -10,8 +10,10 @@ using namespace std;
 class Connection {
 public:
     Connection();
+
     int getPersonID();
     int getComputerID();
+
     void setPersonID(int id);
     void setComputerID(int id);
 private:

@@ -18,11 +18,14 @@
 class ConnectionsService {
 public:
     ConnectionsService();
+
     int getSizeOfRepo();
+
     vector<Connection> getAll();
     vector<Computer> printAllPerson(int ID, vector<Computer> computerList);
-    void add(Connection c);
     vector<Person> printAllComputer(int ID, vector<Person> personList);
+
+    void add(Connection c);
     void setUp();
     void removeAll();
 private:

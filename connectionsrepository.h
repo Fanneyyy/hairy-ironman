@@ -19,11 +19,16 @@ using namespace std;
 class ConnectionsRepository {
 public:
     ConnectionsRepository();
-    void add(Connection c);
+
     Connection getConnection(int id);
-    int getConnectionSize();
+
     vector<Connection> getAllConnections();
+
     QSqlDatabase getDatabaseConnection();
+
+    int getConnectionSize();
+
+    void add(Connection c);
     void setUp();
     void saveConnectionToDatabase(Connection c);
     void addConnectionToVectorAndDatabase(Connection c);

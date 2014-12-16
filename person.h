@@ -31,9 +31,10 @@ public:
     string getGender();
     string getYearOfBirth();
     string getYearOfDeath();
+    string toString();
+
     int getID();
 
-    string toString();
     bool contains(string search);
 private:
     string name;

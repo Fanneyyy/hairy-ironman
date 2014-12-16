@@ -16,18 +16,24 @@
 class ComputersService {
 public:
     ComputersService();
+
     Computer get(int id);
+
     void add(Computer c);
-    int sizeOfDatabase();
-    vector<Computer> getAll();
-    int getSizeOfRepo();
     void setUp();
     void removeAll();
-    int findPosition(int ID);
-    bool validComputerID(vector<Computer> computers, int ID);
     void remove(int computerID, string ID);
+
+    int sizeOfDatabase();
+    int getSizeOfRepo();
+    int findPosition(int ID);
+
+    vector<Computer> getAll();
+
+    bool validComputerID(vector<Computer> computers, int ID);
 private:
     ComputerRepository computerRepo;
+
     QSqlDatabase db;
 };
 

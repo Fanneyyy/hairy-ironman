@@ -26,16 +26,18 @@ public:
     string getBuildYear();
     string getType();
     string getBuiltRnot();
+    string toString();
+
     int getID();
 
     bool contains(string search);
-    string toString();
 private:
     string name;
     string buildYear;
     string type;
     string builtRnot;
     string ID;
+
     Utilities utilities;
 };
 

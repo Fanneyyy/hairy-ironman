@@ -16,20 +16,26 @@ using namespace std;
 class PersonsRepository {
 public:
     PersonsRepository();
-    void add(Person p);
     Person getPerson(int id);
+
     vector<Person> getAllPerson();
-    int getPersonSize();
+
+    void add(Person p);
     void emptyRepo();
     void setUp();
-    string getPersonID();
-    void savePersonToDatabase(Person p);
-    QSqlDatabase getDatabaseConnection();
     void addPersonToVectorAndDatabase(Person p);
     void remove(int id);
     void removeFromDatabase(string ID);
+    void savePersonToDatabase(Person p);
+
+    int getPersonSize();
+
+    string getPersonID();
+
+    QSqlDatabase getDatabaseConnection();
 private:
     vector<Person> personList;
+
     QSqlDatabase db;
 };
 

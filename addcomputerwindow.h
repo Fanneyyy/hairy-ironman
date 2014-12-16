@@ -19,7 +19,6 @@ public:
 
     void addComputer();
 private slots:
-
     void on_buttonAddComputer_clicked();
 
 private:

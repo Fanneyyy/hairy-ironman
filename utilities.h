@@ -13,10 +13,13 @@ class Utilities
 {
 public:
     Utilities();
+
     string stringToLower(string original);
+
     bool validYear(string year);
     bool validName(string name);
     bool birthVSDeath(string yearBirth, string yearDeath);
+
     void trimWhiteSpace(string &input);
 };
 

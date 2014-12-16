@@ -17,20 +17,27 @@ using namespace std;
 class ComputerRepository {
 public:
     ComputerRepository();
-    void add(Computer c);
+
     Computer getComputer(int id);
-    vector<Computer> getAllComputer();
-    int getComputerSize();
+
+    void add(Computer c);
     void emptyRepo();
     void saveComputerToDatabase(Computer c);
-    QSqlDatabase getDatabaseConnection();
     void setUp();
     void addComputerToVectorAndDatabase(Computer c);
-    string getComputerID();
     void removeFromDatabase(string ID);
     void remove(int id);
+
+    vector<Computer> getAllComputer();
+
+    int getComputerSize();
+
+    QSqlDatabase getDatabaseConnection();
+
+    string getComputerID();
 private:
     vector<Computer> computerList;
+
     QSqlDatabase db;
 };
 

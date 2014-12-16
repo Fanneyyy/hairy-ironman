@@ -23,9 +23,7 @@ public:
     void addConnection();
 private slots:
     void on_buttonPushToClose_clicked();
-
     void on_computerTableConnection_cellClicked(int row);
-
     void on_personTableConnection_cellClicked(int row);
 
 private:
