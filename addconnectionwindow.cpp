@@ -7,8 +7,7 @@ AddConnectionWindow::AddConnectionWindow(QWidget *parent) :
 {
     connection = Connection();
     ui->setupUi(this);
-    personsService.setUp();
-    computersService.setUp();
+
     displayComputerTable();
     displayPersonTable();
     ui->personTableConnection->setColumnHidden(4,true);
@@ -22,7 +21,6 @@ AddConnectionWindow::~AddConnectionWindow()
 }
 
 void AddConnectionWindow::displayPersonTable() {
-    personsService.removeAll();
     personsService.setUp();
     ui->personTableConnection->setRowCount(personsService.getSizeOfRepo());
     for(int i = 0; i < personsService.getSizeOfRepo(); i++)
@@ -37,7 +35,6 @@ void AddConnectionWindow::displayPersonTable() {
 }
 
 void AddConnectionWindow::displayComputerTable() {
-    computersService.removeAll();
     computersService.setUp();
     ui->computerTableConnection->setRowCount(computersService.getSizeOfRepo());
     for(int i = 0; i < computersService.getSizeOfRepo(); i++) {
