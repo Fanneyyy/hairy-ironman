@@ -24,6 +24,7 @@ public:
     void add(Connection c);
     vector<Person> printAllComputer(int ID, vector<Person> personList);
     void setUp();
+    void removeAll();
 private:
     ConnectionsRepository connectionRepo;
 };

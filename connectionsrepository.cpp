@@ -8,6 +8,14 @@ void ConnectionsRepository::add(Connection c){
     connectionList.push_back(c);
 }
 
+void ConnectionsRepository::remove(int id){
+    connectionList.erase(connectionList.begin()+id);
+}
+
+void ConnectionsRepository::emptyRepo() {
+    connectionList = vector<Connection>();
+}
+
 // adds to the vector and to the database.
 void ConnectionsRepository::addConnectionToVectorAndDatabase(Connection c) {
     saveConnectionToDatabase(c);

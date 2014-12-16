@@ -27,6 +27,8 @@ public:
     void setUp();
     void saveConnectionToDatabase(Connection c);
     void addConnectionToVectorAndDatabase(Connection c);
+    void remove(int id);
+    void emptyRepo();
 private:
     vector<Connection> connectionList;
     QSqlDatabase db;

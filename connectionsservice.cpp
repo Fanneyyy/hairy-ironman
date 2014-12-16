@@ -8,6 +8,10 @@ void ConnectionsService::add(Connection c) {
     connectionRepo.addConnectionToVectorAndDatabase(c);
 }
 
+void ConnectionsService::removeAll() {
+    connectionRepo.emptyRepo();
+}
+
 void ConnectionsService::setUp() {
     connectionRepo.setUp();
 }
