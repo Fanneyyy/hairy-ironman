@@ -52,16 +52,15 @@
          <property name="text">
           <string>Name</string>
          </property>
-         <property name="textAlignment">
-          <set>AlignLeft|AlignVCenter</set>
+        </column>
+        <column>
+         <property name="text">
+          <string>Type</string>
          </property>
         </column>
         <column>
          <property name="text">
           <string>Build Year</string>
-         </property>
-         <property name="textAlignment">
-          <set>AlignLeft|AlignVCenter</set>
          </property>
         </column>
         <column>
@@ -113,32 +112,20 @@
          <property name="text">
           <string>Name</string>
          </property>
-         <property name="textAlignment">
-          <set>AlignLeft|AlignVCenter</set>
-         </property>
         </column>
         <column>
          <property name="text">
           <string>Gender</string>
-         </property>
-         <property name="textAlignment">
-          <set>AlignLeft|AlignVCenter</set>
          </property>
         </column>
         <column>
          <property name="text">
           <string>Birth year</string>
          </property>
-         <property name="textAlignment">
-          <set>AlignLeft|AlignVCenter</set>
-         </property>
         </column>
         <column>
          <property name="text">
           <string>Death year</string>
-         </property>
-         <property name="textAlignment">
-          <set>AlignLeft|AlignVCenter</set>
          </property>
         </column>
         <column>
