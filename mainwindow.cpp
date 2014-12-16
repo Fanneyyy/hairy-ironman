@@ -86,7 +86,7 @@ void MainWindow::on_buttonAddPerson_clicked() {
     //personsRepo.emptyRepo();
     //personsService.setUp();
     displayPersonTable();
-    ui->labelPerson->setText("A person has been successfully added to the database");
+    //ui->labelPerson->setText("A person has been successfully added to the database");
 }
 
 void MainWindow::on_buttonAddComputer_clicked() {
@@ -94,7 +94,7 @@ void MainWindow::on_buttonAddComputer_clicked() {
     //computersRepo.emptyRepo();
     //computersService.setUp();
     displayComputerTable();
-    ui->labelComputer->setText("A computer has successfully been added to the database");
+    //ui->labelComputer->setText("A computer has successfully been added to the database");
 }
 
 void MainWindow::on_tablePersons_cellActivated(int row) {
@@ -127,14 +127,14 @@ void MainWindow::on_tableComputers_cellActivated(int row) {
 
 void MainWindow::on_buttonAddConnectionPerson_clicked() {
     addconnection.exec();
-    ui->labelPerson->setText("A connection has been successfully added to the database");
-    ui->labelComputer->setText("A connection has been successfully added to the database");
+    //ui->labelPerson->setText("A connection has been successfully added to the database");
+    //ui->labelComputer->setText("A connection has been successfully added to the database");
 }
 
 void MainWindow::on_buttonAddConnectionComputer_clicked() {
     addconnection.exec();
-    ui->labelComputer->setText("A connection has been successfully added to the database");
-    ui->labelPerson->setText("A connection has been successfully added to the database");
+    //ui->labelComputer->setText("A connection has been successfully added to the database");
+    //ui->labelPerson->setText("A connection has been successfully added to the database");
 }
 
 void MainWindow::on_lineSearchPerson_textChanged() {

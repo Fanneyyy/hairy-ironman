@@ -56,7 +56,6 @@ SOURCES       = main.cpp \
 		person.cpp \
 		personsrepository.cpp \
 		personsservice.cpp \
-		search.cpp \
 		addpersonwindow.cpp \
 		addcomputerwindow.cpp \
 		addconnectionwindow.cpp \
@@ -75,7 +74,6 @@ OBJECTS       = main.o \
 		person.o \
 		personsrepository.o \
 		personsservice.o \
-		search.o \
 		addpersonwindow.o \
 		addcomputerwindow.o \
 		addconnectionwindow.o \
@@ -211,7 +209,6 @@ DIST          = ../../../../Qt/5.3/clang_64/mkspecs/features/spec_pre.prf \
 		person.cpp \
 		personsrepository.cpp \
 		personsservice.cpp \
-		search.cpp \
 		addpersonwindow.cpp \
 		addcomputerwindow.cpp \
 		addconnectionwindow.cpp \
@@ -527,7 +524,7 @@ CSC-WindowApp.app/Contents/Info.plist:
 	@sed -e "s,@SHORT_VERSION@,1.0,g" -e "s,@TYPEINFO@,????,g" -e "s,@ICON@,,g" -e "s,@BUNDLEIDENTIFIER@,RU.CSC-WindowApp,g" -e "s,@EXECUTABLE@,CSC-WindowApp,g" -e "s,@TYPEINFO@,????,g" ../../../../Qt/5.3/clang_64/mkspecs/macx-clang/Info.plist.app >CSC-WindowApp.app/Contents/Info.plist
 dist: 
 	@test -d .tmp/CSC-WindowApp1.0.0 || mkdir -p .tmp/CSC-WindowApp1.0.0
-	$(COPY_FILE) --parents $(DIST) .tmp/CSC-WindowApp1.0.0/ && $(COPY_FILE) --parents mainwindow.h computer.h computerrepository.h computersservice.h connection.h connectionsrepository.h connectionsservice.h person.h personsrepository.h personsservice.h search.h addpersonwindow.h addcomputerwindow.h addconnectionwindow.h utilities.h .tmp/CSC-WindowApp1.0.0/ && $(COPY_FILE) --parents main.cpp mainwindow.cpp computer.cpp computerrepository.cpp computersservice.cpp connection.cpp connectionsrepository.cpp connectionsservice.cpp person.cpp personsrepository.cpp personsservice.cpp search.cpp addpersonwindow.cpp addcomputerwindow.cpp addconnectionwindow.cpp utilities.cpp .tmp/CSC-WindowApp1.0.0/ && $(COPY_FILE) --parents mainwindow.ui addpersonwindow.ui addcomputerwindow.ui addconnectionwindow.ui .tmp/CSC-WindowApp1.0.0/ && (cd `dirname .tmp/CSC-WindowApp1.0.0` && $(TAR) CSC-WindowApp1.0.0.tar CSC-WindowApp1.0.0 && $(COMPRESS) CSC-WindowApp1.0.0.tar) && $(MOVE) `dirname .tmp/CSC-WindowApp1.0.0`/CSC-WindowApp1.0.0.tar.gz . && $(DEL_FILE) -r .tmp/CSC-WindowApp1.0.0
+	$(COPY_FILE) --parents $(DIST) .tmp/CSC-WindowApp1.0.0/ && $(COPY_FILE) --parents mainwindow.h computer.h computerrepository.h computersservice.h connection.h connectionsrepository.h connectionsservice.h person.h personsrepository.h personsservice.h addpersonwindow.h addcomputerwindow.h addconnectionwindow.h utilities.h .tmp/CSC-WindowApp1.0.0/ && $(COPY_FILE) --parents main.cpp mainwindow.cpp computer.cpp computerrepository.cpp computersservice.cpp connection.cpp connectionsrepository.cpp connectionsservice.cpp person.cpp personsrepository.cpp personsservice.cpp addpersonwindow.cpp addcomputerwindow.cpp addconnectionwindow.cpp utilities.cpp .tmp/CSC-WindowApp1.0.0/ && $(COPY_FILE) --parents mainwindow.ui addpersonwindow.ui addcomputerwindow.ui addconnectionwindow.ui .tmp/CSC-WindowApp1.0.0/ && (cd `dirname .tmp/CSC-WindowApp1.0.0` && $(TAR) CSC-WindowApp1.0.0.tar CSC-WindowApp1.0.0 && $(COMPRESS) CSC-WindowApp1.0.0.tar) && $(MOVE) `dirname .tmp/CSC-WindowApp1.0.0`/CSC-WindowApp1.0.0.tar.gz . && $(DEL_FILE) -r .tmp/CSC-WindowApp1.0.0
 
 
 clean:compiler_clean 
@@ -812,13 +809,33 @@ mainwindow.o: mainwindow.cpp mainwindow.h \
 
 computer.o: computer.cpp computer.h \
 		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/Qstring \
-		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qstring.h
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qstring.h \
+		utilities.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o computer.o computer.cpp
 
 computerrepository.o: computerrepository.cpp computerrepository.h \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QString \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qstring.h \
+		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/QtSql \
+		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/qsql.h \
+		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/qsqldatabase.h \
+		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/qsqldriver.h \
+		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/qsqldriverplugin.h \
+		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/qsqlerror.h \
+		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/qsqlfield.h \
+		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/qsqlindex.h \
+		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/qsqlquery.h \
+		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/qsqlrecord.h \
+		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/qsqlresult.h \
+		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/qsqlquerymodel.h \
+		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/qsqlrelationaldelegate.h \
+		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/qsqlrelationaltablemodel.h \
+		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/qsqltablemodel.h \
+		../../../../Qt/5.3/clang_64/lib/QtSql.framework/Versions/5/Headers/qtsqlversion.h \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QtDebug \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qdebug.h \
 		person.h \
 		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/Qstring \
-		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qstring.h \
 		utilities.h \
 		computer.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o computerrepository.o computerrepository.cpp
@@ -947,9 +964,6 @@ personsservice.o: personsservice.cpp personsservice.h \
 		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/Qstring \
 		utilities.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o personsservice.o personsservice.cpp
-
-search.o: search.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o search.o search.cpp
 
 addpersonwindow.o: addpersonwindow.cpp addpersonwindow.h \
 		../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QDialog \
