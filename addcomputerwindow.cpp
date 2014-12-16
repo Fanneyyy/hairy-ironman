@@ -36,7 +36,7 @@ bool AddComputerWindow::linesAreValid() {
 void AddComputerWindow::on_buttonAddComputer_clicked()
 {
     if(ui->lineComputerName->text().isEmpty()) {
-        ui->labelError->setText("<font color='red'>Please enter a valid name</font>");
+        ui->labelError->setText("<font color='red'>Please enter a name</font>");
     }
     else if(!utilities.validYear(ui->lineYearOfBuild->text().toStdString()) && ui->lineYearOfBuild->text().toStdString() != "") {
         ui->labelError->setText("<font color='red'>Please enter a valid year</font>");

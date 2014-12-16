@@ -21,8 +21,8 @@ void AddPersonWindow::on_AddPersonButton_clicked() {
     else if(!utilities.validYear(ui->lineYearOfDeath->text().toStdString())) {
         ui->labelError->setText("<font color='red'>The death year you selected is not valid</font>");
     }
-    else if(ui->lineFullname->text().isEmpty()) {
-        ui->labelError->setText("<font color='red'>Please enter a name</font>");
+    else if(!utilities.validName(ui->lineFullname->text().toStdString())) {
+        ui->labelError->setText("<font color='red'>Please enter a valid name</font>");
     }
     else if(!ui->male_checkbox->isChecked() && !ui->female_checkbox->isChecked()) {
         ui->labelError->setText("<font color='red'>Please check a box to select a gender</font>");
