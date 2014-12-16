@@ -41,7 +41,6 @@ private:
     Ui::MainWindow *ui;
     AddPersonWindow addperson;
     AddComputerWindow addcomputer;
-    AddConnectionWindow addconnection;
 
     PersonsService personsService;
     ComputersService computersService;
