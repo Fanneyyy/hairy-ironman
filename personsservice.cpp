@@ -22,6 +22,7 @@ void PersonsService::add(Person p) {
     personRepo.addPersonToVectorAndDatabase(p);
 }
 
+// runs setup for the initialization of a vector filled from the database.
 void PersonsService::setUp() {
     personRepo.setUp();
 }
