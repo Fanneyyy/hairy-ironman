@@ -24,10 +24,10 @@ public:
     int getSizeOfRepo();
     vector<Connection> getAll();
     vector<Computer> printAllPerson(int ID, vector<Computer> computerList);
-    void printAllComputer(vector<Computer> computerList, vector<Person> personList, int size);
     void add(vector<Person> personList, vector<Computer>computerList);
     bool inputCheck(int input, int max);
     int *findConnections(int ID);
+    vector<Person> printAllComputer(int ID, vector<Person> personList);
 private:
     ConnectionsRepository connectionRepo;
     QSqlDatabase db;

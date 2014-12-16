@@ -34,7 +34,7 @@
          <bool>false</bool>
         </property>
         <property name="dragDropMode">
-         <enum>QAbstractItemView::DragOnly</enum>
+         <enum>QAbstractItemView::NoDragDrop</enum>
         </property>
         <property name="alternatingRowColors">
          <bool>false</bool>
@@ -44,6 +44,9 @@
         </property>
         <property name="showGrid">
          <bool>false</bool>
+        </property>
+        <property name="gridStyle">
+         <enum>Qt::SolidLine</enum>
         </property>
         <column>
          <property name="text">
@@ -55,7 +58,7 @@
         </column>
         <column>
          <property name="text">
-          <string>Type</string>
+          <string>Build Year</string>
          </property>
          <property name="textAlignment">
           <set>AlignLeft|AlignVCenter</set>
@@ -63,10 +66,12 @@
         </column>
         <column>
          <property name="text">
-          <string>Build Year</string>
+          <string>Built?</string>
          </property>
-         <property name="textAlignment">
-          <set>AlignLeft|AlignVCenter</set>
+        </column>
+        <column>
+         <property name="text">
+          <string>ID</string>
          </property>
         </column>
        </widget>
@@ -96,7 +101,7 @@
          <bool>false</bool>
         </property>
         <property name="dragDropMode">
-         <enum>QAbstractItemView::DragOnly</enum>
+         <enum>QAbstractItemView::NoDragDrop</enum>
         </property>
         <property name="selectionBehavior">
          <enum>QAbstractItemView::SelectRows</enum>
@@ -134,6 +139,11 @@
          </property>
          <property name="textAlignment">
           <set>AlignLeft|AlignVCenter</set>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>ID</string>
          </property>
         </column>
        </widget>

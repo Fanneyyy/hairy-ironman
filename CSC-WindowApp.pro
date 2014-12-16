@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui sql webkitwidgets
+QT       += core gui sql webkitwidgets webkit
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 

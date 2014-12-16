@@ -32,186 +32,192 @@
          </size>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>1</number>
         </property>
         <widget class="QWidget" name="tabComputers">
          <attribute name="title">
-          <string>Tab 1</string>
+          <string>Computers</string>
          </attribute>
-         <widget class="QTableWidget" name="tableComputers">
+         <widget class="QWidget" name="">
           <property name="geometry">
            <rect>
-            <x>-5</x>
+            <x>0</x>
             <y>0</y>
             <width>471</width>
-            <height>411</height>
+            <height>551</height>
            </rect>
           </property>
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>16777208</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <property name="editTriggers">
-           <set>QAbstractItemView::NoEditTriggers</set>
-          </property>
-          <property name="selectionBehavior">
-           <enum>QAbstractItemView::SelectRows</enum>
-          </property>
-          <property name="showGrid">
-           <bool>false</bool>
-          </property>
-          <property name="sortingEnabled">
-           <bool>true</bool>
-          </property>
-          <column>
-           <property name="text">
-            <string>Name</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Type</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>New Column</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Build Year</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>ID</string>
-           </property>
-          </column>
-         </widget>
-         <widget class="QLineEdit" name="lineSearchComputer">
-          <property name="geometry">
-           <rect>
-            <x>2</x>
-            <y>410</y>
-            <width>461</width>
-            <height>41</height>
-           </rect>
-          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_3">
+           <item>
+            <widget class="QTableWidget" name="tableComputers">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777208</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="editTriggers">
+              <set>QAbstractItemView::NoEditTriggers</set>
+             </property>
+             <property name="selectionBehavior">
+              <enum>QAbstractItemView::SelectRows</enum>
+             </property>
+             <property name="showGrid">
+              <bool>false</bool>
+             </property>
+             <property name="sortingEnabled">
+              <bool>true</bool>
+             </property>
+             <column>
+              <property name="text">
+               <string>Name</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Type</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Build Year</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Built?</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string notr="true">ID</string>
+              </property>
+             </column>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="lineSearchComputer"/>
+           </item>
+           <item>
+            <widget class="QPushButton" name="buttonAddComputer">
+             <property name="enabled">
+              <bool>true</bool>
+             </property>
+             <property name="text">
+              <string>Add Computer!</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="buttonAddConnectionComputer">
+             <property name="text">
+              <string>Add Connection!</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </widget>
         </widget>
         <widget class="QWidget" name="tabPersons">
          <attribute name="title">
-          <string>Tab 2</string>
+          <string>Scientists</string>
          </attribute>
-         <widget class="QTableWidget" name="tablePersons">
+         <widget class="QWidget" name="">
           <property name="geometry">
            <rect>
-            <x>-10</x>
+            <x>0</x>
             <y>0</y>
             <width>471</width>
-            <height>411</height>
+            <height>551</height>
            </rect>
           </property>
-          <property name="minimumSize">
-           <size>
-            <width>405</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="editTriggers">
-           <set>QAbstractItemView::NoEditTriggers</set>
-          </property>
-          <property name="dragEnabled">
-           <bool>false</bool>
-          </property>
-          <property name="selectionBehavior">
-           <enum>QAbstractItemView::SelectRows</enum>
-          </property>
-          <property name="showGrid">
-           <bool>false</bool>
-          </property>
-          <property name="gridStyle">
-           <enum>Qt::SolidLine</enum>
-          </property>
-          <property name="sortingEnabled">
-           <bool>true</bool>
-          </property>
-          <column>
-           <property name="text">
-            <string>Name</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Gender</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Year of birth</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Year of death</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>ID</string>
-           </property>
-          </column>
-         </widget>
-         <widget class="QLineEdit" name="lineSearchPerson">
-          <property name="geometry">
-           <rect>
-            <x>2</x>
-            <y>410</y>
-            <width>461</width>
-            <height>41</height>
-           </rect>
-          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_4">
+           <item>
+            <widget class="QTableWidget" name="tablePersons">
+             <property name="minimumSize">
+              <size>
+               <width>405</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="editTriggers">
+              <set>QAbstractItemView::NoEditTriggers</set>
+             </property>
+             <property name="dragEnabled">
+              <bool>false</bool>
+             </property>
+             <property name="selectionBehavior">
+              <enum>QAbstractItemView::SelectRows</enum>
+             </property>
+             <property name="showGrid">
+              <bool>false</bool>
+             </property>
+             <property name="gridStyle">
+              <enum>Qt::SolidLine</enum>
+             </property>
+             <property name="sortingEnabled">
+              <bool>true</bool>
+             </property>
+             <column>
+              <property name="text">
+               <string>Name</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Gender</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Year of birth</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Year of death</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>ID</string>
+              </property>
+             </column>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="lineSearchPerson"/>
+           </item>
+           <item>
+            <widget class="QPushButton" name="buttonAddPerson">
+             <property name="enabled">
+              <bool>true</bool>
+             </property>
+             <property name="text">
+              <string>Add Person!</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="buttonAddConnectionPerson">
+             <property name="text">
+              <string>Add Connection!</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </widget>
          <zorder>tablePersons</zorder>
          <zorder>lineSearch</zorder>
          <zorder>lineSearchPerson</zorder>
+         <zorder>listConnections</zorder>
         </widget>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="buttonAddConnection">
-        <property name="text">
-         <string>AddConnection!</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="buttonAddComputer">
-        <property name="enabled">
-         <bool>true</bool>
-        </property>
-        <property name="text">
-         <string>AddComputer!</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="buttonAddPerson">
-        <property name="enabled">
-         <bool>true</bool>
-        </property>
-        <property name="text">
-         <string>AddPerson!</string>
-        </property>
        </widget>
       </item>
       <item>
