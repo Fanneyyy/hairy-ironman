@@ -18,19 +18,14 @@
 class ConnectionsService {
 public:
     ConnectionsService();
-    QSqlDatabase getDatabaseConnection();
-    void setUp();
-    void saveConnectionToDatabase(Connection c);
     int getSizeOfRepo();
     vector<Connection> getAll();
     vector<Computer> printAllPerson(int ID, vector<Computer> computerList);
-    void add(vector<Person> personList, vector<Computer>computerList);
-    bool inputCheck(int input, int max);
-    int *findConnections(int ID);
+    void add(Connection c);
     vector<Person> printAllComputer(int ID, vector<Person> personList);
+    void setUp();
 private:
     ConnectionsRepository connectionRepo;
-    QSqlDatabase db;
 };
 
 #endif // CONNECTIONSSERVICE_H
