@@ -50,6 +50,9 @@ private:
     PersonsService personsService;
     ComputersService computersService;
     ConnectionsService connectionsService;
+
+    PersonsRepository personsRepo;
+    ComputerRepository computersRepo;
 };
 
 #endif // MAINWINDOW_H

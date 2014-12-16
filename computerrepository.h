@@ -18,6 +18,7 @@ public:
     Computer getComputer(int id);
     vector<Computer> getAllComputer();
     int getComputerSize();
+    void emptyRepo();
 private:
     vector<Computer> computerList;
 };

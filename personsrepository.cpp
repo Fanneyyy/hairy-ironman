@@ -23,3 +23,7 @@ Person PersonsRepository::getPerson(int id){
 int PersonsRepository::getPersonSize() {
     return personList.size();
 }
+
+void PersonsRepository::emptyRepo() {
+    personList = vector<Person>();
+}

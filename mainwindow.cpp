@@ -9,6 +9,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow) {
     ui->setupUi(this);
     connectionsService.setUp();
+    personsService.setUp();
+    computersService.setUp();
     displayPersonTable();
     displayComputerTable();
     ui->lineSearchComputer->setPlaceholderText("Search..");
@@ -26,6 +28,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
 MainWindow::~MainWindow() {
 
+
     delete ui;
 }
 
@@ -33,7 +36,6 @@ void MainWindow::displayPersonTable() {
     ui->tablePersons->clearContents();
     ui->tablePersons->setSortingEnabled(false);
 
-    personsService.setUp();
     vector<Person> temp;
     string searchString;
     for(int i = 0; i < personsService.getSizeOfRepo(); i++) {
@@ -58,7 +60,6 @@ void MainWindow::displayComputerTable() {
     ui->tableComputers->clearContents();
     ui->tableComputers->setSortingEnabled(false);
 
-    computersService.setUp();
     vector<Computer> temp;
     string searchString;
     for(int i = 0; i < computersService.getSizeOfRepo(); i++) {
@@ -67,7 +68,6 @@ void MainWindow::displayComputerTable() {
             temp.push_back(computersService.get(i));
         }
     }
-
     ui->tableComputers->setRowCount(computersService.getSizeOfRepo());
     for(unsigned int i = 0; i < temp.size(); i++) {
         ui->tableComputers->setItem(i,0,new QTableWidgetItem(QString::fromStdString(temp[i].getComputerName())));
@@ -81,11 +81,15 @@ void MainWindow::displayComputerTable() {
 
 void MainWindow::on_buttonAddPerson_clicked() {
     addperson.exec();
+    //personsRepo.emptyRepo();
+    //personsService.setUp();
     displayPersonTable();
 }
 
 void MainWindow::on_buttonAddComputer_clicked() {
     addcomputer.exec();
+    //computersRepo.emptyRepo();
+    //computersService.setUp();
     displayComputerTable();
 }
 

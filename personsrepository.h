@@ -18,6 +18,7 @@ public:
     Person getPerson(int id);
     vector<Person> getAllPerson();
     int getPersonSize();
+    void emptyRepo();
 private:
     vector<Person> personList;
 };

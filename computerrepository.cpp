@@ -23,3 +23,7 @@ Computer ComputerRepository::getComputer(int id){
 int ComputerRepository::getComputerSize() {
     return computerList.size();
 }
+
+void ComputerRepository::emptyRepo() {
+    computerList = vector<Computer>();
+}
