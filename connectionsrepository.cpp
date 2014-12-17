@@ -12,6 +12,7 @@ void ConnectionsRepository::remove(int id){
     connectionList.erase(connectionList.begin()+id);
 }
 
+// makes a new empty vector and replaces the current repository
 void ConnectionsRepository::emptyRepo() {
     connectionList = vector<Connection>();
 }

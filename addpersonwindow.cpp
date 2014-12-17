@@ -14,6 +14,7 @@ AddPersonWindow::~AddPersonWindow() {
     delete ui;
 }
 
+// on click, runs input validation and add a person
 void AddPersonWindow::on_AddPersonButton_clicked() {
     if(!utilities.validYear(ui->lineYearOfBirth->text().toStdString()) || ui->lineYearOfBirth->text().toStdString() == "") {
         ui->labelError->setText("<font color='red'>The birth year you selected is not valid</font>");
@@ -39,6 +40,7 @@ void AddPersonWindow::on_AddPersonButton_clicked() {
     }
 }
 
+// adds a person into the database
 void AddPersonWindow::addPerson() {
     Person p = Person();
     string temp;

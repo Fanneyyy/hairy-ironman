@@ -1,3 +1,5 @@
+// a dialog for the user to add a person to the database
+
 #ifndef ADDPERSONWINDOW_H
 #define ADDPERSONWINDOW_H
 

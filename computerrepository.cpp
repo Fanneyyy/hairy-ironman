@@ -114,6 +114,7 @@ void ComputerRepository::saveComputerToDatabase(Computer c) {
     db.close();
 }
 
+// removes a computer from the sqlite database
 void ComputerRepository::removeFromDatabase(string ID) {
     db = getDatabaseConnection();
 

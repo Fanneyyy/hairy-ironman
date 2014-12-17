@@ -44,6 +44,7 @@ string Computer::getBuiltRnot() {
     return builtRnot;
 }
 
+// getID(): returns the ID from the database not the vector
 int Computer::getID() {
     int temp;
 
@@ -53,9 +54,10 @@ int Computer::getID() {
 }
 
 string Computer::toString() {
-    return name + " " + type + " " + buildYear;
+    return name + " " + buildYear;
 }
 
+// contains: search for a string in a compuers name eða build year.
 bool Computer::contains(string search) {
     if(search == "") {
         return true;

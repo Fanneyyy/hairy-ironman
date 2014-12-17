@@ -23,8 +23,6 @@ public:
 
     int getSizeOfRepo();
     int findPosition(int ID);
-
-    bool validPersonID(vector<Person> persons, int ID);
 private:
     PersonsRepository personRepo;
 };

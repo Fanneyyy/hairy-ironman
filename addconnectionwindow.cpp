@@ -3,8 +3,7 @@
 
 AddConnectionWindow::AddConnectionWindow(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::AddConnectionWindow)
-{
+    ui(new Ui::AddConnectionWindow) {
     connection = Connection();
     ui->setupUi(this);
     displayComputerTable();
@@ -14,22 +13,19 @@ AddConnectionWindow::AddConnectionWindow(QWidget *parent) :
     ui->computerTableConnection->setColumnHidden(3,true);
 }
 
-AddConnectionWindow::~AddConnectionWindow()
-{
+AddConnectionWindow::~AddConnectionWindow() {
     delete ui;
 }
 
 void AddConnectionWindow::displayPersonTable() {
     personsService.setUp();
     ui->personTableConnection->setRowCount(personsService.getSizeOfRepo());
-    for(int i = 0; i < personsService.getSizeOfRepo(); i++)
-    {
+    for(int i = 0; i < personsService.getSizeOfRepo(); i++) {
         ui->personTableConnection->setItem(i,0,new QTableWidgetItem(QString::fromStdString(personsService.get(i).getName())));
         ui->personTableConnection->setItem(i,1,new QTableWidgetItem(QString::fromStdString(personsService.get(i).getGender())));
         ui->personTableConnection->setItem(i,2,new QTableWidgetItem(QString::fromStdString(personsService.get(i).getYearOfBirth())));
         ui->personTableConnection->setItem(i,3,new QTableWidgetItem(QString::fromStdString(personsService.get(i).getYearOfDeath())));
         ui->personTableConnection->setItem(i,4,new QTableWidgetItem(QString::number(personsService.get(i).getID())));
-
     }
 }
 
@@ -43,10 +39,6 @@ void AddConnectionWindow::displayComputerTable() {
         ui->computerTableConnection->setItem(i,3,new QTableWidgetItem(QString::fromStdString(computersService.get(i).getBuiltRnot())));
         ui->computerTableConnection->setItem(i,4,new QTableWidgetItem(QString::number(computersService.get(i).getID())));
     }
-}
-
-void AddConnectionWindow::addConnection() {
-
 }
 
 void AddConnectionWindow::on_computerTableConnection_cellClicked(int row) {

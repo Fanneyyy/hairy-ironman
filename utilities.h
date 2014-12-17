@@ -1,3 +1,5 @@
+// Some utilities for input validation and other helpers
+
 #ifndef UTILITIES_H
 #define UTILITIES_H
 

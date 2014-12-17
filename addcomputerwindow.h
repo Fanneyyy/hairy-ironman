@@ -1,3 +1,5 @@
+// a dialog for the user to add a computer to the database
+
 #ifndef ADDCOMPUTERWINDOW_H
 #define ADDCOMPUTERWINDOW_H
 
@@ -9,14 +11,12 @@ namespace Ui {
 class AddComputerWindow;
 }
 
-class AddComputerWindow : public QDialog
-{
+class AddComputerWindow : public QDialog {
     Q_OBJECT
 
 public:
     explicit AddComputerWindow(QWidget *parent = 0);
     ~AddComputerWindow();
-
     void addComputer();
 private slots:
     void on_buttonAddComputer_clicked();

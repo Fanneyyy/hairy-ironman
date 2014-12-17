@@ -37,15 +37,7 @@ void ComputersService::remove(int computerID, string ID) {
     computerRepo.removeFromDatabase(ID);
 }
 
-bool ComputersService::validComputerID(vector<Computer> computers, int ID) {
-    for(unsigned int i = 0; i < computers.size(); i++) {
-        if(computers[i].getID() == ID) {
-            return true;
-        }
-    }
-    return false;
-}
-
+// finds and returns a position in the vector for a computer with the ID
 int ComputersService::findPosition(int ID) {
     int temp;
     for(int i = 0; i < computerRepo.getComputerSize(); i++) {
