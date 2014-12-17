@@ -17,9 +17,7 @@ class PersonsRepository {
 public:
     PersonsRepository();
     Person getPerson(int id);
-
     vector<Person> getAllPerson();
-
     void add(Person p);
     void emptyRepo();
     void setUp();
@@ -27,15 +25,11 @@ public:
     void remove(int id);
     void removeFromDatabase(string ID);
     void savePersonToDatabase(Person p);
-
     int getPersonSize();
-
     string getPersonID();
-
     QSqlDatabase getDatabaseConnection();
 private:
     vector<Person> personList;
-
     QSqlDatabase db;
 };
 

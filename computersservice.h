@@ -29,8 +29,6 @@ public:
     int findPosition(int ID);
 
     vector<Computer> getAll();
-
-    bool validComputerID(vector<Computer> computers, int ID);
 private:
     ComputerRepository computerRepo;
 

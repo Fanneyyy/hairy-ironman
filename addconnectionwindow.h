@@ -1,3 +1,5 @@
+// a dialog for the user to add a connection to the database
+
 #ifndef ADDCONNECTIONWINDOW_H
 #define ADDCONNECTIONWINDOW_H
 
@@ -10,17 +12,14 @@ namespace Ui {
 class AddConnectionWindow;
 }
 
-class AddConnectionWindow : public QDialog
-{
+class AddConnectionWindow : public QDialog {
     Q_OBJECT
 
 public:
     explicit AddConnectionWindow(QWidget *parent = 0);
     ~AddConnectionWindow();
-
     void displayPersonTable();
     void displayComputerTable();
-    void addConnection();
 private slots:
     void on_buttonPushToClose_clicked();
     void on_computerTableConnection_cellClicked(int row);

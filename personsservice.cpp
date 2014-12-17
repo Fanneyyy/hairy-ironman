@@ -32,19 +32,12 @@ void PersonsService::remove(int personID, string ID) {
     personRepo.removeFromDatabase(ID);
 }
 
+// makes a new empty vector and replaces the current repository
 void PersonsService::removeAll() {
     personRepo.emptyRepo();
 }
 
-bool PersonsService::validPersonID(vector<Person> persons, int ID) {
-    for(unsigned int i = 0; i < persons.size(); i++) {
-        if(persons[i].getID() == ID) {
-            return true;
-        }
-    }
-    return false;
-}
-
+// finds and returns a position in the vector for a person with the ID
 int PersonsService::findPosition(int ID) {
     int temp;
     for(int i = 0; i < personRepo.getPersonSize(); i++) {

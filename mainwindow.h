@@ -1,3 +1,5 @@
+// The main window for the User interface
+
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 

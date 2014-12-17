@@ -1,6 +1,6 @@
-#ifndef CONNECTION_H
 // Connection: A class that stores information about a connection between a person and a computer.
 
+#ifndef CONNECTION_H
 #define CONNECTION_H
 
 #include <iostream>

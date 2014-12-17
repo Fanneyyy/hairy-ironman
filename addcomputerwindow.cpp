@@ -4,20 +4,18 @@
 
 AddComputerWindow::AddComputerWindow(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::AddComputerWindow)
-{
+    ui(new Ui::AddComputerWindow) {
     ui->setupUi(this);
     ui->lineComputerName->setPlaceholderText("Please enter name of computer");
     ui->lineYearOfBuild->setPlaceholderText("Year of build (leave empty if it wasn't)");
 }
 
-AddComputerWindow::~AddComputerWindow()
-{
+AddComputerWindow::~AddComputerWindow() {
     delete ui;
 }
 
-void AddComputerWindow::on_buttonAddComputer_clicked()
-{
+// on click, runs input validation and add a computer
+void AddComputerWindow::on_buttonAddComputer_clicked() {
     if(ui->lineComputerName->text().isEmpty()) {
         ui->labelError->setText("<font color='red'>Please enter a name</font>");
     }
@@ -34,6 +32,8 @@ void AddComputerWindow::on_buttonAddComputer_clicked()
         close();
     }
 }
+
+// adds a computer into the database
 void AddComputerWindow::addComputer() {
     Computer c = Computer();
     string temp;

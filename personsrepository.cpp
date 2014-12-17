@@ -115,6 +115,7 @@ void PersonsRepository::savePersonToDatabase(Person p) {
     db.close();
 }
 
+// removes a person from the sqlite database
 void PersonsRepository::removeFromDatabase(string ID) {
     db = getDatabaseConnection();
 
