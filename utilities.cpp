@@ -11,8 +11,12 @@ bool Utilities::validName(string name) {
         if(!isspace(name[i])) {
             onlySpaces = false;
         }
-        if(!isalpha(name[i]) && !isspace(name[i])) {
-            validChar = false;
+        try {
+            if(!isalpha(name[i]) && !isspace(name[i])) {
+                validChar = false;
+            }
+        } catch(const char* error) {
+            return false;
         }
     }
     return (validChar && !onlySpaces);
