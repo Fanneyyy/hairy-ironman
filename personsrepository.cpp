@@ -131,7 +131,7 @@ void PersonsRepository::removeFromDatabase(string ID) {
         query.bindValue(":ID", atoi(ID.c_str()));
 
         if(query.exec()) {
-            cout << "The person has been added to the database." << endl;
+            cout << "The person has been removed from the database." << endl;
         } else {
             qDebug() << "Error = " << db.lastError().text();
         }

@@ -130,7 +130,7 @@ void ComputerRepository::removeFromDatabase(string ID) {
         query.bindValue(":ID", atoi(ID.c_str()));
 
         if(query.exec()) {
-            qDebug() << "The person has been added to the database." << endl;
+            qDebug() << "The computer has been removed from the database." << endl;
         } else {
             qDebug() << "Error = " << db.lastError().text();
         }
